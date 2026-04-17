@@ -9,7 +9,7 @@ import Award from '../Awards';
 function Home() {
   return (
     <>
-    <h1>hi</h1>
+   
       <Hero />
       <WhatWeDo />
       <Presence />
