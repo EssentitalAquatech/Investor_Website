@@ -1,0 +1,300 @@
+/* ============================= */
+/* SECTION */
+/* ============================= */
+.lifeImagesSectionMain {
+  background: #ffffff;
+  padding: 120px 0;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================= */
+/* HEADING */
+/* ============================= */
+.lifeImagesMainHeading {
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 70px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+/* Top heading start left */
+.lifeImagesMainHeading .topLine {
+  display: block;
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #000000;
+  opacity: 0;
+  transform: translateX(-120px);
+  transition: all 1s ease;
+}
+
+/* Bottom heading start right */
+.lifeImagesMainHeading .bottomLine {
+  display: block;
+  font-size: 4.6rem;
+  font-weight: 500;
+  color: #38bdf8;
+  opacity: 0;
+  transform: translateX(120px);
+  transition: all 1s ease;
+}
+
+/* Show Animation */
+.lifeImagesMainHeading.showHeading .topLine {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.lifeImagesMainHeading.showHeading .bottomLine {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================= */
+/* WRAPPER */
+/* ============================= */
+.lifeImagesWrapperBox {
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.lifeImagesScrollContainer {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.lifeImagesScrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.lifeImagesSingleCard {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 220px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+}
+
+.lifeImagesSingleCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lifeImagesSingleCard:hover {
+  transform: scale(1.07);
+}
+
+/* OVERLAY */
+.lifeImagesOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.3),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.lifeImagesTextBox {
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+  right: 15px;
+  color: #fff;
+  z-index: 2;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.lifeImagesTextBox h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.lifeImagesTextBox p {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.lifeImagesSingleCard:hover .lifeImagesOverlay {
+  opacity: 1;
+}
+
+.lifeImagesSingleCard:hover .lifeImagesTextBox {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* MODAL */
+.lifeImagesModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.lifeImagesModalContent {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lifeImagesModalContent img {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.lifeImagesModalContent h3 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.lifeImagesYear {
+  color: #38bdf8;
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+.lifeImagesDesc {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.lifeImagesCloseBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: #eee;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lifeImagesCloseBtn:hover {
+  background: #38bdf8;
+  color: #fff;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+/* Large Laptop */
+@media (max-width: 1200px) {
+  .lifeImagesMainHeading .topLine {
+    font-size: 3.4rem;
+  }
+
+  .lifeImagesMainHeading .bottomLine {
+    font-size: 4rem;
+  }
+}
+
+/* Laptop */
+@media (max-width: 992px) {
+  .lifeImagesMainHeading {
+    margin-bottom: 55px;
+  }
+
+  .lifeImagesMainHeading .topLine {
+    font-size: 3rem;
+  }
+
+  .lifeImagesMainHeading .bottomLine {
+    font-size: 3.4rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .lifeImagesMainHeading {
+    margin-bottom: 45px;
+    line-height: 1.25;
+  }
+
+  .lifeImagesMainHeading .topLine {
+    font-size: 2.3rem;
+  }
+
+  .lifeImagesMainHeading .bottomLine {
+    font-size: 2.7rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .lifeImagesMainHeading {
+    margin-bottom: 35px;
+  }
+
+  .lifeImagesMainHeading .topLine {
+    font-size: 1.8rem;
+  }
+
+  .lifeImagesMainHeading .bottomLine {
+    font-size: 2.1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+  .lifeImagesMainHeading .topLine {
+    font-size: 1.5rem;
+  }
+
+  .lifeImagesMainHeading .bottomLine {
+    font-size: 1.7rem;
+  }
+}

@@ -1,0 +1,224 @@
+/* SECTION */
+.presence-section-unique {
+  background: white;
+  padding: 100px 0;
+}
+
+/* CONTAINER */
+.presence-container-unique {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* HEADING */
+.presence-top-title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #000;
+}
+
+.presence-top-title span {
+  color: #0EA5E9;
+}
+
+/* MAIN BOX */
+.presence-main-box {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap; /* 🔥 FIX: wrap हटाया */
+}
+
+/* IMAGE */
+.presence-simple-image {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+}
+
+/* TEXT */
+.presence-text-right {
+  max-width: 600px;
+  width: 100%;
+}
+
+.presence-text-right h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.presence-text-right p {
+  color: #333;
+  line-height: 1.8;
+}
+
+/* CARDS CONTAINER */
+.presence-new-cards-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 80px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* CARD WRAPPER */
+.presence-new-card-wrapper {
+  flex: 1 1 300px;
+  max-width: 350px;
+  min-height: 380px;
+  width: 100%;
+}
+
+/* CARD */
+.presence-pure-image {
+  width: 100%;
+  height: 380px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* BOTTOM TEXT */
+.presence-card-title {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+/* HOVER */
+.presence-hover-content {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 165, 233, 0.9);
+  color: white;
+  padding: 25px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.presence-pure-image.hovered .presence-hover-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ================= ANIMATION ================= */
+
+.animate {
+  opacity: 0;
+}
+
+/* directions */
+.fade-left {
+  transform: translateX(-80px);
+}
+
+.fade-right {
+  transform: translateX(80px);
+}
+
+.fade-up {
+  transform: translateY(80px);
+}
+
+.fade-down {
+  transform: translateY(-80px);
+}
+
+/* visible */
+.visible {
+  opacity: 1;
+  transform: translate(0);
+  transition: all 0.8s ease;
+}
+
+/* DELAYS */
+.delay-0 { transition-delay: 0.2s; }
+.delay-1 { transition-delay: 0.4s; }
+.delay-2 { transition-delay: 0.6s; }
+
+/* ================= RESPONSIVE ================= */
+
+/* LARGE LAPTOP */
+@media (max-width: 1200px) {
+  .presence-main-box {
+    gap: 50px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .presence-main-box {
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap; /* वापस enable */
+  }
+
+  .presence-text-right {
+    max-width: 100%;
+  }
+
+  .presence-new-cards-container {
+    gap: 30px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .presence-container-unique {
+    padding: 0 20px;
+  }
+
+  .presence-top-title {
+    font-size: 2rem;
+  }
+
+  .presence-text-right h3 {
+    font-size: 1.5rem;
+  }
+
+  .presence-new-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presence-new-card-wrapper {
+    max-width: 100%;
+    width: 100%;
+    flex: unset;
+  }
+
+  .presence-pure-image {
+    height: 300px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .presence-top-title {
+    font-size: 1.7rem;
+  }
+
+  .presence-text-right p {
+    font-size: 0.95rem;
+  }
+
+  .presence-pure-image {
+    height: 260px;
+  }
+}

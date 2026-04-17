@@ -1,0 +1,249 @@
+/* ===== Investors & Partners — Premium Page ===== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
+
+.ip-page {
+  --ip-sky: #0ea5e9;
+  --ip-sky-soft: #e6f4fb;
+  --ip-sky-strong: #0284c7;
+  --ip-ink: #0b1220;
+  --ip-muted: #5b6473;
+  --ip-border: #eef1f5;
+  --ip-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  --ip-shadow-hover: 0 22px 50px rgba(14, 165, 233, 0.18);
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--ip-ink);
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ---------- HERO ---------- */
+.ip-hero {
+  position: relative;
+  padding: 140px 0 110px;
+  background:
+    radial-gradient(1100px 500px at 50% -10%, rgba(14, 165, 233, 0.10), transparent 60%),
+    radial-gradient(700px 400px at 90% 20%, rgba(14, 165, 233, 0.06), transparent 70%),
+    #ffffff;
+}
+
+.ip-eyebrow {
+  display: inline-block;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--ip-sky-strong);
+  background: var(--ip-sky-soft);
+  border: 1px solid rgba(14, 165, 233, 0.18);
+  border-radius: 999px;
+  margin-bottom: 28px;
+}
+
+.ip-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ip-ink);
+  margin: 0 auto 22px;
+  max-width: 1000px;
+}
+.ip-amp { color: var(--ip-ink); font-weight: 600; opacity: 0.55; }
+.ip-title-accent {
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ip-subtitle {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: var(--ip-muted);
+  max-width: 760px;
+  margin: 0 auto 44px;
+  line-height: 1.7;
+}
+
+.ip-hero-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  padding: 18px 32px;
+  border: 1px solid var(--ip-border);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: var(--ip-shadow);
+}
+.ip-hero-meta > div { display: flex; flex-direction: column; align-items: center; }
+.ip-hero-meta strong {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.4rem;
+  color: var(--ip-ink);
+}
+.ip-hero-meta span { font-size: 12px; color: var(--ip-muted); letter-spacing: 0.5px; }
+.ip-divider { width: 1px; height: 28px; background: var(--ip-border); }
+
+/* ---------- Fade-up entrance ---------- */
+.ip-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: ipFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.ip-delay-1 { animation-delay: 0.15s; }
+.ip-delay-2 { animation-delay: 0.30s; }
+.ip-delay-3 { animation-delay: 0.45s; }
+@keyframes ipFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- SHOWCASE ---------- */
+.ip-showcase {
+  padding: 110px 0 120px;
+  background: #fff;
+}
+.ip-section-head h2 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--ip-ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.ip-section-head p { color: var(--ip-muted); font-size: 1.05rem; }
+
+/* Card */
+.ip-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--ip-border);
+  border-radius: 20px;
+  padding: 34px 22px 26px;
+  text-align: center;
+  height: 100%;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--ip-shadow);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s ease,
+              border-color 0.3s ease;
+  overflow: hidden;
+
+  /* scroll-in initial state */
+  opacity: 0;
+  transform: translateY(28px);
+}
+.ip-card.ip-in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s ease, border-color 0.3s ease;
+}
+
+.ip-logo-wrap {
+  width: 84px;
+  height: 84px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f8fbfd, #ffffff);
+  border: 1px solid #eef4f8;
+  margin-bottom: 18px;
+  transition: transform 0.5s ease;
+}
+.ip-logo {
+  max-width: 46px;
+  max-height: 46px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.35);
+  opacity: 0.85;
+  transition: transform 0.5s ease, filter 0.4s ease, opacity 0.4s ease;
+}
+
+.ip-card-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ip-ink);
+  margin: 4px 0 6px;
+  letter-spacing: -0.01em;
+}
+.ip-card-tag {
+  font-size: 11.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ip-sky-strong);
+  font-weight: 600;
+}
+
+.ip-card-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  pointer-events: none;
+  background: radial-gradient(400px 120px at 50% 0%, rgba(14, 165, 233, 0.18), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover */
+.ip-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(14, 165, 233, 0.35);
+  box-shadow: var(--ip-shadow-hover);
+}
+.ip-card:hover .ip-logo {
+  transform: scale(1.12);
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+.ip-card:hover .ip-logo-wrap { transform: translateY(-2px); }
+.ip-card:hover .ip-card-glow { opacity: 1; }
+
+/* ---------- CTA ---------- */
+.ip-cta {
+  padding: 90px 0 130px;
+  background:
+    radial-gradient(800px 300px at 50% 100%, rgba(14, 165, 233, 0.10), transparent 70%),
+    #fff;
+}
+.ip-cta h2 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+.ip-cta p { color: var(--ip-muted); margin-bottom: 30px; font-size: 1.05rem; }
+.ip-btn {
+  appearance: none;
+  border: none;
+  padding: 14px 30px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #fff;
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+.ip-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(14, 165, 233, 0.45);
+  filter: brightness(1.05);
+}
+
+/* ---------- Responsive polish ---------- */
+@media (max-width: 575.98px) {
+  .ip-hero { padding: 110px 0 80px; }
+  .ip-hero-meta { gap: 18px; padding: 14px 18px; flex-wrap: wrap; justify-content: center; }
+  .ip-divider { display: none; }
+  .ip-showcase { padding: 80px 0 90px; }
+  .ip-card { min-height: 210px; padding: 28px 18px 22px; }
+}

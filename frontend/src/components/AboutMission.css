@@ -1,0 +1,255 @@
+/* ============================= */
+/* MAIN CONTAINER */
+/* ============================= */
+.about-mission-container {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* ============================= */
+/* SECTION */
+/* ============================= */
+.mission-section {
+  width: 100%;
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.mission-section:nth-child(even) {
+  background: #ffffff;
+}
+
+/* Remove Bootstrap gutter */
+.row.g-0 {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+/* ============================= */
+/* TOP HEADING */
+/* ============================= */
+.mission-top-heading {
+  text-align: center;
+  font-size: 4.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 55px;
+}
+
+.black-word {
+  color: #000000;
+}
+
+.blue-word {
+  color: #0EA5E9;
+}
+
+/* ============================= */
+/* IMAGE */
+/* ============================= */
+.mission-image {
+  width: 92%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.mission-image:hover {
+  transform: scale(1.03) !important;
+}
+
+/* ============================= */
+/* CONTENT */
+/* ============================= */
+.mission-content {
+  padding: 10px 25px;
+}
+
+.mission-subheading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000 !important;
+  line-height: 1.4;
+  margin-bottom: 22px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.mission-description p {
+  font-size: 1rem;
+  color: #555555 !important;
+  line-height: 1.8;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+/* ============================= */
+/* ANIMATION SUPPORT */
+/* ============================= */
+.mission-image,
+.mission-heading,
+.mission-subheading,
+.mission-description p {
+  will-change: transform, opacity;
+}
+
+/* ============================= */
+/* DESKTOP */
+/* ============================= */
+@media (min-width: 992px) {
+  #mission-section-1 .mission-content {
+    padding-left: 35px;
+  }
+
+  #mission-section-2 .mission-content {
+    padding-left: 70px;
+  }
+}
+
+/* ============================= */
+/* TABLET + MOBILE FIX */
+/* ============================= */
+@media (max-width: 991px) {
+  .mission-section {
+    padding: 75px 20px;
+  }
+
+  .mission-top-heading {
+    font-size: 2.6rem;
+    margin-bottom: 40px;
+  }
+
+  .mission-image {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 25px;
+  }
+
+  .mission-content {
+    padding: 0;
+    text-align: center;
+  }
+
+  .mission-subheading {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .mission-description p {
+    text-align: center;
+  }
+
+  /* ALL sections mobile column */
+  .row.align-items-center {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* FORCE Vision image first */
+  #mission-section-2 .row.align-items-center > div:nth-child(3) {
+    order: 1 !important;
+    width: 100%;
+  }
+
+  #mission-section-2 .row.align-items-center > div:nth-child(2) {
+    order: 2 !important;
+    width: 100%;
+  }
+
+  /* Mission first section normal */
+  #mission-section-1 .row.align-items-center > div:nth-child(1) {
+    order: 1 !important;
+    width: 100%;
+  }
+
+  #mission-section-1 .row.align-items-center > div:nth-child(2) {
+    order: 2 !important;
+    width: 100%;
+  }
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+@media (max-width: 767px) {
+  .mission-section {
+    padding: 60px 15px;
+  }
+
+  .mission-top-heading {
+    font-size: 2.1rem;
+    margin-bottom: 35px;
+  }
+
+  .mission-image {
+    height: 260px;
+  }
+
+  .mission-subheading {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+
+  .mission-description p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+}
+
+/* ============================= */
+/* SMALL MOBILE */
+/* ============================= */
+@media (max-width: 575px) {
+  .mission-section {
+    padding: 55px 12px;
+  }
+
+  .mission-top-heading {
+    font-size: 1.8rem;
+    margin-bottom: 28px;
+  }
+
+  .mission-image {
+    height: 220px;
+  }
+
+  .mission-subheading {
+    font-size: 1.12rem;
+  }
+
+  .mission-description p {
+    font-size: 0.92rem;
+  }
+}
+
+/* ============================= */
+/* EXTRA SMALL */
+/* ============================= */
+@media (max-width: 375px) {
+  .mission-top-heading {
+    font-size: 1.55rem;
+  }
+
+  .mission-subheading {
+    font-size: 1rem;
+  }
+
+  .mission-description p {
+    font-size: 0.88rem;
+  }
+
+  .mission-image {
+    height: 200px;
+  }
+}

@@ -1,0 +1,146 @@
+/* Section */
+.products-main {
+  background: #ffffff;
+  padding: 180px 0;
+}
+
+/* Heading */
+.products-heading {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 100px;
+  color: #000;
+}
+
+.products-heading span {
+  color: #0EA5E9;
+}
+
+/* Animation */
+.product-section {
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.product-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reverse layout */
+.product-section.reverse .row {
+  flex-direction: row-reverse;
+}
+
+/* Image */
+.product-image-wrapper {
+  width: 92%;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.product-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Content */
+.product-content-wrapper {
+  padding: 10px 20px;
+}
+
+.product-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.product-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Explore Button */
+.explore-btn-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.explore-btn {
+  background: #0EA5E9;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(14,165,233,0.25);
+  margin-top: 50px;
+}
+
+.explore-btn:hover {
+  background: #0284c7;
+  transform: translateY(-2px);
+}
+
+.explore-icon {
+  transition: 0.3s ease;
+}
+
+.explore-btn:hover .explore-icon {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .product-image-wrapper {
+    height: 300px;
+  }
+
+  .products-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .product-image-wrapper {
+    height: 260px;
+  }
+
+  .product-section {
+    margin-bottom: 60px;
+  }
+
+  .products-heading {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .product-image-wrapper {
+    height: 220px;
+  }
+
+  .products-heading {
+    font-size: 1.6rem;
+  }
+}
