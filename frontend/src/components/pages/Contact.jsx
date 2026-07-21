@@ -33,14 +33,16 @@ function Contact() {
       });
   };
 
-  const socialLinks = {
-    linkedin:
-      "https://www.linkedin.com/company/essential-aquatech-private-limited/",
-    youtube: "https://youtu.be/uSTIec5ky9k?si=izU7ytsubX9Uj7SI",
-    instagram:
-      "https://www.instagram.com/essentialaquatech?igsh=MW8wdDFtcXo3ODlmMQ==",
-    googleMaps: "https://maps.app.goo.gl/XFM2sL69HL8UTqqu8?g_st=aw",
-  };
+
+const socialLinks = {
+  linkedin:
+    "https://www.linkedin.com/company/essential-aquatech-private-limited/",
+  youtube: "https://www.youtube.com/@essentialaquatech",
+  instagram:
+    "https://www.instagram.com/essentialaquatech?igsh=MW8wdDFtcXo3ODlmMQ==",
+  googleMaps: "https://maps.app.goo.gl/XFM2sL69HL8UTqqu8?g_st=aw",
+};
+
 
   return (
     <div className="contact-page-content contact-fade-in">
@@ -52,8 +54,7 @@ function Contact() {
   <span className="touch">Touch</span>
 </h1>
           <p className="contact-subtitle">
-            Have questions about our water solutions? We're here to help. Send
-            us a message and our team will respond within 24 hours.
+          Have any questions about your order, delivery, or products? We're here to help. Send us a message and our team will respond within 24 hours.
           </p>
         </div>
 
@@ -121,24 +122,24 @@ function Contact() {
   </option>
 
   <option value="Farmer / Agriculture Professional">
-    Farmer / Agriculture Professional
+    Order Related
   </option>
 
   <option value="Sales Agent / Distributor">
-    Sales Agent / Distributor
+    Return 
   </option>
 
   <option value="Investor / Business Owner">
-    Investor / Business Owner
+    Payment Related Issues
   </option>
 
-  <option value="Researcher / Academic">
+  {/* <option value="Researcher / Academic">
     Researcher / Academic
   </option>
 
   <option value="Government Official / Partners">
     Government Official / Partners
-  </option>
+  </option> */}
 
   <option value="Other">
     Other
@@ -201,7 +202,7 @@ function Contact() {
                   <i className="contact-info-icon bi bi-telephone-fill"></i>
                   <div className="contact-info-text">
                     <strong>Call Us</strong><br />
-                    +91 9046226703<br />
+                    +91 9046226705<br />
                     <small>Mon-Fri, 9AM-5PM EST</small>
                   </div>
                 </div>
