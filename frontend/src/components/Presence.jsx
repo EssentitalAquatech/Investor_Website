@@ -5,174 +5,76 @@
 // import React, { useEffect, useState } from 'react';
 // import './Presence.css';
 
-// // Import images
-// import indiaMap from '../assets/images/IndiaMap.png';
-// import likelihoodBg from '../assets/images/Likelihood.png';
-// import impactBg from '../assets/images/impact.png';
-// import carbonBg from '../assets/images/carbon.png';
+// // Cloudinary image URL for Asia map
+// const indiaMap =
+//   'https://res.cloudinary.com/p8fs2e1n/image/upload/asia.png';
 
 // function Presence() {
 //   const [hoveredCard, setHoveredCard] = useState(null);
 
-//   // 3 cards with background images
-//   const cardsData = [
-//     { 
-//       id: 'likelihood', 
-//       title: 'Livelihood',
-//       bgImage: likelihoodBg
+//   // IMPACT STATS
+//   const impactStats = [
+//     {
+//       value: '7M+',
+//       label: 'Farmers empowered through intelligent aquaculture solutions'
 //     },
-//     { 
-//       id: 'impact', 
-//       title: 'Impact',
-//       bgImage: impactBg
+//     {
+//       value: '30M+',
+//       label: 'Acres of aquaculture ecosystems analyzed'
 //     },
-//     { 
-//       id: 'carbon', 
-//       title: 'Carbon',
-//       bgImage: carbonBg
+//     {
+//       value: '25%',
+//       label: 'Improvement in farm productivity through data-driven insights'
+//     },
+//     {
+//       value: '30%',
+//       label: 'Potential increase in farmer income through smarter decisions'
 //     }
 //   ];
 
-//   // Animation effect for scroll
+//   // CLOUDINARY CARDS
+//   const cardsData = [
+//     {
+//       id: 'livelihood',
+//       // title: 'Stronger Livelihoods',
+//       bgImage:
+//         'https://res.cloudinary.com/p8fs2e1n/image/upload/live.png',
+//       description:
+//         'We empower farmers with actionable intelligence that helps them make better decisions, improve farm productivity, reduce uncertainty, and build more resilient livelihoods.'
+//     },
+//     {
+//       id: 'impact',
+//       // title: 'Measurable Impact',
+//       bgImage:
+//         'https://res.cloudinary.com/p8fs2e1n/image/upload/impact.png',
+//       description:
+//         'By combining AI, satellite, weather, water, and farm data, we turn complex information into measurable outcomes for more productive, sustainable, and resilient aquaculture.'
+//     },
+//     {
+//       id: 'finance',
+//       // title: 'Financial Intelligence',
+//       bgImage:
+//         'https://res.cloudinary.com/p8fs2e1n/image/upload/finance.png',
+//       description:
+//         'We help farmers and aquaculture businesses make smarter financial decisions by improving profitability, optimizing resources, and reducing avoidable risks across the farm.'
+//     }
+//   ];
+
 //   useEffect(() => {
 //     const observer = new IntersectionObserver(
 //       (entries) => {
-//         entries.forEach(entry => {
+//         entries.forEach((entry) => {
 //           if (entry.isIntersecting) {
 //             entry.target.classList.add('visible');
 //           }
 //         });
 //       },
-//       {
-//         threshold: 0.1,
-//         rootMargin: '0px 0px -50px 0px'
-//       }
+//       { threshold: 0.2 }
 //     );
 
-//     document.querySelectorAll('.presence-new-card-wrapper').forEach(el => {
-//       observer.observe(el);
-//     });
-
-//     document.querySelectorAll('.presence-animate-on-scroll').forEach(el => {
-//       observer.observe(el);
-//     });
-
-//     return () => observer.disconnect();
-//   }, []);
-
-//   return (
-//     <section className="presence-section-unique">
-//       <div className="presence-container-unique">
-//         {/* Simple Layout: Image Left, Heading Right */}
-//         <div className="presence-main-layout">
-//           {/* Image on Left Side */}
-//           <div className="presence-image-left">
-//             <div className="presence-simple-image-wrapper presence-animate-on-scroll">
-//               <img 
-//                 src={indiaMap} 
-//                 alt="India Map showing our sustainable impact" 
-//                 className="presence-simple-image"
-//               />
-//             </div>
-//           </div>
-          
-//           {/* Heading on Right Side */}
-//           <div className="presence-heading-right">
-//             <div className="presence-heading-content presence-animate-on-scroll presence-delay-200">
-//               <h2 className="presence-main-title">
-//                 Our Sustainable Impact Across India
-//               </h2>
-//               <p className="presence-subtitle">
-//                 Strengthening our Presence in 3 States & Counting…
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-        
-//         {/* Cards Section - Images with Headings Below */}
-//         <div className="presence-cards-section">
-//           <div className="presence-new-cards-wrapper">
-//             <div className="presence-new-cards-container">
-//               {cardsData.map((card) => (
-//                 <div 
-//                   key={card.id} 
-//                   className="presence-new-card-wrapper"
-//                   data-card={card.id}
-//                   onMouseEnter={() => setHoveredCard(card.id)}
-//                   onMouseLeave={() => setHoveredCard(null)}
-//                 >
-//                   <div className="presence-card-container">
-//                     {/* Pure Image */}
-//                     <div 
-//                       className={`presence-pure-image ${hoveredCard === card.id ? 'hovered' : ''}`}
-//                       style={{ backgroundImage: `url(${card.bgImage})` }}
-//                     >
-//                       {/* Hover Content - Only visible on hover */}
-//                       <div className="presence-hover-content">
-//                         <h3 className="presence-hover-title">{card.title}</h3>
-//                         <p className="presence-hover-description">
-//                           {card.id === 'likelihood' ? 'Our innovative solutions demonstrate high probability of success across diverse agricultural landscapes.' :
-//                            card.id === 'impact' ? 'Creating substantial positive change in rural economies through technology-driven interventions.' :
-//                            'Reducing carbon footprint through sustainable agricultural practices and green technologies.'}
-//                         </p>
-//                       </div>
-//                     </div>
-                    
-//                     {/* Heading Below Image - Black Color */}
-//                     <div className="presence-image-heading">
-//                       {card.title}
-//                     </div>
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Presence;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useEffect, useState } from 'react';
-// import './Presence.css';
-
-// import indiaMap from '../assets/images/IndiaMap.png';
-// import likelihoodBg from '../assets/images/HomeMain.png';
-// import impactBg from '../assets/images/HomeMain2.png';
-// import carbonBg from '../assets/images/HomeMain.png';
-
-// function Presence() {
-//   const [hoveredCard, setHoveredCard] = useState(null);
-
-//   const cardsData = [
-//     { id: 'likelihood', title: 'Livelihood', bgImage: likelihoodBg },
-//     { id: 'impact', title: 'Impact', bgImage: impactBg },
-//     { id: 'carbon', title: 'Carbon', bgImage: carbonBg }
-//   ];
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver((entries) => {
-//       entries.forEach(entry => {
-//         if (entry.isIntersecting) entry.target.classList.add('visible');
-//       });
-//     });
-
-//     document.querySelectorAll('.presence-new-card-wrapper').forEach(el => observer.observe(el));
-//     document.querySelectorAll('.presence-animate-on-scroll').forEach(el => observer.observe(el));
+//     document
+//       .querySelectorAll('.animate')
+//       .forEach((el) => observer.observe(el));
 
 //     return () => observer.disconnect();
 //   }, []);
@@ -181,36 +83,39 @@
 //     <section className="presence-section-unique">
 //       <div className="presence-container-unique">
 
-//         {/* TOP CENTER HEADING */}
-//         <h2 className="presence-top-title">
-//           Our Impact Across <span>India</span>
+//         {/* TOP HEADING */}
+//         <h2 className="presence-top-title animate fade-down">
+//           Our Impact Across <span>Asia</span>
 //         </h2>
 
-//         {/* MAIN BOX (image + text) */}
+//         {/* IMPACT STATS */}
+//         <div className="presence-impact-stats">
+//           {impactStats.map((stat, index) => (
+//             <div
+//               className={`presence-stat-item animate fade-up delay-${index}`}
+//               key={index}
+//             >
+//               <div className="presence-stat-line"></div>
+
+//               <div className="presence-stat-value">
+//                 {stat.value}
+//               </div>
+
+//               <div className="presence-stat-label">
+//                 {stat.label}
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* ASIA MAP */}
 //         <div className="presence-main-box">
-
-//           {/* LEFT IMAGE */}
-//           <div className="presence-image-left">
-//             <img src={indiaMap} alt="India Map" className="presence-simple-image" />
-//           </div>
-
-//           {/* RIGHT TEXT */}
-//           <div className="presence-text-right">
-
-//             <h3 className="presence-inner-heading">
-//               Reaching Communities That Need It Most
-//             </h3>
-
-//             <p>
-//               Essential Aquatech operates across five key states in India, bringing safe drinking
-//               water solutions to communities that face acute water scarcity and contamination challenges.
-//             </p>
-
-//             <p>
-//               From the arsenic-affected regions of West Bengal and Bihar to the fluoride-prone areas
-//               of Gujarat, our technology-driven water purification plants are transforming lives.
-//             </p>
-
+//           <div className="presence-image-center animate fade-up">
+//             <img
+//               src={indiaMap}
+//               alt="Asia Map"
+//               className="presence-simple-image"
+//             />
 //           </div>
 //         </div>
 
@@ -218,42 +123,63 @@
 //         <div className="presence-cards-section">
 //           <div className="presence-new-cards-container">
 
-//             {cardsData.map((card) => (
-//               <div
-//                 key={card.id}
-//                 className="presence-new-card-wrapper"
-//                 onMouseEnter={() => setHoveredCard(card.id)}
-//                 onMouseLeave={() => setHoveredCard(null)}
-//               >
-//                 <div className="presence-card-container">
+//             {cardsData.map((card, index) => {
+//               const directions = [
+//                 'fade-left',
+//                 'fade-up',
+//                 'fade-right'
+//               ];
 
-//                   <div
-//                     className={`presence-pure-image ${hoveredCard === card.id ? 'hovered' : ''}`}
-//                     style={{ backgroundImage: `url(${card.bgImage})` }}
-//                   >
+//               return (
+//                 <div
+//                   key={card.id}
+//                   className={`presence-new-card-wrapper card-${card.id} animate ${directions[index]} delay-${index}`}
+//                   onMouseEnter={() => setHoveredCard(card.id)}
+//                   onMouseLeave={() => setHoveredCard(null)}
+//                 >
+//                   <div className="presence-card-container">
 
-//                     {/* TEXT LEFT BOTTOM */}
-//                     <div className="presence-card-title">
-//                       {card.title}
-//                     </div>
+//                     <div
+//                       className={`presence-pure-image ${
+//                         hoveredCard === card.id ? 'hovered' : ''
+//                       }`}
+//                       style={{
+//                         backgroundImage: `url(${card.bgImage})`
+//                       }}
+//                     >
 
-//                     {/* HOVER */}
-//                     <div className="presence-hover-content">
-//                       <h3>{card.title}</h3>
-//                       <p>
-//                         {card.id === 'likelihood'
-//                           ? 'Our innovative solutions demonstrate high success across agricultural landscapes.'
-//                           : card.id === 'impact'
-//                           ? 'Creating strong positive change through technology-driven interventions.'
-//                           : 'Reducing carbon footprint using sustainable and green technologies.'}
-//                       </p>
+//                       {/* Bottom text */}
+//                       {hoveredCard !== card.id && (
+//                         <div className="presence-card-title">
+//                           {card.title}
+//                         </div>
+//                       )}
+
+//                       {/* HOVER CONTENT */}
+//                       <div className="presence-hover-content">
+
+//                         <span className="presence-hover-kicker">
+//                           {card.id === 'livelihood'
+//                             ? 'FARMER EMPOWERMENT'
+//                             : card.id === 'impact'
+//                             ? 'INTELLIGENCE IN ACTION'
+//                             : 'SMARTER FARM ECONOMICS'}
+//                         </span>
+
+//                         <h3>{card.title}</h3>
+
+//                         <div className="presence-hover-line"></div>
+
+//                         <p>{card.description}</p>
+
+//                       </div>
+
 //                     </div>
 
 //                   </div>
-
 //                 </div>
-//               </div>
-//             ))}
+//               );
+//             })}
 
 //           </div>
 //         </div>
@@ -264,12 +190,6 @@
 // }
 
 // export default Presence;
-
-
-
-
-
-
 
 
 
@@ -284,32 +204,160 @@
 import React, { useEffect, useState } from 'react';
 import './Presence.css';
 
-import indiaMap from '../assets/images/IndiaMap.png';
-import likelihoodBg from '../assets/images/HomeMain.png';
-import impactBg from '../assets/images/HomeMain2.png';
-import carbonBg from '../assets/images/HomeMain.png';
+// Cloudinary image URL for Asia map
+const indiaMap =
+  'https://res.cloudinary.com/p8fs2e1n/image/upload/asia.png';
+
+// ANIMATED NUMBER COMPONENT - Premium smooth version
+function AnimatedNumber({ value, start }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!start) return;
+
+    const match = value.match(/^(\d+)(.*)$/);
+
+    if (!match) return;
+
+    const target = Number(match[1]);
+    const suffix = match[2];
+
+    let startTime = null;
+
+    // Thoda slow = more premium/smooth feel
+    const duration = 3000;
+
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Very smooth ease-out
+      const easedProgress =
+        1 - Math.pow(1 - progress, 4);
+
+      const currentValue =
+        target * easedProgress;
+
+      setCount(currentValue);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setCount(target);
+      }
+    };
+
+    requestAnimationFrame(animate);
+
+    return () => {
+      startTime = null;
+    };
+  }, [start, value]);
+
+  return (
+    <>
+      {count < 10 && count % 1 !== 0
+        ? count.toFixed(1)
+        : Math.floor(count)}
+      {value.replace(/^\d+/, '')}
+    </>
+  );
+}
 
 function Presence() {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [statsVisible, setStatsVisible] = useState(false);
 
+  // IMPACT STATS
+  const impactStats = [
+    {
+      value: '7M+',
+      label: 'Farmers empowered through intelligent aquaculture solutions'
+    },
+    {
+      value: '30M+',
+      label: 'Acres of aquaculture ecosystems analyzed'
+    },
+    {
+      value: '25%',
+      label: 'Improvement in farm productivity through data-driven insights'
+    },
+    {
+      value: '30%',
+      label: 'Potential increase in farmer income through smarter decisions'
+    }
+  ];
+
+  // CLOUDINARY CARDS
   const cardsData = [
-    { id: 'likelihood', title: 'Livelihood', bgImage: likelihoodBg },
-    { id: 'impact', title: 'Impact', bgImage: impactBg },
-    { id: 'carbon', title: 'Carbon', bgImage: carbonBg }
+    {
+      id: 'livelihood',
+      bgImage:
+        'https://res.cloudinary.com/p8fs2e1n/image/upload/live.png',
+      description:
+        'We empower farmers with actionable intelligence that helps them make better decisions, improve farm productivity, reduce uncertainty, and build more resilient livelihoods.'
+    },
+    {
+      id: 'impact',
+      bgImage:
+        'https://res.cloudinary.com/p8fs2e1n/image/upload/impact.png',
+      description:
+        'By combining AI, satellite, weather, water, and farm data, we turn complex information into measurable outcomes for more productive, sustainable, and resilient aquaculture.'
+    },
+    {
+      id: 'finance',
+      bgImage:
+        'https://res.cloudinary.com/p8fs2e1n/image/upload/finance.png',
+      description:
+        'We help farmers and aquaculture businesses make smarter financial decisions by improving profitability, optimizing resources, and reducing avoidable risks across the farm.'
+    }
   ];
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
-    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+    document
+      .querySelectorAll('.animate')
+      .forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    // Stats counter observer
+    const statsSection = document.querySelector(
+      '.presence-impact-stats'
+    );
+
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setStatsVisible(true);
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.35
+      }
+    );
+
+    if (statsSection) {
+      statsObserver.observe(statsSection);
+    }
+
+    return () => {
+      observer.disconnect();
+      statsObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -318,30 +366,40 @@ function Presence() {
 
         {/* TOP HEADING */}
         <h2 className="presence-top-title animate fade-down">
-          Our Impact Across <span>India</span>
+          Our Impact Across <span>Asia</span>
         </h2>
 
-        {/* MAIN BOX */}
+        {/* IMPACT STATS */}
+        <div className="presence-impact-stats">
+          {impactStats.map((stat, index) => (
+            <div
+              className={`presence-stat-item animate fade-up delay-${index}`}
+              key={index}
+            >
+              <div className="presence-stat-line"></div>
+
+              <div className="presence-stat-value">
+                <AnimatedNumber
+                  value={stat.value}
+                  start={statsVisible}
+                />
+              </div>
+
+              <div className="presence-stat-label">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ASIA MAP */}
         <div className="presence-main-box">
-
-          <div className="presence-image-left animate fade-left">
-            <img src={indiaMap} alt="India Map" className="presence-simple-image" />
-          </div>
-
-          <div className="presence-text-right animate fade-right">
-            <h3 className="presence-inner-heading">
-              Reaching Communities That Need It Most
-            </h3>
-
-            <p>
-              Essential Aquatech operates across five key states in India, bringing safe drinking
-              water solutions to communities that face acute water scarcity and contamination challenges.
-            </p>
-
-            <p>
-              From the arsenic-affected regions of West Bengal and Bihar to the fluoride-prone areas
-              of Gujarat, our technology-driven water purification plants are transforming lives.
-            </p>
+          <div className="presence-image-center animate fade-up">
+            <img
+              src={indiaMap}
+              alt="Asia Map"
+              className="presence-simple-image"
+            />
           </div>
         </div>
 
@@ -349,48 +407,63 @@ function Presence() {
         <div className="presence-cards-section">
           <div className="presence-new-cards-container">
 
-           {cardsData.map((card, index) => {
-  const directions = ["fade-left", "fade-up", "fade-right"]; // 👈 different directions
+            {cardsData.map((card, index) => {
+              const directions = [
+                'fade-left',
+                'fade-up',
+                'fade-right'
+              ];
 
-  return (
-    <div
-      key={card.id}
-      className={`presence-new-card-wrapper animate ${directions[index]} delay-${index}`}
-      onMouseEnter={() => setHoveredCard(card.id)}
-      onMouseLeave={() => setHoveredCard(null)}
-    >
-      <div className="presence-card-container">
+              return (
+                <div
+                  key={card.id}
+                  className={`presence-new-card-wrapper card-${card.id} animate ${directions[index]} delay-${index}`}
+                  onMouseEnter={() => setHoveredCard(card.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <div className="presence-card-container">
 
-        <div
-          className={`presence-pure-image ${hoveredCard === card.id ? 'hovered' : ''}`}
-          style={{ backgroundImage: `url(${card.bgImage})` }}
-        >
+                    <div
+                      className={`presence-pure-image ${
+                        hoveredCard === card.id ? 'hovered' : ''
+                      }`}
+                      style={{
+                        backgroundImage: `url(${card.bgImage})`
+                      }}
+                    >
 
-          {/* Bottom text (hide on hover) */}
-          {hoveredCard !== card.id && (
-            <div className="presence-card-title">
-              {card.title}
-            </div>
-          )}
+                      {/* Bottom text */}
+                      {hoveredCard !== card.id && (
+                        <div className="presence-card-title">
+                          {card.title}
+                        </div>
+                      )}
 
-          {/* Hover */}
-          <div className="presence-hover-content">
-            <h3>{card.title}</h3>
-            <p>
-              {card.id === 'likelihood'
-                ? 'Our innovative solutions demonstrate high success across agricultural landscapes.'
-                : card.id === 'impact'
-                ? 'Creating strong positive change through technology-driven interventions.'
-                : 'Reducing carbon footprint using sustainable and green technologies.'}
-            </p>
-          </div>
+                      {/* HOVER CONTENT */}
+                      <div className="presence-hover-content">
 
-        </div>
+                        <span className="presence-hover-kicker">
+                          {card.id === 'livelihood'
+                            ? 'FARMER EMPOWERMENT'
+                            : card.id === 'impact'
+                            ? 'INTELLIGENCE IN ACTION'
+                            : 'SMARTER FARM ECONOMICS'}
+                        </span>
 
-      </div>
-    </div>
-  );
-})}
+                        <h3>{card.title}</h3>
+
+                        <div className="presence-hover-line"></div>
+
+                        <p>{card.description}</p>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              );
+            })}
 
           </div>
         </div>

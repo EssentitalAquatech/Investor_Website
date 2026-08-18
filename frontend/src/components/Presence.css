@@ -24,66 +24,75 @@
   color: #0EA5E9;
 }
 
-/* MAIN BOX */
+/* MAIN BOX - Image centered */
 .presence-main-box {
   display: flex;
-  gap: 80px;
-  align-items: center;
   justify-content: center;
-  flex-wrap: nowrap; /* 🔥 FIX: wrap हटाया */
+  align-items: center;
+  width: 100%;
 }
 
-/* IMAGE */
-.presence-simple-image {
+/* IMAGE CENTERED - LARGER SIZE */
+.presence-image-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 650px;
+}
+
+.presence-image-center .presence-simple-image {
+  width: 100%;
+  max-width: 1500px;
   height: auto;
 }
 
-/* TEXT */
-.presence-text-right {
-  max-width: 600px;
-  width: 100%;
-}
+/* ================= IMPACT CARDS ================= */
 
-.presence-text-right h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #000;
-}
-
-.presence-text-right p {
-  color: #333;
-  line-height: 1.8;
-}
-
-/* CARDS CONTAINER */
 .presence-new-cards-container {
-  display: flex;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
   margin-top: 80px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* CARD WRAPPER */
-.presence-new-card-wrapper {
-  flex: 1 1 300px;
-  max-width: 350px;
-  min-height: 380px;
   width: 100%;
 }
 
-/* CARD */
+.presence-new-card-wrapper {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Top two cards */
+.presence-new-card-wrapper.card-livelihood,
+.presence-new-card-wrapper.card-impact {
+  grid-column: span 1;
+}
+
+/* Finance: center aligned, same size as one card */
+.presence-new-card-wrapper.card-finance {
+  grid-column: 1 / -1;
+  width: calc((100% - 35px) / 2);
+  justify-self: center;
+}
+
+/* Images */
 .presence-pure-image {
   width: 100%;
-  height: 380px;
-  background-size: cover;
+  aspect-ratio: 3 / 2;
+  background-size: 100% 100%;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   background-color: #fff;
+}
+
+/* Same height for all three */
+.card-livelihood .presence-pure-image,
+.card-impact .presence-pure-image,
+.card-finance .presence-pure-image {
+  height: 400px;
+  aspect-ratio: auto;
 }
 
 /* BOTTOM TEXT */
@@ -97,24 +106,86 @@
   z-index: 2;
 }
 
-/* HOVER */
+/* ================= HOVER CONTENT ================= */
+
 .presence-hover-content {
   position: absolute;
   inset: 0;
-  background: rgba(14, 165, 233, 0.9);
-  color: white;
-  padding: 25px;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 0.4s ease;
+
+  background: linear-gradient(
+    135deg,
+    rgba(5, 35, 45, 0.96),
+    rgba(8, 92, 105, 0.92)
+  );
+
+  color: #fff;
+
+  padding: 55px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+  z-index: 5;
 }
 
 .presence-pure-image.hovered .presence-hover-content {
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0);
+}
+
+/* Small category text */
+.presence-hover-kicker {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+
+  margin-bottom: 14px;
+
+  opacity: 0.8;
+}
+
+/* Main heading */
+.presence-hover-content h3 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+
+  margin: 0 0 18px;
+
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Accent line */
+.presence-hover-line {
+  width: 65px;
+  height: 3px;
+
+  background: #52e5e3;
+
+  border-radius: 10px;
+
+  margin-bottom: 24px;
+}
+
+/* Description */
+.presence-hover-content p {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-size: 1.08rem;
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* ================= ANIMATION ================= */
@@ -151,6 +222,49 @@
 .delay-0 { transition-delay: 0.2s; }
 .delay-1 { transition-delay: 0.4s; }
 .delay-2 { transition-delay: 0.6s; }
+.delay-3 { transition-delay: 0.8s; }
+
+/* ================= IMPACT STATS ================= */
+
+.presence-impact-stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  margin: 0 auto 80px;
+  padding: 0 10px;
+}
+
+.presence-stat-item {
+  position: relative;
+  text-align: left;
+  min-width: 0;
+}
+
+.presence-stat-line {
+  width: 130px;
+  height: 5px;
+  background: #0EA5E9;
+  border-radius: 10px;
+  margin-bottom: 65px;
+}
+
+.presence-stat-value {
+  font-size: 4.2rem;
+  line-height: 1;
+  font-weight: 700;
+  color: #0EA5E9;
+  margin-bottom: 12px;
+  letter-spacing: -2px;
+}
+
+.presence-stat-label {
+  max-width: 240px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: #111;
+  font-weight: 400;
+}
 
 /* ================= RESPONSIVE ================= */
 
@@ -159,6 +273,22 @@
   .presence-main-box {
     gap: 50px;
   }
+  
+  .presence-image-center .presence-simple-image {
+    max-width: 750px;
+  }
+
+  .presence-impact-stats {
+    gap: 30px;
+  }
+
+  .presence-stat-value {
+    font-size: 3.5rem;
+  }
+
+  .presence-stat-line {
+    width: 110px;
+  }
 }
 
 /* TABLET */
@@ -166,15 +296,32 @@
   .presence-main-box {
     flex-direction: column;
     text-align: center;
-    flex-wrap: wrap; /* वापस enable */
+    flex-wrap: wrap;
   }
 
-  .presence-text-right {
-    max-width: 100%;
+  .presence-image-center .presence-simple-image {
+    max-width: 650px;
   }
 
   .presence-new-cards-container {
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+  }
+
+  .card-livelihood .presence-pure-image,
+  .card-impact .presence-pure-image,
+  .card-finance .presence-pure-image {
+    height: 420px;
+  }
+
+  .presence-impact-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 35px;
+    margin-bottom: 60px;
+  }
+
+  .presence-stat-value {
+    font-size: 3.3rem;
   }
 }
 
@@ -188,23 +335,56 @@
     font-size: 2rem;
   }
 
-  .presence-text-right h3 {
-    font-size: 1.5rem;
+  .presence-image-center .presence-simple-image {
+    max-width: 100%;
+    padding: 0 10px;
   }
 
   .presence-new-cards-container {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .presence-new-card-wrapper {
-    max-width: 100%;
     width: 100%;
-    flex: unset;
+  }
+
+  .presence-new-card-wrapper.card-finance {
+    grid-column: auto;
+    width: 100%;
+    justify-self: unset;
+  }
+
+  .card-livelihood .presence-pure-image,
+  .card-impact .presence-pure-image,
+  .card-finance .presence-pure-image {
+    height: auto;
+    aspect-ratio: 3 / 2;
   }
 
   .presence-pure-image {
-    height: 300px;
+    aspect-ratio: 3 / 2;
+  }
+
+  .presence-impact-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 25px;
+    padding: 0;
+  }
+
+  .presence-stat-line {
+    width: 80px;
+    height: 4px;
+    margin-bottom: 35px;
+  }
+
+  .presence-stat-value {
+    font-size: 2.7rem;
+    letter-spacing: -1px;
+  }
+
+  .presence-stat-label {
+    font-size: 0.95rem;
   }
 }
 
@@ -214,11 +394,41 @@
     font-size: 1.7rem;
   }
 
-  .presence-text-right p {
-    font-size: 0.95rem;
+  .presence-image-center .presence-simple-image {
+    max-width: 100%;
+    padding: 0 5px;
+  }
+
+  .presence-new-cards-container {
+    grid-template-columns: 1fr;
   }
 
   .presence-pure-image {
-    height: 260px;
+    aspect-ratio: 3 / 2;
+    border-radius: 10px;
+  }
+
+  .presence-impact-stats {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .presence-stat-item {
+    text-align: center;
+  }
+
+  .presence-stat-line {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+  }
+
+  .presence-stat-value {
+    font-size: 2.8rem;
+  }
+
+  .presence-stat-label {
+    max-width: 100%;
+    margin: 0 auto;
   }
 }

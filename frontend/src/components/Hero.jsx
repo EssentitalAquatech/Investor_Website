@@ -1,24 +1,63 @@
+
+
+
+
+
+
+
+
+
 // // src/components/Hero.js
 // import React, { useState, useEffect } from 'react';
 // import './Hero.css';
-// import heroVideo from '../assets/images/mainVideo.mp4'; // Import your local video
 
 // function Hero() {
 //   const [currentSlide, setCurrentSlide] = useState(0);
-//   const [videoLoaded, setVideoLoaded] = useState(false);
 
 //   const slides = [
 //     {
-//       heading: "Innovating Water Technology",
-//       paragraph: "Pioneering sustainable solutions for global water challenges with cutting-edge aquatech innovations."
+//       heading: (
+//         <>
+//           <span className="highlight-text">Building the Intelligence Layer</span>
+//           <br />
+//           <span className="white-text">for Aquaculture</span>
+//         </>
+//       ),
+//       paragraph:
+//         "Connecting ponds, farmers, AI, satellite, weather and water intelligence to make aquaculture more predictive, profitable and sustainable."
 //     },
 //     {
-//       heading: "Sustainable Solutions",
-//       paragraph: "Transforming agriculture and industries through eco-friendly water management systems."
+//       heading: (
+//         <>
+//           <span className="highlight-text">Making Every Pond</span>
+//           <br />
+//           <span className="white-text">Smarter</span>
+//         </>
+//       ),
+//       paragraph:
+//         "AI-powered intelligence that turns farm, water, weather and environmental data into better aquaculture decisions."
 //     },
 //     {
-//       heading: "Future of Water Conservation",
-//       paragraph: "Leading the way in smart water technology for a greener, more sustainable tomorrow."
+//       heading: (
+//         <>
+//           <span className="highlight-text">The Intelligence Layer</span>
+//           <br />
+//           <span className="white-text">for Aquaculture</span>
+//         </>
+//       ),
+//       paragraph:
+//         "One intelligent platform connecting farmers, ponds, AI, environmental data and the aquaculture ecosystem."
+//     },
+//     {
+//       heading: (
+//         <>
+//           <span className="highlight-text">The Future of Aquaculture</span>
+//           <br />
+//           <span className="white-text">Runs on Intelligence</span>
+//         </>
+//       ),
+//       paragraph:
+//         "Combining AI, satellite, weather, water and farm data to transform how aquaculture is monitored, managed and scaled."
 //     }
 //   ];
 
@@ -30,191 +69,83 @@
 //     return () => clearInterval(interval);
 //   }, [slides.length]);
 
-//   const handleVideoLoad = () => {
-//     setVideoLoaded(true);
-//   };
-
-//   const handleVideoError = () => {
-//     console.error('Video failed to load. Using fallback.');
-//     setVideoLoaded(false);
-//   };
-
 //   return (
 //     <section className="hero-section position-relative">
-//       {/* Background Video */}
-//       <div className={`video-background ${videoLoaded ? 'loaded' : 'loading'}`}>
-//         <video 
-//           autoPlay 
-//           loop 
-//           muted 
+
+//       {/* Video Background */}
+//       <div className="image-background">
+
+//         <video
+//           className="background-image"
+//           autoPlay
+//           muted
+//           loop
 //           playsInline
-//           className="background-video"
-//           onLoadedData={handleVideoLoad}
-//           onError={handleVideoError}
+//           preload="auto"
 //         >
-//           <source src={heroVideo} type="video/mp4" />
-//           {/* Fallback for unsupported formats */}
-//           <source src={heroVideo.replace('.mp4', '.webm')} type="video/webm" />
+//           <source
+//             src="https://res.cloudinary.com/p8fs2e1n/video/upload/home.mp4"
+//             type="video/mp4"
+//           />
 //           Your browser does not support the video tag.
 //         </video>
-        
-//         {/* Sky Blue Blur Overlay */}
+
 //         <div className="skyblue-blur-overlay"></div>
-        
-//         {/* Dark Overlay */}
 //         <div className="video-overlay"></div>
-        
-//         {/* Fallback if video fails to load */}
-//         {!videoLoaded && (
-//           <div className="video-fallback">
-//             <div className="fallback-image"></div>
-//           </div>
-//         )}
+
 //       </div>
 
-//       {/* Content Container */}
+//       {/* Hero Content */}
 //       <div className="container position-relative z-2">
 //         <div className="hero-content text-center">
-          
-//           {/* Animated Text Carousel - Only Heading & Paragraph */}
+
 //           <div className="carousel-container">
+
 //             <div className="carousel-wrapper">
+
 //               {slides.map((slide, index) => (
-//                 <div 
+//                 <div
 //                   key={index}
-//                   className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+//                   className={`carousel-slide ${
+//                     index === currentSlide ? 'active' : ''
+//                   }`}
 //                 >
-//                   <h2 className="carousel-heading display-2 fw-bold text-white mb-4">
+//                   <h2 className="carousel-heading display-2 fw-bold mb-4">
 //                     {slide.heading}
 //                   </h2>
-//                   <p className="carousel-paragraph fs-4 text-white">
+
+//                   <p className="carousel-paragraph fs-4">
 //                     {slide.paragraph}
 //                   </p>
 //                 </div>
 //               ))}
+
 //             </div>
-            
-//             {/* Carousel Indicators */}
+
 //             <div className="carousel-indicators d-flex justify-content-center mt-4">
+
 //               {slides.map((_, index) => (
 //                 <button
 //                   key={index}
-//                   className={`indicator ${index === currentSlide ? 'active' : ''}`}
+//                   className={`indicator ${
+//                     index === currentSlide ? 'active' : ''
+//                   }`}
 //                   onClick={() => setCurrentSlide(index)}
-//                   aria-label={`Go to slide ${index + 1}`}
 //                 ></button>
 //               ))}
+
 //             </div>
+
 //           </div>
 
 //         </div>
 //       </div>
+
 //     </section>
 //   );
 // }
 
 // export default Hero;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // src/components/Hero.js
-// import React, { useState, useEffect } from 'react';
-// import './Hero.css';
-// import heroImage from '../assets/images/HomeMain.png'; // ✅ Image import
-
-// function Hero() {
-//   const [currentSlide, setCurrentSlide] = useState(0);
-
-//   const slides = [
-//     {
-//       heading: "Innovating Water Technology",
-//       paragraph: "Pioneering sustainable solutions for global water challenges with cutting-edge aquatech innovations."
-//     },
-//     {
-//       heading: "Sustainable Solutions",
-//       paragraph: "Transforming agriculture and industries through eco-friendly water management systems."
-//     },
-//     {
-//       heading: "Future of Water Conservation",
-//       paragraph: "Leading the way in smart water technology for a greener, more sustainable tomorrow."
-//     }
-//   ];
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-//     }, 3000);
-
-//     return () => clearInterval(interval);
-//   }, [slides.length]);
-
-//   return (
-//     <section className="hero-section position-relative">
-      
-//       {/* ✅ Background Image */}
-//       <div className="image-background">
-//         <img src={heroImage} alt="Hero Background" className="background-image" />
-
-//         {/* Sky Blue Blur Overlay */}
-//         <div className="skyblue-blur-overlay"></div>
-
-//         {/* Dark Overlay */}
-//         <div className="video-overlay"></div>
-//       </div>
-
-//       {/* Content Container */}
-//       <div className="container position-relative z-2">
-//         <div className="hero-content text-center">
-          
-//           {/* Animated Text Carousel */}
-//           <div className="carousel-container">
-//             <div className="carousel-wrapper">
-//               {slides.map((slide, index) => (
-//                 <div 
-//                   key={index}
-//                   className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
-//                 >
-//                   <h2 className="carousel-heading display-2 fw-bold text-white mb-4">
-//                     {slide.heading}
-//                   </h2>
-//                   <p className="carousel-paragraph fs-4 text-white">
-//                     {slide.paragraph}
-//                   </p>
-//                 </div>
-//               ))}
-//             </div>
-            
-//             {/* Indicators */}
-//             <div className="carousel-indicators d-flex justify-content-center mt-4">
-//               {slides.map((_, index) => (
-//                 <button
-//                   key={index}
-//                   className={`indicator ${index === currentSlide ? 'active' : ''}`}
-//                   onClick={() => setCurrentSlide(index)}
-//                 ></button>
-//               ))}
-//             </div>
-//           </div>
-
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Hero;
-
-
 
 
 
@@ -233,23 +164,54 @@
 // src/components/Hero.js
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import heroImage from '../assets/images/HomeMain.png';
 
 function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      heading: <> <span className="black-text">Innovating</span> Water Technology </>,
-      paragraph: "Pioneering sustainable solutions for global water challenges with cutting-edge aquatech innovations."
+      heading: (
+        <>
+          <span className="highlight-text">Building the Intelligence Layer</span>
+          <br />
+          <span className="white-text">for Aquaculture</span>
+        </>
+      ),
+      paragraph:
+        "Connecting ponds, farmers, AI, satellite, weather and water intelligence to make aquaculture more predictive, profitable and sustainable."
     },
     {
-      heading: <> <span className="black-text">Sustainable</span> Solutions </>,
-      paragraph: "Transforming agriculture and industries through eco-friendly water management systems."
+      heading: (
+        <>
+          <span className="highlight-text">Making Every Pond</span>
+          <br />
+          <span className="white-text">Smarter</span>
+        </>
+      ),
+      paragraph:
+        "AI-powered intelligence that turns farm, water, weather and environmental data into better aquaculture decisions."
     },
     {
-      heading: <> <span className="black-text">Future of</span> Water Conservation </>,
-      paragraph: "Leading the way in smart water technology for a greener, more sustainable tomorrow."
+      heading: (
+        <>
+          <span className="highlight-text">The Intelligence Layer</span>
+          <br />
+          <span className="white-text">for Aquaculture</span>
+        </>
+      ),
+      paragraph:
+        "One intelligent platform connecting farmers, ponds, AI, environmental data and the aquaculture ecosystem."
+    },
+    {
+      heading: (
+        <>
+          <span className="highlight-text">The Future of Aquaculture</span>
+          <br />
+          <span className="white-text">Runs on Intelligence</span>
+        </>
+      ),
+      paragraph:
+        "Combining AI, satellite, weather, water and farm data to transform how aquaculture is monitored, managed and scaled."
     }
   ];
 
@@ -263,47 +225,76 @@ function Hero() {
 
   return (
     <section className="hero-section position-relative">
-      
+
+      {/* Video Background */}
       <div className="image-background">
-        <img src={heroImage} alt="Hero Background" className="background-image" />
+
+        <video
+          className="background-image"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source
+            src="https://res.cloudinary.com/p8fs2e1n/video/upload/home.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
 
         <div className="skyblue-blur-overlay"></div>
         <div className="video-overlay"></div>
+
       </div>
 
+      {/* Hero Content */}
       <div className="container position-relative z-2">
         <div className="hero-content text-center">
-          
+
           <div className="carousel-container">
+
             <div className="carousel-wrapper">
+
               {slides.map((slide, index) => (
-                <div 
+                <div
                   key={index}
-                  className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+                  className={`carousel-slide ${
+                    index === currentSlide ? 'active' : ''
+                  }`}
                 >
-                  <h2 className="carousel-heading display-2 fw-bold mb-4">
+                  <h2 className="carousel-heading">
                     {slide.heading}
                   </h2>
-                  <p className="carousel-paragraph fs-4">
+
+                  <p className="carousel-paragraph">
                     {slide.paragraph}
                   </p>
                 </div>
               ))}
+
             </div>
-            
+
             <div className="carousel-indicators d-flex justify-content-center mt-4">
+
               {slides.map((_, index) => (
                 <button
                   key={index}
-                  className={`indicator ${index === currentSlide ? 'active' : ''}`}
+                  className={`indicator ${
+                    index === currentSlide ? 'active' : ''
+                  }`}
                   onClick={() => setCurrentSlide(index)}
                 ></button>
               ))}
+
             </div>
+
           </div>
 
         </div>
       </div>
+
     </section>
   );
 }

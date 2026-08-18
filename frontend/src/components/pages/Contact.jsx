@@ -198,14 +198,14 @@ const socialLinks = {
                   </div>
                 </div>
                 
-                <div className="contact-info-item">
+                {/* <div className="contact-info-item">
                   <i className="contact-info-icon bi bi-telephone-fill"></i>
                   <div className="contact-info-text">
                     <strong>Call Us</strong><br />
                     +91 9046226705<br />
                     <small>Mon-Fri, 9AM-5PM EST</small>
                   </div>
-                </div>
+                </div> */}
                 
                 <div className="contact-info-item">
                   <i className="contact-info-icon bi bi-envelope-fill"></i>

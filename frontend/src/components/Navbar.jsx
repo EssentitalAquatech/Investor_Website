@@ -1,120 +1,219 @@
+
+
+
+
+
+
+
+
+
+
 // // src/components/Navbar.js
-// import React, { useState, useEffect } from 'react';
-// import { Link, useLocation } from 'react-router-dom';
-// import './Navbar.css';
-// import logoImage from '../assets/images/EssentitalLogo.png'; // Your logo
+
+// import React, { useState, useEffect } from "react";
+// import { Link, useLocation } from "react-router-dom";
+// import { Menu, X } from "lucide-react";
+// import "./Navbar.css";
+// import logoImage from "../assets/images/EssentitalLogo.png";
+
+// const navItems = [
+//   { label: "Home", id: "home" },
+//   { label: "Product", id: "products" },
+//    { label: "About Us", id: "aboutus" },
+//   { label: "Life", id: "life" },
+ 
+//   { label: "Contact", id: "contact" },
+// ];
 
 // function Navbar() {
 //   const location = useLocation();
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
 
-//   // Handle scroll effect
+//   const [scrolled, setScrolled] = useState(false);
+//   const [menuOpen, setMenuOpen] = useState(false);
+//   const [activeSection, setActiveSection] = useState("home");
+
+//   // ==========================================
+//   // NAVBAR SCROLL EFFECT
+//   // ==========================================
 //   useEffect(() => {
 //     const handleScroll = () => {
-//       if (window.scrollY > 20) {
-//         setScrolled(true);
-//       } else {
-//         setScrolled(false);
-//       }
+//       setScrolled(window.scrollY > 10);
 //     };
 
-//     window.addEventListener('scroll', handleScroll);
-//     return () => window.removeEventListener('scroll', handleScroll);
+//     window.addEventListener("scroll", handleScroll);
+
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
 //   }, []);
 
-//   // Close mobile menu when route changes
+//   // ==========================================
+//   // ACTIVE SECTION DETECTION
+//   // ==========================================
 //   useEffect(() => {
-//     setIsMenuOpen(false);
-//   }, [location]);
+//     // Ye section navigation sirf Home page par chalega
+//     if (location.pathname !== "/") {
+//       return;
+//     }
 
-//   // Toggle mobile menu
-//   const toggleMenu = () => {
-//     setIsMenuOpen(!isMenuOpen);
+//     const handleSectionScroll = () => {
+//       const scrollPosition = window.scrollY + 150;
+
+//       let currentSection = "home";
+
+//       navItems.forEach((item) => {
+//         const section = document.getElementById(item.id);
+
+//         if (section) {
+//           const sectionTop = section.offsetTop;
+
+//           if (scrollPosition >= sectionTop) {
+//             currentSection = item.id;
+//           }
+//         }
+//       });
+
+//       setActiveSection(currentSection);
+//     };
+
+//     handleSectionScroll();
+
+//     window.addEventListener("scroll", handleSectionScroll);
+
+//     return () => {
+//       window.removeEventListener("scroll", handleSectionScroll);
+//     };
+//   }, [location.pathname]);
+
+//   // ==========================================
+//   // CLOSE MOBILE MENU
+//   // ==========================================
+//   useEffect(() => {
+//     setMenuOpen(false);
+//   }, [location.pathname]);
+
+//   // ==========================================
+//   // SECTION CLICK
+//   // ==========================================
+//   const handleSectionClick = (sectionId) => {
+//     setMenuOpen(false);
+
+//     // Agar Home page par hain
+//     if (location.pathname === "/") {
+//       const section = document.getElementById(sectionId);
+
+//       if (section) {
+//         section.scrollIntoView({
+//           behavior: "smooth",
+//           block: "start",
+//         });
+//       }
+
+//       return;
+//     }
+
+//     // Agar kisi aur route/page par hain
+//     // Pehle Home par jao
+//     window.location.href = `/#${sectionId}`;
+//   };
+
+//   // ==========================================
+//   // ACTIVE STATE
+//   // ==========================================
+//   const isActive = (item) => {
+//     if (location.pathname === "/") {
+//       return activeSection === item.id;
+//     }
+
+//     return false;
 //   };
 
 //   return (
-//     <nav className={`navbar navbar-expand-lg navbar-white bg-white fixed-top ${scrolled ? 'navbar-scrolled' : ''}`}>
-//       <div className="container-fluid px-4 px-lg-5">
-//         {/* Logo and Company Name */}
-//         <Link className="navbar-brand d-flex align-items-center" to="/">
-//           <img 
-//             src={logoImage} 
-//             alt="Essential Aquatech Logo" 
-//             className="navbar-logo me-3"
-//             onError={(e) => {
-//               e.target.onerror = null;
-//               e.target.src = "https://cdn-icons-png.flaticon.com/512/732/732212.png";
-//             }}
+//     <header
+//       className={`navbar-custom ${
+//         scrolled ? "scrolled" : ""
+//       }`}
+//     >
+//       <div className="nav-container">
+
+//         {/* =========================
+//             LOGO
+//         ========================= */}
+//         <Link to="/" className="logo-section">
+//           <img
+//             src={logoImage}
+//             alt="Essential Aquatech"
+//             className="logo-img"
 //           />
-//           {/* <span className="company-name">
-//             Essential Aquatech
-//           </span> */}
-//         <span className="company-name">
-//   Essential <span className="brand">Aquatech</span>
-//   <span className="tm">TM</span>
-// </span>
+
+//           <span className="logo-text">
+//             Essential{" "}
+//             <span className="brand">
+//               Aquatech
+//               <span className="tm">TM</span>
+//             </span>
+//           </span>
 //         </Link>
-        
-//         {/* Mobile Toggle Button */}
-//         <button 
-//           className="navbar-toggler" 
-//           type="button" 
-//           onClick={toggleMenu}
-//           aria-controls="navbarNav" 
-//           aria-expanded={isMenuOpen}
-//           aria-label="Toggle navigation"
-//         >
-//           <span className="navbar-toggler-icon"></span>
-//         </button>
-        
-//         {/* Navigation Links - Simple and Clean */}
-//         <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
-//           <ul className="navbar-nav ms-auto">
-//             <li className="nav-item">
-//               <Link 
-//                 className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} 
-//                 to="/"
-//               >
-//                 <span className="nav-text">Home</span>
-//               </Link>
-//             </li>
-//             <li className="nav-item">
-//               <Link 
-//                 className={`nav-link ${location.pathname === '/products' ? 'active' : ''}`} 
-//                 to="/products"
-//               >
-//                 <span className="nav-text">Product</span>
-//               </Link>
-//             </li>
-//             <li className="nav-item">
-//               <Link 
-//                 className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} 
-//                 to="/about"
-//               >
-//                 <span className="nav-text">About Us</span>
-//               </Link>
-//             </li>
-//             <li className="nav-item">
-//               <Link 
-//                 className={`nav-link ${location.pathname === '/life' ? 'active' : ''}`} 
-//                 to="/life"
-//               >
-//                 <span className="nav-text">Life!</span>
-//               </Link>
-//             </li>
-//             <li className="nav-item">
-//               <Link 
-//                 className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} 
-//                 to="/contact"
-//               >
-//                 <span className="nav-text">Contact</span>
-//               </Link>
-//             </li>
-//           </ul>
+
+//         {/* =========================
+//             DESKTOP MENU
+//         ========================= */}
+//         <div className="nav-links">
+
+//           {navItems.map((item) => (
+//             <button
+//               key={item.id}
+//               onClick={() => handleSectionClick(item.id)}
+//               className={`nav-link nav-button ${
+//                 isActive(item) ? "active" : ""
+//               }`}
+//             >
+//               {item.label}
+//             </button>
+//           ))}
+
 //         </div>
+
+//         {/* =========================
+//             MOBILE MENU BUTTON
+//         ========================= */}
+//         <button
+//           className="menu-btn"
+//           onClick={() => setMenuOpen(!menuOpen)}
+//           aria-label="Toggle menu"
+//         >
+//           {menuOpen ? (
+//             <X size={26} />
+//           ) : (
+//             <Menu size={26} />
+//           )}
+//         </button>
 //       </div>
-//     </nav>
+
+//       {/* =========================
+//           MOBILE MENU
+//       ========================= */}
+//       <div
+//         className={`mobile-menu ${
+//           menuOpen ? "show" : ""
+//         }`}
+//       >
+//         {navItems.map((item, i) => (
+//           <button
+//             key={item.id}
+//             onClick={() => handleSectionClick(item.id)}
+//             className={`mobile-link mobile-button ${
+//               isActive(item) ? "active" : ""
+//             }`}
+//             style={{
+//               transitionDelay: `${i * 80}ms`,
+//             }}
+//           >
+//             {item.label}
+//           </button>
+//         ))}
+//       </div>
+//     </header>
 //   );
 // }
 
@@ -130,101 +229,218 @@
 
 
 
+
+
+
+
+
+
+
 // src/components/Navbar.js
+
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import "./Navbar.css";
-import logoImage from "../assets/images/EssentitalLogo.png";
 
 const navItems = [
-  { label: "Home", path: "/" },
-  { label: "Product", path: "/products" },
-  { label: "Life", path: "/life" },
-  { label: "About Us", path: "/about" },
-  { label: "Contact", path: "/contact" },
+  { label: "Home", id: "home" },
+  { label: "Product", id: "products" },
+  { label: "About Us", id: "aboutus" },
+  { label: "Life", id: "life" },
+  { label: "Contact", id: "contact" },
 ];
 
 function Navbar() {
   const location = useLocation();
+
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
-  // Scroll effect
+  // ==========================================
+  // NAVBAR SCROLL EFFECT
+  // ==========================================
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  // Close menu on route change
+  // ==========================================
+  // ACTIVE SECTION DETECTION
+  // ==========================================
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      return;
+    }
+
+    const handleSectionScroll = () => {
+      const scrollPosition = window.scrollY + 150;
+
+      let currentSection = "home";
+
+      navItems.forEach((item) => {
+        const section = document.getElementById(item.id);
+
+        if (section) {
+          const sectionTop = section.offsetTop;
+
+          if (scrollPosition >= sectionTop) {
+            currentSection = item.id;
+          }
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    handleSectionScroll();
+
+    window.addEventListener("scroll", handleSectionScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleSectionScroll);
+    };
+  }, [location.pathname]);
+
+  // ==========================================
+  // CLOSE MOBILE MENU
+  // ==========================================
   useEffect(() => {
     setMenuOpen(false);
-  }, [location]);
+  }, [location.pathname]);
+
+  // ==========================================
+  // SECTION CLICK
+  // ==========================================
+  const handleSectionClick = (sectionId) => {
+    setMenuOpen(false);
+
+    if (location.pathname === "/") {
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      return;
+    }
+
+    window.location.href = `/#${sectionId}`;
+  };
+
+  // ==========================================
+  // ACTIVE STATE
+  // ==========================================
+  const isActive = (item) => {
+    if (location.pathname === "/") {
+      return activeSection === item.id;
+    }
+
+    return false;
+  };
 
   return (
-    <header className={`navbar-custom ${scrolled ? "scrolled" : ""}`}>
-      
-      {/* NAVBAR */}
+    <header
+      className={`navbar-custom ${
+        scrolled ? "scrolled" : ""
+      }`}
+    >
       <div className="nav-container">
 
-        {/* LOGO */}
+        {/* =========================
+            LOGO
+        ========================= */}
         <Link to="/" className="logo-section">
-          <img src={logoImage} alt="logo" className="logo-img" />
-          {/* <span className="logo-text">
-            Essential<span>Aquatech</span>
-          </span> */}
+
+          <img
+            src="https://res.cloudinary.com/p8fs2e1n/image/upload/Logo1.png"
+            alt="Essential Aquatech"
+            className="logo-img"
+          />
+
           <span className="logo-text">
-  Essential
-  <span className="brand">
-    Aquatech
-    <span className="tm">TM</span>
-  </span>
-</span>
+            Essential{" "}
+            <span className="brand">
+              Aquatech
+              <span className="tm">TM</span>
+            </span>
+          </span>
+
         </Link>
 
-        {/* DESKTOP MENU */}
+        {/* =========================
+            DESKTOP MENU
+        ========================= */}
         <div className="nav-links">
+
           {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`nav-link ${
-                location.pathname === item.path ? "active" : ""
+            <button
+              key={item.id}
+              onClick={() => handleSectionClick(item.id)}
+              className={`nav-link nav-button ${
+                isActive(item) ? "active" : ""
               }`}
             >
               {item.label}
-            </Link>
+            </button>
           ))}
+
         </div>
 
-        {/* MOBILE BUTTON */}
+        {/* =========================
+            MOBILE MENU BUTTON
+        ========================= */}
         <button
           className="menu-btn"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
         >
-          {menuOpen ? <X size={26} /> : <Menu size={26} />}
+          {menuOpen ? (
+            <X size={26} />
+          ) : (
+            <Menu size={26} />
+          )}
         </button>
+
       </div>
 
-      {/* MOBILE MENU */}
-      <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
+      {/* =========================
+          MOBILE MENU
+      ========================= */}
+      <div
+        className={`mobile-menu ${
+          menuOpen ? "show" : ""
+        }`}
+      >
         {navItems.map((item, i) => (
-          <Link
-            key={item.path}
-            to={item.path}
-            className="mobile-link"
-            style={{ transitionDelay: `${i * 80}ms` }}
+          <button
+            key={item.id}
+            onClick={() => handleSectionClick(item.id)}
+            className={`mobile-link mobile-button ${
+              isActive(item) ? "active" : ""
+            }`}
+            style={{
+              transitionDelay: `${i * 80}ms`,
+            }}
           >
             {item.label}
-          </Link>
+          </button>
         ))}
       </div>
+
     </header>
   );
 }
 
 export default Navbar;
-

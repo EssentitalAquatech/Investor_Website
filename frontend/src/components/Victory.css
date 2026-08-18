@@ -24,7 +24,7 @@
 /* ===== HERO ===== */
 .sp-hero {
   position: relative;
-  padding: 140px 0 110px;
+  padding: 50px 0 110px;
   background:
     radial-gradient(1100px 480px at 50% -10%, #eaf6fd 0%, transparent 60%),
     linear-gradient(180deg, #ffffff 0%, #fafcfe 100%);
@@ -118,7 +118,7 @@
 
 /* ===== SHOWCASE ===== */
 .sp-showcase {
-  padding: 110px 0 120px;
+  padding: 50px 0 120px;
   background: #fff;
 }
 .sp-section-head h2 {

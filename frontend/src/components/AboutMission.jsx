@@ -1,5 +1,17 @@
+
+
+
+
+
+
+
+
 // import React, { useRef, useEffect } from "react";
 // import "./AboutMission.css";
+
+// // Images
+// import HomeMain from "../assets/images/HomeMain.png";
+// import HomeMain2 from "../assets/images/HomeMain2.png";
 
 // function MissionSection({
 //   imageSrc,
@@ -32,7 +44,9 @@
 //       { threshold: 0.25 }
 //     );
 
-//     if (sectionRef.current) observer.observe(sectionRef.current);
+//     if (sectionRef.current) {
+//       observer.observe(sectionRef.current);
+//     }
 
 //     return () => observer.disconnect();
 //   }, []);
@@ -42,24 +56,59 @@
 //   return (
 //     <div ref={sectionRef} className="mission-section" id={id}>
 //       <div className="container">
-//         {/* Top Heading */}
-//         <h2 className="mission-top-heading mission-heading">
-//           <span className="black-word">{words[0]}</span>{" "}
-//           <span className="blue-word">{words[1]}</span>
-//         </h2>
 
-//         <div className="row align-items-center g-0">
-//           {/* Image Left */}
-//           {imageOnLeft && (
-//             <div className="col-lg-6 col-md-12 mb-4">
-//               <img src={imageSrc} alt={heading} className="mission-image" />
+//         {/* =========================
+//             WHO WE ARE + TOP HEADING
+//         ========================= */}
+//         <div className="mission-heading-area">
+
+//           <div className="who-we-are">
+//             <span className="who-line"></span>
+//             <span>WHO WE ARE</span>
+//           </div>
+
+//           <h2 className="mission-top-heading mission-heading">
+//             <span className="black-word">
+//               {words[0]}
+//             </span>{" "}
+//             <span className="blue-word">
+//               {words.slice(1).join(" ")}
+//             </span>
+//           </h2>
+
+//           {/* Vertical AI statement only on first section */}
+//           {id === "mission-section-1" && (
+//             <div className="vertical-ai-statement">
+//               Building the world's largest{" "}
+//               <span>Vertical AI for Fish Farming</span>{" "}
+//               to power intelligent aquaculture globally.
 //             </div>
 //           )}
 
-//           {/* Content */}
+//         </div>
+
+//         <div className="row align-items-center g-0">
+
+//           {/* =========================
+//               IMAGE LEFT
+//           ========================= */}
+//           {imageOnLeft && (
+//             <div className="col-lg-6 col-md-12 mb-4">
+//               <img
+//                 src={imageSrc}
+//                 alt={heading}
+//                 className="mission-image"
+//               />
+//             </div>
+//           )}
+
+//           {/* =========================
+//               CONTENT
+//           ========================= */}
 //           <div className="col-lg-6 col-md-12">
 //             <div className="mission-content">
 //               <div className="mission-text">
+
 //                 <h3 className="mission-subheading">
 //                   {subheading}
 //                 </h3>
@@ -67,16 +116,24 @@
 //                 <div className="mission-description">
 //                   <p>{text}</p>
 //                 </div>
+
 //               </div>
 //             </div>
 //           </div>
 
-//           {/* Image Right */}
+//           {/* =========================
+//               IMAGE RIGHT
+//           ========================= */}
 //           {!imageOnLeft && (
 //             <div className="col-lg-6 col-md-12 mt-4 mt-lg-0">
-//               <img src={imageSrc} alt={heading} className="mission-image" />
+//               <img
+//                 src={imageSrc}
+//                 alt={heading}
+//                 className="mission-image"
+//               />
 //             </div>
 //           )}
+
 //         </div>
 //       </div>
 //     </div>
@@ -86,25 +143,45 @@
 // function AboutMission() {
 //   return (
 //     <div className="about-mission-container">
-//       {/* Section 1 */}
+
+//       {/* =========================
+//           SECTION 1 — OUR VISION
+//       ========================= */}
 //       <MissionSection
 //         id="mission-section-1"
-//         imageSrc="/src/assets/images/HomeMain.png"
-//         heading="Our Mission"
-//         subheading="Connect The Dots Globally Across The Fresh Fish ood Supply Chain"
-//         text="The billion-dollar global seafood distribution industry faces fragmentation, lacks standardisation, and is operationally complex. We aspire to transform the seafood industry by delivering high-quality, traceable and reliable seafood to our customers at transparent fulfilment terms."
+//         imageSrc={HomeMain}
+//         heading="Our Vision"
+//         subheading="Building the Intelligence Layer for Aquaculture"
+//         text="We envision a world where every fish farmer can make smarter, faster and more confident decisions. By bringing together AI, satellite, weather, water and farm data, we are building the intelligence layer that makes aquaculture more predictive, profitable and sustainable."
 //         imageOnLeft={true}
 //       />
 
-//       {/* Section 2 */}
+
+//       {/* =========================
+//           SECTION 2 — OUR MISSION
+//       ========================= */}
 //       <MissionSection
 //         id="mission-section-2"
-//         imageSrc="/src/assets/images/HomeMain2.png"
-//         heading="Our Vision"
-//         subheading="Transforming Fresh Fish Food Supply Chain Through Technology"
-//         text="We envision a world where seafood supply chains are transparent, efficient, and sustainable. Through cutting-edge technology and innovative solutions, we're building the future of seafood distribution that benefits everyone from fishermen to consumers."
+//         imageSrc={HomeMain2}
+//         heading="Our Mission"
+//         subheading="Transforming Aquaculture Through Intelligence and Technology"
+//         text="Our mission is to empower the aquaculture ecosystem with intelligent technology that turns complex farm data into clear, actionable insights. We connect farmers, agents and the wider aquaculture value chain through AI-driven intelligence to improve productivity, reduce risk and create more sustainable outcomes."
 //         imageOnLeft={false}
 //       />
+
+
+//       {/* =========================
+//           SECTION 3 — OUR VALUES
+//       ========================= */}
+//       <MissionSection
+//         id="mission-section-3"
+//         imageSrc={HomeMain}
+//         heading="Our Values"
+//         subheading="Innovation With Purpose, Intelligence With Impact"
+//         text="We believe technology should create meaningful impact on the ground. We value innovation, transparency, sustainability and farmer-first thinking. Every solution we build is designed to turn intelligence into action, strengthen livelihoods and help shape a smarter, more resilient future for aquaculture."
+//         imageOnLeft={true}
+//       />
+
 //     </div>
 //   );
 // }
@@ -118,12 +195,28 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useRef, useEffect } from "react";
 import "./AboutMission.css";
 
-// ✅ Images import (Vercel-safe)
+// Images
 import HomeMain from "../assets/images/HomeMain.png";
 import HomeMain2 from "../assets/images/HomeMain2.png";
+
+// Cloudinary — Our Values image
+const valuesImage =
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/Value.png";
 
 function MissionSection({
   imageSrc,
@@ -156,7 +249,9 @@ function MissionSection({
       { threshold: 0.25 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => observer.disconnect();
   }, []);
@@ -166,24 +261,59 @@ function MissionSection({
   return (
     <div ref={sectionRef} className="mission-section" id={id}>
       <div className="container">
-        {/* Top Heading */}
-        <h2 className="mission-top-heading mission-heading">
-          <span className="black-word">{words[0]}</span>{" "}
-          <span className="blue-word">{words[1]}</span>
-        </h2>
 
-        <div className="row align-items-center g-0">
-          {/* Image Left */}
-          {imageOnLeft && (
-            <div className="col-lg-6 col-md-12 mb-4">
-              <img src={imageSrc} alt={heading} className="mission-image" />
+        {/* =========================
+            WHO WE ARE + TOP HEADING
+        ========================= */}
+        <div className="mission-heading-area">
+
+          <div className="who-we-are">
+            <span className="who-line"></span>
+            <span>WHO WE ARE</span>
+          </div>
+
+          <h2 className="mission-top-heading mission-heading">
+            <span className="black-word">
+              {words[0]}
+            </span>{" "}
+            <span className="blue-word">
+              {words.slice(1).join(" ")}
+            </span>
+          </h2>
+
+          {/* Vertical AI statement only on first section */}
+          {id === "mission-section-1" && (
+            <div className="vertical-ai-statement">
+              Building the world's largest{" "}
+              <span>Vertical AI for Fish Farming</span>{" "}
+              to power intelligent aquaculture globally.
             </div>
           )}
 
-          {/* Content */}
+        </div>
+
+        <div className="row align-items-center g-0">
+
+          {/* =========================
+              IMAGE LEFT
+          ========================= */}
+          {imageOnLeft && (
+            <div className="col-lg-6 col-md-12 mb-4">
+              <img
+                src={imageSrc}
+                alt={heading}
+                className="mission-image"
+              />
+            </div>
+          )}
+
+          {/* =========================
+              CONTENT
+          ========================= */}
           <div className="col-lg-6 col-md-12">
             <div className="mission-content">
               <div className="mission-text">
+
                 <h3 className="mission-subheading">
                   {subheading}
                 </h3>
@@ -191,16 +321,24 @@ function MissionSection({
                 <div className="mission-description">
                   <p>{text}</p>
                 </div>
+
               </div>
             </div>
           </div>
 
-          {/* Image Right */}
+          {/* =========================
+              IMAGE RIGHT
+          ========================= */}
           {!imageOnLeft && (
             <div className="col-lg-6 col-md-12 mt-4 mt-lg-0">
-              <img src={imageSrc} alt={heading} className="mission-image" />
+              <img
+                src={imageSrc}
+                alt={heading}
+                className="mission-image"
+              />
             </div>
           )}
+
         </div>
       </div>
     </div>
@@ -210,25 +348,45 @@ function MissionSection({
 function AboutMission() {
   return (
     <div className="about-mission-container">
-      {/* Section 1 */}
+
+      {/* =========================
+          SECTION 1 — OUR VISION
+      ========================= */}
       <MissionSection
         id="mission-section-1"
         imageSrc={HomeMain}
-        heading="Our Mission"
-        subheading="Connect The Dots Globally Across The Fresh Fish ood Supply Chain"
-        text="The billion-dollar global seafood distribution industry faces fragmentation, lacks standardisation, and is operationally complex. We aspire to transform the seafood industry by delivering high-quality, traceable and reliable seafood to our customers at transparent fulfilment terms."
+        heading="Our Vision"
+        subheading="Building the Intelligence Layer for Aquaculture"
+        text="We envision a world where every fish farmer can make smarter, faster and more confident decisions. By bringing together AI, satellite, weather, water and farm data, we are building the intelligence layer that makes aquaculture more predictive, profitable and sustainable."
         imageOnLeft={true}
       />
 
-      {/* Section 2 */}
+
+      {/* =========================
+          SECTION 2 — OUR MISSION
+      ========================= */}
       <MissionSection
         id="mission-section-2"
         imageSrc={HomeMain2}
-        heading="Our Vision"
-        subheading="Transforming Fresh Fish Food Supply Chain Through Technology"
-        text="We envision a world where seafood supply chains are transparent, efficient, and sustainable. Through cutting-edge technology and innovative solutions, we're building the future of seafood distribution that benefits everyone from fishermen to consumers."
+        heading="Our Mission"
+        subheading="Transforming Aquaculture Through Intelligence and Technology"
+        text="Our mission is to empower the aquaculture ecosystem with intelligent technology that turns complex farm data into clear, actionable insights. We connect farmers, agents and the wider aquaculture value chain through AI-driven intelligence to improve productivity, reduce risk and create more sustainable outcomes."
         imageOnLeft={false}
       />
+
+
+      {/* =========================
+          SECTION 3 — OUR VALUES
+      ========================= */}
+      <MissionSection
+        id="mission-section-3"
+        imageSrc={valuesImage}
+        heading="Our Values"
+        subheading="Innovation With Purpose, Intelligence With Impact"
+        text="We put farmers first, act responsibly toward the planet, take ownership of every outcome, think boldly about the future, and hold ourselves to a high standard of execution. These values guide how we build technology, work with our ecosystem, and create lasting impact across aquaculture."
+        imageOnLeft={true}
+      />
+
     </div>
   );
 }

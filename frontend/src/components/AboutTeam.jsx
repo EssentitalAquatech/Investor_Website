@@ -3,8 +3,15 @@
 
 
 
+
+
 // import React, { useEffect, useRef } from "react";
 // import "./AboutTeam.css";
+
+// // ✅ Images import (Vercel-safe)
+// import CEO from "../assets/images/CEO.jpg";
+// import CEO2 from "../assets/images/CEO2.jpg";
+// import CEO3 from "../assets/images/CEO3.jpg";
 
 // function AboutTeam() {
 //   const leftContainerRef = useRef(null);
@@ -17,50 +24,50 @@
 //       id: 1,
 //       name: "Matthew Thomas",
 //       role: "Whole-Time Director and Chief Financial Officer",
-//       image: "src/assets/images/CEO.jpg",
+//       image: CEO,
 //     },
 //     {
 //       id: 2,
 //       name: "Venu Gopala Krishna Annamaneni",
 //       role: "Chief Technology Officer",
-//       image: "src/assets/images/CEO2.jpg",
+//       image: CEO2,
 //     },
 //     {
 //       id: 3,
 //       name: "Kumar Saurabh",
 //       role: "Chief Information Officer",
-//       image: "src/assets/images/CEO3.jpg",
+//       image: CEO3,
 //     },
 //     {
 //       id: 4,
 //       name: "Alex Johnson",
 //       role: "CEO & Founder",
-//       image: "src/assets/images/CEO.jpg",
+//       image: CEO,
 //     },
 //     {
 //       id: 5,
 //       name: "Alex Johnson",
 //       role: "CEO & Founder",
-//       image: "src/assets/images/CEO2.jpg",
+//       image: CEO2,
 //     },
 //     {
 //       id: 6,
 //       name: "Alex Johnson",
 //       role: "CEO & Founder",
-//       image: "src/assets/images/CEO3.jpg",
+//       image: CEO3,
 //     },
 //     {
 //       id: 7,
 //       name: "Alex Johnson",
 //       role: "CEO & Founder",
-//       image: "src/assets/images/CEO.jpg",
+//       image: CEO,
 //     },
 //   ];
 
 //   // Scroll left function
 //   const scrollLeft = () => {
 //     if (scrollContainerRef.current) {
-//       const scrollAmount = 300; // Adjust scroll amount as needed
+//       const scrollAmount = 300;
 //       scrollContainerRef.current.scrollBy({
 //         left: -scrollAmount,
 //         behavior: 'smooth'
@@ -71,7 +78,7 @@
 //   // Scroll right function
 //   const scrollRight = () => {
 //     if (scrollContainerRef.current) {
-//       const scrollAmount = 300; // Adjust scroll amount as needed
+//       const scrollAmount = 300;
 //       scrollContainerRef.current.scrollBy({
 //         left: scrollAmount,
 //         behavior: 'smooth'
@@ -84,17 +91,14 @@
 //       (entries) => {
 //         entries.forEach((entry) => {
 //           if (entry.isIntersecting) {
-//             // Left side animation
 //             if (entry.target === leftContainerRef.current) {
 //               entry.target.classList.add("animate");
 //             }
-            
-//             // Right side animation
+
 //             if (entry.target === rightContainerRef.current) {
 //               entry.target.classList.add("animate");
 //             }
-            
-//             // Cards animation
+
 //             if (cardRefs.current.includes(entry.target)) {
 //               entry.target.classList.add("animate");
 //             }
@@ -107,17 +111,14 @@
 //       }
 //     );
 
-//     // Observe left container
 //     if (leftContainerRef.current) {
 //       observer.observe(leftContainerRef.current);
 //     }
 
-//     // Observe right container
 //     if (rightContainerRef.current) {
 //       observer.observe(rightContainerRef.current);
 //     }
 
-//     // Observe all cards
 //     cardRefs.current.forEach((card) => {
 //       if (card) observer.observe(card);
 //     });
@@ -149,15 +150,6 @@
 
 //             {/* SCROLL BUTTONS */}
 //             <div className="abt-team-scroll-buttons">
-//               {/* <button 
-//                 className="abt-team-scroll-btn"
-//                 onClick={scrollLeft}
-//                 aria-label="Scroll left to see more team members"
-//               >
-//                 <span className="abt-team-btn-icon">←</span>
-//                 <span>Simple Scroll</span>
-//               </button> */}
-              
 //               <button 
 //                 className="abt-team-scroll-btn"
 //                 onClick={scrollRight}
@@ -216,13 +208,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useEffect, useRef } from "react";
 import "./AboutTeam.css";
 
-// ✅ Images import (Vercel-safe)
-import CEO from "../assets/images/CEO.jpg";
-import CEO2 from "../assets/images/CEO2.jpg";
-import CEO3 from "../assets/images/CEO3.jpg";
+// ☁️ Cloudinary Images
+const teamImages = {
+  image18:
+    "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/ChatGPT_Image_Aug_14_2026_03_03_18_PM.png",
+
+  image19:
+    "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/ChatGPT_Image_Aug_14_2026_03_00_52_PM.png",
+};
 
 function AboutTeam() {
   const leftContainerRef = useRef(null);
@@ -233,66 +243,56 @@ function AboutTeam() {
   const teamMembers = [
     {
       id: 1,
-      name: "Matthew Thomas",
-      role: "Whole-Time Director and Chief Financial Officer",
-      image: CEO,
+      name: "Arkaprava Das",
+      role: "Founder and CEO",
+      image: teamImages.image18,
     },
     {
       id: 2,
-      name: "Venu Gopala Krishna Annamaneni",
-      role: "Chief Technology Officer",
-      image: CEO2,
+      name: "Subhadeep Mitra",
+      role: "Chief Operating Officer",
+      image: teamImages.image19,
     },
     {
       id: 3,
       name: "Kumar Saurabh",
-      role: "Chief Information Officer",
-      image: CEO3,
+      role: "Chartered Accountant",
+      image: teamImages.image18,
     },
     {
       id: 4,
       name: "Alex Johnson",
       role: "CEO & Founder",
-      image: CEO,
+      image: teamImages.image19,
     },
     {
       id: 5,
       name: "Alex Johnson",
       role: "CEO & Founder",
-      image: CEO2,
+      image: teamImages.image18,
     },
     {
       id: 6,
       name: "Alex Johnson",
       role: "CEO & Founder",
-      image: CEO3,
+      image: teamImages.image19,
     },
     {
       id: 7,
       name: "Alex Johnson",
       role: "CEO & Founder",
-      image: CEO,
+      image: teamImages.image18,
     },
   ];
 
-  // Scroll left function
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 300;
-      scrollContainerRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  // Scroll right function
+  // Scroll right
   const scrollRight = () => {
     if (scrollContainerRef.current) {
       const scrollAmount = 300;
+
       scrollContainerRef.current.scrollBy({
         left: scrollAmount,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -318,7 +318,7 @@ function AboutTeam() {
       },
       {
         threshold: 0.2,
-        rootMargin: "0px 0px -50px 0px"
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
@@ -331,74 +331,121 @@ function AboutTeam() {
     }
 
     cardRefs.current.forEach((card) => {
-      if (card) observer.observe(card);
+      if (card) {
+        observer.observe(card);
+      }
     });
 
     return () => {
-      if (leftContainerRef.current) observer.unobserve(leftContainerRef.current);
-      if (rightContainerRef.current) observer.unobserve(rightContainerRef.current);
+      if (leftContainerRef.current) {
+        observer.unobserve(leftContainerRef.current);
+      }
+
+      if (rightContainerRef.current) {
+        observer.unobserve(rightContainerRef.current);
+      }
+
       cardRefs.current.forEach((card) => {
-        if (card) observer.unobserve(card);
+        if (card) {
+          observer.unobserve(card);
+        }
       });
     };
   }, []);
 
   return (
     <section className="abt-team-section">
-      <div className="abt-team-container" ref={scrollContainerRef}>
+      <div
+        className="abt-team-container"
+        ref={scrollContainerRef}
+      >
         <div className="abt-team-layout">
 
           {/* LEFT SIDE */}
-          <div className="abt-team-text-side" ref={leftContainerRef}>
+          <div
+            className="abt-team-text-side"
+            ref={leftContainerRef}
+          >
             <h2 className="abt-team-title">
-              <span className="abt-team-title-light">Meet Our</span>
-              <span className="abt-team-title-bold">Team</span>
+              <span className="abt-team-title-light">
+                Meet Our
+              </span>
+
+              <span className="abt-team-title-bold">
+                Team
+              </span>
             </h2>
 
             <p className="abt-team-subtitle abt-team-clamp-4">
-              Seasoned professionals <br/>with diverse backgrounds <br/> and expertise, driven by the<br/>  motivation to disrupt.
+              Seasoned professionals <br />
+              with diverse backgrounds <br />
+              and expertise, driven by the <br />
+              motivation to disrupt.
             </p>
 
-            {/* SCROLL BUTTONS */}
+            {/* SCROLL BUTTON */}
             <div className="abt-team-scroll-buttons">
-              <button 
+              <button
                 className="abt-team-scroll-btn"
                 onClick={scrollRight}
                 aria-label="Scroll right to see more team members"
               >
                 <span>Scroll</span>
-                <span className="abt-team-btn-icon">→</span>
+
+                <span className="abt-team-btn-icon">
+                  →
+                </span>
               </button>
             </div>
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="abt-team-cards-side" ref={rightContainerRef}>
+          <div
+            className="abt-team-cards-side"
+            ref={rightContainerRef}
+          >
             <div className="abt-team-scroll-container">
               <div className="abt-team-members-row">
+
                 {teamMembers.map((member, index) => (
-                  <div 
-                    key={member.id} 
+                  <div
+                    key={member.id}
                     className="abt-team-member-card"
-                    ref={el => cardRefs.current[index] = el}
+                    ref={(el) =>
+                      (cardRefs.current[index] = el)
+                    }
                   >
                     <div className="abt-team-card">
+
                       <div className="abt-team-img-container">
                         <img
                           src={member.image}
                           alt={member.name}
                           className="abt-team-img"
+                          loading="lazy"
                         />
                       </div>
 
                       <div className="abt-team-card-body">
-                        <h5 className="abt-team-name">{member.name}</h5>
-                        <p className="abt-team-role">{member.role}</p>
-                        <p className="abt-team-desc">{member.description}</p>
+                        <h5 className="abt-team-name">
+                          {member.name}
+                        </h5>
+
+                        <p className="abt-team-role">
+                          {member.role}
+                        </p>
+
+                        {member.description && (
+                          <p className="abt-team-desc">
+                            {member.description}
+                          </p>
+                        )}
                       </div>
+
                     </div>
                   </div>
                 ))}
+
               </div>
             </div>
           </div>
@@ -410,8 +457,3 @@ function AboutTeam() {
 }
 
 export default AboutTeam;
-
-
-
-
-

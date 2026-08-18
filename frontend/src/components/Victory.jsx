@@ -616,8 +616,8 @@ const Victory = () => {
             <div className="sp-divider" />
 
             <div>
-              <strong>28</strong>
-              <span>States Covered</span>
+              <strong>3+</strong>
+              <span>countries Covered</span>
             </div>
           </div>
         </div>

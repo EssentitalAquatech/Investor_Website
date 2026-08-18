@@ -1,4 +1,7 @@
-/* Hero Section Base */
+/* =========================================
+   HERO SECTION
+========================================= */
+
 .hero-section {
   min-height: 100vh;
   height: 100vh;
@@ -11,15 +14,17 @@
   padding: 20px;
 }
 
-/* ✅ IMAGE Background (Video replace) */
+/* =========================================
+   VIDEO BACKGROUND
+========================================= */
+
 .image-background {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
   overflow: hidden;
+  z-index: 1;
 }
 
 .background-image {
@@ -27,60 +32,77 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  position: absolute;
+  inset: 0;
 }
 
-/* ❌ Sky Blue हटाया (अब transparent) */
 .skyblue-blur-overlay {
   display: none;
 }
 
-/* ✅ Light Black Overlay (very subtle) */
 .video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.25); /* 👈 light black */
-  z-index: 2;
+  display: none;
 }
 
-/* Hero Content */
+/* =========================================
+   HERO CONTENT
+========================================= */
+
 .hero-content {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
+
+  /* Desktop position */
+  transform: translateY(100px);
 }
 
-/* ===== बाकी सब same रखा गया है ===== */
+/* =========================================
+   CAROUSEL
+========================================= */
 
-/* Carousel Styles */
 .carousel-container {
   width: 100%;
   position: relative;
 }
 
 .carousel-wrapper {
-  min-height: 250px;
   position: relative;
-  overflow: hidden;
+  width: 100%;
+
+  /* Increased height so text never gets clipped */
+  min-height: 300px;
+
+  overflow: visible;
 }
 
 .carousel-slide {
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
-  height: 100%;
+  min-height: 300px;
+  height: auto;
+
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   text-align: center;
+
+  padding: 20px 30px;
+
+  box-sizing: border-box;
 }
 
 .carousel-slide.active {
@@ -88,131 +110,329 @@
   transform: translateY(0);
 }
 
+/* =========================================
+   HEADING
+========================================= */
+
 .carousel-heading {
   font-family: 'Poppins', sans-serif;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  line-height: 1.2;
-  margin-bottom: 1.5rem !important;
+
+  /* Smaller than Bootstrap display-2 */
+  font-size: 3.6rem !important;
+
+  line-height: 1.18;
+
+  letter-spacing: -0.5px;
+
+  margin: 0 0 20px 0 !important;
+
   color: #ffffff;
-  font-weight: 700;
+
+  /* Reduced boldness */
+  font-weight: 500 !important;
+
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.45);
 }
+
+/* Highlight */
+.carousel-heading .highlight-text {
+  color: #0EA5E9 !important;
+
+  font-weight: 500;
+
+  text-shadow: 0 2px 12px rgba(14, 165, 233, 0.35);
+}
+
+/* White text */
+.carousel-heading .white-text {
+  color: #ffffff !important;
+
+  font-weight: 500;
+
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   PARAGRAPH
+========================================= */
 
 .carousel-paragraph {
   font-family: 'Inter', sans-serif;
-  max-width: 800px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  line-height: 1.6;
+
+  width: 100%;
+  max-width: 720px;
+
+  font-size: 1.25rem !important;
+
+  line-height: 1.55;
+
   margin: 0 auto;
-  color: #ffffff;
-  font-weight: 400;
+
+  color: #ffffff !important;
+
+  /* Less bold */
+  font-weight: 400 !important;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
-/* Carousel Indicators */
+/* =========================================
+   INDICATORS
+========================================= */
+
 .carousel-indicators {
-  gap: 15px;
-  margin-top: 40px;
+  gap: 12px;
+  margin-top: 25px;
 }
 
 .indicator {
-  width: 14px;
-  height: 14px;
+  width: 11px;
+  height: 11px;
+
   border-radius: 50%;
+
   border: 2px solid rgba(255, 255, 255, 0.7);
+
   background: transparent;
+
   padding: 0;
+
   cursor: pointer;
+
   transition: all 0.3s ease;
-  z-index: 3;
 }
 
 .indicator.active {
   background: #ffffff;
   border-color: #ffffff;
-  transform: scale(1.3);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+  transform: scale(1.25);
+
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 .indicator:hover {
   border-color: #ffffff;
   background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.2);
 }
 
-/* Responsive same as before */
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
 @media (max-width: 1200px) {
-  .carousel-heading {
-    font-size: 3.5rem !important;
+
+  .hero-content {
+    transform: translateY(80px);
   }
+
+  .carousel-heading {
+    font-size: 3.2rem !important;
+  }
+
   .carousel-paragraph {
-    font-size: 1.5rem !important;
-    max-width: 700px;
+    font-size: 1.15rem !important;
+    max-width: 680px;
   }
 }
+
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 992px) {
-  .carousel-heading {
-    font-size: 3rem !important;
-  }
-  .carousel-paragraph {
-    font-size: 1.4rem !important;
-    max-width: 600px;
-  }
-  .carousel-wrapper {
-    min-height: 220px;
-  }
-}
 
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 60px 20px;
+  .hero-content {
+    transform: translateY(60px);
   }
-  .carousel-heading {
-    font-size: 2.5rem !important;
-    padding: 0 10px;
-  }
-  .carousel-paragraph {
-    font-size: 1.2rem !important;
-    padding: 0 20px;
-    max-width: 100%;
-  }
-  .carousel-wrapper {
-    min-height: 200px;
-  }
-  .carousel-indicators {
-    margin-top: 30px;
-  }
-}
 
-@media (max-width: 576px) {
-  .carousel-heading {
-    font-size: 2rem !important;
-    margin-bottom: 1rem !important;
+  .carousel-wrapper {
+    min-height: 280px;
   }
+
+  .carousel-slide {
+    min-height: 280px;
+    padding: 20px;
+  }
+
+  .carousel-heading {
+    font-size: 2.8rem !important;
+    line-height: 1.2;
+  }
+
   .carousel-paragraph {
     font-size: 1.1rem !important;
-    line-height: 1.5;
-  }
-  .carousel-wrapper {
-    min-height: 180px;
-  }
-  .carousel-indicators {
-    margin-top: 25px;
-    gap: 12px;
-  }
-  .indicator {
-    width: 12px;
-    height: 12px;
+    max-width: 600px;
   }
 }
 
-@media (max-width: 400px) {
-  .carousel-heading {
-    font-size: 1.8rem !important;
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .hero-section {
+    padding: 40px 15px;
   }
+
+  .hero-content {
+    transform: translateY(50px);
+  }
+
+  .carousel-wrapper {
+    min-height: 300px;
+  }
+
+  .carousel-slide {
+    min-height: 300px;
+    padding: 20px 15px;
+  }
+
+  .carousel-heading {
+    font-size: 2.25rem !important;
+
+    line-height: 1.18;
+
+    letter-spacing: -0.3px;
+
+    margin-bottom: 16px !important;
+
+    /* Normal/medium */
+    font-weight: 500 !important;
+  }
+
   .carousel-paragraph {
     font-size: 1rem !important;
+
+    line-height: 1.5;
+
+    max-width: 92%;
+
+    font-weight: 400 !important;
   }
+
+  .carousel-indicators {
+    margin-top: 20px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+  .hero-section {
+    padding: 30px 12px;
+  }
+
+  .hero-content {
+    transform: translateY(35px);
+  }
+
   .carousel-wrapper {
-    min-height: 160px;
+    min-height: 310px;
   }
+
+  .carousel-slide {
+    min-height: 310px;
+
+    padding: 20px 10px;
+  }
+
+  .carousel-heading {
+    font-size: 1.85rem !important;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.2px;
+
+    margin-bottom: 15px !important;
+
+    font-weight: 500 !important;
+  }
+
+  .carousel-paragraph {
+    font-size: 0.95rem !important;
+
+    line-height: 1.5;
+
+    max-width: 95%;
+
+    font-weight: 400 !important;
+  }
+
+  .carousel-indicators {
+    gap: 10px;
+    margin-top: 18px !important;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .indicator.active {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .hero-content {
+    transform: translateY(25px);
+  }
+
+  .carousel-wrapper {
+    min-height: 320px;
+  }
+
+  .carousel-slide {
+    min-height: 320px;
+
+    padding: 15px 8px;
+  }
+
+  .carousel-heading {
+    font-size: 1.65rem !important;
+
+    line-height: 1.2;
+
+    letter-spacing: 0;
+
+    font-weight: 500 !important;
+  }
+
+  .carousel-paragraph {
+    font-size: 0.88rem !important;
+
+    line-height: 1.5;
+
+    max-width: 96%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.background-image {
+  filter: none !important;
+  opacity: 1 !important;
+}
+.image-background::after {
+  display: none !important;
 }
