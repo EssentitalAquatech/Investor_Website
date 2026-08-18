@@ -1,168 +1,454 @@
-/* ===== LIFE CHALLENGES HEADING (UNIQUE PREFIX: lc-) ===== */
+/* =========================================================
+   LIFE CHALLENGES
+   Mobile + Tablet + Desktop Responsive
+========================================================= */
 
 .lc-heading-text {
-    font-size: 5.5rem !important;
-    font-weight: 800 !important;
-    margin-top: 150px;
-    text-align: center !important;
-    line-height: 1.05 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 150px auto 0 !important;
+    padding: 0 15px !important;
+
+    box-sizing: border-box !important;
 
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: center !important;
+
     gap: 8px !important;
 
-    padding: 0 20px !important;
+    text-align: center !important;
+
+    font-family: "Inter", sans-serif !important;
+    font-size: 5.5rem !important;
+    font-weight: 800 !important;
+
+    line-height: 1.05 !important;
+
+    overflow: hidden !important;
 }
 
-/* text colors */
+
+/* =========================================================
+   IMPORTANT:
+   INDIVIDUAL HEADING SPANS
+========================================================= */
+
+.lc-heading-text > span {
+    position: relative !important;
+
+    display: block !important;
+
+    width: max-content !important;
+    max-width: 100% !important;
+
+    flex: 0 0 auto !important;
+    flex-shrink: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    line-height: 1.05 !important;
+
+    font-family: "Inter", sans-serif !important;
+    font-weight: 800 !important;
+
+    white-space: nowrap !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
 .lc-black-text {
     color: #000 !important;
-    font-family: "Inter", sans-serif !important;
-    letter-spacing: -1px !important;
 }
 
 .lc-blue-text {
     color: #38bdf8 !important;
-    font-family: "Inter", sans-serif !important;
-    letter-spacing: -1px !important;
 }
 
-/* paragraph */
+
+/* =========================================================
+   SUBTEXT
+========================================================= */
+
 .lc-subtext {
-    font-size: 15px !important;
-    line-height: 1.8 !important;
-    color: #555 !important;
+    width: 100% !important;
     max-width: 750px !important;
-    margin: 0 auto 150px !important;
-    text-align: center !important;
-    font-weight: 450 !important;
+
+    margin: 28px auto 150px !important;
     padding: 0 20px !important;
+
+    box-sizing: border-box !important;
+
+    color: #555 !important;
+
+    font-family: "Inter", sans-serif !important;
+
+    font-size: 15px !important;
+    font-weight: 450 !important;
+
+    line-height: 1.8 !important;
+
+    text-align: center !important;
 }
 
-/* ===== SCROLL ANIMATION BASE ===== */
+
+/* =========================================================
+   SCROLL ANIMATION
+========================================================= */
+
 .lc-reveal {
     opacity: 0;
-    transition: all 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     will-change: transform, opacity;
 }
 
-/* directions */
+
+/* LEFT */
+
 .lc-from-left {
-    transform: translateX(-120px);
+    transform: translateX(-100px);
 }
+
+
+/* RIGHT */
 
 .lc-from-right {
-    transform: translateX(120px);
+    transform: translateX(100px);
 }
+
+
+/* BOTTOM */
 
 .lc-from-bottom {
-    transform: translateY(80px);
+    transform: translateY(70px);
 }
+
+
+/* FADE */
 
 .lc-from-fade {
-    transform: translateY(40px);
+    transform: translateY(35px);
 }
 
-/* when visible */
+
+/* ACTIVE */
+
 .lc-in-view {
-    opacity: 1;
-    transform: translate(0, 0);
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
 }
 
-/* ============================= */
-/* RESPONSIVE DESIGN */
-/* ============================= */
+
+/* =========================================================
+   LARGE LAPTOP
+========================================================= */
 
 @media (max-width: 1400px) {
-    .lc-heading-text { font-size: 5rem !important; }
+
+    .lc-heading-text {
+        font-size: 5rem !important;
+        margin-top: 140px !important;
+    }
 }
 
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
 @media (max-width: 1200px) {
+
     .lc-heading-text {
         font-size: 4.5rem !important;
-        margin-top: 130px !important;
+        margin-top: 125px !important;
+
+        gap: 7px !important;
     }
 
     .lc-subtext {
         max-width: 700px !important;
+        margin-bottom: 125px !important;
     }
 }
+
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 992px) {
+
     .lc-heading-text {
         font-size: 3.8rem !important;
-        margin-top: 110px !important;
+
+        margin-top: 105px !important;
+
         gap: 6px !important;
+
+        line-height: 1.08 !important;
+    }
+
+    .lc-heading-text > span {
+        line-height: 1.08 !important;
     }
 
     .lc-subtext {
+        max-width: 650px !important;
+
         font-size: 14px !important;
-        max-width: 620px !important;
-        margin-bottom: 120px !important;
-    }
-}
+        line-height: 1.75 !important;
 
-@media (max-width: 768px) {
-    .lc-heading-text {
-        font-size: 3rem !important;
-        margin-top: 90px !important;
-        line-height: 1.15 !important;
-        gap: 4px !important;
-    }
-
-    .lc-subtext {
-        font-size: 14px !important;
-        line-height: 1.7 !important;
-        max-width: 95% !important;
-        margin-bottom: 90px !important;
-    }
-
-    .lc-from-left,
-    .lc-from-right {
-        transform: translateX(60px);
+        margin-top: 25px !important;
+        margin-bottom: 110px !important;
     }
 
     .lc-from-left {
-        transform: translateX(-60px);
+        transform: translateX(-70px);
     }
 
-    .lc-from-bottom,
+    .lc-from-right {
+        transform: translateX(70px);
+    }
+
+    .lc-from-bottom {
+        transform: translateY(50px);
+    }
+
     .lc-from-fade {
-        transform: translateY(35px);
+        transform: translateY(30px);
     }
 }
 
-@media (max-width: 576px) {
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
     .lc-heading-text {
-        font-size: 2.4rem !important;
-        margin-top: 70px !important;
-        gap: 2px !important;
+        font-size: 3rem !important;
+
+        margin-top: 85px !important;
+
+        gap: 5px !important;
+
+        line-height: 1.1 !important;
+
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .lc-heading-text > span {
+        line-height: 1.1 !important;
     }
 
     .lc-subtext {
-        font-size: 13px !important;
-        margin-bottom: 70px !important;
+        max-width: 100% !important;
+
+        padding: 0 20px !important;
+
+        font-size: 14px !important;
+
+        line-height: 1.7 !important;
+
+        margin-top: 25px !important;
+        margin-bottom: 90px !important;
+    }
+
+    .lc-from-left {
+        transform: translateX(-55px);
+    }
+
+    .lc-from-right {
+        transform: translateX(55px);
+    }
+
+    .lc-from-bottom {
+        transform: translateY(35px);
+    }
+
+    .lc-from-fade {
+        transform: translateY(25px);
     }
 }
 
-@media (max-width: 420px) {
+
+/* =========================================================
+   MOBILE 576px
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .lc-heading-text {
+        font-size: 2.5rem !important;
+
+        margin-top: 70px !important;
+
+        gap: 4px !important;
+
+        line-height: 1.12 !important;
+
+        padding: 0 8px !important;
+    }
+
+    .lc-heading-text > span {
+        line-height: 1.12 !important;
+    }
+
+    .lc-subtext {
+        padding: 0 18px !important;
+
+        font-size: 13px !important;
+
+        line-height: 1.7 !important;
+
+        margin-top: 22px !important;
+        margin-bottom: 75px !important;
+    }
+
+    .lc-from-left {
+        transform: translateX(-45px);
+    }
+
+    .lc-from-right {
+        transform: translateX(45px);
+    }
+
+    .lc-from-bottom {
+        transform: translateY(30px);
+    }
+
+    .lc-from-fade {
+        transform: translateY(22px);
+    }
+}
+
+
+/* =========================================================
+   iPHONE / 430px
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .lc-heading-text {
+        font-size: 2.2rem !important;
+
+        margin-top: 60px !important;
+
+        gap: 5px !important;
+
+        line-height: 1.15 !important;
+
+        padding: 0 8px !important;
+    }
+
+    .lc-heading-text > span {
+        line-height: 1.15 !important;
+
+        letter-spacing: -0.5px !important;
+    }
+
+    .lc-subtext {
+        font-size: 12.5px !important;
+
+        line-height: 1.65 !important;
+
+        padding: 0 18px !important;
+
+        margin-top: 20px !important;
+        margin-bottom: 65px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   375px
+========================================================= */
+
+@media (max-width: 375px) {
+
     .lc-heading-text {
         font-size: 2rem !important;
+
         margin-top: 55px !important;
+
+        gap: 4px !important;
+
+        line-height: 1.15 !important;
+    }
+
+    .lc-heading-text > span {
+        line-height: 1.15 !important;
     }
 
     .lc-subtext {
         font-size: 12px !important;
+
+        padding: 0 15px !important;
+
+        line-height: 1.6 !important;
+
+        margin-bottom: 55px !important;
     }
 }
 
-@media (max-width: 340px) {
+
+/* =========================================================
+   VERY SMALL MOBILE
+   320px
+========================================================= */
+
+@media (max-width: 320px) {
+
     .lc-heading-text {
         font-size: 1.7rem !important;
+
+        margin-top: 45px !important;
+
+        gap: 3px !important;
+
+        line-height: 1.15 !important;
+    }
+
+    .lc-heading-text > span {
+        line-height: 1.15 !important;
     }
 
     .lc-subtext {
         font-size: 11px !important;
+
+        padding: 0 12px !important;
+
+        line-height: 1.6 !important;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .lc-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 }
