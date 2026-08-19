@@ -281,7 +281,7 @@ function MissionSection({
 
           <div className="who-we-are">
             <span className="who-line"></span>
-            <span>WHO WE ARE</span>
+            <span>What does Essential Aquatech do?</span>
           </div>
 
           <h2 className="mission-top-heading mission-heading">

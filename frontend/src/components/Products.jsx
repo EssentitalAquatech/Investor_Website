@@ -535,23 +535,22 @@ export default function Products() {
 
   const sections = [
 
-    /* =====================================
-       01 — AQUAOS
-    ===================================== */
-    {
-      imageSrc: aquaImage,
+  /* =====================================
+   01 — FISHOS
+===================================== */
+{
+  imageSrc: aquaImage,
 
-      number: "01",
+  number: "01",
 
-      title: "AquaOS",
+  title: "FishOS",
 
-      tagline:
-        "The intelligence operating system for aquaculture.",
+  tagline:
+    "The intelligence operating system for aquaculture.",
 
-      description:
-        "AquaOS brings together farm data, pond intelligence, operational history and AI-driven insights into one connected intelligence layer. It helps transform fragmented aquaculture data into actionable intelligence for smarter farm management."
-    },
-
+  description:
+    "FishOS brings together farm data, pond intelligence, operational history and AI-driven insights into one connected intelligence layer. It helps transform fragmented aquaculture data into actionable intelligence for smarter farm management."
+},
 
     /* =====================================
        02 — MEENAMMA AI

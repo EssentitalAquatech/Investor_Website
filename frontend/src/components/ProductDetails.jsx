@@ -8,17 +8,17 @@
 // import HomeMain2 from "../assets/images/HomeMain2.png";
 
 // const productData = {
-//   "aquaos": {
+//   "fishos": {
 //     number: "01",
-//     title: "AquaOS",
+//     title: "FishOS",
 //     tagline: "The intelligence operating system for aquaculture.",
 //     image: HomeMain,
 
 //     intro:
-//       "AquaOS is the intelligence layer that brings the aquaculture ecosystem together.",
+//       "FishOS is the intelligence layer that brings the aquaculture ecosystem together.",
 
 //     description:
-//       "Aquaculture generates enormous amounts of information across ponds, farmers, weather, water quality, production history and farm operations. AquaOS brings these fragmented signals together into one connected intelligence platform.",
+//       "Aquaculture generates enormous amounts of information across ponds, farmers, weather, water quality, production history and farm operations. FishOS brings these fragmented signals together into one connected intelligence platform.",
 
 //     features: [
 //       "Unified farm and pond data",
@@ -30,7 +30,7 @@
 //     ],
 
 //     bottomText:
-//       "By connecting data, intelligence and operations, AquaOS helps aquaculture move from fragmented information to smarter, data-driven decisions."
+//       "By connecting data, intelligence and operations, FishOS helps aquaculture move from fragmented information to smarter, data-driven decisions."
 //   },
 
 //   "meenamma-ai": {
@@ -196,6 +196,11 @@
 //             <h2>
 //               Built for smarter aquaculture.
 //             </h2>
+
+//             <p className="features-subtitle">
+//               Intelligence designed to turn aquaculture data into
+//               meaningful decisions and measurable action.
+//             </p>
 //           </div>
 
 //           <div className="features-grid">
@@ -204,18 +209,42 @@
 //               <div
 //                 className="feature-card"
 //                 key={index}
+//                 style={{
+//                   "--card-delay": `${index * 0.08}s`
+//                 }}
 //               >
-//                 <span className="feature-number">
-//                   0{index + 1}
-//                 </span>
 
-//                 <h3>
-//                   {feature}
-//                 </h3>
+//                 {/* Animated top line */}
+//                 <div className="feature-top-line"></div>
 
-//                 <span className="feature-arrow">
-//                   →
-//                 </span>
+//                 {/* Number */}
+//                 <div className="feature-number-wrap">
+//                   <span className="feature-number">
+//                     0{index + 1}
+//                   </span>
+
+//                   <span className="feature-dot"></span>
+//                 </div>
+
+//                 {/* Text */}
+//                 <div className="feature-content">
+//                   <h3>
+//                     {feature}
+//                   </h3>
+
+//                   <p>
+//                     Aquaculture intelligence designed for
+//                     better decisions and smarter outcomes.
+//                   </p>
+//                 </div>
+
+//                 {/* Arrow */}
+//                 <div className="feature-arrow-wrap">
+//                   <span className="feature-arrow">
+//                     →
+//                   </span>
+//                 </div>
+
 //               </div>
 //             ))}
 
@@ -262,36 +291,44 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./ProductDetails.css";
 
-import HomeMain from "../assets/images/HomeMain.png";
-import HomeMain2 from "../assets/images/HomeMain2.png";
+// ☁️ Cloudinary Product Images
+const aquaImage =
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/aqua.png";
+
+const meenammaImage =
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/meenamma.png";
+
+const aquaSenseImage =
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/Sense.png";
+
+const aquaRiskImage =
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/Risk.png";
+
 
 const productData = {
-  "aquaos": {
+
+  /* =====================================
+     01 — FISHOS
+  ===================================== */
+  "fishos": {
     number: "01",
-    title: "AquaOS",
-    tagline: "The intelligence operating system for aquaculture.",
-    image: HomeMain,
+
+    title: "FishOS",
+
+    tagline:
+      "The intelligence operating system for aquaculture.",
+
+    image: aquaImage,
 
     intro:
-      "AquaOS is the intelligence layer that brings the aquaculture ecosystem together.",
+      "FishOS is the intelligence layer that brings the aquaculture ecosystem together.",
 
     description:
-      "Aquaculture generates enormous amounts of information across ponds, farmers, weather, water quality, production history and farm operations. AquaOS brings these fragmented signals together into one connected intelligence platform.",
+      "Aquaculture generates enormous amounts of information across ponds, farmers, weather, water quality, production history and farm operations. FishOS brings these fragmented signals together into one connected intelligence platform.",
 
     features: [
       "Unified farm and pond data",
@@ -303,14 +340,22 @@ const productData = {
     ],
 
     bottomText:
-      "By connecting data, intelligence and operations, AquaOS helps aquaculture move from fragmented information to smarter, data-driven decisions."
+      "By connecting data, intelligence and operations, FishOS helps aquaculture move from fragmented information to smarter, data-driven decisions."
   },
 
+
+  /* =====================================
+     02 — MEENAMMA AI
+  ===================================== */
   "meenamma-ai": {
     number: "02",
+
     title: "Meenamma AI",
-    tagline: "Your AI companion for smarter aquaculture.",
-    image: HomeMain2,
+
+    tagline:
+      "Your AI companion for smarter aquaculture.",
+
+    image: meenammaImage,
 
     intro:
       "Meenamma AI brings aquaculture intelligence directly into the farmer's hands.",
@@ -331,11 +376,19 @@ const productData = {
       "From everyday questions to critical farm decisions, Meenamma AI helps farmers understand what is happening and what action they can take next."
   },
 
+
+  /* =====================================
+     03 — AQUASENSE
+  ===================================== */
   "aquasense": {
     number: "03",
+
     title: "AquaSense",
-    tagline: "See beyond the pond with environmental intelligence.",
-    image: HomeMain,
+
+    tagline:
+      "See beyond the pond with environmental intelligence.",
+
+    image: aquaSenseImage,
 
     intro:
       "AquaSense connects the pond to the world around it.",
@@ -356,11 +409,19 @@ const productData = {
       "AquaSense helps reveal patterns and environmental changes that may not be visible from the ground, enabling better awareness and earlier decisions."
   },
 
+
+  /* =====================================
+     04 — AQUARISK
+  ===================================== */
   "aquarisk": {
     number: "04",
+
     title: "AquaRisk",
-    tagline: "Farm intelligence for smarter credit, insurance and risk.",
-    image: HomeMain2,
+
+    tagline:
+      "Farm intelligence for smarter credit, insurance and risk.",
+
+    image: aquaRiskImage,
 
     intro:
       "AquaRisk transforms aquaculture intelligence into decision-ready risk insights.",
@@ -380,43 +441,77 @@ const productData = {
     bottomText:
       "By making farm intelligence more accessible and measurable, AquaRisk helps financial institutions and enterprise partners make more informed aquaculture decisions."
   }
+
 };
+
 
 export default function ProductDetails() {
 
   const { productSlug } = useParams();
+
   const navigate = useNavigate();
 
   const product = productData[productSlug];
 
+
+  /* =====================================
+     PRODUCT NOT FOUND
+  ===================================== */
   if (!product) {
+
     return (
+
       <section className="product-not-found">
-        <h1>Product Not Found</h1>
-        <button onClick={() => navigate("/#products")}>
+
+        <h1>
+          Product Not Found
+        </h1>
+
+        <button
+          onClick={() => navigate("/#products")}
+        >
           Back to Products
         </button>
+
       </section>
+
     );
+
   }
 
+
   return (
+
     <section className="product-details-page">
 
-      {/* Hero */}
+
+      {/* =====================================
+          HERO
+      ===================================== */}
+
       <div className="product-details-hero">
 
         <div className="container">
 
           <div className="product-details-eyebrow">
-            <span>{product.number}</span>
+
+            <span>
+              {product.number}
+            </span>
+
             <span className="details-line"></span>
-            <span>PRODUCT</span>
+
+            <span>
+              PRODUCT
+            </span>
+
           </div>
+
 
           <h1 className="product-details-title">
             {product.title}
           </h1>
+
 
           <p className="product-details-tagline">
             {product.tagline}
@@ -426,29 +521,44 @@ export default function ProductDetails() {
 
       </div>
 
-      {/* Main Content */}
+
+      {/* =====================================
+          MAIN CONTENT
+      ===================================== */}
+
       <div className="container">
 
         <div className="product-details-grid">
 
-          {/* Image */}
+
+          {/* ================= IMAGE ================= */}
+
           <div className="product-details-image">
+
             <img
               src={product.image}
-              alt={product.title}
+              alt={`${product.title} - Aquaculture Intelligence`}
+              loading="lazy"
             />
+
           </div>
 
-          {/* Intro */}
+
+          {/* ================= INTRO ================= */}
+
           <div className="product-details-intro">
 
             <span className="details-small-label">
+
               ABOUT {product.title.toUpperCase()}
+
             </span>
+
 
             <h2>
               {product.intro}
             </h2>
+
 
             <p>
               {product.description}
@@ -458,27 +568,40 @@ export default function ProductDetails() {
 
         </div>
 
-        {/* Features */}
+
+        {/* =====================================
+            FEATURES
+        ===================================== */}
+
         <div className="product-features">
 
+
           <div className="features-heading">
+
             <span className="details-small-label">
               CAPABILITIES
             </span>
+
 
             <h2>
               Built for smarter aquaculture.
             </h2>
 
+
             <p className="features-subtitle">
+
               Intelligence designed to turn aquaculture data into
               meaningful decisions and measurable action.
+
             </p>
+
           </div>
+
 
           <div className="features-grid">
 
             {product.features.map((feature, index) => (
+
               <div
                 className="feature-card"
                 key={index}
@@ -487,50 +610,76 @@ export default function ProductDetails() {
                 }}
               >
 
+
                 {/* Animated top line */}
+
                 <div className="feature-top-line"></div>
 
+
                 {/* Number */}
+
                 <div className="feature-number-wrap">
+
                   <span className="feature-number">
+
                     0{index + 1}
+
                   </span>
 
+
                   <span className="feature-dot"></span>
+
                 </div>
 
+
                 {/* Text */}
+
                 <div className="feature-content">
+
                   <h3>
                     {feature}
                   </h3>
 
+
                   <p>
+
                     Aquaculture intelligence designed for
                     better decisions and smarter outcomes.
+
                   </p>
+
                 </div>
 
+
                 {/* Arrow */}
+
                 <div className="feature-arrow-wrap">
+
                   <span className="feature-arrow">
                     →
                   </span>
+
                 </div>
 
               </div>
+
             ))}
 
           </div>
 
         </div>
 
-        {/* Bottom */}
+
+        {/* =====================================
+            BOTTOM
+        ===================================== */}
+
         <div className="product-details-bottom">
 
           <p>
             {product.bottomText}
           </p>
+
 
           <button
             className="details-back-btn"
@@ -546,5 +695,7 @@ export default function ProductDetails() {
       </div>
 
     </section>
+
   );
+
 }
