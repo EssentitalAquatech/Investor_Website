@@ -6,12 +6,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
 // import React, { useRef, useEffect } from "react";
 // import "./AboutMission.css";
 
 // // Images
 // import HomeMain from "../assets/images/HomeMain.png";
 // import HomeMain2 from "../assets/images/HomeMain2.png";
+
+// // Cloudinary — Our Values image
+// const valuesImage =
+//   "https://res.cloudinary.com/p8fs2e1n/image/upload/Value.png";
 
 // function MissionSection({
 //   imageSrc,
@@ -175,10 +188,10 @@
 //       ========================= */}
 //       <MissionSection
 //         id="mission-section-3"
-//         imageSrc={HomeMain}
+//         imageSrc={valuesImage}
 //         heading="Our Values"
 //         subheading="Innovation With Purpose, Intelligence With Impact"
-//         text="We believe technology should create meaningful impact on the ground. We value innovation, transparency, sustainability and farmer-first thinking. Every solution we build is designed to turn intelligence into action, strengthen livelihoods and help shape a smarter, more resilient future for aquaculture."
+//         text="We put farmers first, act responsibly toward the planet, take ownership of every outcome, think boldly about the future, and hold ourselves to a high standard of execution. These values guide how we build technology, work with our ecosystem, and create lasting impact across aquaculture."
 //         imageOnLeft={true}
 //       />
 
@@ -202,17 +215,16 @@
 
 
 
-
-
-
-
-
 import React, { useRef, useEffect } from "react";
 import "./AboutMission.css";
 
-// Images
-import HomeMain from "../assets/images/HomeMain.png";
-import HomeMain2 from "../assets/images/HomeMain2.png";
+// Cloudinary — Vision Image
+const visionImage =
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/vision.png";
+
+// Cloudinary — Mission Image
+const missionImage =
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/mission.png";
 
 // Cloudinary — Our Values image
 const valuesImage =
@@ -281,15 +293,6 @@ function MissionSection({
             </span>
           </h2>
 
-          {/* Vertical AI statement only on first section */}
-          {id === "mission-section-1" && (
-            <div className="vertical-ai-statement">
-              Building the world's largest{" "}
-              <span>Vertical AI for Fish Farming</span>{" "}
-              to power intelligent aquaculture globally.
-            </div>
-          )}
-
         </div>
 
         <div className="row align-items-center g-0">
@@ -354,26 +357,24 @@ function AboutMission() {
       ========================= */}
       <MissionSection
         id="mission-section-1"
-        imageSrc={HomeMain}
+        imageSrc={visionImage}
         heading="Our Vision"
-        subheading="Building the Intelligence Layer for Aquaculture"
-        text="We envision a world where every fish farmer can make smarter, faster and more confident decisions. By bringing together AI, satellite, weather, water and farm data, we are building the intelligence layer that makes aquaculture more predictive, profitable and sustainable."
+        subheading="A Resilient, Intelligent and Dignified Future for Aquaculture"
+        text="A future where freshwater aquaculture becomes a resilient, intelligent, and dignified livelihood for every smallholder farmer — where no pond is too small to matter, no farmer too remote to reach, and no climate shock powerful enough to break a family that farms fish."
         imageOnLeft={true}
       />
-
 
       {/* =========================
           SECTION 2 — OUR MISSION
       ========================= */}
       <MissionSection
         id="mission-section-2"
-        imageSrc={HomeMain2}
+        imageSrc={missionImage}
         heading="Our Mission"
-        subheading="Transforming Aquaculture Through Intelligence and Technology"
-        text="Our mission is to empower the aquaculture ecosystem with intelligent technology that turns complex farm data into clear, actionable insights. We connect farmers, agents and the wider aquaculture value chain through AI-driven intelligence to improve productivity, reduce risk and create more sustainable outcomes."
+        subheading="Building the Intelligence Infrastructure for Freshwater Aquaculture"
+        text="To build the intelligence infrastructure for freshwater aquaculture — connecting every smallholder carp farmer to the data, advice, inputs, and finance they need to make better decisions, protect their ponds from climate and disease, and build a livelihood that sustains their family and feeds their community."
         imageOnLeft={false}
       />
-
 
       {/* =========================
           SECTION 3 — OUR VALUES

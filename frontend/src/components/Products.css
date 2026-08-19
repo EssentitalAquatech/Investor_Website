@@ -4,7 +4,7 @@
 
 .products-main {
   background: #e5e2e2;
-  padding: 50px 0;
+  padding: 0 0;
 }
 
 
@@ -18,6 +18,7 @@
   font-weight: 700;
   margin-bottom: 100px;
   color: #000;
+  padding-top: 70px;
 }
 
 .products-heading span {
@@ -164,13 +165,49 @@
 }
 
 
-/* ================================
-   Explore Button
-================================ */
+/* ========================================
+   FULL WIDTH EXPLORE IMAGE
+======================================== */
+
+.explore-more-section {
+  position: relative;
+
+  width: 100%;
+  height: 633px;
+
+  margin-top: 60px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .explore-btn-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+
+  padding-right: 8%;
+} */
 
 .explore-btn-container {
-  text-align: center;
-  margin-top: 40px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30%;
+    margin-top: 335px;
 }
 
 .explore-btn {
@@ -187,7 +224,7 @@
   gap: 10px;
   transition: 0.3s ease;
   box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
-  margin-top: 50px;
+  margin-top: 0;
 }
 
 .explore-btn:hover {
@@ -268,6 +305,22 @@
   .product-text {
     font-size: 0.95rem;
     line-height: 1.7;
+  }
+
+  .explore-more-section {
+    width: 100%;
+    height: 280px;
+
+    margin-top: 40px;
+
+    border-radius: 0;
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  .explore-btn-container {
+    padding-right: 5%;
   }
 }
 
@@ -355,29 +408,6 @@
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ========================================
