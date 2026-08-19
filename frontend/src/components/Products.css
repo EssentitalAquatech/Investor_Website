@@ -4,7 +4,7 @@
 
 .products-main {
   background: #e5e2e2;
-  padding: 0 0;
+  padding: 0 0 80px;
 }
 
 
@@ -14,10 +14,14 @@
 
 .products-heading {
   text-align: center;
+
   font-size: 3.5rem;
   font-weight: 700;
+
   margin-bottom: 100px;
+
   color: #000;
+
   padding-top: 70px;
 }
 
@@ -32,13 +36,19 @@
 
 .product-section {
   margin-bottom: 100px;
+
   opacity: 0;
+
   transform: translateY(40px);
-  transition: all 0.7s ease;
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .product-section.visible {
   opacity: 1;
+
   transform: translateY(0);
 }
 
@@ -59,41 +69,41 @@
 .product-image-wrapper {
   width: 92%;
   height: 360px;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-}
 
-.product-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.5s ease;
-}
-
-.product-image-wrapper {
-  width: 92%;
-  height: 360px;
   overflow: hidden;
+
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.1);
+
   margin: 0 auto;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
   cursor: pointer;
 }
 
 .product-image-wrapper:hover {
+
   transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.16);
+
+  box-shadow:
+    0 18px 35px rgba(0, 0, 0, 0.16);
 }
 
+
 .product-image-wrapper img {
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   display: block;
-  /* Image par koi hover/zoom nahi */
+
   transform: none !important;
 }
 
@@ -106,307 +116,108 @@
   padding: 10px 30px;
 }
 
-/* Product Eyebrow */
+
+/* ================================
+   Product Eyebrow
+================================ */
+
 .product-eyebrow {
+
   display: flex;
+
   align-items: center;
+
   gap: 12px;
+
   margin-bottom: 12px;
 }
 
-/* Product Number */
+
 .product-number {
+
   font-size: 0.85rem;
+
   font-weight: 700;
+
   color: #0EA5E9;
+
   letter-spacing: 2px;
 }
 
-/* Product Line */
+
 .product-line {
+
   flex: 0 0 40px;
+
   height: 2px;
+
   background: #0EA5E9;
 }
 
-/* Product Label */
+
 .product-label {
+
   font-size: 0.7rem;
+
   font-weight: 600;
+
   color: #0EA5E9;
+
   letter-spacing: 3px;
+
   text-transform: uppercase;
 }
 
-/* Product Title */
+
+/* ================================
+   Product Title
+================================ */
+
 .product-title {
+
   font-size: 2.3rem;
+
   font-weight: 700;
+
   color: #000;
+
   margin-bottom: 10px;
 }
 
-/* Product Tagline */
+
+/* ================================
+   Product Tagline
+================================ */
+
 .product-tagline {
+
   font-size: 1.15rem;
+
   font-weight: 600;
+
   color: #222;
+
   line-height: 1.5;
+
   margin-bottom: 18px;
 }
 
-/* Product Description */
+
+/* ================================
+   Product Description
+================================ */
+
 .product-text {
+
   font-size: 1rem;
+
   color: #555;
+
   line-height: 1.8;
+
   margin-bottom: 0;
+
   max-width: 560px;
-}
-
-
-/* ========================================
-   FULL WIDTH EXPLORE IMAGE
-======================================== */
-
-.explore-more-section {
-  position: relative;
-
-  width: 100%;
-  height: 633px;
-
-  margin-top: 60px;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* .explore-btn-container {
-  position: relative;
-  z-index: 2;
-
-  width: 100%;
-
-  display: flex;
-  justify-content: flex-end;
-
-  padding-right: 8%;
-} */
-
-.explore-btn-container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 30%;
-    margin-top: 335px;
-}
-
-.explore-btn {
-  background: #0EA5E9;
-  color: #fff;
-  border: none;
-  padding: 14px 28px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 30px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: 0.3s ease;
-  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
-  margin-top: 0;
-}
-
-.explore-btn:hover {
-  background: #0284c7;
-  transform: translateY(-2px);
-}
-
-.explore-icon {
-  transition: 0.3s ease;
-}
-
-.explore-btn:hover .explore-icon {
-  transform: translateX(4px);
-}
-
-
-/* ================================
-   Tablet
-================================ */
-
-@media (max-width: 991px) {
-
-  .product-image-wrapper {
-    height: 300px;
-    width: 95%;
-  }
-
-  .products-heading {
-    font-size: 2.5rem;
-  }
-
-  .product-title {
-    font-size: 2rem;
-  }
-
-  .product-content-wrapper {
-    padding: 10px 15px;
-  }
-}
-
-
-/* ================================
-   Mobile
-================================ */
-
-@media (max-width: 767px) {
-
-  .products-main {
-    padding: 40px 0;
-  }
-
-  .products-heading {
-    font-size: 2rem;
-    margin-bottom: 70px;
-  }
-
-  .product-section {
-    margin-bottom: 70px;
-  }
-
-  .product-image-wrapper {
-    height: 260px;
-    width: 100%;
-  }
-
-  .product-content-wrapper {
-    padding: 10px 5px;
-  }
-
-  .product-title {
-    font-size: 1.8rem;
-  }
-
-  .product-tagline {
-    font-size: 1.05rem;
-  }
-
-  .product-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  .explore-more-section {
-    width: 100%;
-    height: 280px;
-
-    margin-top: 40px;
-
-    border-radius: 0;
-
-    background-size: cover;
-    background-position: center;
-  }
-
-  .explore-btn-container {
-    padding-right: 5%;
-  }
-}
-
-
-/* ========================================
-   TYPOGRAPHY - TABLET
-======================================== */
-
-@media (max-width: 991px) {
-
-  .product-image-wrapper {
-    border-radius: 16px;
-  }
-
-  .product-section {
-    margin-bottom: 75px;
-  }
-
-  .product-title {
-    font-size: 2.5rem;
-    letter-spacing: -1.5px;
-  }
-
-  .product-tagline {
-    font-size: 1.08rem;
-  }
-
-  .product-text {
-    font-size: 0.95rem;
-    line-height: 1.75;
-  }
-
-  .product-section:hover .product-content-wrapper,
-  .product-section.reverse:hover .product-content-wrapper {
-    transform: none;
-  }
-}
-
-
-/* ========================================
-   TYPOGRAPHY - SMALL MOBILE
-======================================== */
-
-@media (max-width: 575px) {
-
-  .products-heading {
-    font-size: 2rem;
-    letter-spacing: -1px;
-    margin-bottom: 60px;
-  }
-
-  .product-image-wrapper {
-    height: 220px;
-  }
-
-  .product-eyebrow {
-    gap: 9px;
-  }
-
-  .product-number {
-    font-size: 0.75rem;
-  }
-
-  .product-line {
-    width: 25px;
-  }
-
-  .product-label {
-    font-size: 0.62rem;
-    letter-spacing: 2px;
-  }
-
-  .product-title {
-    font-size: 2.15rem;
-  }
-
-  .product-tagline {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .product-text {
-    font-size: 0.9rem;
-    line-height: 1.7;
-  }
-
 }
 
 
@@ -415,21 +226,27 @@
 ======================================== */
 
 .learn-more-btn {
+
   margin-top: 28px;
 
   display: inline-flex;
+
   align-items: center;
+
   gap: 10px;
 
   padding: 11px 20px;
 
   background: transparent;
+
   color: #0EA5E9;
 
   border: 1px solid rgba(14, 165, 233, 0.5);
+
   border-radius: 30px;
 
   font-size: 0.92rem;
+
   font-weight: 650;
 
   cursor: pointer;
@@ -441,8 +258,11 @@
     box-shadow 0.3s ease;
 }
 
+
 .learn-more-btn:hover {
+
   background: #0EA5E9;
+
   color: #ffffff;
 
   transform: translateY(-2px);
@@ -451,22 +271,852 @@
     0 8px 20px rgba(14, 165, 233, 0.2);
 }
 
+
 .learn-more-icon {
-  transition: transform 0.3s ease;
+
+  transition:
+    transform 0.3s ease;
 }
 
-.learn-more-btn:hover .learn-more-icon {
+
+.learn-more-btn:hover
+.learn-more-icon {
+
   transform: translateX(4px);
 }
 
 
-/* Mobile */
+/* =========================================================
+   SECONDARY PRODUCTS SECTION
+========================================================= */
+
+.secondary-products-section {
+
+  position: relative;
+
+  width: 100%;
+
+  margin-top: 40px;
+
+  margin-bottom: 20px;
+
+  padding: 85px 60px;
+
+  background: #ffffff;
+
+  border-radius: 26px;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.08);
+
+
+  /* Initial animation */
+
+  opacity: 0;
+
+  transform:
+    translateY(80px)
+    scale(0.94);
+
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ========================================
+   Soft Background Glow
+======================================== */
+
+.secondary-products-section::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+
+  height: 300px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(14, 165, 233, 0.08);
+
+  top: -150px;
+
+  left: -120px;
+
+  filter: blur(10px);
+
+  opacity: 0;
+
+  transform: scale(0.5);
+
+  transition:
+    opacity 1.2s ease 0.2s,
+    transform 1.2s ease 0.2s;
+}
+
+
+.secondary-products-section::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+
+  height: 280px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(14, 165, 233, 0.06);
+
+  bottom: -150px;
+
+  right: -100px;
+
+  filter: blur(10px);
+
+  opacity: 0;
+
+  transform: scale(0.5);
+
+  transition:
+    opacity 1.2s ease 0.3s,
+    transform 1.2s ease 0.3s;
+}
+
+
+/* ========================================
+   Visible State
+======================================== */
+
+.secondary-products-section.visible {
+
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+.secondary-products-section.visible::before {
+
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+
+.secondary-products-section.visible::after {
+
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+
+/* ========================================
+   Secondary Content
+======================================== */
+
+.secondary-products-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   Secondary Eyebrow
+======================================== */
+
+.secondary-products-eyebrow {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  color: #0EA5E9;
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.7s ease 0.25s,
+    transform 0.7s ease 0.25s;
+}
+
+
+.secondary-products-section.visible
+.secondary-products-eyebrow {
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   Eyebrow Lines
+======================================== */
+
+.secondary-products-line {
+
+  width: 0;
+
+  height: 2px;
+
+  background: #0EA5E9;
+
+  transition:
+    width 0.7s ease 0.45s;
+}
+
+
+.secondary-products-section.visible
+.secondary-products-line {
+
+  width: 45px;
+}
+
+
+/* ========================================
+   Secondary Heading
+======================================== */
+
+.secondary-products-title {
+
+  font-size: 3rem;
+
+  font-weight: 700;
+
+  color: #000;
+
+  margin-bottom: 22px;
+
+  letter-spacing: -1px;
+
+  opacity: 0;
+
+  transform:
+    translateY(35px)
+    scale(0.94);
+
+  transition:
+    opacity 0.8s ease 0.4s,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+}
+
+
+.secondary-products-section.visible
+.secondary-products-title {
+
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+.secondary-products-title span {
+
+  color: #0EA5E9;
+
+  display: inline-block;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.secondary-products-section:hover
+.secondary-products-title span {
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* ========================================
+   Main Description
+======================================== */
+
+.secondary-products-text {
+
+  max-width: 720px;
+
+  margin: 0 auto 14px;
+
+  font-size: 1.08rem;
+
+  line-height: 1.8;
+
+  color: #555;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.8s ease 0.6s,
+    transform 0.8s ease 0.6s;
+}
+
+
+.secondary-products-section.visible
+.secondary-products-text {
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   Secondary Subtext
+======================================== */
+
+.secondary-products-subtext {
+
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+
+  color: #666;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.8s ease 0.75s,
+    transform 0.8s ease 0.75s;
+}
+
+
+.secondary-products-section.visible
+.secondary-products-subtext {
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   Explore Button
+======================================== */
+
+.explore-btn {
+
+  margin-top: 32px;
+
+  background: #0EA5E9;
+
+  color: #fff;
+
+  border: none;
+
+  padding: 14px 28px;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  box-shadow:
+    0 8px 20px rgba(14, 165, 233, 0.25);
+
+  opacity: 0;
+
+  transform:
+    translateY(30px)
+    scale(0.85);
+
+  transition:
+    opacity 0.8s ease 0.9s,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.9s,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* ========================================
+   Button Visible
+======================================== */
+
+.secondary-products-section.visible
+.explore-btn {
+
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* ========================================
+   Button Hover
+======================================== */
+
+.explore-btn:hover {
+
+  background: #0284c7;
+
+  transform:
+    translateY(-5px)
+    scale(1.03);
+
+  box-shadow:
+    0 14px 30px rgba(14, 165, 233, 0.30);
+}
+
+
+/* ========================================
+   Button Icon
+======================================== */
+
+.explore-icon {
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.explore-btn:hover
+.explore-icon {
+
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .product-image-wrapper {
+
+    height: 300px;
+
+    width: 95%;
+  }
+
+
+  .products-heading {
+
+    font-size: 2.5rem;
+  }
+
+
+  .product-title {
+
+    font-size: 2rem;
+  }
+
+
+  .product-content-wrapper {
+
+    padding: 10px 15px;
+  }
+
+
+  .product-section {
+
+    margin-bottom: 75px;
+  }
+
+
+  .product-title {
+
+    font-size: 2.5rem;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  .product-tagline {
+
+    font-size: 1.08rem;
+  }
+
+
+  .product-text {
+
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+  }
+
+
+  .product-section:hover
+  .product-content-wrapper,
+
+  .product-section.reverse:hover
+  .product-content-wrapper {
+
+    transform: none;
+  }
+
+
+  /* ========================================
+     Secondary Tablet
+  ======================================== */
+
+  .secondary-products-section {
+
+    padding: 70px 40px;
+
+    border-radius: 22px;
+  }
+
+
+  .secondary-products-title {
+
+    font-size: 2.5rem;
+  }
+
+
+  .secondary-products-text {
+
+    font-size: 1rem;
+  }
+
+
+  .secondary-products-subtext {
+
+    font-size: 0.95rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .products-main {
+
+    padding: 40px 0 60px;
+  }
+
+
+  .products-heading {
+
+    font-size: 2rem;
+
+    margin-bottom: 70px;
+  }
+
+
+  .product-section {
+
+    margin-bottom: 70px;
+  }
+
+
+  .product-image-wrapper {
+
+    height: 260px;
+
+    width: 100%;
+  }
+
+
+  .product-content-wrapper {
+
+    padding: 10px 5px;
+  }
+
+
+  .product-title {
+
+    font-size: 1.8rem;
+  }
+
+
+  .product-tagline {
+
+    font-size: 1.05rem;
+  }
+
+
+  .product-text {
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+  }
+
+
+  /* ========================================
+     Secondary Mobile
+  ======================================== */
+
+  .secondary-products-section {
+
+    margin-top: 25px;
+
+    padding: 55px 22px;
+
+    border-radius: 18px;
+  }
+
+
+  .secondary-products-title {
+
+    font-size: 2rem;
+
+    line-height: 1.25;
+  }
+
+
+  .secondary-products-text {
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+  }
+
+
+  .secondary-products-subtext {
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+  }
+
+
+  .secondary-products-eyebrow {
+
+    font-size: 0.62rem;
+
+    letter-spacing: 2px;
+
+    gap: 8px;
+  }
+
+
+  .secondary-products-line {
+
+    width: 25px;
+  }
+
+
+  .secondary-products-section.visible
+  .secondary-products-line {
+
+    width: 28px;
+  }
+
+
+  .explore-btn {
+
+    padding: 12px 22px;
+
+    font-size: 0.9rem;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 575px) {
 
+  .products-heading {
+
+    font-size: 2rem;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 60px;
+  }
+
+
+  .product-image-wrapper {
+
+    height: 220px;
+  }
+
+
+  .product-eyebrow {
+
+    gap: 9px;
+  }
+
+
+  .product-number {
+
+    font-size: 0.75rem;
+  }
+
+
+  .product-line {
+
+    width: 25px;
+  }
+
+
+  .product-label {
+
+    font-size: 0.62rem;
+
+    letter-spacing: 2px;
+  }
+
+
+  .product-title {
+
+    font-size: 2.15rem;
+  }
+
+
+  .product-tagline {
+
+    font-size: 1rem;
+
+    line-height: 1.5;
+  }
+
+
+  .product-text {
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+  }
+
+
+  /* ========================================
+     Secondary Small Mobile
+  ======================================== */
+
+  .secondary-products-section {
+
+    padding: 45px 18px;
+
+    border-radius: 16px;
+  }
+
+
+  .secondary-products-title {
+
+    font-size: 1.8rem;
+
+    letter-spacing: -0.5px;
+  }
+
+
+  .secondary-products-text {
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+  }
+
+
+  .secondary-products-subtext {
+
+    font-size: 0.85rem;
+
+    line-height: 1.6;
+  }
+
+
+  .secondary-products-eyebrow {
+
+    margin-bottom: 15px;
+  }
+
+
+  .secondary-products-line {
+
+    width: 20px;
+  }
+
+
+  .secondary-products-section.visible
+  .secondary-products-line {
+
+    width: 25px;
+  }
+
+
+  .explore-btn {
+
+    margin-top: 25px;
+
+    padding: 11px 19px;
+
+    font-size: 0.86rem;
+  }
+
+
+  .explore-icon {
+
+    width: 18px;
+
+    height: 18px;
+  }
+
+
   .learn-more-btn {
+
     margin-top: 22px;
+
     padding: 10px 18px;
+
     font-size: 0.88rem;
   }
 
