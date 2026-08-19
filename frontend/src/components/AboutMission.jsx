@@ -360,7 +360,7 @@ function AboutMission() {
         imageSrc={visionImage}
         heading="Our Vision"
         subheading="A Resilient, Intelligent and Dignified Future for Aquaculture"
-        text="A future where freshwater aquaculture becomes a resilient, intelligent, and dignified livelihood for every smallholder farmer — where no pond is too small to matter, no farmer too remote to reach, and no climate shock powerful enough to break a family that farms fish."
+        text="A future where freshwater aquaculture becomes a resilient, intelligent, and dignified livelihood for every smallholder farmer where no pond is too small to matter, no farmer too remote to reach, and no climate shock powerful enough to break a family that farms fish."
         imageOnLeft={true}
       />
 
@@ -372,7 +372,7 @@ function AboutMission() {
         imageSrc={missionImage}
         heading="Our Mission"
         subheading="Building the Intelligence Infrastructure for Freshwater Aquaculture"
-        text="To build the intelligence infrastructure for freshwater aquaculture — connecting every smallholder carp farmer to the data, advice, inputs, and finance they need to make better decisions, protect their ponds from climate and disease, and build a livelihood that sustains their family and feeds their community."
+        text="To build the intelligence infrastructure for freshwater aquaculture connecting every smallholder carp farmer to the data, advice, inputs, and finance they need to make better decisions, protect their ponds from climate and disease, and build a livelihood that sustains their family and feeds their community."
         imageOnLeft={false}
       />
 
