@@ -7,7 +7,7 @@ import './Presence.css';
 
 // Cloudinary image URL for Asia map
 const indiaMap =
-  'https://res.cloudinary.com/p8fs2e1n/image/upload/world.jpg';
+  'https://res.cloudinary.com/p8fs2e1n/image/upload/World1.png';
 
 // ANIMATED NUMBER COMPONENT - Premium smooth version
 function AnimatedNumber({ value, start }) {
