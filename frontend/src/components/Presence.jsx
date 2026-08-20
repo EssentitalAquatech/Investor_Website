@@ -428,7 +428,7 @@ function Presence() {
         "https://res.cloudinary.com/p8fs2e1n/image/upload/live.png",
 
       description:
-        "We empower farmers with actionable intelligence that helps them make better decisions, improve farm productivity, reduce uncertainty, and build more resilient livelihoods.",
+        "Essential Aquatech delivers real-time pond intelligence to smallholder fresh water fish farmers through MeenAmma, a multilingual WhatsApp AI . Farmers on the platform record 30% yield improvement and 25% income increase."
     },
 
     {
@@ -452,7 +452,7 @@ function Presence() {
         "https://res.cloudinary.com/p8fs2e1n/image/upload/finance.png",
 
       description:
-        "We help farmers and aquaculture businesses make smarter financial decisions by improving profitability, optimizing resources, and reducing avoidable risks across the farm.",
+        "Every MeenAmma interaction builds a proprietary Farm Health Score — converting pond-level behavioral data into credit profiles and insurance eligibility. EA is enabling freshwater fish farmers to access formal credit and insurance."
     },
   ];
 
