@@ -1,132 +1,320 @@
-/* SECTION */
+ /* =========================================================
+   PRESENCE SECTION
+========================================================= */
+
 .presence-section-unique {
-  background: white;
+  background: #ffffff;
   padding: 100px 0;
 }
 
-/* CONTAINER */
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .presence-container-unique {
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
-/* HEADING */
+
+/* =========================================================
+   HEADING
+========================================================= */
+
 .presence-top-title {
   text-align: center;
   font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 60px;
-  color: #000;
+  line-height: 1.15;
+  margin: 0 0 60px;
+  color: #000000;
+  letter-spacing: -1.5px;
 }
 
 .presence-top-title span {
-  color: #0EA5E9;
+  color: #0ea5e9;
 }
 
-/* MAIN BOX - Image centered */
+
+/* =========================================================
+   IMPACT STATS
+   DESKTOP - ALL 5 IN ONE ROW
+========================================================= */
+
+.presence-impact-stats {
+  width: 100%;
+
+  display: grid;
+
+  /* IMPORTANT:
+     5 stats = 5 columns */
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 30px;
+
+  margin: 0 auto 80px;
+
+  padding: 0;
+
+  align-items: start;
+}
+
+
+/* Individual stat */
+
+.presence-stat-item {
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+
+  text-align: left;
+}
+
+
+/* Blue line */
+
+.presence-stat-line {
+  width: 100px;
+
+  height: 5px;
+
+  background: #0ea5e9;
+
+  border-radius: 10px;
+
+  margin-bottom: 35px;
+}
+
+
+/* Stat number */
+
+.presence-stat-value {
+  font-size: clamp(
+    2.5rem,
+    3.2vw,
+    4rem
+  );
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  color: #0ea5e9;
+
+  margin-bottom: 14px;
+
+  letter-spacing: -2px;
+
+  white-space: nowrap;
+}
+
+
+/* Stat label */
+
+.presence-stat-label {
+  max-width: 220px;
+
+  font-size: 1rem;
+
+  line-height: 1.45;
+
+  color: #111111;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   MAIN BOX - MAP
+========================================================= */
+
 .presence-main-box {
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   width: 100%;
 }
 
-/* IMAGE CENTERED - LARGER SIZE */
+
+/* =========================================================
+   MAP IMAGE
+========================================================= */
+
 .presence-image-center {
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   width: 100%;
 }
 
-.presence-image-center .presence-simple-image {
+
+.presence-image-center
+.presence-simple-image {
   width: 100%;
+
   max-width: 1500px;
+
   height: auto;
+
+  display: block;
 }
 
-/* ================= IMPACT CARDS ================= */
+
+/* =========================================================
+   IMPACT CARDS
+========================================================= */
 
 .presence-new-cards-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
   gap: 35px;
+
   margin-top: 80px;
+
   width: 100%;
 }
+
 
 .presence-new-card-wrapper {
   width: 100%;
+
   min-width: 0;
 }
 
+
 /* Top two cards */
+
 .presence-new-card-wrapper.card-livelihood,
 .presence-new-card-wrapper.card-impact {
   grid-column: span 1;
 }
 
-/* Finance: center aligned, same size as one card */
+
+/* Finance card centered */
+
 .presence-new-card-wrapper.card-finance {
   grid-column: 1 / -1;
-  width: calc((100% - 35px) / 2);
+
+  width: calc(
+    (100% - 35px) / 2
+  );
+
   justify-self: center;
 }
 
-/* Images */
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
 .presence-pure-image {
   width: 100%;
-  aspect-ratio: 3 / 2;
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: #fff;
-}
 
-/* Same height for all three */
-.card-livelihood .presence-pure-image,
-.card-impact .presence-pure-image,
-.card-finance .presence-pure-image {
   height: 400px;
+
   aspect-ratio: auto;
+
+  background-size: 100% 100%;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  background-color: #ffffff;
 }
 
-/* BOTTOM TEXT */
+
+/* Same height for all cards */
+
+.card-livelihood
+.presence-pure-image,
+
+.card-impact
+.presence-pure-image,
+
+.card-finance
+.presence-pure-image {
+  height: 400px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
 .presence-card-title {
   position: absolute;
+
   bottom: 15px;
+
   left: 15px;
-  color: white;
+
+  color: #ffffff;
+
   font-weight: 600;
+
   font-size: 1.2rem;
+
   z-index: 2;
+
+  text-shadow:
+    0 2px 8px rgba(
+      0,
+      0,
+      0,
+      0.5
+    );
 }
 
-/* ================= HOVER CONTENT ================= */
+
+/* =========================================================
+   HOVER CONTENT
+========================================================= */
 
 .presence-hover-content {
   position: absolute;
+
   inset: 0;
 
-  background: linear-gradient(
-    135deg,
-    rgba(5, 35, 45, 0.96),
-    rgba(8, 92, 105, 0.92)
-  );
+  background:
+    linear-gradient(
+      135deg,
+      rgba(5, 35, 45, 0.96),
+      rgba(8, 92, 105, 0.92)
+    );
 
-  color: #fff;
+  color: #ffffff;
 
   padding: 55px;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
 
   opacity: 0;
+
   transform: translateY(20px);
 
   transition:
@@ -136,16 +324,26 @@
   z-index: 5;
 }
 
-.presence-pure-image.hovered .presence-hover-content {
+
+.presence-pure-image.hovered
+.presence-hover-content {
   opacity: 1;
+
   transform: translateY(0);
 }
 
-/* Small category text */
+
+/* =========================================================
+   HOVER KICKER
+========================================================= */
+
 .presence-hover-kicker {
   font-size: 0.78rem;
+
   font-weight: 700;
+
   letter-spacing: 2.5px;
+
   text-transform: uppercase;
 
   margin-bottom: 14px;
@@ -153,20 +351,35 @@
   opacity: 0.8;
 }
 
-/* Main heading */
+
+/* =========================================================
+   HOVER HEADING
+========================================================= */
+
 .presence-hover-content h3 {
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(
+    2rem,
+    3vw,
+    3rem
+  );
+
   line-height: 1.1;
 
   margin: 0 0 18px;
 
   font-weight: 700;
+
   letter-spacing: -0.5px;
 }
 
-/* Accent line */
+
+/* =========================================================
+   HOVER ACCENT LINE
+========================================================= */
+
 .presence-hover-line {
   width: 65px;
+
   height: 3px;
 
   background: #52e5e3;
@@ -176,259 +389,611 @@
   margin-bottom: 24px;
 }
 
-/* Description */
+
+/* =========================================================
+   HOVER DESCRIPTION
+========================================================= */
+
 .presence-hover-content p {
   max-width: 650px;
 
   margin: 0;
 
   font-size: 1.08rem;
+
   line-height: 1.75;
 
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  );
 }
 
-/* ================= ANIMATION ================= */
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
 .animate {
   opacity: 0;
 }
 
-/* directions */
+
+/* From left */
+
 .fade-left {
   transform: translateX(-80px);
 }
+
+
+/* From right */
 
 .fade-right {
   transform: translateX(80px);
 }
 
+
+/* From bottom */
+
 .fade-up {
   transform: translateY(80px);
 }
+
+
+/* From top */
 
 .fade-down {
   transform: translateY(-80px);
 }
 
-/* visible */
+
+/* Visible */
+
 .visible {
   opacity: 1;
+
   transform: translate(0);
-  transition: all 0.8s ease;
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
-/* DELAYS */
-.delay-0 { transition-delay: 0.2s; }
-.delay-1 { transition-delay: 0.4s; }
-.delay-2 { transition-delay: 0.6s; }
-.delay-3 { transition-delay: 0.8s; }
 
-/* ================= IMPACT STATS ================= */
+/* =========================================================
+   ANIMATION DELAYS
+========================================================= */
 
-.presence-impact-stats {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
-  margin: 0 auto 80px;
-  padding: 0 10px;
+.delay-0 {
+  transition-delay: 0.2s;
 }
 
-.presence-stat-item {
-  position: relative;
-  text-align: left;
-  min-width: 0;
+.delay-1 {
+  transition-delay: 0.4s;
 }
 
-.presence-stat-line {
-  width: 130px;
-  height: 5px;
-  background: #0EA5E9;
-  border-radius: 10px;
-  margin-bottom: 65px;
+.delay-2 {
+  transition-delay: 0.6s;
 }
 
-.presence-stat-value {
-  font-size: 4.2rem;
-  line-height: 1;
-  font-weight: 700;
-  color: #0EA5E9;
-  margin-bottom: 12px;
-  letter-spacing: -2px;
+.delay-3 {
+  transition-delay: 0.8s;
 }
 
-.presence-stat-label {
-  max-width: 240px;
-  font-size: 1.05rem;
-  line-height: 1.45;
-  color: #111;
-  font-weight: 400;
+.delay-4 {
+  transition-delay: 1s;
 }
 
-/* ================= RESPONSIVE ================= */
 
-/* LARGE LAPTOP */
+/* =========================================================
+   LARGE LAPTOP
+========================================================= */
+
 @media (max-width: 1200px) {
-  .presence-main-box {
-    gap: 50px;
+
+  .presence-container-unique {
+    padding: 0 30px;
   }
-  
-  .presence-image-center .presence-simple-image {
-    max-width: 750px;
-  }
+
+
+  /* Still 5 columns */
 
   .presence-impact-stats {
-    gap: 30px;
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+
+    gap: 20px;
   }
 
-  .presence-stat-value {
-    font-size: 3.5rem;
-  }
 
   .presence-stat-line {
-    width: 110px;
+    width: 80px;
+
+    height: 4px;
+
+    margin-bottom: 30px;
   }
+
+
+  .presence-stat-value {
+    font-size: 2.7rem;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  .presence-stat-label {
+    font-size: 0.9rem;
+
+    max-width: 190px;
+  }
+
+
+  .presence-image-center
+  .presence-simple-image {
+    max-width: 1100px;
+  }
+
 }
 
-/* TABLET */
+
+/* =========================================================
+   TABLET
+========================================================= */
+
 @media (max-width: 992px) {
-  .presence-main-box {
-    flex-direction: column;
-    text-align: center;
-    flex-wrap: wrap;
+
+  .presence-section-unique {
+    padding: 80px 0;
   }
 
-  .presence-image-center .presence-simple-image {
-    max-width: 650px;
+
+  /* Heading */
+
+  .presence-top-title {
+    font-size: 3rem;
+
+    margin-bottom: 50px;
   }
 
-  .presence-new-cards-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
 
-  .card-livelihood .presence-pure-image,
-  .card-impact .presence-pure-image,
-  .card-finance .presence-pure-image {
-    height: 420px;
-  }
+  /* Stats - 3 + 2 */
 
   .presence-impact-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px 35px;
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 45px 30px;
+
     margin-bottom: 60px;
   }
 
+
   .presence-stat-value {
-    font-size: 3.3rem;
+    font-size: 3rem;
+
+    letter-spacing: -1.5px;
   }
+
+
+  .presence-stat-line {
+    width: 90px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .presence-stat-label {
+    font-size: 0.95rem;
+
+    max-width: 210px;
+  }
+
+
+  /* Map */
+
+  .presence-main-box {
+    flex-direction: column;
+
+    text-align: center;
+
+    flex-wrap: wrap;
+  }
+
+
+  .presence-image-center
+  .presence-simple-image {
+    max-width: 750px;
+  }
+
+
+  /* Cards */
+
+  .presence-new-cards-container {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 30px;
+  }
+
+
+  .card-livelihood
+  .presence-pure-image,
+
+  .card-impact
+  .presence-pure-image,
+
+  .card-finance
+  .presence-pure-image {
+    height: 420px;
+  }
+
+
+  .presence-hover-content {
+    padding: 40px;
+  }
+
 }
 
-/* MOBILE */
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 768px) {
+
+  .presence-section-unique {
+    padding: 70px 0;
+  }
+
+
   .presence-container-unique {
     padding: 0 20px;
   }
 
+
+  /* Heading */
+
   .presence-top-title {
     font-size: 2rem;
+
+    margin-bottom: 45px;
+
+    letter-spacing: -0.5px;
   }
 
-  .presence-image-center .presence-simple-image {
+
+  /* Stats - 2 columns */
+
+  .presence-impact-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 40px 25px;
+
+    padding: 0;
+
+    margin-bottom: 55px;
+  }
+
+
+  .presence-stat-item {
+    text-align: left;
+  }
+
+
+  .presence-stat-line {
+    width: 70px;
+
+    height: 4px;
+
+    margin-bottom: 25px;
+  }
+
+
+  .presence-stat-value {
+    font-size: 2.4rem;
+
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+  }
+
+
+  .presence-stat-label {
+    font-size: 0.9rem;
+
+    max-width: 180px;
+  }
+
+
+  /* Map */
+
+  .presence-image-center
+  .presence-simple-image {
     max-width: 100%;
+
     padding: 0 10px;
   }
 
+
+  /* Cards */
+
   .presence-new-cards-container {
     grid-template-columns: 1fr;
+
     gap: 30px;
+
+    margin-top: 60px;
   }
+
 
   .presence-new-card-wrapper {
     width: 100%;
   }
 
+
   .presence-new-card-wrapper.card-finance {
     grid-column: auto;
+
     width: 100%;
+
     justify-self: unset;
   }
 
-  .card-livelihood .presence-pure-image,
-  .card-impact .presence-pure-image,
-  .card-finance .presence-pure-image {
-    height: auto;
-    aspect-ratio: 3 / 2;
-  }
 
   .presence-pure-image {
+    height: auto;
+
+    aspect-ratio: 3 / 2;
+
+    border-radius: 14px;
+  }
+
+
+  .card-livelihood
+  .presence-pure-image,
+
+  .card-impact
+  .presence-pure-image,
+
+  .card-finance
+  .presence-pure-image {
+    height: auto;
+
     aspect-ratio: 3 / 2;
   }
 
-  .presence-impact-stats {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px 25px;
-    padding: 0;
+
+  /* Hover */
+
+  .presence-hover-content {
+    padding: 30px;
   }
 
-  .presence-stat-line {
-    width: 80px;
-    height: 4px;
-    margin-bottom: 35px;
+
+  .presence-hover-content h3 {
+    font-size: 2rem;
   }
 
-  .presence-stat-value {
-    font-size: 2.7rem;
-    letter-spacing: -1px;
-  }
 
-  .presence-stat-label {
+  .presence-hover-content p {
     font-size: 0.95rem;
+
+    line-height: 1.6;
   }
+
 }
 
-/* SMALL MOBILE */
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
 @media (max-width: 480px) {
-  .presence-top-title {
-    font-size: 1.7rem;
+
+  .presence-section-unique {
+    padding: 60px 0;
   }
 
-  .presence-image-center .presence-simple-image {
+
+  .presence-container-unique {
+    padding: 0 16px;
+  }
+
+
+  /* Heading */
+
+  .presence-top-title {
+    font-size: 1.7rem;
+
+    margin-bottom: 40px;
+  }
+
+
+  /* Stats */
+
+  .presence-impact-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 35px 20px;
+  }
+
+
+  .presence-stat-line {
+    width: 60px;
+
+    height: 3px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .presence-stat-value {
+    font-size: 1.9rem;
+
+    letter-spacing: -0.8px;
+
+    white-space: nowrap;
+  }
+
+
+  .presence-stat-label {
+    font-size: 0.82rem;
+
+    line-height: 1.4;
+
+    max-width: 160px;
+  }
+
+
+  /* Map */
+
+  .presence-image-center
+  .presence-simple-image {
     max-width: 100%;
+
     padding: 0 5px;
   }
 
+
+  /* Cards */
+
   .presence-new-cards-container {
     grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin-top: 50px;
   }
+
 
   .presence-pure-image {
     aspect-ratio: 3 / 2;
+
     border-radius: 10px;
   }
 
-  .presence-impact-stats {
-    grid-template-columns: 1fr;
-    gap: 35px;
+
+  .presence-card-title {
+    font-size: 1rem;
+
+    left: 15px;
+
+    bottom: 14px;
   }
 
-  .presence-stat-item {
-    text-align: center;
+
+  /* Hover content */
+
+  .presence-hover-content {
+    padding: 25px;
   }
 
-  .presence-stat-line {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 25px;
+
+  .presence-hover-kicker {
+    font-size: 0.65rem;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 10px;
   }
+
+
+  .presence-hover-content h3 {
+    font-size: 1.6rem;
+
+    margin-bottom: 14px;
+  }
+
+
+  .presence-hover-line {
+    width: 50px;
+
+    margin-bottom: 16px;
+  }
+
+
+  .presence-hover-content p {
+    font-size: 0.86rem;
+
+    line-height: 1.5;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
 
   .presence-stat-value {
-    font-size: 2.8rem;
+    font-size: 1.65rem;
   }
 
+
   .presence-stat-label {
-    max-width: 100%;
-    margin: 0 auto;
+    font-size: 0.78rem;
   }
+
+
+  .presence-top-title {
+    font-size: 1.5rem;
+  }
+
+
+  .presence-impact-stats {
+    gap: 30px 15px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Separate 4th & 5th stats on desktop */
+@media (min-width: 993px) {
+  .presence-stat-item:nth-child(4) {
+    margin-right: 100px;
+  }
+
+  .presence-stat-item:nth-child(5) {
+    margin-left: 100px;
+  }
+}
+
+
+
+
+/* Separate 4th & 5th stats on tablet */
+@media (min-width: 769px) and (max-width: 992px) {
+
+  .presence-stat-item:nth-child(4) {
+    margin-right: 50px;
+  }
+
+  .presence-stat-item:nth-child(5) {
+    margin-left: 50px;
+  }
+
 }
