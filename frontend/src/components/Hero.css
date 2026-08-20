@@ -12,6 +12,9 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+
+  /* Prevent unnecessary browser rendering work */
+  contain: layout paint;
 }
 
 /* =========================================
@@ -25,23 +28,43 @@
   height: 100%;
   overflow: hidden;
   z-index: 1;
+
+  /* Isolate video rendering */
+  contain: strict;
 }
 
 .background-image {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   object-position: center;
+
   position: absolute;
   inset: 0;
+
+  /*
+    Helps browser keep video on its own compositing layer.
+    This is useful for a full-screen animated background.
+  */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  filter: none !important;
+  opacity: 1 !important;
 }
 
+/* Existing overlays intentionally preserved */
 .skyblue-blur-overlay {
   display: none;
 }
 
 .video-overlay {
   display: none;
+}
+
+.image-background::after {
+  display: none !important;
 }
 
 /* =========================================
@@ -51,10 +74,10 @@
 .hero-content {
   position: relative;
   z-index: 3;
+
   width: 100%;
   max-width: 1100px;
 
-  /* Desktop position */
   transform: translateY(100px);
 }
 
@@ -71,7 +94,6 @@
   position: relative;
   width: 100%;
 
-  /* Increased height so text never gets clipped */
   min-height: 300px;
 
   overflow: visible;
@@ -87,7 +109,7 @@
   height: auto;
 
   opacity: 0;
-  transform: translateY(25px);
+  transform: translate3d(0, 25px, 0);
 
   transition:
     opacity 0.8s ease,
@@ -103,11 +125,19 @@
   padding: 20px 30px;
 
   box-sizing: border-box;
+
+  /*
+    Only active slide needs full visual rendering.
+    Helps reduce unnecessary work on inactive slides.
+  */
+  pointer-events: none;
 }
 
 .carousel-slide.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
+
+  pointer-events: auto;
 }
 
 /* =========================================
@@ -115,9 +145,8 @@
 ========================================= */
 
 .carousel-heading {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 
-  /* Smaller than Bootstrap display-2 */
   font-size: 3.6rem !important;
 
   line-height: 1.18;
@@ -128,15 +157,20 @@
 
   color: #ffffff;
 
-  /* Reduced boldness */
   font-weight: 500 !important;
 
   text-shadow: 0 3px 15px rgba(0, 0, 0, 0.45);
+
+  /*
+    Don't allow text to cause unnecessary layout changes.
+  */
+  text-wrap: balance;
 }
 
 /* Highlight */
+
 .carousel-heading .highlight-text {
-  color: #0EA5E9 !important;
+  color: #0ea5e9 !important;
 
   font-weight: 500;
 
@@ -144,6 +178,7 @@
 }
 
 /* White text */
+
 .carousel-heading .white-text {
   color: #ffffff !important;
 
@@ -157,7 +192,7 @@
 ========================================= */
 
 .carousel-paragraph {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 
   width: 100%;
   max-width: 720px;
@@ -170,7 +205,6 @@
 
   color: #ffffff !important;
 
-  /* Less bold */
   font-weight: 400 !important;
 
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
@@ -199,11 +233,21 @@
 
   cursor: pointer;
 
-  transition: all 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  /*
+    Small elements can be promoted without expensive layout.
+  */
+  transform: translateZ(0);
 }
 
 .indicator.active {
   background: #ffffff;
+
   border-color: #ffffff;
 
   transform: scale(1.25);
@@ -221,7 +265,6 @@
 ========================================= */
 
 @media (max-width: 1200px) {
-
   .hero-content {
     transform: translateY(80px);
   }
@@ -241,7 +284,6 @@
 ========================================= */
 
 @media (max-width: 992px) {
-
   .hero-content {
     transform: translateY(60px);
   }
@@ -271,7 +313,6 @@
 ========================================= */
 
 @media (max-width: 768px) {
-
   .hero-section {
     padding: 40px 15px;
   }
@@ -298,7 +339,6 @@
 
     margin-bottom: 16px !important;
 
-    /* Normal/medium */
     font-weight: 500 !important;
   }
 
@@ -322,7 +362,6 @@
 ========================================= */
 
 @media (max-width: 576px) {
-
   .hero-section {
     padding: 30px 12px;
   }
@@ -337,7 +376,6 @@
 
   .carousel-slide {
     min-height: 310px;
-
     padding: 20px 10px;
   }
 
@@ -365,6 +403,7 @@
 
   .carousel-indicators {
     gap: 10px;
+
     margin-top: 18px !important;
   }
 
@@ -384,7 +423,6 @@
 ========================================= */
 
 @media (max-width: 400px) {
-
   .hero-content {
     transform: translateY(25px);
   }
@@ -418,21 +456,17 @@
   }
 }
 
+/* =========================================
+   ACCESSIBILITY / PERFORMANCE
+========================================= */
 
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide {
+    transition: none;
+    transform: none;
+  }
 
-
-
-
-
-
-
-
-
-
-.background-image {
-  filter: none !important;
-  opacity: 1 !important;
-}
-.image-background::after {
-  display: none !important;
+  .indicator {
+    transition: none;
+  }
 }
