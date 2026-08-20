@@ -118,7 +118,7 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/images/EssentitalLogo.png";
+import logo from "../assets/images/Logo.png";
 
 import {
   FaFacebookF,
