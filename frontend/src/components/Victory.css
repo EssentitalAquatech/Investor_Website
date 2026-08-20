@@ -201,7 +201,7 @@
 .sp-play-btn svg { width: 22px; height: 22px; fill: var(--sp-sky-deep); margin-left: 3px; }
 .sp-card:hover .sp-play-btn { transform: scale(1.08); background: #fff; }
 
-.sp-tag {
+/* .sp-tag {
   position: absolute;
   top: 14px; left: 14px;
   background: rgba(255,255,255,0.95);
@@ -213,7 +213,7 @@
   padding: 6px 10px;
   border-radius: 999px;
   box-shadow: 0 4px 12px rgba(2, 132, 199, 0.18);
-}
+} */
 
 /* Body */
 .sp-body {
