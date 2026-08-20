@@ -30,8 +30,11 @@
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.15;
+
   margin: 0 0 60px;
+
   color: #000000;
+
   letter-spacing: -1.5px;
 }
 
@@ -51,19 +54,29 @@
 
 .presence-impact-stats {
   width: 100%;
+
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
   gap: 30px;
+
   margin: 0 auto 80px;
+
   padding: 0;
+
   align-items: start;
 }
 
 
 .presence-stat-item {
   position: relative;
+
   width: 100%;
+
   min-width: 0;
+
   text-align: left;
 }
 
@@ -75,8 +88,11 @@
 .presence-stat-line {
   width: 100px;
   height: 5px;
+
   background: #0ea5e9;
+
   border-radius: 10px;
+
   margin-bottom: 35px;
 }
 
@@ -86,12 +102,22 @@
 ========================================================= */
 
 .presence-stat-value {
-  font-size: clamp(2.5rem, 3.2vw, 4rem);
+  font-size: clamp(
+    2.5rem,
+    3.2vw,
+    4rem
+  );
+
   line-height: 1;
+
   font-weight: 700;
+
   color: #0ea5e9;
+
   margin-bottom: 14px;
+
   letter-spacing: -2px;
+
   white-space: nowrap;
 }
 
@@ -102,9 +128,13 @@
 
 .presence-stat-label {
   max-width: 220px;
+
   font-size: 1rem;
+
   line-height: 1.45;
+
   color: #111111;
+
   font-weight: 400;
 }
 
@@ -115,8 +145,11 @@
 
 .presence-main-box {
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   width: 100%;
 }
 
@@ -127,56 +160,126 @@
 
 .presence-image-center {
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   width: 100%;
 }
 
 
-.presence-image-center .presence-simple-image {
+.presence-image-center
+.presence-simple-image {
   width: 100%;
+
   max-width: 1500px;
+
   height: auto;
+
   display: block;
 
-  /* Browser image decoding optimization */
   content-visibility: auto;
 }
 
 
 /* =========================================================
-   IMPACT CARDS
+   CARDS SECTION
+========================================================= */
+
+.presence-cards-section {
+  width: 100%;
+
+  margin-top: 80px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   AUTO SCROLL CONTAINER
 ========================================================= */
 
 .presence-new-cards-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  display: flex;
+
+  align-items: center;
+
   gap: 35px;
-  margin-top: 80px;
+
   width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  /*
+   * IMPORTANT:
+   * Enables horizontal finger swipe.
+   */
+  touch-action: pan-x;
+
+  /*
+   * iPhone / iPad smooth touch scrolling.
+   */
+  -webkit-overflow-scrolling: touch;
+
+  /*
+   * Hide scrollbar.
+   */
+  scrollbar-width: none;
+
+  /*
+   * Prevent text selection while dragging.
+   */
+  user-select: none;
+
+  -webkit-user-select: none;
+
+  /*
+   * Prevent vertical overscroll.
+   */
+  overscroll-behavior-x: contain;
+
+  scroll-behavior: auto;
+
+  /*
+   * IMPORTANT:
+   * Do NOT use grid here.
+   * Flex allows continuous horizontal scrolling.
+   */
+  white-space: nowrap;
 }
 
+
+.presence-new-cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   CARD WRAPPER
+========================================================= */
 
 .presence-new-card-wrapper {
+
+  flex: 0 0 auto;
+
+  width: 420px;
+
+  min-width: 420px;
+
+  white-space: normal;
+}
+
+
+/* =========================================================
+   CARD CONTAINER
+========================================================= */
+
+.presence-card-container {
   width: 100%;
-  min-width: 0;
-}
-
-
-/* Top two cards */
-
-.presence-new-card-wrapper.card-livelihood,
-.presence-new-card-wrapper.card-impact {
-  grid-column: span 1;
-}
-
-
-/* Finance card */
-
-.presence-new-card-wrapper.card-finance {
-  grid-column: 1 / -1;
-  width: calc((100% - 35px) / 2);
-  justify-self: center;
 }
 
 
@@ -185,31 +288,26 @@
 ========================================================= */
 
 .presence-pure-image {
+
   width: 100%;
+
   height: 400px;
 
   background-size: 100% 100%;
+
   background-position: center;
+
   background-repeat: no-repeat;
 
   position: relative;
 
   border-radius: 16px;
+
   overflow: hidden;
 
   background-color: #ffffff;
 
-  /* Reduce unnecessary browser work */
   contain: layout paint;
-}
-
-
-/* Same height */
-
-.card-livelihood .presence-pure-image,
-.card-impact .presence-pure-image,
-.card-finance .presence-pure-image {
-  height: 400px;
 }
 
 
@@ -218,18 +316,25 @@
 ========================================================= */
 
 .presence-card-title {
+
   position: absolute;
+
   bottom: 15px;
+
   left: 15px;
 
   color: #ffffff;
+
   font-weight: 600;
+
   font-size: 1.2rem;
 
   z-index: 2;
 
   text-shadow:
     0 2px 8px rgba(0, 0, 0, 0.5);
+
+  pointer-events: none;
 }
 
 
@@ -238,7 +343,9 @@
 ========================================================= */
 
 .presence-hover-content {
+
   position: absolute;
+
   inset: 0;
 
   background:
@@ -253,7 +360,9 @@
   padding: 55px;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
 
   opacity: 0;
@@ -265,13 +374,19 @@
     transform 0.4s ease;
 
   z-index: 5;
+
+  pointer-events: none;
 }
 
 
 .presence-pure-image.hovered
 .presence-hover-content {
+
   opacity: 1;
+
   transform: translateY(0);
+
+  pointer-events: auto;
 }
 
 
@@ -280,11 +395,17 @@
 ========================================================= */
 
 .presence-hover-kicker {
+
   font-size: 0.78rem;
+
   font-weight: 700;
+
   letter-spacing: 2.5px;
+
   text-transform: uppercase;
+
   margin-bottom: 14px;
+
   opacity: 0.8;
 }
 
@@ -294,10 +415,20 @@
 ========================================================= */
 
 .presence-hover-content h3 {
-  font-size: clamp(2rem, 3vw, 3rem);
+
+  font-size:
+    clamp(
+      2rem,
+      3vw,
+      3rem
+    );
+
   line-height: 1.1;
+
   margin: 0 0 18px;
+
   font-weight: 700;
+
   letter-spacing: -0.5px;
 }
 
@@ -307,10 +438,15 @@
 ========================================================= */
 
 .presence-hover-line {
+
   width: 65px;
+
   height: 3px;
+
   background: #52e5e3;
+
   border-radius: 10px;
+
   margin-bottom: 24px;
 }
 
@@ -320,11 +456,22 @@
 ========================================================= */
 
 .presence-hover-content p {
+
   max-width: 650px;
+
   margin: 0;
+
   font-size: 1.08rem;
+
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.9);
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.9
+    );
 }
 
 
@@ -358,9 +505,15 @@
 
 
 .visible {
+
   opacity: 1;
 
-  transform: translate3d(0, 0, 0);
+  transform:
+    translate3d(
+      0,
+      0,
+      0
+    );
 
   transition:
     opacity 0.8s ease,
@@ -376,17 +529,21 @@
   transition-delay: 0.2s;
 }
 
+
 .delay-1 {
   transition-delay: 0.4s;
 }
+
 
 .delay-2 {
   transition-delay: 0.6s;
 }
 
+
 .delay-3 {
   transition-delay: 0.8s;
 }
+
 
 .delay-4 {
   transition-delay: 1s;
@@ -405,7 +562,9 @@
   .fade-up,
   .fade-down,
   .presence-hover-content {
+
     transition: none !important;
+
     transform: none !important;
   }
 
@@ -425,32 +584,60 @@
     padding: 0 30px;
   }
 
+
   .presence-impact-stats {
+
     grid-template-columns:
-      repeat(5, minmax(0, 1fr));
+      repeat(
+        5,
+        minmax(
+          0,
+          1fr
+        )
+      );
 
     gap: 20px;
   }
 
+
   .presence-stat-line {
+
     width: 80px;
+
     height: 4px;
+
     margin-bottom: 30px;
   }
 
+
   .presence-stat-value {
+
     font-size: 2.7rem;
+
     letter-spacing: -1.5px;
   }
 
+
   .presence-stat-label {
+
     font-size: 0.9rem;
+
     max-width: 190px;
   }
 
+
   .presence-image-center
   .presence-simple-image {
+
     max-width: 1100px;
+  }
+
+
+  .presence-new-card-wrapper {
+
+    width: 380px;
+
+    min-width: 380px;
   }
 }
 
@@ -465,64 +652,98 @@
     padding: 80px 0;
   }
 
+
   .presence-top-title {
+
     font-size: 3rem;
+
     margin-bottom: 50px;
   }
 
+
   .presence-impact-stats {
+
     grid-template-columns:
-      repeat(3, 1fr);
+      repeat(
+        3,
+        1fr
+      );
 
     gap: 45px 30px;
+
     margin-bottom: 60px;
   }
 
+
   .presence-stat-value {
+
     font-size: 3rem;
+
     letter-spacing: -1.5px;
   }
 
+
   .presence-stat-line {
+
     width: 90px;
+
     margin-bottom: 30px;
   }
 
+
   .presence-stat-label {
+
     font-size: 0.95rem;
+
     max-width: 210px;
   }
 
+
   .presence-main-box {
+
     flex-direction: column;
+
     text-align: center;
+
     flex-wrap: wrap;
   }
 
+
   .presence-image-center
   .presence-simple-image {
+
     max-width: 750px;
   }
 
+
+  .presence-cards-section {
+
+    margin-top: 60px;
+  }
+
+
   .presence-new-cards-container {
-    grid-template-columns:
-      repeat(2, 1fr);
 
     gap: 30px;
   }
 
-  .card-livelihood
-  .presence-pure-image,
 
-  .card-impact
-  .presence-pure-image,
+  .presence-new-card-wrapper {
 
-  .card-finance
+    width: 360px;
+
+    min-width: 360px;
+  }
+
+
   .presence-pure-image {
+
     height: 420px;
   }
 
+
   .presence-hover-content {
+
     padding: 40px;
   }
 }
@@ -535,99 +756,171 @@
 @media (max-width: 768px) {
 
   .presence-section-unique {
+
     padding: 70px 0;
   }
 
+
   .presence-container-unique {
+
     padding: 0 20px;
   }
 
+
   .presence-top-title {
+
     font-size: 2rem;
+
     margin-bottom: 45px;
+
     letter-spacing: -0.5px;
   }
 
+
   .presence-impact-stats {
+
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(
+        2,
+        1fr
+      );
 
     gap: 40px 25px;
+
     padding: 0;
+
     margin-bottom: 55px;
   }
 
+
   .presence-stat-item {
+
     text-align: left;
   }
 
+
   .presence-stat-line {
+
     width: 70px;
+
     height: 4px;
+
     margin-bottom: 25px;
   }
 
+
   .presence-stat-value {
+
     font-size: 2.4rem;
+
     letter-spacing: -1px;
+
     white-space: nowrap;
   }
 
+
   .presence-stat-label {
+
     font-size: 0.9rem;
+
     max-width: 180px;
   }
 
+
   .presence-image-center
   .presence-simple-image {
+
     max-width: 100%;
+
     padding: 0 10px;
   }
 
-  .presence-new-cards-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-top: 60px;
+
+  /* ---------------------------------------------
+     MOBILE HORIZONTAL CARD SCROLL
+  --------------------------------------------- */
+
+  .presence-cards-section {
+
+    margin-top: 55px;
+
+    width: calc(
+      100% + 20px
+    );
+
+    margin-left: -10px;
   }
+
+
+  .presence-new-cards-container {
+
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding: 10px;
+
+    touch-action: pan-x;
+
+    -webkit-overflow-scrolling: touch;
+
+    scroll-behavior: auto;
+
+    scrollbar-width: none;
+
+    overscroll-behavior-x: contain;
+  }
+
+
+  .presence-new-cards-container::-webkit-scrollbar {
+    display: none;
+  }
+
 
   .presence-new-card-wrapper {
-    width: 100%;
+
+    flex: 0 0 auto;
+
+    width: 300px;
+
+    min-width: 300px;
   }
 
-  .presence-new-card-wrapper.card-finance {
-    grid-column: auto;
-    width: 100%;
-    justify-self: unset;
-  }
 
   .presence-pure-image {
+
+    width: 100%;
+
     height: auto;
+
     aspect-ratio: 3 / 2;
+
     border-radius: 14px;
   }
 
-  .card-livelihood
-  .presence-pure-image,
-
-  .card-impact
-  .presence-pure-image,
-
-  .card-finance
-  .presence-pure-image {
-    height: auto;
-    aspect-ratio: 3 / 2;
-  }
 
   .presence-hover-content {
+
     padding: 30px;
   }
 
+
   .presence-hover-content h3 {
+
     font-size: 2rem;
   }
 
+
   .presence-hover-content p {
+
     font-size: 0.95rem;
+
     line-height: 1.6;
   }
 }
@@ -640,88 +933,162 @@
 @media (max-width: 480px) {
 
   .presence-section-unique {
+
     padding: 60px 0;
   }
 
+
   .presence-container-unique {
+
     padding: 0 16px;
   }
 
+
   .presence-top-title {
+
     font-size: 1.7rem;
+
     margin-bottom: 40px;
   }
 
+
   .presence-impact-stats {
+
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(
+        2,
+        1fr
+      );
 
     gap: 35px 20px;
   }
 
+
   .presence-stat-line {
+
     width: 60px;
+
     height: 3px;
+
     margin-bottom: 20px;
   }
 
+
   .presence-stat-value {
+
     font-size: 1.9rem;
+
     letter-spacing: -0.8px;
+
     white-space: nowrap;
   }
 
+
   .presence-stat-label {
+
     font-size: 0.82rem;
+
     line-height: 1.4;
+
     max-width: 160px;
   }
 
+
   .presence-image-center
   .presence-simple-image {
+
     max-width: 100%;
+
     padding: 0 5px;
   }
 
-  .presence-new-cards-container {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    margin-top: 50px;
+
+  /* ---------------------------------------------
+     SMALL MOBILE CARD SIZE
+  --------------------------------------------- */
+
+  .presence-cards-section {
+
+    margin-top: 45px;
+
+    width: calc(
+      100% + 16px
+    );
+
+    margin-left: -8px;
   }
 
+
+  .presence-new-cards-container {
+
+    gap: 16px;
+
+    padding: 8px;
+  }
+
+
+  .presence-new-card-wrapper {
+
+    width: 280px;
+
+    min-width: 280px;
+  }
+
+
   .presence-pure-image {
+
     aspect-ratio: 3 / 2;
+
     border-radius: 10px;
   }
 
+
   .presence-card-title {
+
     font-size: 1rem;
+
     left: 15px;
+
     bottom: 14px;
   }
 
+
   .presence-hover-content {
+
     padding: 25px;
   }
 
+
   .presence-hover-kicker {
+
     font-size: 0.65rem;
+
     letter-spacing: 1.8px;
+
     margin-bottom: 10px;
   }
 
+
   .presence-hover-content h3 {
+
     font-size: 1.6rem;
+
     margin-bottom: 14px;
   }
 
+
   .presence-hover-line {
+
     width: 50px;
+
     margin-bottom: 16px;
   }
 
+
   .presence-hover-content p {
+
     font-size: 0.86rem;
+
     line-height: 1.5;
   }
 }
@@ -734,19 +1101,34 @@
 @media (max-width: 360px) {
 
   .presence-stat-value {
+
     font-size: 1.65rem;
   }
 
+
   .presence-stat-label {
+
     font-size: 0.78rem;
   }
 
+
   .presence-top-title {
+
     font-size: 1.5rem;
   }
 
+
   .presence-impact-stats {
+
     gap: 30px 15px;
+  }
+
+
+  .presence-new-card-wrapper {
+
+    width: 260px;
+
+    min-width: 260px;
   }
 }
 
@@ -758,10 +1140,13 @@
 @media (min-width: 993px) {
 
   .presence-stat-item:nth-child(4) {
+
     margin-right: 100px;
   }
 
+
   .presence-stat-item:nth-child(5) {
+
     margin-left: 100px;
   }
 }
@@ -771,13 +1156,17 @@
    TABLET STAT POSITIONING
 ========================================================= */
 
-@media (min-width: 769px) and (max-width: 992px) {
+@media (min-width: 769px)
+and (max-width: 992px) {
 
   .presence-stat-item:nth-child(4) {
+
     margin-right: 50px;
   }
 
+
   .presence-stat-item:nth-child(5) {
+
     margin-left: 50px;
   }
 }
