@@ -149,8 +149,8 @@ export default function WhatWeDo() {
           <p className="wwd__subtitle">We&rsquo;re not just another Aquatech company</p>
           <p className="wwd__lead">
             We are building the intelligence layer for aquaculture — combining AI,
-            satellite, weather, water and farm data to make aquaculture more predictive,
-            profitable and sustainable.
+            Satellite, Weather, Astronomical and Pond data to make aquaculture more Predictive,
+            Profitable and Sustainable.
           </p>
         </header>
 
