@@ -379,14 +379,20 @@ function AboutMission() {
       {/* =========================
           SECTION 3 — OUR VALUES
       ========================= */}
-      <MissionSection
-        id="mission-section-3"
-        imageSrc={valuesImage}
-        heading="Our Values"
-        subheading="Innovation With Purpose, Intelligence With Impact"
-        text="We put farmers first, act responsibly toward the planet, take ownership of every outcome, think boldly about the future, and hold ourselves to a high standard of execution. These values guide how we build technology, work with our ecosystem, and create lasting impact across aquaculture."
-        imageOnLeft={true}
-      />
+     <MissionSection 
+  id="mission-section-3" 
+  imageSrc={valuesImage} 
+  heading="Our Values" 
+  subheading={
+    <>
+      Innovation With Purpose, Intelligence With Impact,
+      <br />
+      We build on truth.
+    </>
+  } 
+  text="We put farmers first, act responsibly toward the planet, take ownership of every outcome, think boldly about the future, and hold ourselves to a high standard of execution. These values guide how we build technology, work with our ecosystem, and create lasting impact across aquaculture." 
+  imageOnLeft={true} 
+/>
 
     </div>
   );

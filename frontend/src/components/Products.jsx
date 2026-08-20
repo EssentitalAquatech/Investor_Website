@@ -1,6 +1,8 @@
 
 
 
+
+
 // import React, { useEffect, useRef } from "react";
 // import { useNavigate } from "react-router-dom";
 // import "./Products.css";
@@ -18,6 +20,10 @@
 // const aquaRiskImage =
 //   "https://res.cloudinary.com/p8fs2e1n/image/upload/Risk.png";
 
+
+// /* =========================================================
+//    PRODUCT SECTION
+// ========================================================= */
 
 // function ProductSection({
 //   imageSrc,
@@ -89,7 +95,7 @@
 
 //           <div className="product-content-wrapper">
 
-//             {/* Eyebrow */}
+//             {/* ================= EYEBROW ================= */}
 //             <div className="product-eyebrow">
 
 //               <span className="product-number">
@@ -105,25 +111,25 @@
 //             </div>
 
 
-//             {/* Title */}
+//             {/* ================= TITLE ================= */}
 //             <h3 className="product-title">
 //               {title}
 //             </h3>
 
 
-//             {/* Tagline */}
+//             {/* ================= TAGLINE ================= */}
 //             <h4 className="product-tagline">
 //               {tagline}
 //             </h4>
 
 
-//             {/* Description */}
+//             {/* ================= DESCRIPTION ================= */}
 //             <p className="product-text">
 //               {description}
 //             </p>
 
 
-//             {/* Learn More */}
+//             {/* ================= LEARN MORE ================= */}
 //             <button
 //               className="learn-more-btn"
 //               onClick={handleLearnMore}
@@ -169,6 +175,183 @@
 // }
 
 
+// /* =========================================================
+//    SECONDARY PRODUCTS SECTION
+// ========================================================= */
+
+// function SecondaryProducts() {
+
+//   const sectionRef = useRef(null);
+
+//   useEffect(() => {
+
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+
+//         entries.forEach((entry) => {
+
+//           if (entry.isIntersecting) {
+
+//             entry.target.classList.add("visible");
+
+//             observer.disconnect();
+
+//           }
+
+//         });
+
+//       },
+//       {
+//         threshold: 0.2
+//       }
+//     );
+
+
+//     if (sectionRef.current) {
+//       observer.observe(sectionRef.current);
+//     }
+
+
+//     return () => observer.disconnect();
+
+//   }, []);
+
+
+//   /* ================================
+//      FISHHAAT BUTTON
+//   ================================= */
+
+//   const handleExploreClick = () => {
+
+//     window.open(
+//       "https://fishhaat.com/",
+//       "_blank"
+//     );
+
+//   };
+
+
+//   return (
+
+//     <div
+//       ref={sectionRef}
+//       className="secondary-products-section"
+//     >
+
+//       <div className="secondary-products-content">
+
+
+//         {/* ================================
+//            EYEBROW
+//         ================================= */}
+
+//         <div className="secondary-products-eyebrow">
+
+//           <span className="secondary-products-line"></span>
+
+//           <span>
+//             SECONDARY PRODUCTS
+//           </span>
+
+//           <span className="secondary-products-line"></span>
+
+//         </div>
+
+
+//         {/* ================================
+//            HEADING
+//         ================================= */}
+
+//         <h2 className="secondary-products-title">
+
+//           Another{" "}
+
+//           <span>
+//             Secondary Products
+//           </span>
+
+//         </h2>
+
+
+//         {/* ================================
+//            DESCRIPTION
+//         ================================= */}
+
+//         <p className="secondary-products-text">
+
+//           Looking for products and solutions related to
+//           fish farming? Explore FishHaat for a wide range
+//           of fish farming products designed to support
+//           farmers in their everyday aquaculture needs.
+
+//         </p>
+
+
+//         {/* ================================
+//            SUBTEXT
+//         ================================= */}
+
+//         <p className="secondary-products-subtext">
+
+//           Visit FishHaat.com to explore more fish farming
+//           products and find the right solutions for your farm.
+
+//         </p>
+
+
+//         {/* ================================
+//            EXPLORE BUTTON
+//         ================================= */}
+
+//         <button
+//           className="explore-btn secondary-explore-btn"
+//           onClick={handleExploreClick}
+//         >
+
+//           <span>
+//             Explore More Products
+//           </span>
+
+
+//           <svg
+//             className="explore-icon"
+//             width="20"
+//             height="20"
+//             viewBox="0 0 20 20"
+//             fill="none"
+//             xmlns="http://www.w3.org/2000/svg"
+//           >
+
+//             <path
+//               d="M4 10H16"
+//               stroke="currentColor"
+//               strokeWidth="2"
+//               strokeLinecap="round"
+//             />
+
+//             <path
+//               d="M11 5L16 10L11 15"
+//               stroke="currentColor"
+//               strokeWidth="2"
+//               strokeLinecap="round"
+//             />
+
+//           </svg>
+
+//         </button>
+
+//       </div>
+
+//     </div>
+
+//   );
+// }
+
+
+// /* =========================================================
+//    MAIN PRODUCTS COMPONENT
+// ========================================================= */
+
 // export default function Products() {
 
 //   const sections = [
@@ -176,6 +359,7 @@
 //     /* =====================================
 //        01 — FISHOS
 //     ===================================== */
+
 //     {
 //       imageSrc: aquaImage,
 
@@ -194,6 +378,7 @@
 //     /* =====================================
 //        02 — MEENAMMA AI
 //     ===================================== */
+
 //     {
 //       imageSrc: meenammaImage,
 
@@ -212,6 +397,7 @@
 //     /* =====================================
 //        03 — AQUASENSE
 //     ===================================== */
+
 //     {
 //       imageSrc: aquaSenseImage,
 
@@ -230,6 +416,7 @@
 //     /* =====================================
 //        04 — AQUARISK
 //     ===================================== */
+
 //     {
 //       imageSrc: aquaRiskImage,
 
@@ -247,30 +434,27 @@
 //   ];
 
 
-//   /* =====================================
-//      FISHHAAT
-//   ===================================== */
-//   const handleExploreClick = () => {
-//     window.open(
-//       "https://fishhaat.com/",
-//       "_blank"
-//     );
-//   };
-
-
 //   return (
+
 //     <section className="products-main">
 
 //       <div className="container">
 
-//         {/* ================= HEADING ================= */}
+
+//         {/* ================================
+//            MAIN HEADING
+//         ================================= */}
 
 //         <h2 className="products-heading">
+
 //           Our <span>Products</span>
+
 //         </h2>
 
 
-//         {/* ================= MAIN PRODUCTS ================= */}
+//         {/* ================================
+//            MAIN PRODUCTS
+//         ================================= */}
 
 //         {sections.map((item, index) => (
 
@@ -293,100 +477,18 @@
 //         ))}
 
 
-//         {/* ==========================================
-//             SECONDARY PRODUCTS
-//         ========================================== */}
+//         {/* ================================
+//            SECONDARY PRODUCTS
+//         ================================= */}
 
-//         <div className="secondary-products-section">
-
-//           <div className="secondary-products-content">
-
-//             {/* Eyebrow */}
-//             <div className="secondary-products-eyebrow">
-
-//               <span className="secondary-products-line"></span>
-
-//               <span>
-//                 SECONDARY PRODUCTS
-//               </span>
-
-//             </div>
-
-
-//             {/* Heading */}
-//             <h2 className="secondary-products-title">
-//               Another <span>Secondary Products</span>
-//             </h2>
-
-
-//             {/* Description */}
-//             <p className="secondary-products-text">
-//               Looking for products and solutions related to
-//               fish farming? Explore FishHaat for a wide range
-//               of fish farming products designed to support
-//               farmers in their everyday aquaculture needs.
-//             </p>
-
-
-//             <p className="secondary-products-subtext">
-//               Visit FishHaat.com to explore more fish farming
-//               products and find the right solutions for your farm.
-//             </p>
-
-
-//             {/* Explore Button */}
-//             <button
-//               className="explore-btn secondary-explore-btn"
-//               onClick={handleExploreClick}
-//             >
-
-//               <span>
-//                 Explore More Products
-//               </span>
-
-
-//               <svg
-//                 className="explore-icon"
-//                 width="20"
-//                 height="20"
-//                 viewBox="0 0 20 20"
-//                 fill="none"
-//                 xmlns="http://www.w3.org/2000/svg"
-//               >
-
-//                 <path
-//                   d="M4 10H16"
-//                   stroke="currentColor"
-//                   strokeWidth="2"
-//                   strokeLinecap="round"
-//                 />
-
-
-//                 <path
-//                   d="M11 5L16 10L11 15"
-//                   stroke="currentColor"
-//                   strokeWidth="2"
-//                   strokeLinecap="round"
-//                 />
-
-//               </svg>
-
-//             </button>
-
-//           </div>
-
-//         </div>
+//         <SecondaryProducts />
 
 //       </div>
 
 //     </section>
+
 //   );
 // }
-
-
-
-
-
 
 
 
@@ -645,33 +747,15 @@ function SecondaryProducts() {
 
 
         {/* ================================
-           EYEBROW
-        ================================= */}
-
-        <div className="secondary-products-eyebrow">
-
-          <span className="secondary-products-line"></span>
-
-          <span>
-            SECONDARY PRODUCTS
-          </span>
-
-          <span className="secondary-products-line"></span>
-
-        </div>
-
-
-        {/* ================================
            HEADING
         ================================= */}
 
         <h2 className="secondary-products-title">
 
-          Another{" "}
-
-          <span>
-            Secondary Products
-          </span>
+          <span className="fishhaat-highlight">
+            FishHaat
+          </span>{" "}
+          — India's Freshwater Aquaculture Marketplace
 
         </h2>
 
@@ -682,28 +766,17 @@ function SecondaryProducts() {
 
         <p className="secondary-products-text">
 
-          Looking for products and solutions related to
-          fish farming? Explore FishHaat for a wide range
-          of fish farming products designed to support
-          farmers in their everyday aquaculture needs.
+          FishHaat delivers quality fish health medicines,
+          feed supplements, and fingerlings, fish feed
+          directly to farmers — backed by MeenAmma's
+          diagnostic intelligence. The right input, at the
+          right time, for the right pond.
 
         </p>
 
 
         {/* ================================
-           SUBTEXT
-        ================================= */}
-
-        <p className="secondary-products-subtext">
-
-          Visit FishHaat.com to explore more fish farming
-          products and find the right solutions for your farm.
-
-        </p>
-
-
-        {/* ================================
-           EXPLORE BUTTON
+           VISIT FISHHAAT BUTTON
         ================================= */}
 
         <button
@@ -712,7 +785,7 @@ function SecondaryProducts() {
         >
 
           <span>
-            Explore More Products
+            Visit FishHaat
           </span>
 
 
@@ -748,6 +821,7 @@ function SecondaryProducts() {
     </div>
 
   );
+
 }
 
 
@@ -881,7 +955,7 @@ export default function Products() {
 
 
         {/* ================================
-           SECONDARY PRODUCTS
+           FISHHAAT / SECONDARY PRODUCT
         ================================= */}
 
         <SecondaryProducts />
@@ -891,4 +965,5 @@ export default function Products() {
     </section>
 
   );
+
 }

@@ -292,7 +292,7 @@ import "./Presence.css";
 // =====================================================
 
 const indiaMap =
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/World1.png";
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/world1.png";
 
 
 // =====================================================
