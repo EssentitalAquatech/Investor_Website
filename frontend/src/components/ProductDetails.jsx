@@ -43,12 +43,43 @@
 //       "Aquaculture generates enormous amounts of information across ponds, farmers, weather, water quality, production history and farm operations. FishOS brings these fragmented signals together into one connected intelligence platform.",
 
 //     features: [
-//       "Unified farm and pond data",
-//       "AI-powered farm intelligence",
-//       "Real-time operational insights",
-//       "Pond and production monitoring",
-//       "Weather and environmental intelligence",
-//       "Actionable recommendations"
+
+//       {
+//         title: "Unified farm and pond data",
+//         description:
+//           "Brings farm, pond, production and operational data together into one connected intelligence system."
+//       },
+
+//       {
+//         title: "AI-powered farm intelligence",
+//         description:
+//           "Uses AI to transform complex aquaculture data into clear insights that support faster and smarter farm decisions."
+//       },
+
+//       {
+//         title: "Real-time operational insights",
+//         description:
+//           "Provides timely visibility into farm operations, helping teams understand changing conditions and respond quickly."
+//       },
+
+//       {
+//         title: "Pond and production monitoring",
+//         description:
+//           "Tracks key pond and production signals to help farmers monitor performance and identify important changes."
+//       },
+
+//       {
+//         title: "Weather and environmental intelligence",
+//         description:
+//           "Combines weather and environmental data to reveal conditions that can influence pond health and farm productivity."
+//       },
+
+//       {
+//         title: "Actionable recommendations",
+//         description:
+//           "Converts farm intelligence into practical recommendations that help farmers decide what to do next."
+//       }
+
 //     ],
 
 //     bottomText:
@@ -76,12 +107,43 @@
 //       "Farmers often have access to large amounts of information but need simple and timely answers. Meenamma AI understands aquaculture conversations and turns complex farm intelligence into practical guidance.",
 
 //     features: [
-//       "Natural language conversations",
-//       "Farmer-friendly AI assistance",
-//       "Pond and fish health guidance",
-//       "Feeding recommendations",
-//       "Water-quality insights",
-//       "Personalized farm recommendations"
+
+//       {
+//         title: "Natural language conversations",
+//         description:
+//           "Lets farmers interact with aquaculture intelligence naturally through simple, everyday conversations."
+//       },
+
+//       {
+//         title: "Farmer-friendly AI assistance",
+//         description:
+//           "Turns complex aquaculture information into simple, understandable guidance that farmers can act on."
+//       },
+
+//       {
+//         title: "Pond and fish health guidance",
+//         description:
+//           "Helps farmers understand pond and fish health conditions and provides guidance for better farm management."
+//       },
+
+//       {
+//         title: "Feeding recommendations",
+//         description:
+//           "Provides intelligent feeding guidance based on farm conditions to support efficient feeding and healthier fish growth."
+//       },
+
+//       {
+//         title: "Water-quality insights",
+//         description:
+//           "Helps farmers interpret water-quality conditions and understand their potential impact on fish and pond performance."
+//       },
+
+//       {
+//         title: "Personalized farm recommendations",
+//         description:
+//           "Uses farm-specific information to provide recommendations tailored to the farmer's pond, conditions and needs."
+//       }
+
 //     ],
 
 //     bottomText:
@@ -109,12 +171,43 @@
 //       "Pond conditions are influenced by weather, geography, surrounding land, water conditions and environmental changes. AquaSense brings these signals together using satellite, weather, geospatial and environmental intelligence.",
 
 //     features: [
-//       "Satellite-based farm monitoring",
-//       "Weather intelligence",
-//       "Geospatial farm insights",
-//       "Environmental condition monitoring",
-//       "Early detection of changing conditions",
-//       "Location-based risk signals"
+
+//       {
+//         title: "Satellite-based farm monitoring",
+//         description:
+//           "Uses satellite imagery to monitor aquaculture farms and identify changes across ponds and surrounding areas."
+//       },
+
+//       {
+//         title: "Weather intelligence",
+//         description:
+//           "Delivers weather insights that help farmers understand upcoming conditions and prepare for their potential impact."
+//       },
+
+//       {
+//         title: "Geospatial farm insights",
+//         description:
+//           "Analyzes location and geographic information to reveal patterns and conditions influencing aquaculture farms."
+//       },
+
+//       {
+//         title: "Environmental condition monitoring",
+//         description:
+//           "Monitors environmental signals around farms to provide a broader understanding of pond and farm conditions."
+//       },
+
+//       {
+//         title: "Early detection of changing conditions",
+//         description:
+//           "Identifies emerging environmental and farm-level changes early, helping farmers respond before risks become bigger problems."
+//       },
+
+//       {
+//         title: "Location-based risk signals",
+//         description:
+//           "Generates location-specific risk signals by combining geographic, environmental and weather information."
+//       }
+
 //     ],
 
 //     bottomText:
@@ -142,12 +235,43 @@
 //       "Traditional financial and insurance decisions can be difficult when farm-level information is limited. AquaRisk uses farm intelligence, production history and environmental signals to create a deeper understanding of aquaculture risk.",
 
 //     features: [
-//       "Farm-level risk intelligence",
-//       "Credit decision support",
-//       "Insurance risk assessment",
-//       "Production history insights",
-//       "Environmental risk signals",
-//       "Portfolio-level aquaculture intelligence"
+
+//       {
+//         title: "Farm-level risk intelligence",
+//         description:
+//           "Builds a deeper understanding of individual farm risk using operational, production and environmental intelligence."
+//       },
+
+//       {
+//         title: "Credit decision support",
+//         description:
+//           "Provides data-driven farm insights that can help financial institutions make more informed aquaculture credit decisions."
+//       },
+
+//       {
+//         title: "Insurance risk assessment",
+//         description:
+//           "Combines farm and environmental intelligence to support more informed assessment of aquaculture insurance risk."
+//       },
+
+//       {
+//         title: "Production history insights",
+//         description:
+//           "Uses historical production information to reveal farm performance patterns and support better risk evaluation."
+//       },
+
+//       {
+//         title: "Environmental risk signals",
+//         description:
+//           "Identifies environmental factors that may increase farm risk and provides signals for closer monitoring."
+//       },
+
+//       {
+//         title: "Portfolio-level aquaculture intelligence",
+//         description:
+//           "Aggregates farm-level intelligence to help enterprise and financial partners understand risk across aquaculture portfolios."
+//       }
+
 //     ],
 
 //     bottomText:
@@ -323,18 +447,22 @@
 //               >
 
 
-//                 {/* Animated top line */}
+//                 {/* =========================
+//                     Animated Top Line
+//                 ========================= */}
 
 //                 <div className="feature-top-line"></div>
 
 
-//                 {/* Number */}
+//                 {/* =========================
+//                     Number
+//                 ========================= */}
 
 //                 <div className="feature-number-wrap">
 
 //                   <span className="feature-number">
 
-//                     0{index + 1}
+//                     {String(index + 1).padStart(2, "0")}
 
 //                   </span>
 
@@ -344,26 +472,27 @@
 //                 </div>
 
 
-//                 {/* Text */}
+//                 {/* =========================
+//                     Feature Content
+//                 ========================= */}
 
 //                 <div className="feature-content">
 
 //                   <h3>
-//                     {feature}
+//                     {feature.title}
 //                   </h3>
 
 
 //                   <p>
-
-//                     Aquaculture intelligence designed for
-//                     better decisions and smarter outcomes.
-
+//                     {feature.description}
 //                   </p>
 
 //                 </div>
 
 
-//                 {/* Arrow */}
+//                 {/* =========================
+//                     Arrow
+//                 ========================= */}
 
 //                 <div className="feature-arrow-wrap">
 
@@ -452,15 +581,20 @@ const aquaRiskImage =
   "https://res.cloudinary.com/p8fs2e1n/image/upload/Risk.png";
 
 
+/* =========================================================
+   PRODUCT DETAILS DATA
+========================================================= */
+
 const productData = {
 
   /* =====================================
-     01 — FISHOS
+     01 — TOROS
   ===================================== */
-  "fishos": {
+
+  toros: {
     number: "01",
 
-    title: "FishOS",
+    title: "TOROS",
 
     tagline:
       "The intelligence operating system for aquaculture.",
@@ -468,45 +602,51 @@ const productData = {
     image: aquaImage,
 
     intro:
-      "FishOS is the intelligence layer that brings the aquaculture ecosystem together.",
+      "TOROS is the intelligence layer that brings the aquaculture ecosystem together.",
 
     description:
-      "Aquaculture generates enormous amounts of information across ponds, farmers, weather, water quality, production history and farm operations. FishOS brings these fragmented signals together into one connected intelligence platform.",
+      "Aquaculture generates enormous amounts of information across ponds, farmers, weather, water quality, production history and farm operations. TOROS brings these fragmented signals together into one connected intelligence platform.",
 
     features: [
 
       {
         title: "Unified farm and pond data",
+
         description:
           "Brings farm, pond, production and operational data together into one connected intelligence system."
       },
 
       {
         title: "AI-powered farm intelligence",
+
         description:
           "Uses AI to transform complex aquaculture data into clear insights that support faster and smarter farm decisions."
       },
 
       {
         title: "Real-time operational insights",
+
         description:
           "Provides timely visibility into farm operations, helping teams understand changing conditions and respond quickly."
       },
 
       {
         title: "Pond and production monitoring",
+
         description:
           "Tracks key pond and production signals to help farmers monitor performance and identify important changes."
       },
 
       {
         title: "Weather and environmental intelligence",
+
         description:
           "Combines weather and environmental data to reveal conditions that can influence pond health and farm productivity."
       },
 
       {
         title: "Actionable recommendations",
+
         description:
           "Converts farm intelligence into practical recommendations that help farmers decide what to do next."
       }
@@ -514,13 +654,14 @@ const productData = {
     ],
 
     bottomText:
-      "By connecting data, intelligence and operations, FishOS helps aquaculture move from fragmented information to smarter, data-driven decisions."
+      "By connecting data, intelligence and operations, TOROS helps aquaculture move from fragmented information to smarter, data-driven decisions."
   },
 
 
   /* =====================================
      02 — MEENAMMA AI
   ===================================== */
+
   "meenamma-ai": {
     number: "02",
 
@@ -541,36 +682,42 @@ const productData = {
 
       {
         title: "Natural language conversations",
+
         description:
           "Lets farmers interact with aquaculture intelligence naturally through simple, everyday conversations."
       },
 
       {
         title: "Farmer-friendly AI assistance",
+
         description:
           "Turns complex aquaculture information into simple, understandable guidance that farmers can act on."
       },
 
       {
         title: "Pond and fish health guidance",
+
         description:
           "Helps farmers understand pond and fish health conditions and provides guidance for better farm management."
       },
 
       {
         title: "Feeding recommendations",
+
         description:
           "Provides intelligent feeding guidance based on farm conditions to support efficient feeding and healthier fish growth."
       },
 
       {
         title: "Water-quality insights",
+
         description:
           "Helps farmers interpret water-quality conditions and understand their potential impact on fish and pond performance."
       },
 
       {
         title: "Personalized farm recommendations",
+
         description:
           "Uses farm-specific information to provide recommendations tailored to the farmer's pond, conditions and needs."
       }
@@ -583,12 +730,13 @@ const productData = {
 
 
   /* =====================================
-     03 — AQUASENSE
+     03 — 6SENSE
   ===================================== */
-  "aquasense": {
+
+  "6sense": {
     number: "03",
 
-    title: "AquaSense",
+    title: "6sense",
 
     tagline:
       "See beyond the pond with environmental intelligence.",
@@ -596,45 +744,51 @@ const productData = {
     image: aquaSenseImage,
 
     intro:
-      "AquaSense connects the pond to the world around it.",
+      "6sense connects the pond to the world around it.",
 
     description:
-      "Pond conditions are influenced by weather, geography, surrounding land, water conditions and environmental changes. AquaSense brings these signals together using satellite, weather, geospatial and environmental intelligence.",
+      "Pond conditions are influenced by weather, geography, surrounding land, water conditions and environmental changes. 6sense brings these signals together using satellite, weather, geospatial and environmental intelligence.",
 
     features: [
 
       {
         title: "Satellite-based farm monitoring",
+
         description:
           "Uses satellite imagery to monitor aquaculture farms and identify changes across ponds and surrounding areas."
       },
 
       {
         title: "Weather intelligence",
+
         description:
           "Delivers weather insights that help farmers understand upcoming conditions and prepare for their potential impact."
       },
 
       {
         title: "Geospatial farm insights",
+
         description:
           "Analyzes location and geographic information to reveal patterns and conditions influencing aquaculture farms."
       },
 
       {
         title: "Environmental condition monitoring",
+
         description:
           "Monitors environmental signals around farms to provide a broader understanding of pond and farm conditions."
       },
 
       {
         title: "Early detection of changing conditions",
+
         description:
           "Identifies emerging environmental and farm-level changes early, helping farmers respond before risks become bigger problems."
       },
 
       {
         title: "Location-based risk signals",
+
         description:
           "Generates location-specific risk signals by combining geographic, environmental and weather information."
       }
@@ -642,17 +796,18 @@ const productData = {
     ],
 
     bottomText:
-      "AquaSense helps reveal patterns and environmental changes that may not be visible from the ground, enabling better awareness and earlier decisions."
+      "6sense helps reveal patterns and environmental changes that may not be visible from the ground, enabling better awareness and earlier decisions."
   },
 
 
   /* =====================================
-     04 — AQUARISK
+     04 — GOONCH
   ===================================== */
-  "aquarisk": {
+
+  goonch: {
     number: "04",
 
-    title: "AquaRisk",
+    title: "Goonch",
 
     tagline:
       "Farm intelligence for smarter credit, insurance and risk.",
@@ -660,45 +815,51 @@ const productData = {
     image: aquaRiskImage,
 
     intro:
-      "AquaRisk transforms aquaculture intelligence into decision-ready risk insights.",
+      "Goonch transforms aquaculture intelligence into decision-ready risk insights.",
 
     description:
-      "Traditional financial and insurance decisions can be difficult when farm-level information is limited. AquaRisk uses farm intelligence, production history and environmental signals to create a deeper understanding of aquaculture risk.",
+      "Traditional financial and insurance decisions can be difficult when farm-level information is limited. Goonch uses farm intelligence, production history and environmental signals to create a deeper understanding of aquaculture risk.",
 
     features: [
 
       {
         title: "Farm-level risk intelligence",
+
         description:
           "Builds a deeper understanding of individual farm risk using operational, production and environmental intelligence."
       },
 
       {
         title: "Credit decision support",
+
         description:
           "Provides data-driven farm insights that can help financial institutions make more informed aquaculture credit decisions."
       },
 
       {
         title: "Insurance risk assessment",
+
         description:
           "Combines farm and environmental intelligence to support more informed assessment of aquaculture insurance risk."
       },
 
       {
         title: "Production history insights",
+
         description:
           "Uses historical production information to reveal farm performance patterns and support better risk evaluation."
       },
 
       {
         title: "Environmental risk signals",
+
         description:
           "Identifies environmental factors that may increase farm risk and provides signals for closer monitoring."
       },
 
       {
         title: "Portfolio-level aquaculture intelligence",
+
         description:
           "Aggregates farm-level intelligence to help enterprise and financial partners understand risk across aquaculture portfolios."
       }
@@ -706,11 +867,15 @@ const productData = {
     ],
 
     bottomText:
-      "By making farm intelligence more accessible and measurable, AquaRisk helps financial institutions and enterprise partners make more informed aquaculture decisions."
+      "By making farm intelligence more accessible and measurable, Goonch helps financial institutions and enterprise partners make more informed aquaculture decisions."
   }
 
 };
 
+
+/* =========================================================
+   PRODUCT DETAILS COMPONENT
+========================================================= */
 
 export default function ProductDetails() {
 
@@ -721,9 +886,10 @@ export default function ProductDetails() {
   const product = productData[productSlug];
 
 
-  /* =====================================
+  /* =========================================================
      PRODUCT NOT FOUND
-  ===================================== */
+  ========================================================= */
+
   if (!product) {
 
     return (
@@ -746,6 +912,10 @@ export default function ProductDetails() {
 
   }
 
+
+  /* =========================================================
+     MAIN PAGE
+  ========================================================= */
 
   return (
 
@@ -776,12 +946,16 @@ export default function ProductDetails() {
 
 
           <h1 className="product-details-title">
+
             {product.title}
+
           </h1>
 
 
           <p className="product-details-tagline">
+
             {product.tagline}
+
           </p>
 
         </div>
@@ -823,12 +997,16 @@ export default function ProductDetails() {
 
 
             <h2>
+
               {product.intro}
+
             </h2>
 
 
             <p>
+
               {product.description}
+
             </p>
 
           </div>
@@ -846,12 +1024,16 @@ export default function ProductDetails() {
           <div className="features-heading">
 
             <span className="details-small-label">
+
               CAPABILITIES
+
             </span>
 
 
             <h2>
+
               Built for smarter aquaculture.
+
             </h2>
 
 
@@ -910,12 +1092,16 @@ export default function ProductDetails() {
                 <div className="feature-content">
 
                   <h3>
+
                     {feature.title}
+
                   </h3>
 
 
                   <p>
+
                     {feature.description}
+
                   </p>
 
                 </div>
@@ -928,7 +1114,9 @@ export default function ProductDetails() {
                 <div className="feature-arrow-wrap">
 
                   <span className="feature-arrow">
+
                     →
+
                   </span>
 
                 </div>
@@ -949,20 +1137,23 @@ export default function ProductDetails() {
         <div className="product-details-bottom">
 
           <p>
+
             {product.bottomText}
+
           </p>
 
 
           <button
             className="details-back-btn"
-            onClick={() => {
-              navigate("/#products");
-            }}
+            onClick={() => navigate("/#products")}
           >
+
             ← Back to Products
+
           </button>
 
         </div>
+
 
       </div>
 
