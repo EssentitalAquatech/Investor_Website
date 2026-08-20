@@ -146,11 +146,9 @@ export default function WhatWeDo() {
           <h2 className="wwd__title" id="what-we-do-title">
             What We <span className="wwd__title-accent">Do</span>
           </h2>
-          <p className="wwd__subtitle">We&rsquo;re not just another Aquatech company</p>
+          <p className="wwd__subtitle">Intelligence for Livelihood.</p>
           <p className="wwd__lead">
-            We are building the intelligence layer for aquaculture — combining AI,
-            Satellite, Weather, Astronomical and Pond data to make aquaculture more Predictive,
-            Profitable and Sustainable.
+            Building the intelligence infrastructure for freshwater aquaculture — combining Climate, Satellite, Astronomical, and Pond-Level data to make fish farming Predictive, Profitable, and Sustainable.
           </p>
         </header>
 
