@@ -1,17 +1,21 @@
 /* ============================= */
 /* SECTION */
 /* ============================= */
+
 .awardSectionMain {
   background: #e5e2e2;
   padding: 120px 0;
   min-height: 650px;
+
   display: flex;
   align-items: center;
 }
 
+
 /* ============================= */
 /* HEADING */
 /* ============================= */
+
 .awardMainHeading {
   text-align: center;
   font-size: 3.2rem;
@@ -22,7 +26,13 @@
   letter-spacing: 0.5px;
   line-height: 1.2;
 
-  background: linear-gradient(90deg, #111827, #334155, #111827);
+  background: linear-gradient(
+    90deg,
+    #111827,
+    #334155,
+    #111827
+  );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -32,123 +42,220 @@
   font-weight: 800;
   letter-spacing: 0.5px;
 
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #0ea5e9
+  );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+
 /* ============================= */
 /* WRAPPER */
 /* ============================= */
+
 .awardWrapperBox {
   overflow: hidden;
   position: relative;
   padding: 20px 0;
 }
 
+
 /* ============================= */
 /* SCROLL CONTAINER */
 /* ============================= */
+
 .awardScrollContainer {
   display: flex;
   gap: 25px;
   align-items: center;
 
-  overflow-x: auto;        /* ✅ SCROLL ENABLE */
-  scroll-behavior: smooth;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  /*
+   * IMPORTANT:
+   * Allows native horizontal finger swipe
+   */
+  touch-action: pan-x;
+
+  /*
+   * Smooth native scrolling on iOS
+   */
+  -webkit-overflow-scrolling: touch;
+
+  /*
+   * Prevent text selection while dragging
+   */
+  user-select: none;
+  -webkit-user-select: none;
+
+  /*
+   * Hide scrollbar
+   */
+  scrollbar-width: none;
+
+  /*
+   * Prevent unnecessary browser overscroll
+   */
+  overscroll-behavior-x: contain;
+
   white-space: nowrap;
 
-  will-change: transform;
+  /*
+   * Don't use transform here.
+   * scrollLeft is controlled by JS.
+   */
+  will-change: scroll-position;
 }
 
-/* Hide Scrollbar */
+
+/* Hide Chrome / Safari scrollbar */
+
 .awardScrollContainer::-webkit-scrollbar {
   display: none;
 }
 
+
 /* ============================= */
 /* CARD */
 /* ============================= */
+
 .awardSingleCard {
   flex: 0 0 auto;
+
   width: 380px;
   height: 270px;
+
   border-radius: 18px;
   overflow: hidden;
+
   position: relative;
   cursor: pointer;
 
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-  transition: all 0.4s ease;
-  
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+
   background: #f5f5f5;
+
+  /*
+   * Prevent card from shrinking
+   */
+  min-width: 380px;
 }
+
+
+/* ============================= */
+/* IMAGE */
+/* ============================= */
 
 .awardSingleCard img {
   width: 100%;
   height: 100%;
+
   object-fit: contain;
   object-position: center;
+
+  /*
+   * Prevent image drag from interfering
+   * with touch scrolling.
+   */
+  -webkit-user-drag: none;
+  user-select: none;
+
+  /*
+   * Parent card handles click.
+   */
+  pointer-events: none;
 }
+
 
 /* ============================= */
 /* HOVER SCALE */
 /* ============================= */
+
 .awardSingleCard:hover {
   transform: scale(1.07);
 }
 
+
 /* ============================= */
 /* OVERLAY */
 /* ============================= */
+
 .awardOverlay {
   position: absolute;
   inset: 0;
 
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.8),
-    rgba(0,0,0,0.3),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.3),
     transparent
   );
 
   opacity: 0;
-  transition: 0.4s;
+
+  transition: opacity 0.4s ease;
+
+  pointer-events: none;
 }
+
 
 /* ============================= */
 /* TEXT BOX */
 /* ============================= */
+
 .awardTextBox {
   position: absolute;
+
   bottom: 12px;
   left: 15px;
   right: 15px;
+
   color: #fff;
+
   z-index: 2;
 
   transform: translateY(20px);
+
   opacity: 0;
+
   transition: all 0.4s ease;
+
+  pointer-events: none;
 }
 
 .awardTextBox h5 {
   font-size: 1rem;
   font-weight: 600;
+
   margin: 0;
+
   white-space: normal;
   word-wrap: break-word;
 }
 
 .awardTextBox p {
   font-size: 0.8rem;
+
   opacity: 0.7;
+
   margin: 0;
 }
+
 
 /* ============================= */
 /* HOVER EFFECT */
 /* ============================= */
+
 .awardSingleCard:hover .awardOverlay {
   opacity: 1;
 }
@@ -158,110 +265,163 @@
   opacity: 1;
 }
 
+
 /* ============================= */
 /* MODAL */
 /* ============================= */
+
 .awardModal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+
+  background: rgba(0, 0, 0, 0.6);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   z-index: 999;
+
   padding: 20px;
 }
+
 
 /* ============================= */
 /* MODAL CONTENT */
 /* ============================= */
+
 .awardModalContent {
   width: 90%;
   max-width: 700px;
+
   background: #fff;
+
   border-radius: 20px;
+
   padding: 25px;
+
   position: relative;
 
   animation: scaleIn 0.3s ease;
+
+  max-height: 90vh;
+  overflow-y: auto;
 }
+
 
 @keyframes scaleIn {
   from {
     transform: scale(0.8);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
   }
 }
 
+
 .awardModalContent img {
   width: 100%;
   height: 400px;
+
   border-radius: 12px;
+
   object-fit: contain;
   object-position: center;
+
   background: #f5f5f5;
 }
 
+
 .awardModalContent h3 {
   margin-top: 15px;
+
   font-size: 1.3rem;
   font-weight: 700;
+
   color: #000;
 }
 
+
 .awardYear {
   color: #0ea5e9;
+
   font-size: 0.95rem;
+
   margin-top: 5px;
 }
 
+
 .awardDesc {
   font-size: 0.9rem;
+
   margin-top: 10px;
+
   color: #555;
+
   line-height: 1.5;
 }
 
+
+/* ============================= */
 /* CLOSE BUTTON */
+/* ============================= */
+
 .awardCloseBtn {
   position: absolute;
+
   top: 10px;
   right: 10px;
+
   border: none;
+
   background: #eee;
+
   border-radius: 50%;
+
   width: 32px;
   height: 32px;
+
   cursor: pointer;
+
   transition: 0.3s;
+
   z-index: 10;
 }
+
 
 .awardCloseBtn:hover {
   background: #0ea5e9;
   color: #fff;
 }
 
+
 /* ============================= */
-/* RESPONSIVE */
+/* TABLET */
 /* ============================= */
 
 @media (max-width: 992px) {
+
   .awardMainHeading {
     font-size: 2.5rem;
   }
 
   .awardSingleCard {
     width: 320px;
+    min-width: 320px;
     height: 240px;
   }
 }
 
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
 @media (max-width: 768px) {
+
   .awardSectionMain {
     padding: 80px 0;
     min-height: 550px;
@@ -273,10 +433,23 @@
 
   .awardScrollContainer {
     gap: 20px;
+
+    /*
+     * Native finger scrolling
+     */
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    touch-action: pan-x;
+
+    -webkit-overflow-scrolling: touch;
+
+    scroll-behavior: auto;
   }
 
   .awardSingleCard {
     width: 280px;
+    min-width: 280px;
     height: 210px;
   }
 
@@ -290,13 +463,20 @@
   }
 }
 
+
+/* ============================= */
+/* SMALL MOBILE */
+/* ============================= */
+
 @media (max-width: 480px) {
+
   .awardMainHeading {
     font-size: 1.8rem;
   }
 
   .awardSingleCard {
     width: 250px;
+    min-width: 250px;
     height: 190px;
   }
 
