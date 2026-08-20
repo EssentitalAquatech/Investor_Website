@@ -1,10 +1,11 @@
- /* =========================================================
+/* =========================================================
    PRESENCE SECTION
 ========================================================= */
 
 .presence-section-unique {
   background: #ffffff;
   padding: 100px 0;
+  contain: layout paint;
 }
 
 
@@ -34,6 +35,11 @@
   letter-spacing: -1.5px;
 }
 
+
+/* =========================================================
+   HEADING ACCENT
+========================================================= */
+
 .presence-top-title span {
   color: #0ea5e9;
 }
@@ -41,90 +47,64 @@
 
 /* =========================================================
    IMPACT STATS
-   DESKTOP - ALL 5 IN ONE ROW
 ========================================================= */
 
 .presence-impact-stats {
   width: 100%;
-
   display: grid;
-
-  /* IMPORTANT:
-     5 stats = 5 columns */
   grid-template-columns: repeat(5, minmax(0, 1fr));
-
   gap: 30px;
-
   margin: 0 auto 80px;
-
   padding: 0;
-
   align-items: start;
 }
 
 
-/* Individual stat */
-
 .presence-stat-item {
   position: relative;
-
   width: 100%;
-
   min-width: 0;
-
   text-align: left;
 }
 
 
-/* Blue line */
+/* =========================================================
+   BLUE LINE
+========================================================= */
 
 .presence-stat-line {
   width: 100px;
-
   height: 5px;
-
   background: #0ea5e9;
-
   border-radius: 10px;
-
   margin-bottom: 35px;
 }
 
 
-/* Stat number */
+/* =========================================================
+   STAT NUMBER
+========================================================= */
 
 .presence-stat-value {
-  font-size: clamp(
-    2.5rem,
-    3.2vw,
-    4rem
-  );
-
+  font-size: clamp(2.5rem, 3.2vw, 4rem);
   line-height: 1;
-
   font-weight: 700;
-
   color: #0ea5e9;
-
   margin-bottom: 14px;
-
   letter-spacing: -2px;
-
   white-space: nowrap;
 }
 
 
-/* Stat label */
+/* =========================================================
+   STAT LABEL
+========================================================= */
 
 .presence-stat-label {
   max-width: 220px;
-
   font-size: 1rem;
-
   line-height: 1.45;
-
   color: #111111;
-
   font-weight: 400;
 }
 
@@ -135,11 +115,8 @@
 
 .presence-main-box {
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   width: 100%;
 }
 
@@ -150,24 +127,20 @@
 
 .presence-image-center {
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   width: 100%;
 }
 
 
-.presence-image-center
-.presence-simple-image {
+.presence-image-center .presence-simple-image {
   width: 100%;
-
   max-width: 1500px;
-
   height: auto;
-
   display: block;
+
+  /* Browser image decoding optimization */
+  content-visibility: auto;
 }
 
 
@@ -177,21 +150,15 @@
 
 .presence-new-cards-container {
   display: grid;
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
+  grid-template-columns: repeat(2, 1fr);
   gap: 35px;
-
   margin-top: 80px;
-
   width: 100%;
 }
 
 
 .presence-new-card-wrapper {
   width: 100%;
-
   min-width: 0;
 }
 
@@ -204,15 +171,11 @@
 }
 
 
-/* Finance card centered */
+/* Finance card */
 
 .presence-new-card-wrapper.card-finance {
   grid-column: 1 / -1;
-
-  width: calc(
-    (100% - 35px) / 2
-  );
-
+  width: calc((100% - 35px) / 2);
   justify-self: center;
 }
 
@@ -223,37 +186,29 @@
 
 .presence-pure-image {
   width: 100%;
-
   height: 400px;
 
-  aspect-ratio: auto;
-
   background-size: 100% 100%;
-
   background-position: center;
-
   background-repeat: no-repeat;
 
   position: relative;
 
   border-radius: 16px;
-
   overflow: hidden;
 
   background-color: #ffffff;
+
+  /* Reduce unnecessary browser work */
+  contain: layout paint;
 }
 
 
-/* Same height for all cards */
+/* Same height */
 
-.card-livelihood
-.presence-pure-image,
-
-.card-impact
-.presence-pure-image,
-
-.card-finance
-.presence-pure-image {
+.card-livelihood .presence-pure-image,
+.card-impact .presence-pure-image,
+.card-finance .presence-pure-image {
   height: 400px;
 }
 
@@ -264,26 +219,17 @@
 
 .presence-card-title {
   position: absolute;
-
   bottom: 15px;
-
   left: 15px;
 
   color: #ffffff;
-
   font-weight: 600;
-
   font-size: 1.2rem;
 
   z-index: 2;
 
   text-shadow:
-    0 2px 8px rgba(
-      0,
-      0,
-      0,
-      0.5
-    );
+    0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -293,7 +239,6 @@
 
 .presence-hover-content {
   position: absolute;
-
   inset: 0;
 
   background:
@@ -308,9 +253,7 @@
   padding: 55px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 
   opacity: 0;
@@ -328,7 +271,6 @@
 .presence-pure-image.hovered
 .presence-hover-content {
   opacity: 1;
-
   transform: translateY(0);
 }
 
@@ -339,15 +281,10 @@
 
 .presence-hover-kicker {
   font-size: 0.78rem;
-
   font-weight: 700;
-
   letter-spacing: 2.5px;
-
   text-transform: uppercase;
-
   margin-bottom: 14px;
-
   opacity: 0.8;
 }
 
@@ -357,18 +294,10 @@
 ========================================================= */
 
 .presence-hover-content h3 {
-  font-size: clamp(
-    2rem,
-    3vw,
-    3rem
-  );
-
+  font-size: clamp(2rem, 3vw, 3rem);
   line-height: 1.1;
-
   margin: 0 0 18px;
-
   font-weight: 700;
-
   letter-spacing: -0.5px;
 }
 
@@ -379,13 +308,9 @@
 
 .presence-hover-line {
   width: 65px;
-
   height: 3px;
-
   background: #52e5e3;
-
   border-radius: 10px;
-
   margin-bottom: 24px;
 }
 
@@ -396,19 +321,10 @@
 
 .presence-hover-content p {
   max-width: 650px;
-
   margin: 0;
-
   font-size: 1.08rem;
-
   line-height: 1.75;
-
-  color: rgba(
-    255,
-    255,
-    255,
-    0.9
-  );
+  color: rgba(255, 255, 255, 0.9);
 }
 
 
@@ -421,40 +337,30 @@
 }
 
 
-/* From left */
-
 .fade-left {
   transform: translateX(-80px);
 }
 
-
-/* From right */
 
 .fade-right {
   transform: translateX(80px);
 }
 
 
-/* From bottom */
-
 .fade-up {
   transform: translateY(80px);
 }
 
-
-/* From top */
 
 .fade-down {
   transform: translateY(-80px);
 }
 
 
-/* Visible */
-
 .visible {
   opacity: 1;
 
-  transform: translate(0);
+  transform: translate3d(0, 0, 0);
 
   transition:
     opacity 0.8s ease,
@@ -488,6 +394,28 @@
 
 
 /* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .animate,
+  .fade-left,
+  .fade-right,
+  .fade-up,
+  .fade-down,
+  .presence-hover-content {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .animate {
+    opacity: 1 !important;
+  }
+}
+
+
+/* =========================================================
    LARGE LAPTOP
 ========================================================= */
 
@@ -497,9 +425,6 @@
     padding: 0 30px;
   }
 
-
-  /* Still 5 columns */
-
   .presence-impact-stats {
     grid-template-columns:
       repeat(5, minmax(0, 1fr));
@@ -507,35 +432,26 @@
     gap: 20px;
   }
 
-
   .presence-stat-line {
     width: 80px;
-
     height: 4px;
-
     margin-bottom: 30px;
   }
 
-
   .presence-stat-value {
     font-size: 2.7rem;
-
     letter-spacing: -1.5px;
   }
 
-
   .presence-stat-label {
     font-size: 0.9rem;
-
     max-width: 190px;
   }
-
 
   .presence-image-center
   .presence-simple-image {
     max-width: 1100px;
   }
-
 }
 
 
@@ -549,67 +465,44 @@
     padding: 80px 0;
   }
 
-
-  /* Heading */
-
   .presence-top-title {
     font-size: 3rem;
-
     margin-bottom: 50px;
   }
-
-
-  /* Stats - 3 + 2 */
 
   .presence-impact-stats {
     grid-template-columns:
       repeat(3, 1fr);
 
     gap: 45px 30px;
-
     margin-bottom: 60px;
   }
 
-
   .presence-stat-value {
     font-size: 3rem;
-
     letter-spacing: -1.5px;
   }
 
-
   .presence-stat-line {
     width: 90px;
-
     margin-bottom: 30px;
   }
 
-
   .presence-stat-label {
     font-size: 0.95rem;
-
     max-width: 210px;
   }
 
-
-  /* Map */
-
   .presence-main-box {
     flex-direction: column;
-
     text-align: center;
-
     flex-wrap: wrap;
   }
-
 
   .presence-image-center
   .presence-simple-image {
     max-width: 750px;
   }
-
-
-  /* Cards */
 
   .presence-new-cards-container {
     grid-template-columns:
@@ -617,7 +510,6 @@
 
     gap: 30px;
   }
-
 
   .card-livelihood
   .presence-pure-image,
@@ -630,11 +522,9 @@
     height: 420px;
   }
 
-
   .presence-hover-content {
     padding: 40px;
   }
-
 }
 
 
@@ -648,110 +538,73 @@
     padding: 70px 0;
   }
 
-
   .presence-container-unique {
     padding: 0 20px;
   }
 
-
-  /* Heading */
-
   .presence-top-title {
     font-size: 2rem;
-
     margin-bottom: 45px;
-
     letter-spacing: -0.5px;
   }
-
-
-  /* Stats - 2 columns */
 
   .presence-impact-stats {
     grid-template-columns:
       repeat(2, 1fr);
 
     gap: 40px 25px;
-
     padding: 0;
-
     margin-bottom: 55px;
   }
-
 
   .presence-stat-item {
     text-align: left;
   }
 
-
   .presence-stat-line {
     width: 70px;
-
     height: 4px;
-
     margin-bottom: 25px;
   }
 
-
   .presence-stat-value {
     font-size: 2.4rem;
-
     letter-spacing: -1px;
-
     white-space: nowrap;
   }
 
-
   .presence-stat-label {
     font-size: 0.9rem;
-
     max-width: 180px;
   }
-
-
-  /* Map */
 
   .presence-image-center
   .presence-simple-image {
     max-width: 100%;
-
     padding: 0 10px;
   }
 
-
-  /* Cards */
-
   .presence-new-cards-container {
     grid-template-columns: 1fr;
-
     gap: 30px;
-
     margin-top: 60px;
   }
-
 
   .presence-new-card-wrapper {
     width: 100%;
   }
 
-
   .presence-new-card-wrapper.card-finance {
     grid-column: auto;
-
     width: 100%;
-
     justify-self: unset;
   }
 
-
   .presence-pure-image {
     height: auto;
-
     aspect-ratio: 3 / 2;
-
     border-radius: 14px;
   }
-
 
   .card-livelihood
   .presence-pure-image,
@@ -762,29 +615,21 @@
   .card-finance
   .presence-pure-image {
     height: auto;
-
     aspect-ratio: 3 / 2;
   }
-
-
-  /* Hover */
 
   .presence-hover-content {
     padding: 30px;
   }
 
-
   .presence-hover-content h3 {
     font-size: 2rem;
   }
 
-
   .presence-hover-content p {
     font-size: 0.95rem;
-
     line-height: 1.6;
   }
-
 }
 
 
@@ -798,22 +643,14 @@
     padding: 60px 0;
   }
 
-
   .presence-container-unique {
     padding: 0 16px;
   }
 
-
-  /* Heading */
-
   .presence-top-title {
     font-size: 1.7rem;
-
     margin-bottom: 40px;
   }
-
-
-  /* Stats */
 
   .presence-impact-stats {
     grid-template-columns:
@@ -822,107 +659,71 @@
     gap: 35px 20px;
   }
 
-
   .presence-stat-line {
     width: 60px;
-
     height: 3px;
-
     margin-bottom: 20px;
   }
 
-
   .presence-stat-value {
     font-size: 1.9rem;
-
     letter-spacing: -0.8px;
-
     white-space: nowrap;
   }
 
-
   .presence-stat-label {
     font-size: 0.82rem;
-
     line-height: 1.4;
-
     max-width: 160px;
   }
-
-
-  /* Map */
 
   .presence-image-center
   .presence-simple-image {
     max-width: 100%;
-
     padding: 0 5px;
   }
 
-
-  /* Cards */
-
   .presence-new-cards-container {
     grid-template-columns: 1fr;
-
     gap: 25px;
-
     margin-top: 50px;
   }
 
-
   .presence-pure-image {
     aspect-ratio: 3 / 2;
-
     border-radius: 10px;
   }
 
-
   .presence-card-title {
     font-size: 1rem;
-
     left: 15px;
-
     bottom: 14px;
   }
-
-
-  /* Hover content */
 
   .presence-hover-content {
     padding: 25px;
   }
 
-
   .presence-hover-kicker {
     font-size: 0.65rem;
-
     letter-spacing: 1.8px;
-
     margin-bottom: 10px;
   }
 
-
   .presence-hover-content h3 {
     font-size: 1.6rem;
-
     margin-bottom: 14px;
   }
 
-
   .presence-hover-line {
     width: 50px;
-
     margin-bottom: 16px;
   }
 
-
   .presence-hover-content p {
     font-size: 0.86rem;
-
     line-height: 1.5;
   }
-
 }
 
 
@@ -936,43 +737,26 @@
     font-size: 1.65rem;
   }
 
-
   .presence-stat-label {
     font-size: 0.78rem;
   }
-
 
   .presence-top-title {
     font-size: 1.5rem;
   }
 
-
   .presence-impact-stats {
     gap: 30px 15px;
   }
-
 }
 
 
+/* =========================================================
+   DESKTOP STAT POSITIONING
+========================================================= */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Separate 4th & 5th stats on desktop */
 @media (min-width: 993px) {
+
   .presence-stat-item:nth-child(4) {
     margin-right: 100px;
   }
@@ -983,9 +767,10 @@
 }
 
 
+/* =========================================================
+   TABLET STAT POSITIONING
+========================================================= */
 
-
-/* Separate 4th & 5th stats on tablet */
 @media (min-width: 769px) and (max-width: 992px) {
 
   .presence-stat-item:nth-child(4) {
@@ -995,5 +780,4 @@
   .presence-stat-item:nth-child(5) {
     margin-left: 50px;
   }
-
 }

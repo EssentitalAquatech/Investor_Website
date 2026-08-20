@@ -2,39 +2,56 @@
 
 
 
-// import React, { useEffect, useState } from 'react';
-// import './Presence.css';
+// import React, { useEffect, useState } from "react";
+// import "./Presence.css";
 
-// // Cloudinary image URL for Asia map
+// // =====================================================
+// // CLOUDINARY IMAGE
+// // =====================================================
+
 // const indiaMap =
-//   'https://res.cloudinary.com/p8fs2e1n/image/upload/World1.png';
+//   "https://res.cloudinary.com/p8fs2e1n/image/upload/world1.png";
 
-// // ANIMATED NUMBER COMPONENT - Premium smooth version
+
+// // =====================================================
+// // ANIMATED NUMBER COMPONENT
+// // =====================================================
+
 // function AnimatedNumber({ value, start }) {
 //   const [count, setCount] = useState(0);
 
+//   // Extract number + suffix
+//   const match = value.match(/^([\d,]+)(.*)$/);
+
+//   const target = match
+//     ? Number(match[1].replace(/,/g, ""))
+//     : 0;
+
+//   const suffix = match
+//     ? match[2]
+//     : "";
+
 //   useEffect(() => {
-//     if (!start) return;
-
-//     const match = value.match(/^(\d+)(.*)$/);
-
-//     if (!match) return;
-
-//     const target = Number(match[1]);
-//     const suffix = match[2];
+//     if (!start || !match) return;
 
 //     let startTime = null;
+//     let animationFrame = null;
 
-//     // Thoda slow = more premium/smooth feel
 //     const duration = 3000;
 
 //     const animate = (currentTime) => {
-//       if (!startTime) startTime = currentTime;
+//       if (!startTime) {
+//         startTime = currentTime;
+//       }
 
 //       const elapsed = currentTime - startTime;
-//       const progress = Math.min(elapsed / duration, 1);
 
-//       // Very smooth ease-out
+//       const progress = Math.min(
+//         elapsed / duration,
+//         1
+//       );
+
+//       // Smooth premium ease-out
 //       const easedProgress =
 //         1 - Math.pow(1 - progress, 4);
 
@@ -44,241 +61,485 @@
 //       setCount(currentValue);
 
 //       if (progress < 1) {
-//         requestAnimationFrame(animate);
+//         animationFrame =
+//           requestAnimationFrame(animate);
 //       } else {
 //         setCount(target);
 //       }
 //     };
 
-//     requestAnimationFrame(animate);
+//     animationFrame =
+//       requestAnimationFrame(animate);
 
 //     return () => {
-//       startTime = null;
+//       if (animationFrame) {
+//         cancelAnimationFrame(animationFrame);
+//       }
 //     };
-//   }, [start, value]);
+//   }, [start, value, target]);
 
 //   return (
 //     <>
-//       {count < 10 && count % 1 !== 0
-//         ? count.toFixed(1)
-//         : Math.floor(count)}
-//       {value.replace(/^\d+/, '')}
+//       {Math.floor(count).toLocaleString("en-IN")}
+//       {suffix}
 //     </>
 //   );
 // }
 
-// function Presence() {
-//   const [hoveredCard, setHoveredCard] = useState(null);
-//   const [statsVisible, setStatsVisible] = useState(false);
 
+// // =====================================================
+// // PRESENCE COMPONENT
+// // =====================================================
+
+// function Presence() {
+
+//   const [hoveredCard, setHoveredCard] =
+//     useState(null);
+
+//   const [statsVisible, setStatsVisible] =
+//     useState(false);
+
+
+//   // =====================================================
 //   // IMPACT STATS
+//   // =====================================================
+
 //   const impactStats = [
 //     {
-//       value: '5 Lakh+',
-//       label: 'Farmer conversations monthly'
+//       value: "5 Lakh+",
+//       label: "Farmer conversations monthly",
 //     },
+
 //     {
-//       value: '30%',
-//       label: 'Yield improvement'
+//       value: "30%",
+//       label: "Yield improvement",
 //     },
+
 //     {
-//       value: '25%',
-//       label: 'Income increase '
+//       value: "25%",
+//       label: "Income increase",
 //     },
+
 //     {
-//       value: ' 50,000 Litres+',
-//       label: ' Water saved per acre per season'
+//       value: "50,000 Litres+",
+//       label: "Water saved per acre per season",
 //     },
+
 //     {
-//       value: ' 82%',
-//       label: ' Farmers with improved production '
-//     }
+//       value: "82%",
+//       label: "Farmers with improved production",
+//     },
 //   ];
 
-//   // CLOUDINARY CARDS
+
+//   // =====================================================
+//   // IMPACT CARDS
+//   // =====================================================
+
 //   const cardsData = [
 //     {
-//       id: 'livelihood',
+//       id: "livelihood",
+
+//       title: " Livelihood",
+
 //       bgImage:
-//         'https://res.cloudinary.com/p8fs2e1n/image/upload/live.png',
+//         "https://res.cloudinary.com/p8fs2e1n/image/upload/Live.png",
+
 //       description:
-//         'We empower farmers with actionable intelligence that helps them make better decisions, improve farm productivity, reduce uncertainty, and build more resilient livelihoods.'
+//         "Essential Aquatech delivers real-time pond intelligence to smallholder fresh water fish farmers through MeenAmma, a multilingual WhatsApp AI . Farmers on the platform record 30% yield improvement and 25% income increase."
 //     },
+
 //     {
-//       id: 'impact',
+//       id: "impact",
+
+//       title: " Impact",
+
 //       bgImage:
-//         'https://res.cloudinary.com/p8fs2e1n/image/upload/impact.png',
+//         "https://res.cloudinary.com/p8fs2e1n/image/upload/Impact.png",
+
 //       description:
-//         'By combining AI, satellite, weather, water, and farm data, we turn complex information into measurable outcomes for more productive, sustainable, and resilient aquaculture.'
+//         "By combining AI, satellite, weather, water, and farm data, we turn complex information into measurable outcomes for more productive, sustainable, and resilient aquaculture.",
 //     },
+
 //     {
-//       id: 'finance',
-//       bgImage:
-//         'https://res.cloudinary.com/p8fs2e1n/image/upload/finance.png',
-//       description:
-//         'We help farmers and aquaculture businesses make smarter financial decisions by improving profitability, optimizing resources, and reducing avoidable risks across the farm.'
-//     }
+//   id: "finance",
+
+//   title: "Finance",
+
+//   bgImage:
+//     "https://res.cloudinary.com/p8fs2e1n/image/upload/Finance.png",
+
+//   description:
+//     "Every pond conversation with MeenAmma builds a proprietary Farm Health Score, turning real-world farm data into credit profiles and insurance eligibility. EA is making India’s freshwater fish farmers bankable for the first time by enabling access to formal credit and insurance."
+// },
 //   ];
 
+
+//   // =====================================================
+//   // INTERSECTION OBSERVER
+//   // =====================================================
+
 //   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             entry.target.classList.add('visible');
-//           }
-//         });
-//       },
-//       { threshold: 0.2 }
-//     );
 
-//     document
-//       .querySelectorAll('.animate')
-//       .forEach((el) => observer.observe(el));
+//     // -----------------------------------------------
+//     // General animations
+//     // -----------------------------------------------
 
-//     // Stats counter observer
-//     const statsSection = document.querySelector(
-//       '.presence-impact-stats'
-//     );
+//     const observer =
+//       new IntersectionObserver(
+//         (entries) => {
 
-//     const statsObserver = new IntersectionObserver(
-//       (entries) => {
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             setStatsVisible(true);
-//             statsObserver.unobserve(entry.target);
-//           }
-//         });
-//       },
-//       {
-//         threshold: 0.35
-//       }
-//     );
+//           entries.forEach((entry) => {
+
+//             if (entry.isIntersecting) {
+
+//               entry.target.classList.add(
+//                 "visible"
+//               );
+
+//             }
+
+//           });
+
+//         },
+//         {
+//           threshold: 0.2,
+//         }
+//       );
+
+
+//     const animatedElements =
+//       document.querySelectorAll(
+//         ".presence-section-unique .animate"
+//       );
+
+
+//     animatedElements.forEach((element) => {
+//       observer.observe(element);
+//     });
+
+
+//     // -----------------------------------------------
+//     // Stats animation observer
+//     // -----------------------------------------------
+
+//     const statsSection =
+//       document.querySelector(
+//         ".presence-impact-stats"
+//       );
+
+
+//     const statsObserver =
+//       new IntersectionObserver(
+//         (entries) => {
+
+//           entries.forEach((entry) => {
+
+//             if (entry.isIntersecting) {
+
+//               setStatsVisible(true);
+
+//               statsObserver.unobserve(
+//                 entry.target
+//               );
+
+//             }
+
+//           });
+
+//         },
+//         {
+//           threshold: 0.25,
+//         }
+//       );
+
 
 //     if (statsSection) {
-//       statsObserver.observe(statsSection);
+
+//       statsObserver.observe(
+//         statsSection
+//       );
+
 //     }
 
+
+//     // -----------------------------------------------
+//     // Cleanup
+//     // -----------------------------------------------
+
 //     return () => {
+
 //       observer.disconnect();
+
 //       statsObserver.disconnect();
+
 //     };
+
 //   }, []);
 
-//   return (
-//     <section className="presence-section-unique">
-//       <div className="presence-container-unique">
 
-//         {/* TOP HEADING */}
-//         <h2 className="presence-top-title animate fade-down">
-//           Our Impact Across <span>World</span>
+//   // =====================================================
+//   // RENDER
+//   // =====================================================
+
+//   return (
+
+//     <section
+//       className="presence-section-unique"
+//     >
+
+//       <div
+//         className="presence-container-unique"
+//       >
+
+
+//         {/* =================================================
+//             TOP HEADING
+//         ================================================= */}
+
+//         <h2
+//           className="presence-top-title animate fade-down"
+//         >
+//           Our Impact Across{" "}
+//           <span>World</span>
 //         </h2>
 
-//         {/* IMPACT STATS */}
-//         <div className="presence-impact-stats">
-//           {impactStats.map((stat, index) => (
-//             <div
-//               className={`presence-stat-item animate fade-up delay-${index}`}
-//               key={index}
-//             >
-//               <div className="presence-stat-line"></div>
 
-//               <div className="presence-stat-value">
-//                 <AnimatedNumber
-//                   value={stat.value}
-//                   start={statsVisible}
+//         {/* =================================================
+//             IMPACT STATS
+//         ================================================= */}
+
+//         <div
+//           className="presence-impact-stats"
+//         >
+
+//           {impactStats.map(
+//             (stat, index) => (
+
+//               <div
+//                 key={index}
+//                 className={`presence-stat-item animate fade-up delay-${index}`}
+//               >
+
+
+//                 {/* BLUE LINE */}
+
+//                 <div
+//                   className="presence-stat-line"
 //                 />
+
+
+//                 {/* NUMBER */}
+
+//                 <div
+//                   className="presence-stat-value"
+//                 >
+
+//                   <AnimatedNumber
+//                     value={stat.value}
+//                     start={statsVisible}
+//                   />
+
+//                 </div>
+
+
+//                 {/* LABEL */}
+
+//                 <div
+//                   className="presence-stat-label"
+//                 >
+//                   {stat.label}
+//                 </div>
+
+
 //               </div>
 
-//               <div className="presence-stat-label">
-//                 {stat.label}
-//               </div>
-//             </div>
-//           ))}
+//             )
+//           )}
+
 //         </div>
 
-//         {/* ASIA MAP */}
-//         <div className="presence-main-box">
-//           <div className="presence-image-center animate fade-up">
+
+//         {/* =================================================
+//             MAP
+//         ================================================= */}
+
+//         <div
+//           className="presence-main-box"
+//         >
+
+//           <div
+//             className="presence-image-center animate fade-up"
+//           >
+
 //             <img
 //               src={indiaMap}
-//               alt="Asia Map"
+//               alt="Essential Aquatech global impact across the world"
 //               className="presence-simple-image"
+//               loading="lazy"
 //             />
+
 //           </div>
+
 //         </div>
 
-//         {/* CARDS */}
-//         <div className="presence-cards-section">
-//           <div className="presence-new-cards-container">
 
-//             {cardsData.map((card, index) => {
-//               const directions = [
-//                 'fade-left',
-//                 'fade-up',
-//                 'fade-right'
-//               ];
+//         {/* =================================================
+//             IMPACT CARDS
+//         ================================================= */}
 
-//               return (
-//                 <div
-//                   key={card.id}
-//                   className={`presence-new-card-wrapper card-${card.id} animate ${directions[index]} delay-${index}`}
-//                   onMouseEnter={() => setHoveredCard(card.id)}
-//                   onMouseLeave={() => setHoveredCard(null)}
-//                 >
-//                   <div className="presence-card-container">
+//         <div
+//           className="presence-cards-section"
+//         >
+
+//           <div
+//             className="presence-new-cards-container"
+//           >
+
+//             {cardsData.map(
+//               (card, index) => {
+
+//                 const directions = [
+//                   "fade-left",
+//                   "fade-up",
+//                   "fade-right",
+//                 ];
+
+
+//                 return (
+
+//                   <div
+//                     key={card.id}
+//                     className={`presence-new-card-wrapper card-${card.id} animate ${directions[index]} delay-${index}`}
+//                     onMouseEnter={() =>
+//                       setHoveredCard(card.id)
+//                     }
+//                     onMouseLeave={() =>
+//                       setHoveredCard(null)
+//                     }
+//                   >
 
 //                     <div
-//                       className={`presence-pure-image ${
-//                         hoveredCard === card.id ? 'hovered' : ''
-//                       }`}
-//                       style={{
-//                         backgroundImage: `url(${card.bgImage})`
-//                       }}
+//                       className="presence-card-container"
 //                     >
 
-//                       {/* Bottom text */}
-//                       {hoveredCard !== card.id && (
-//                         <div className="presence-card-title">
-//                           {card.title}
+//                       <div
+//                         className={`presence-pure-image ${
+//                           hoveredCard === card.id
+//                             ? "hovered"
+//                             : ""
+//                         }`}
+//                         style={{
+//                           backgroundImage:
+//                             `url(${card.bgImage})`,
+//                         }}
+//                       >
+
+
+//                         {/* =================================================
+//                             NORMAL TITLE
+//                         ================================================= */}
+
+//                         {hoveredCard !==
+//                           card.id && (
+
+//                           <div
+//                             className="presence-card-title"
+//                           >
+//                             {card.title}
+//                           </div>
+
+//                         )}
+
+
+//                         {/* =================================================
+//                             HOVER CONTENT
+//                         ================================================= */}
+
+//                         <div
+//                           className="presence-hover-content"
+//                         >
+
+
+//                           {/* KICKER */}
+
+//                           <span
+//                             className="presence-hover-kicker"
+//                           >
+
+//                             {card.id ===
+//                             "livelihood"
+//                               ? "FARMER EMPOWERMENT"
+//                               : card.id ===
+//                                 "impact"
+//                               ? "INTELLIGENCE IN ACTION"
+//                               : "SMARTER FARM ECONOMICS"}
+
+//                           </span>
+
+
+//                           {/* TITLE */}
+
+//                           <h3>
+//                             {card.title}
+//                           </h3>
+
+
+//                           {/* ACCENT LINE */}
+
+//                           <div
+//                             className="presence-hover-line"
+//                           />
+
+
+//                           {/* DESCRIPTION */}
+
+//                           <p>
+//                             {card.description}
+//                           </p>
+
+
 //                         </div>
-//                       )}
-
-//                       {/* HOVER CONTENT */}
-//                       <div className="presence-hover-content">
-
-//                         <span className="presence-hover-kicker">
-//                           {card.id === 'livelihood'
-//                             ? 'FARMER EMPOWERMENT'
-//                             : card.id === 'impact'
-//                             ? 'INTELLIGENCE IN ACTION'
-//                             : 'SMARTER FARM ECONOMICS'}
-//                         </span>
-
-//                         <h3>{card.title}</h3>
-
-//                         <div className="presence-hover-line"></div>
-
-//                         <p>{card.description}</p>
 
 //                       </div>
 
 //                     </div>
 
 //                   </div>
-//                 </div>
-//               );
-//             })}
+
+//                 );
+
+//               }
+//             )}
 
 //           </div>
+
 //         </div>
 
+
 //       </div>
+
 //     </section>
+
 //   );
 // }
 
+
 // export default Presence;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -288,11 +549,14 @@ import React, { useEffect, useState } from "react";
 import "./Presence.css";
 
 // =====================================================
-// CLOUDINARY IMAGE
+// CLOUDINARY IMAGES
 // =====================================================
 
-const indiaMap =
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/world1.png";
+// Auto format + quality optimization
+const CLOUDINARY_BASE =
+  "https://res.cloudinary.com/p8fs2e1n/image/upload";
+
+const indiaMap = `${CLOUDINARY_BASE}/f_auto,q_auto/world1.png`;
 
 
 // =====================================================
@@ -302,16 +566,13 @@ const indiaMap =
 function AnimatedNumber({ value, start }) {
   const [count, setCount] = useState(0);
 
-  // Extract number + suffix
   const match = value.match(/^([\d,]+)(.*)$/);
 
   const target = match
     ? Number(match[1].replace(/,/g, ""))
     : 0;
 
-  const suffix = match
-    ? match[2]
-    : "";
+  const suffix = match ? match[2] : "";
 
   useEffect(() => {
     if (!start || !match) return;
@@ -333,7 +594,6 @@ function AnimatedNumber({ value, start }) {
         1
       );
 
-      // Smooth premium ease-out
       const easedProgress =
         1 - Math.pow(1 - progress, 4);
 
@@ -374,7 +634,6 @@ function AnimatedNumber({ value, start }) {
 // =====================================================
 
 function Presence() {
-
   const [hoveredCard, setHoveredCard] =
     useState(null);
 
@@ -391,22 +650,18 @@ function Presence() {
       value: "5 Lakh+",
       label: "Farmer conversations monthly",
     },
-
     {
       value: "30%",
       label: "Yield improvement",
     },
-
     {
       value: "25%",
       label: "Income increase",
     },
-
     {
       value: "50,000 Litres+",
       label: "Water saved per acre per season",
     },
-
     {
       value: "82%",
       label: "Farmers with improved production",
@@ -421,39 +676,36 @@ function Presence() {
   const cardsData = [
     {
       id: "livelihood",
-
       title: " Livelihood",
 
       bgImage:
-        "https://res.cloudinary.com/p8fs2e1n/image/upload/Live.png",
+        `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/Live.png`,
 
       description:
-        "Essential Aquatech delivers real-time pond intelligence to smallholder fresh water fish farmers through MeenAmma, a multilingual WhatsApp AI . Farmers on the platform record 30% yield improvement and 25% income increase."
+        "Essential Aquatech delivers real-time pond intelligence to smallholder fresh water fish farmers through MeenAmma, a multilingual WhatsApp AI . Farmers on the platform record 30% yield improvement and 25% income increase.",
     },
 
     {
       id: "impact",
-
       title: " Impact",
 
       bgImage:
-        "https://res.cloudinary.com/p8fs2e1n/image/upload/Impact.png",
+        `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/Impact.png`,
 
       description:
         "By combining AI, satellite, weather, water, and farm data, we turn complex information into measurable outcomes for more productive, sustainable, and resilient aquaculture.",
     },
 
     {
-  id: "finance",
+      id: "finance",
+      title: "Finance",
 
-  title: "Finance",
+      bgImage:
+        `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/Finance.png`,
 
-  bgImage:
-    "https://res.cloudinary.com/p8fs2e1n/image/upload/Finance.png",
-
-  description:
-    "Every pond conversation with MeenAmma builds a proprietary Farm Health Score, turning real-world farm data into credit profiles and insurance eligibility. EA is making India’s freshwater fish farmers bankable for the first time by enabling access to formal credit and insurance."
-},
+      description:
+        "Every pond conversation with MeenAmma builds a proprietary Farm Health Score, turning real-world farm data into credit profiles and insurance eligibility. EA is making India’s freshwater fish farmers bankable for the first time by enabling access to formal credit and insurance.",
+    },
   ];
 
 
@@ -462,31 +714,24 @@ function Presence() {
   // =====================================================
 
   useEffect(() => {
-
-    // -----------------------------------------------
-    // General animations
-    // -----------------------------------------------
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px",
+    };
 
     const observer =
       new IntersectionObserver(
         (entries) => {
-
           entries.forEach((entry) => {
-
             if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
 
-              entry.target.classList.add(
-                "visible"
-              );
-
+              // Once visible, no need to observe again
+              observer.unobserve(entry.target);
             }
-
           });
-
         },
-        {
-          threshold: 0.2,
-        }
+        observerOptions
       );
 
 
@@ -495,68 +740,51 @@ function Presence() {
         ".presence-section-unique .animate"
       );
 
-
     animatedElements.forEach((element) => {
       observer.observe(element);
     });
 
 
-    // -----------------------------------------------
-    // Stats animation observer
-    // -----------------------------------------------
+    // =====================================================
+    // STATS OBSERVER
+    // =====================================================
 
     const statsSection =
       document.querySelector(
         ".presence-impact-stats"
       );
 
+    let statsObserver;
 
-    const statsObserver =
-      new IntersectionObserver(
-        (entries) => {
-
-          entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
+    if (statsSection) {
+      statsObserver =
+        new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
               setStatsVisible(true);
 
               statsObserver.unobserve(
-                entry.target
+                entries[0].target
               );
-
             }
+          },
+          {
+            threshold: 0.25,
+            rootMargin: "0px 0px -50px 0px",
+          }
+        );
 
-          });
-
-        },
-        {
-          threshold: 0.25,
-        }
-      );
-
-
-    if (statsSection) {
-
-      statsObserver.observe(
-        statsSection
-      );
-
+      statsObserver.observe(statsSection);
     }
 
 
-    // -----------------------------------------------
-    // Cleanup
-    // -----------------------------------------------
-
     return () => {
-
       observer.disconnect();
 
-      statsObserver.disconnect();
-
+      if (statsObserver) {
+        statsObserver.disconnect();
+      }
     };
-
   }, []);
 
 
@@ -565,100 +793,60 @@ function Presence() {
   // =====================================================
 
   return (
+    <section className="presence-section-unique">
 
-    <section
-      className="presence-section-unique"
-    >
+      <div className="presence-container-unique">
 
-      <div
-        className="presence-container-unique"
-      >
+        {/* TOP HEADING */}
 
-
-        {/* =================================================
-            TOP HEADING
-        ================================================= */}
-
-        <h2
-          className="presence-top-title animate fade-down"
-        >
+        <h2 className="presence-top-title animate fade-down">
           Our Impact Across{" "}
           <span>World</span>
         </h2>
 
 
-        {/* =================================================
-            IMPACT STATS
-        ================================================= */}
+        {/* IMPACT STATS */}
 
-        <div
-          className="presence-impact-stats"
-        >
+        <div className="presence-impact-stats">
 
-          {impactStats.map(
-            (stat, index) => (
+          {impactStats.map((stat, index) => (
+            <div
+              key={index}
+              className={`presence-stat-item animate fade-up delay-${index}`}
+            >
 
-              <div
-                key={index}
-                className={`presence-stat-item animate fade-up delay-${index}`}
-              >
+              <div className="presence-stat-line" />
 
-
-                {/* BLUE LINE */}
-
-                <div
-                  className="presence-stat-line"
+              <div className="presence-stat-value">
+                <AnimatedNumber
+                  value={stat.value}
+                  start={statsVisible}
                 />
-
-
-                {/* NUMBER */}
-
-                <div
-                  className="presence-stat-value"
-                >
-
-                  <AnimatedNumber
-                    value={stat.value}
-                    start={statsVisible}
-                  />
-
-                </div>
-
-
-                {/* LABEL */}
-
-                <div
-                  className="presence-stat-label"
-                >
-                  {stat.label}
-                </div>
-
-
               </div>
 
-            )
-          )}
+              <div className="presence-stat-label">
+                {stat.label}
+              </div>
+
+            </div>
+          ))}
 
         </div>
 
 
-        {/* =================================================
-            MAP
-        ================================================= */}
+        {/* MAP */}
 
-        <div
-          className="presence-main-box"
-        >
+        <div className="presence-main-box">
 
-          <div
-            className="presence-image-center animate fade-up"
-          >
+          <div className="presence-image-center animate fade-up">
 
             <img
               src={indiaMap}
               alt="Essential Aquatech global impact across the world"
               className="presence-simple-image"
               loading="lazy"
+              decoding="async"
+              fetchPriority="low"
             />
 
           </div>
@@ -666,122 +854,79 @@ function Presence() {
         </div>
 
 
-        {/* =================================================
-            IMPACT CARDS
-        ================================================= */}
+        {/* IMPACT CARDS */}
 
-        <div
-          className="presence-cards-section"
-        >
+        <div className="presence-cards-section">
 
-          <div
-            className="presence-new-cards-container"
-          >
+          <div className="presence-new-cards-container">
 
-            {cardsData.map(
-              (card, index) => {
+            {cardsData.map((card, index) => {
 
-                const directions = [
-                  "fade-left",
-                  "fade-up",
-                  "fade-right",
-                ];
+              const directions = [
+                "fade-left",
+                "fade-up",
+                "fade-right",
+              ];
 
+              return (
+                <div
+                  key={card.id}
+                  className={`presence-new-card-wrapper card-${card.id} animate ${directions[index]} delay-${index}`}
+                  onMouseEnter={() =>
+                    setHoveredCard(card.id)
+                  }
+                  onMouseLeave={() =>
+                    setHoveredCard(null)
+                  }
+                >
 
-                return (
-
-                  <div
-                    key={card.id}
-                    className={`presence-new-card-wrapper card-${card.id} animate ${directions[index]} delay-${index}`}
-                    onMouseEnter={() =>
-                      setHoveredCard(card.id)
-                    }
-                    onMouseLeave={() =>
-                      setHoveredCard(null)
-                    }
-                  >
+                  <div className="presence-card-container">
 
                     <div
-                      className="presence-card-container"
+                      className={`presence-pure-image ${
+                        hoveredCard === card.id
+                          ? "hovered"
+                          : ""
+                      }`}
+                      style={{
+                        backgroundImage:
+                          `url("${card.bgImage}")`,
+                      }}
                     >
 
-                      <div
-                        className={`presence-pure-image ${
-                          hoveredCard === card.id
-                            ? "hovered"
-                            : ""
-                        }`}
-                        style={{
-                          backgroundImage:
-                            `url(${card.bgImage})`,
-                        }}
-                      >
+                      {/* NORMAL TITLE */}
 
-
-                        {/* =================================================
-                            NORMAL TITLE
-                        ================================================= */}
-
-                        {hoveredCard !==
-                          card.id && (
-
-                          <div
-                            className="presence-card-title"
-                          >
-                            {card.title}
-                          </div>
-
-                        )}
-
-
-                        {/* =================================================
-                            HOVER CONTENT
-                        ================================================= */}
-
-                        <div
-                          className="presence-hover-content"
-                        >
-
-
-                          {/* KICKER */}
-
-                          <span
-                            className="presence-hover-kicker"
-                          >
-
-                            {card.id ===
-                            "livelihood"
-                              ? "FARMER EMPOWERMENT"
-                              : card.id ===
-                                "impact"
-                              ? "INTELLIGENCE IN ACTION"
-                              : "SMARTER FARM ECONOMICS"}
-
-                          </span>
-
-
-                          {/* TITLE */}
-
-                          <h3>
-                            {card.title}
-                          </h3>
-
-
-                          {/* ACCENT LINE */}
-
-                          <div
-                            className="presence-hover-line"
-                          />
-
-
-                          {/* DESCRIPTION */}
-
-                          <p>
-                            {card.description}
-                          </p>
-
-
+                      {hoveredCard !== card.id && (
+                        <div className="presence-card-title">
+                          {card.title}
                         </div>
+                      )}
+
+
+                      {/* HOVER CONTENT */}
+
+                      <div className="presence-hover-content">
+
+                        <span className="presence-hover-kicker">
+                          {card.id === "livelihood"
+                            ? "FARMER EMPOWERMENT"
+                            : card.id === "impact"
+                            ? "INTELLIGENCE IN ACTION"
+                            : "SMARTER FARM ECONOMICS"}
+                        </span>
+
+
+                        <h3>
+                          {card.title}
+                        </h3>
+
+
+                        <div className="presence-hover-line" />
+
+
+                        <p>
+                          {card.description}
+                        </p>
 
                       </div>
 
@@ -789,22 +934,18 @@ function Presence() {
 
                   </div>
 
-                );
-
-              }
-            )}
+                </div>
+              );
+            })}
 
           </div>
 
         </div>
 
-
       </div>
 
     </section>
-
   );
 }
-
 
 export default Presence;
