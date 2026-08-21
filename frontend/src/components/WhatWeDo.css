@@ -1,4 +1,4 @@
- /* ==========================================================
+/* ==========================================================
    What We Do — Premium Aquaculture Intelligence Section
    PERFORMANCE OPTIMIZED
    ========================================================== */
@@ -14,12 +14,16 @@
   --wwd-radius: 26px;
 
   position: relative;
+
   overflow: hidden;
 
-  padding: clamp(64px, 9vw, 140px) 0
+  padding:
+    clamp(64px, 9vw, 140px)
+    0
     clamp(80px, 10vw, 160px);
 
   background: var(--wwd-bg);
+
   color: var(--wwd-ink);
 
   font-family:
@@ -38,8 +42,10 @@
     Isolate this section's layout/paint work.
     It does not change appearance.
   */
+
   contain: layout paint;
 }
+
 
 /* ==========================================================
    SHELL
@@ -47,8 +53,10 @@
 
 .wwd__shell {
   width: min(1180px, 100% - 2.5rem);
+
   margin-inline: auto;
 }
+
 
 /* ==========================================================
    HEADER
@@ -58,31 +66,41 @@
   max-width: 860px;
 }
 
+
 .wwd__eyebrow {
   display: inline-flex;
+
   align-items: center;
+
   gap: 0.6rem;
 
   margin: 0 0 1.6rem;
+
   padding: 0.42rem 0.95rem;
 
   border: 1px solid var(--wwd-line);
+
   border-radius: 999px;
 
   background: rgba(255, 255, 255, 0.7);
 
   font-size: 0.68rem;
+
   font-weight: 600;
+
   letter-spacing: 0.18em;
+
   text-transform: uppercase;
 
   color: var(--wwd-ink-soft);
 }
 
+
 .wwd__eyebrow::before {
   content: "";
 
   width: 7px;
+
   height: 7px;
 
   border-radius: 50%;
@@ -91,6 +109,7 @@
 
   flex-shrink: 0;
 }
+
 
 .wwd__title {
   margin: 0;
@@ -106,19 +125,23 @@
   text-wrap: balance;
 }
 
+
 .wwd__title-accent {
   background: var(--wwd-gradient);
 
   -webkit-background-clip: text;
+
   background-clip: text;
 
   color: transparent;
 }
 
+
 .wwd__subtitle {
   margin: 1.35rem 0 0;
 
-  font-size: clamp(1.25rem, 2.4vw, 1.9rem);
+  font-size:
+    clamp(1.25rem, 2.4vw, 1.9rem);
 
   font-weight: 500;
 
@@ -127,24 +150,32 @@
   color: var(--wwd-ink);
 }
 
+
 .wwd__lead {
   margin: 1.1rem 0 0;
 
   max-width: 620px;
 
-  font-size: clamp(1rem, 1.3vw, 1.08rem);
+  font-size:
+    clamp(1rem, 1.3vw, 1.08rem);
 
   line-height: 1.7;
 
   color: var(--wwd-ink-soft);
 }
 
+
+/* ==========================================================
+   DIVIDER
+   ========================================================== */
+
 .wwd__rule {
   height: 1px;
 
   margin:
     clamp(48px, 6vw, 84px)
-    0 0;
+    0
+    0;
 
   background:
     linear-gradient(
@@ -154,6 +185,7 @@
       transparent
     );
 }
+
 
 /* ==========================================================
    BLOCKS
@@ -166,7 +198,8 @@
 
   align-items: center;
 
-  gap: clamp(2.5rem, 6vw, 5.5rem);
+  gap:
+    clamp(2.5rem, 6vw, 5.5rem);
 
   padding:
     clamp(56px, 8vw, 104px)
@@ -177,20 +210,25 @@
   /*
     Each block is isolated for smoother browser rendering.
   */
+
   contain: layout paint;
 }
+
 
 .wwd__block--reverse .wwd__media-col {
   order: 2;
 }
 
+
 .wwd__block--reverse .wwd__content-col {
   order: 1;
 }
 
+
 .wwd__block:last-of-type {
   border-bottom: 0;
 }
+
 
 /* ==========================================================
    IMAGE CONTAINER
@@ -208,11 +246,17 @@
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   overflow: hidden;
 
-  cursor: pointer;
+  /*
+    No click action.
+    Cursor remains normal.
+  */
+
+  cursor: default;
 
   border-radius: var(--wwd-radius);
 
@@ -224,11 +268,35 @@
     0 26px 60px -34px
     rgba(16, 23, 28, 0.4);
 
-  /*
-    Prevent image/layout from affecting surrounding content.
-  */
   contain: layout paint;
+
+  /*
+    Hover applies to the whole container,
+    not the image inside it.
+  */
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
+
+
+/* ==========================================================
+   CONTAINER HOVER
+   ========================================================== */
+
+.wwd__media:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(14, 165, 233, 0.3);
+
+  box-shadow:
+    0 32px 70px -30px
+    rgba(16, 23, 28, 0.5);
+}
+
 
 /* ==========================================================
    IMAGES
@@ -236,34 +304,29 @@
 
 .wwd__media img {
   width: 100%;
+
   height: 100%;
 
   display: block;
 
   object-fit: cover;
+
   object-position: center;
 
   /*
-    Async image decoding.
+    No transform transition.
+    Therefore image itself never zooms.
   */
-  decoding: async;
-
-  /*
-    Smooth hover only.
-  */
-  transition:
-    transform 0.7s
-    cubic-bezier(0.16, 1, 0.3, 1);
 
   pointer-events: none;
 
-  /*
-    Helps browser render image independently.
-  */
   backface-visibility: hidden;
-
-  transform: translateZ(0);
 }
+
+
+/* ==========================================================
+   IMAGE OVERLAY
+   ========================================================== */
 
 .wwd__media::after {
   content: "";
@@ -284,155 +347,6 @@
   pointer-events: none;
 }
 
-.wwd__media:hover .wwd__img,
-.wwd__media:focus-within .wwd__img {
-  transform: scale(1.03);
-}
-
-/* ==========================================================
-   LIGHTBOX
-   ========================================================== */
-
-.wwd__lightbox {
-  display: none;
-
-  position: fixed;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background: rgba(0, 0, 0, 0.9);
-
-  z-index: 9999;
-
-  justify-content: center;
-  align-items: center;
-
-  padding: 2rem;
-
-  cursor: pointer;
-
-  animation:
-    wwdFadeIn
-    0.3s
-    ease;
-
-  /*
-    Keep lightbox rendering isolated.
-  */
-  contain: strict;
-}
-
-.wwd__lightbox.active {
-  display: flex;
-}
-
-.wwd__lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-
-  object-fit: contain;
-
-  border-radius: 12px;
-
-  box-shadow:
-    0 30px 80px
-    rgba(0, 0, 0, 0.8);
-
-  animation:
-    wwdZoomIn
-    0.4s
-    cubic-bezier(0.16, 1, 0.3, 1);
-
-  decoding: async;
-}
-
-.wwd__lightbox-close {
-  position: absolute;
-
-  top: 2rem;
-  right: 2rem;
-
-  width: 48px;
-  height: 48px;
-
-  border-radius: 50%;
-
-  border: 2px solid
-    rgba(255, 255, 255, 0.3);
-
-  background:
-    rgba(255, 255, 255, 0.1);
-
-  color: white;
-
-  font-size: 1.8rem;
-
-  cursor: pointer;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease,
-    border-color 0.3s ease;
-
-  /*
-    Avoid unnecessary backdrop-filter rendering.
-    Appearance remains visually very close.
-  */
-}
-
-.wwd__lightbox-close:hover {
-  background:
-    rgba(255, 255, 255, 0.2);
-
-  transform: rotate(90deg);
-
-  border-color:
-    rgba(255, 255, 255, 0.6);
-}
-
-.wwd__lightbox-close::before {
-  content: "";
-
-  line-height: 1;
-}
-
-/* ==========================================================
-   ANIMATIONS
-   ========================================================== */
-
-@keyframes wwdFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes wwdZoomIn {
-  from {
-    opacity: 0;
-    transform:
-      scale(0.8)
-      translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform:
-      scale(1)
-      translateY(0);
-  }
-}
 
 /* ==========================================================
    NUMBER
@@ -454,6 +368,7 @@
   color: var(--wwd-accent);
 }
 
+
 .wwd__num span {
   width: 46px;
 
@@ -462,6 +377,7 @@
   background:
     var(--wwd-gradient);
 }
+
 
 /* ==========================================================
    KICKER
@@ -480,6 +396,7 @@
 
   color: var(--wwd-ink-soft);
 }
+
 
 /* ==========================================================
    HEADING
@@ -500,6 +417,7 @@
   text-wrap: balance;
 }
 
+
 /* ==========================================================
    INTELLIGENCE CHAIN
    ========================================================== */
@@ -519,6 +437,7 @@
 
   list-style: none;
 }
+
 
 .wwd__chip {
   display: inline-flex;
@@ -553,8 +472,10 @@
   white-space: nowrap;
 }
 
+
 .wwd__chip-dot {
   width: 6px;
+
   height: 6px;
 
   border-radius: 50%;
@@ -567,6 +488,7 @@
   flex-shrink: 0;
 }
 
+
 .wwd__chip-arrow {
   color: var(--wwd-accent);
 
@@ -578,6 +500,7 @@
 
   flex-shrink: 0;
 }
+
 
 .wwd__chip:hover {
   color: #0284c7;
@@ -592,6 +515,11 @@
     rgba(16, 23, 28, 0.6);
 }
 
+
+/* ==========================================================
+   FOOTNOTE
+   ========================================================== */
+
 .wwd__footnote {
   margin: 1.5rem 0 0;
 
@@ -601,6 +529,7 @@
 
   color: var(--wwd-ink-soft);
 }
+
 
 /* ==========================================================
    REVEAL ANIMATION
@@ -617,22 +546,20 @@
       cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.9s
       cubic-bezier(0.22, 1, 0.36, 1);
-
-  /*
-    Only use will-change during animation.
-    Keeping it permanently can waste GPU memory.
-  */
 }
+
 
 .wwd__reveal--left {
   transform:
     translate3d(-48px, 16px, 0);
 }
 
+
 .wwd__reveal--right {
   transform:
     translate3d(48px, 16px, 0);
 }
+
 
 .wwd__reveal.is-visible {
   opacity: 1;
@@ -641,9 +568,11 @@
     translate3d(0, 0, 0);
 }
 
+
 .wwd__block .wwd__reveal:nth-child(2) {
   transition-delay: 0.1s;
 }
+
 
 /* ==========================================================
    REDUCED MOTION
@@ -653,20 +582,24 @@
   .wwd__reveal,
   .wwd__img,
   .wwd__chip,
-  .wwd__lightbox,
-  .wwd__lightbox img {
+  .wwd__media {
     transition: none !important;
+
     animation: none !important;
+
     transform: none !important;
+
     opacity: 1 !important;
   }
 }
 
+
 /* ==========================================================
-   RESPONSIVE
+   RESPONSIVE — TABLET
    ========================================================== */
 
 @media (max-width: 992px) {
+
   .wwd__block {
     grid-template-columns: 1fr 1fr;
 
@@ -675,21 +608,30 @@
     padding: 3.25rem 0;
   }
 
+
   .wwd__media {
     min-height: 260px;
 
     max-height: 420px;
   }
 
+
   .wwd__chip {
     font-size: 0.78rem;
 
     padding:
-      0.4rem 0.85rem;
+      0.4rem
+      0.85rem;
   }
 }
 
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+   ========================================================== */
+
 @media (max-width: 768px) {
+
   .wwd__shell {
     width:
       min(
@@ -698,18 +640,22 @@
       );
   }
 
+
   .wwd__block {
     grid-template-columns:
       minmax(0, 1fr);
   }
 
+
   .wwd__block .wwd__media-col {
     order: 1;
   }
 
+
   .wwd__block .wwd__content-col {
     order: 2;
   }
+
 
   .wwd__media {
     min-height: 220px;
@@ -717,19 +663,24 @@
     max-height: 340px;
   }
 
+
   .wwd__chip {
     font-size: 0.72rem;
 
     padding:
-      0.3rem 0.7rem;
+      0.3rem
+      0.7rem;
 
     white-space: nowrap;
   }
 
+
   .wwd__chain {
     gap:
-      0.4rem 0.6rem;
+      0.4rem
+      0.6rem;
   }
+
 
   .wwd__reveal--left,
   .wwd__reveal--right {
@@ -738,18 +689,27 @@
   }
 }
 
+
+/* ==========================================================
+   RESPONSIVE — SMALL MOBILE
+   ========================================================== */
+
 @media (max-width: 480px) {
+
   .wwd__chip {
     font-size: 0.65rem;
 
     padding:
-      0.25rem 0.6rem;
+      0.25rem
+      0.6rem;
 
     gap: 0.35rem;
   }
 
+
   .wwd__chain {
     gap:
-      0.3rem 0.4rem;
+      0.3rem
+      0.4rem;
   }
 }
