@@ -27,6 +27,7 @@
 
 .presence-top-title {
   text-align: center;
+
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.15;
@@ -192,69 +193,32 @@
 
   margin-top: 80px;
 
-  overflow: hidden;
+  overflow: visible;
 }
 
 
 /* =========================================================
-   AUTO SCROLL CONTAINER
+   CARDS GRID
 ========================================================= */
 
 .presence-new-cards-container {
 
-  display: flex;
+  display: grid;
 
-  align-items: center;
+  grid-template-columns:
+    repeat(2, 520px);
+
+  justify-content: center;
+
+  align-items: start;
 
   gap: 35px;
 
   width: 100%;
 
-  overflow-x: auto;
+  overflow: visible;
 
-  overflow-y: hidden;
-
-  /*
-   * IMPORTANT:
-   * Enables horizontal finger swipe.
-   */
-  touch-action: pan-x;
-
-  /*
-   * iPhone / iPad smooth touch scrolling.
-   */
-  -webkit-overflow-scrolling: touch;
-
-  /*
-   * Hide scrollbar.
-   */
-  scrollbar-width: none;
-
-  /*
-   * Prevent text selection while dragging.
-   */
-  user-select: none;
-
-  -webkit-user-select: none;
-
-  /*
-   * Prevent vertical overscroll.
-   */
-  overscroll-behavior-x: contain;
-
-  scroll-behavior: auto;
-
-  /*
-   * IMPORTANT:
-   * Do NOT use grid here.
-   * Flex allows continuous horizontal scrolling.
-   */
-  white-space: nowrap;
-}
-
-
-.presence-new-cards-container::-webkit-scrollbar {
-  display: none;
+  white-space: normal;
 }
 
 
@@ -264,13 +228,24 @@
 
 .presence-new-card-wrapper {
 
-  flex: 0 0 auto;
+  width: 520px;
 
-  width: 420px;
-
-  min-width: 420px;
+  min-width: 520px;
 
   white-space: normal;
+}
+
+
+/* =========================================================
+   THIRD CARD
+   CENTERED BELOW FIRST TWO
+========================================================= */
+
+.presence-new-card-wrapper:nth-child(3) {
+
+  grid-column: 1 / 3;
+
+  justify-self: center;
 }
 
 
@@ -291,7 +266,7 @@
 
   width: 100%;
 
-  height: 400px;
+  height: 460px;
 
   background-size: 100% 100%;
 
@@ -633,12 +608,32 @@
   }
 
 
+  /* ==============================================
+     LAPTOP CARDS
+  ============================================== */
+
+  .presence-new-cards-container {
+
+    grid-template-columns:
+      repeat(2, 450px);
+
+    gap: 30px;
+  }
+
+
   .presence-new-card-wrapper {
 
-    width: 380px;
+    width: 450px;
 
-    min-width: 380px;
+    min-width: 450px;
   }
+
+
+  .presence-pure-image {
+
+    height: 430px;
+  }
+
 }
 
 
@@ -722,7 +717,14 @@
   }
 
 
+  /* ==============================================
+     TABLET CARDS
+  ============================================== */
+
   .presence-new-cards-container {
+
+    grid-template-columns:
+      repeat(2, 360px);
 
     gap: 30px;
   }
@@ -736,6 +738,14 @@
   }
 
 
+  .presence-new-card-wrapper:nth-child(3) {
+
+    grid-column: 1 / 3;
+
+    justify-self: center;
+  }
+
+
   .presence-pure-image {
 
     height: 420px;
@@ -746,6 +756,7 @@
 
     padding: 40px;
   }
+
 }
 
 
@@ -836,60 +847,53 @@
   }
 
 
-  /* ---------------------------------------------
-     MOBILE HORIZONTAL CARD SCROLL
-  --------------------------------------------- */
+  /* ==============================================
+     MOBILE CARDS
+  ============================================== */
 
   .presence-cards-section {
 
     margin-top: 55px;
 
-    width: calc(
-      100% + 20px
-    );
+    width: 100%;
 
-    margin-left: -10px;
+    margin-left: 0;
+
+    overflow: visible;
   }
 
 
   .presence-new-cards-container {
 
-    display: flex;
+    display: grid;
 
-    flex-direction: row;
+    grid-template-columns: 1fr;
 
     gap: 20px;
 
-    overflow-x: auto;
+    width: 100%;
 
-    overflow-y: hidden;
+    overflow: visible;
 
-    padding: 10px;
+    padding: 0;
 
-    touch-action: pan-x;
-
-    -webkit-overflow-scrolling: touch;
-
-    scroll-behavior: auto;
-
-    scrollbar-width: none;
-
-    overscroll-behavior-x: contain;
-  }
-
-
-  .presence-new-cards-container::-webkit-scrollbar {
-    display: none;
+    white-space: normal;
   }
 
 
   .presence-new-card-wrapper {
 
-    flex: 0 0 auto;
+    width: 100%;
 
-    width: 300px;
+    min-width: 0;
+  }
 
-    min-width: 300px;
+
+  .presence-new-card-wrapper:nth-child(3) {
+
+    grid-column: auto;
+
+    justify-self: stretch;
   }
 
 
@@ -923,6 +927,7 @@
 
     line-height: 1.6;
   }
+
 }
 
 
@@ -1003,35 +1008,37 @@
   }
 
 
-  /* ---------------------------------------------
-     SMALL MOBILE CARD SIZE
-  --------------------------------------------- */
+  /* ==============================================
+     SMALL MOBILE CARDS
+  ============================================== */
 
   .presence-cards-section {
 
     margin-top: 45px;
 
-    width: calc(
-      100% + 16px
-    );
+    width: 100%;
 
-    margin-left: -8px;
+    margin-left: 0;
   }
 
 
   .presence-new-cards-container {
 
+    display: grid;
+
+    grid-template-columns: 1fr;
+
     gap: 16px;
 
-    padding: 8px;
+    padding: 0;
   }
 
 
   .presence-new-card-wrapper {
 
-    width: 280px;
+    width: 100%;
 
-    min-width: 280px;
+    min-width: 0;
   }
 
 
@@ -1091,6 +1098,7 @@
 
     line-height: 1.5;
   }
+
 }
 
 
@@ -1126,10 +1134,11 @@
 
   .presence-new-card-wrapper {
 
-    width: 260px;
+    width: 100%;
 
-    min-width: 260px;
+    min-width: 0;
   }
+
 }
 
 
@@ -1149,6 +1158,7 @@
 
     margin-left: 100px;
   }
+
 }
 
 
@@ -1169,4 +1179,5 @@ and (max-width: 992px) {
 
     margin-left: 50px;
   }
+
 }

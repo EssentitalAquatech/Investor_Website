@@ -1,13 +1,20 @@
 
 
-// import React, { useEffect, useState } from "react";
+
+
+
+
+
+
+
+
+// import React, { useEffect, useRef, useState } from "react";
 // import "./Presence.css";
 
 // // =====================================================
 // // CLOUDINARY IMAGES
 // // =====================================================
 
-// // Auto format + quality optimization
 // const CLOUDINARY_BASE =
 //   "https://res.cloudinary.com/p8fs2e1n/image/upload";
 
@@ -95,6 +102,8 @@
 //   const [statsVisible, setStatsVisible] =
 //     useState(false);
 
+//   const cardsScrollRef = useRef(null);
+
 
 //   // =====================================================
 //   // IMPACT STATS
@@ -131,7 +140,7 @@
 //   const cardsData = [
 //     {
 //       id: "livelihood",
-//       title: " Livelihood",
+//       title: "Livelihood",
 
 //       bgImage:
 //         `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/Live.png`,
@@ -142,7 +151,7 @@
 
 //     {
 //       id: "impact",
-//       title: " Impact",
+//       title: "Impact",
 
 //       bgImage:
 //         `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/Impact.png`,
@@ -181,14 +190,14 @@
 //             if (entry.isIntersecting) {
 //               entry.target.classList.add("visible");
 
-//               // Once visible, no need to observe again
-//               observer.unobserve(entry.target);
+//               observer.unobserve(
+//                 entry.target
+//               );
 //             }
 //           });
 //         },
 //         observerOptions
 //       );
-
 
 //     const animatedElements =
 //       document.querySelectorAll(
@@ -244,6 +253,149 @@
 
 
 //   // =====================================================
+//   // AUTO SCROLL + TOUCH SWIPE
+//   // =====================================================
+
+//   useEffect(() => {
+//     const container =
+//       cardsScrollRef.current;
+
+//     if (!container) return;
+
+//     let animationFrame;
+//     let resumeTimeout;
+
+//     let isUserInteracting = false;
+
+//     // ---------------------------------------------
+//     // START USER INTERACTION
+//     // ---------------------------------------------
+
+//     const startInteraction = () => {
+//       isUserInteracting = true;
+
+//       clearTimeout(resumeTimeout);
+//     };
+
+
+//     // ---------------------------------------------
+//     // END USER INTERACTION
+//     // ---------------------------------------------
+
+//     const endInteraction = () => {
+//       clearTimeout(resumeTimeout);
+
+//       resumeTimeout = setTimeout(() => {
+//         isUserInteracting = false;
+//       }, 1500);
+//     };
+
+
+//     // ---------------------------------------------
+//     // MOUSE
+//     // ---------------------------------------------
+
+//     container.addEventListener(
+//       "mouseenter",
+//       startInteraction
+//     );
+
+//     container.addEventListener(
+//       "mouseleave",
+//       endInteraction
+//     );
+
+
+//     // ---------------------------------------------
+//     // TOUCH
+//     // ---------------------------------------------
+
+//     container.addEventListener(
+//       "touchstart",
+//       startInteraction,
+//       { passive: true }
+//     );
+
+//     container.addEventListener(
+//       "touchend",
+//       endInteraction,
+//       { passive: true }
+//     );
+
+//     container.addEventListener(
+//       "touchcancel",
+//       endInteraction,
+//       { passive: true }
+//     );
+
+
+//     // ---------------------------------------------
+//     // AUTO SCROLL
+//     // ---------------------------------------------
+
+//     const scroll = () => {
+//       if (!isUserInteracting) {
+//         container.scrollLeft += 0.6;
+
+//         /*
+//          * When reaching the end,
+//          * smoothly start again.
+//          */
+//         if (
+//           container.scrollLeft >=
+//           container.scrollWidth -
+//             container.clientWidth
+//         ) {
+//           container.scrollLeft = 0;
+//         }
+//       }
+
+//       animationFrame =
+//         requestAnimationFrame(scroll);
+//     };
+
+//     animationFrame =
+//       requestAnimationFrame(scroll);
+
+
+//     // ---------------------------------------------
+//     // CLEANUP
+//     // ---------------------------------------------
+
+//     return () => {
+//       cancelAnimationFrame(animationFrame);
+
+//       clearTimeout(resumeTimeout);
+
+//       container.removeEventListener(
+//         "mouseenter",
+//         startInteraction
+//       );
+
+//       container.removeEventListener(
+//         "mouseleave",
+//         endInteraction
+//       );
+
+//       container.removeEventListener(
+//         "touchstart",
+//         startInteraction
+//       );
+
+//       container.removeEventListener(
+//         "touchend",
+//         endInteraction
+//       );
+
+//       container.removeEventListener(
+//         "touchcancel",
+//         endInteraction
+//       );
+//     };
+//   }, []);
+
+
+//   // =====================================================
 //   // RENDER
 //   // =====================================================
 
@@ -252,7 +404,9 @@
 
 //       <div className="presence-container-unique">
 
-//         {/* TOP HEADING */}
+//         {/* ============================================
+//             TOP HEADING
+//         ============================================ */}
 
 //         <h2 className="presence-top-title animate fade-down">
 //           Our Impact Across{" "}
@@ -260,36 +414,42 @@
 //         </h2>
 
 
-//         {/* IMPACT STATS */}
+//         {/* ============================================
+//             IMPACT STATS
+//         ============================================ */}
 
 //         <div className="presence-impact-stats">
 
-//           {impactStats.map((stat, index) => (
-//             <div
-//               key={index}
-//               className={`presence-stat-item animate fade-up delay-${index}`}
-//             >
+//           {impactStats.map(
+//             (stat, index) => (
+//               <div
+//                 key={index}
+//                 className={`presence-stat-item animate fade-up delay-${index}`}
+//               >
 
-//               <div className="presence-stat-line" />
+//                 <div className="presence-stat-line" />
 
-//               <div className="presence-stat-value">
-//                 <AnimatedNumber
-//                   value={stat.value}
-//                   start={statsVisible}
-//                 />
+//                 <div className="presence-stat-value">
+//                   <AnimatedNumber
+//                     value={stat.value}
+//                     start={statsVisible}
+//                   />
+//                 </div>
+
+//                 <div className="presence-stat-label">
+//                   {stat.label}
+//                 </div>
+
 //               </div>
-
-//               <div className="presence-stat-label">
-//                 {stat.label}
-//               </div>
-
-//             </div>
-//           ))}
+//             )
+//           )}
 
 //         </div>
 
 
-//         {/* MAP */}
+//         {/* ============================================
+//             MAP
+//         ============================================ */}
 
 //         <div className="presence-main-box">
 
@@ -309,89 +469,98 @@
 //         </div>
 
 
-//         {/* IMPACT CARDS */}
+//         {/* ============================================
+//             IMPACT CARDS
+//         ============================================ */}
 
 //         <div className="presence-cards-section">
 
-//           <div className="presence-new-cards-container">
+//           <div
+//             className="presence-new-cards-container"
+//             ref={cardsScrollRef}
+//           >
 
-//             {cardsData.map((card, index) => {
+//             {[...cardsData, ...cardsData].map(
+//               (card, index) => {
 
-//               const directions = [
-//                 "fade-left",
-//                 "fade-up",
-//                 "fade-right",
-//               ];
+//                 return (
+//                   <div
+//                     key={`${card.id}-${index}`}
+//                     className={`presence-new-card-wrapper card-${card.id} animate ${
+//                       index % 3 === 0
+//                         ? "fade-left"
+//                         : index % 3 === 1
+//                         ? "fade-up"
+//                         : "fade-right"
+//                     }`}
+//                     onMouseEnter={() =>
+//                       setHoveredCard(card.id)
+//                     }
+//                     onMouseLeave={() =>
+//                       setHoveredCard(null)
+//                     }
+//                   >
 
-//               return (
-//                 <div
-//                   key={card.id}
-//                   className={`presence-new-card-wrapper card-${card.id} animate ${directions[index]} delay-${index}`}
-//                   onMouseEnter={() =>
-//                     setHoveredCard(card.id)
-//                   }
-//                   onMouseLeave={() =>
-//                     setHoveredCard(null)
-//                   }
-//                 >
+//                     <div className="presence-card-container">
 
-//                   <div className="presence-card-container">
+//                       <div
+//                         className={`presence-pure-image ${
+//                           hoveredCard === card.id
+//                             ? "hovered"
+//                             : ""
+//                         }`}
+//                         style={{
+//                           backgroundImage:
+//                             `url("${card.bgImage}")`,
+//                         }}
+//                       >
 
-//                     <div
-//                       className={`presence-pure-image ${
-//                         hoveredCard === card.id
-//                           ? "hovered"
-//                           : ""
-//                       }`}
-//                       style={{
-//                         backgroundImage:
-//                           `url("${card.bgImage}")`,
-//                       }}
-//                     >
+//                         {/* NORMAL TITLE */}
 
-//                       {/* NORMAL TITLE */}
+//                         {hoveredCard !== card.id && (
+//                           <div className="presence-card-title">
+//                             {card.title}
+//                           </div>
+//                         )}
 
-//                       {hoveredCard !== card.id && (
-//                         <div className="presence-card-title">
-//                           {card.title}
+
+//                         {/* HOVER CONTENT */}
+
+//                         <div className="presence-hover-content">
+
+//                           <span className="presence-hover-kicker">
+
+//                             {card.id === "livelihood"
+//                               ? "FARMER EMPOWERMENT"
+//                               : card.id === "impact"
+//                               ? "INTELLIGENCE IN ACTION"
+//                               : "SMARTER FARM ECONOMICS"}
+
+//                           </span>
+
+
+//                           <h3>
+//                             {card.title}
+//                           </h3>
+
+
+//                           <div className="presence-hover-line" />
+
+
+//                           <p>
+//                             {card.description}
+//                           </p>
+
 //                         </div>
-//                       )}
-
-
-//                       {/* HOVER CONTENT */}
-
-//                       <div className="presence-hover-content">
-
-//                         <span className="presence-hover-kicker">
-//                           {card.id === "livelihood"
-//                             ? "FARMER EMPOWERMENT"
-//                             : card.id === "impact"
-//                             ? "INTELLIGENCE IN ACTION"
-//                             : "SMARTER FARM ECONOMICS"}
-//                         </span>
-
-
-//                         <h3>
-//                           {card.title}
-//                         </h3>
-
-
-//                         <div className="presence-hover-line" />
-
-
-//                         <p>
-//                           {card.description}
-//                         </p>
 
 //                       </div>
 
 //                     </div>
 
 //                   </div>
-
-//                 </div>
-//               );
-//             })}
+//                 );
+//               }
+//             )}
 
 //           </div>
 
@@ -415,14 +584,7 @@
 
 
 
-
-
-
-
-
-
-
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Presence.css";
 
 // =====================================================
@@ -515,8 +677,6 @@ function Presence() {
 
   const [statsVisible, setStatsVisible] =
     useState(false);
-
-  const cardsScrollRef = useRef(null);
 
 
   // =====================================================
@@ -667,149 +827,6 @@ function Presence() {
 
 
   // =====================================================
-  // AUTO SCROLL + TOUCH SWIPE
-  // =====================================================
-
-  useEffect(() => {
-    const container =
-      cardsScrollRef.current;
-
-    if (!container) return;
-
-    let animationFrame;
-    let resumeTimeout;
-
-    let isUserInteracting = false;
-
-    // ---------------------------------------------
-    // START USER INTERACTION
-    // ---------------------------------------------
-
-    const startInteraction = () => {
-      isUserInteracting = true;
-
-      clearTimeout(resumeTimeout);
-    };
-
-
-    // ---------------------------------------------
-    // END USER INTERACTION
-    // ---------------------------------------------
-
-    const endInteraction = () => {
-      clearTimeout(resumeTimeout);
-
-      resumeTimeout = setTimeout(() => {
-        isUserInteracting = false;
-      }, 1500);
-    };
-
-
-    // ---------------------------------------------
-    // MOUSE
-    // ---------------------------------------------
-
-    container.addEventListener(
-      "mouseenter",
-      startInteraction
-    );
-
-    container.addEventListener(
-      "mouseleave",
-      endInteraction
-    );
-
-
-    // ---------------------------------------------
-    // TOUCH
-    // ---------------------------------------------
-
-    container.addEventListener(
-      "touchstart",
-      startInteraction,
-      { passive: true }
-    );
-
-    container.addEventListener(
-      "touchend",
-      endInteraction,
-      { passive: true }
-    );
-
-    container.addEventListener(
-      "touchcancel",
-      endInteraction,
-      { passive: true }
-    );
-
-
-    // ---------------------------------------------
-    // AUTO SCROLL
-    // ---------------------------------------------
-
-    const scroll = () => {
-      if (!isUserInteracting) {
-        container.scrollLeft += 0.6;
-
-        /*
-         * When reaching the end,
-         * smoothly start again.
-         */
-        if (
-          container.scrollLeft >=
-          container.scrollWidth -
-            container.clientWidth
-        ) {
-          container.scrollLeft = 0;
-        }
-      }
-
-      animationFrame =
-        requestAnimationFrame(scroll);
-    };
-
-    animationFrame =
-      requestAnimationFrame(scroll);
-
-
-    // ---------------------------------------------
-    // CLEANUP
-    // ---------------------------------------------
-
-    return () => {
-      cancelAnimationFrame(animationFrame);
-
-      clearTimeout(resumeTimeout);
-
-      container.removeEventListener(
-        "mouseenter",
-        startInteraction
-      );
-
-      container.removeEventListener(
-        "mouseleave",
-        endInteraction
-      );
-
-      container.removeEventListener(
-        "touchstart",
-        startInteraction
-      );
-
-      container.removeEventListener(
-        "touchend",
-        endInteraction
-      );
-
-      container.removeEventListener(
-        "touchcancel",
-        endInteraction
-      );
-    };
-  }, []);
-
-
-  // =====================================================
   // RENDER
   // =====================================================
 
@@ -889,17 +906,14 @@ function Presence() {
 
         <div className="presence-cards-section">
 
-          <div
-            className="presence-new-cards-container"
-            ref={cardsScrollRef}
-          >
+          <div className="presence-new-cards-container">
 
-            {[...cardsData, ...cardsData].map(
+            {cardsData.map(
               (card, index) => {
 
                 return (
                   <div
-                    key={`${card.id}-${index}`}
+                    key={card.id}
                     className={`presence-new-card-wrapper card-${card.id} animate ${
                       index % 3 === 0
                         ? "fade-left"
