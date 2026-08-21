@@ -1,51 +1,74 @@
 /* ============================= */
 /* SECTION */
 /* ============================= */
+
 .lifeImagesSectionMain {
   background: #ffffff;
   padding: 120px 0;
   min-height: 650px;
+
   display: flex;
   align-items: center;
 }
 
+
 /* ============================= */
 /* HEADING */
 /* ============================= */
+
 .lifeImagesMainHeading {
   text-align: center;
   line-height: 1.2;
   margin-bottom: 70px;
+
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
+
   overflow: hidden;
   padding: 0 15px;
 }
 
+
 /* Top heading start left */
+
 .lifeImagesMainHeading .topLine {
   display: block;
+
   font-size: 4rem;
   font-weight: 500;
+
   margin-bottom: 8px;
+
   color: #000000;
+
   opacity: 0;
   transform: translateX(-120px);
+
   transition: all 1s ease;
 }
+
 
 /* Bottom heading start right */
+
 .lifeImagesMainHeading .bottomLine {
   display: block;
+
   font-size: 4.6rem;
   font-weight: 500;
+
   color: #38bdf8;
+
   opacity: 0;
   transform: translateX(120px);
+
   transition: all 1s ease;
 }
 
-/* Show Animation */
+
+/* ============================= */
+/* HEADING ANIMATION */
+/* ============================= */
+
 .lifeImagesMainHeading.showHeading .topLine {
   opacity: 1;
   transform: translateX(0);
@@ -56,93 +79,222 @@
   transform: translateX(0);
 }
 
+
 /* ============================= */
 /* WRAPPER */
 /* ============================= */
+
 .lifeImagesWrapperBox {
   overflow: hidden;
   position: relative;
   padding: 20px 0;
 }
 
+
+/* ============================= */
+/* SCROLL CONTAINER */
+/* ============================= */
+
 .lifeImagesScrollContainer {
   display: flex;
   gap: 25px;
   align-items: center;
+
   overflow-x: auto;
-  scroll-behavior: smooth;
+  overflow-y: hidden;
+
+  /*
+   * IMPORTANT:
+   * Allows native horizontal finger swipe
+   */
+  touch-action: pan-x;
+
+  /*
+   * Smooth native scrolling on iOS
+   */
+  -webkit-overflow-scrolling: touch;
+
+  /*
+   * Prevent text selection while dragging
+   */
+  user-select: none;
+  -webkit-user-select: none;
+
+  /*
+   * Hide scrollbar
+   */
+  scrollbar-width: none;
+
+  /*
+   * Prevent unnecessary browser overscroll
+   */
+  overscroll-behavior-x: contain;
+
+  /*
+   * Keep cards in one horizontal line
+   */
   white-space: nowrap;
-  will-change: transform;
+
+  /*
+   * Do not use transform here.
+   * scrollLeft is controlled by JS.
+   */
+  will-change: scroll-position;
 }
+
+
+/* ============================= */
+/* HIDE CHROME / SAFARI SCROLLBAR */
+/* ============================= */
 
 .lifeImagesScrollContainer::-webkit-scrollbar {
   display: none;
 }
 
+
 /* ============================= */
 /* CARD */
 /* ============================= */
+
 .lifeImagesSingleCard {
   flex: 0 0 auto;
+
   width: 420px;
+  min-width: 420px;
+
   height: 290px;
+
   border-radius: 18px;
+
   overflow: hidden;
+
   position: relative;
+
   cursor: pointer;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s ease;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+
   background: #f5f5f5;
+
+  /*
+   * Prevent card shrinking
+   */
+  flex-shrink: 0;
 }
+
+
+/* ============================= */
+/* IMAGE */
+/* ============================= */
 
 .lifeImagesSingleCard img {
   width: 100%;
   height: 100%;
+
   object-fit: contain;
+  object-position: center;
+
   display: block;
+
+  /*
+   * Prevent image dragging
+   * from interfering with touch scroll
+   */
+  -webkit-user-drag: none;
+  user-select: none;
+
+  /*
+   * Parent card handles click
+   */
+  pointer-events: none;
 }
+
+
+/* ============================= */
+/* HOVER SCALE */
+/* ============================= */
 
 .lifeImagesSingleCard:hover {
   transform: scale(1.07);
 }
 
+
+/* ============================= */
 /* OVERLAY */
+/* ============================= */
+
 .lifeImagesOverlay {
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.8),
     rgba(0, 0, 0, 0.3),
     transparent
   );
+
   opacity: 0;
-  transition: 0.4s;
+
+  transition: opacity 0.4s ease;
+
+  pointer-events: none;
 }
+
+
+/* ============================= */
+/* TEXT BOX */
+/* ============================= */
 
 .lifeImagesTextBox {
   position: absolute;
+
   bottom: 12px;
   left: 15px;
   right: 15px;
+
   color: #fff;
+
   z-index: 2;
+
   transform: translateY(20px);
+
   opacity: 0;
+
   transition: all 0.4s ease;
+
+  pointer-events: none;
 }
+
 
 .lifeImagesTextBox h5 {
   font-size: 1rem;
   font-weight: 600;
+
   margin: 0;
+
+  white-space: normal;
+  word-wrap: break-word;
 }
+
 
 .lifeImagesTextBox p {
   font-size: 0.8rem;
+
   opacity: 0.7;
+
   margin: 0;
 }
+
+
+/* ============================= */
+/* HOVER EFFECT */
+/* ============================= */
 
 .lifeImagesSingleCard:hover .lifeImagesOverlay {
   opacity: 1;
@@ -153,97 +305,148 @@
   opacity: 1;
 }
 
+
 /* ============================= */
 /* MODAL */
 /* ============================= */
+
 .lifeImagesModal {
   position: fixed;
   inset: 0;
+
   background: rgba(0, 0, 0, 0.6);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   z-index: 999;
+
   padding: 30px;
 }
+
+
+/* ============================= */
+/* MODAL CONTENT */
+/* ============================= */
 
 .lifeImagesModalContent {
   width: 100%;
   max-width: 900px;
+
   max-height: 90vh;
+
   background: #fff;
+
   border-radius: 20px;
+
   padding: 25px;
+
   position: relative;
+
   animation: scaleIn 0.3s ease;
+
   overflow-y: auto;
 }
+
 
 @keyframes scaleIn {
   from {
     transform: scale(0.8);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
   }
 }
 
+
 .lifeImagesModalContent img {
   width: 100%;
   height: 500px;
+
   border-radius: 12px;
+
   object-fit: contain;
+  object-position: center;
+
   display: block;
+
   background: #f5f5f5;
 }
 
+
 .lifeImagesModalContent h3 {
   margin-top: 20px;
+
   font-size: 1.6rem;
   font-weight: 700;
+
   color: #000;
 }
 
+
 .lifeImagesYear {
   color: #38bdf8;
+
   font-size: 1rem;
+
   margin-top: 5px;
 }
 
+
 .lifeImagesDesc {
   font-size: 1rem;
+
   margin-top: 10px;
+
   color: #555;
+
   line-height: 1.5;
 }
 
+
+/* ============================= */
+/* CLOSE BUTTON */
+/* ============================= */
+
 .lifeImagesCloseBtn {
   position: absolute;
+
   top: 15px;
   right: 15px;
+
   border: none;
+
   background: #eee;
+
   border-radius: 50%;
+
   width: 38px;
   height: 38px;
+
   cursor: pointer;
+
   transition: 0.3s;
+
   z-index: 5;
 }
+
 
 .lifeImagesCloseBtn:hover {
   background: #38bdf8;
   color: #fff;
 }
 
+
 /* ============================= */
-/* RESPONSIVE */
+/* LARGE LAPTOP */
 /* ============================= */
 
-/* Large Laptop */
 @media (max-width: 1200px) {
+
   .lifeImagesMainHeading .topLine {
     font-size: 3.4rem;
   }
@@ -254,6 +457,7 @@
 
   .lifeImagesSingleCard {
     width: 380px;
+    min-width: 380px;
     height: 270px;
   }
 
@@ -266,8 +470,13 @@
   }
 }
 
-/* Laptop */
+
+/* ============================= */
+/* LAPTOP */
+/* ============================= */
+
 @media (max-width: 992px) {
+
   .lifeImagesMainHeading {
     margin-bottom: 55px;
   }
@@ -282,6 +491,7 @@
 
   .lifeImagesSingleCard {
     width: 350px;
+    min-width: 350px;
     height: 250px;
   }
 
@@ -298,8 +508,18 @@
   }
 }
 
-/* Tablet */
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
 @media (max-width: 768px) {
+
+  .lifeImagesSectionMain {
+    padding: 80px 0;
+    min-height: 550px;
+  }
+
   .lifeImagesMainHeading {
     margin-bottom: 45px;
     line-height: 1.25;
@@ -313,10 +533,51 @@
     font-size: 2.7rem;
   }
 
+
+  /* =============================
+     MOBILE NATIVE SCROLL
+     ============================= */
+
+  .lifeImagesScrollContainer {
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    /*
+     * Native horizontal finger scrolling
+     */
+    touch-action: pan-x;
+
+    /*
+     * iOS native scrolling
+     */
+    -webkit-overflow-scrolling: touch;
+
+    /*
+     * Do NOT use smooth scrolling here.
+     * Native touch should feel immediate.
+     */
+    scroll-behavior: auto;
+
+    /*
+     * Hide scrollbar
+     */
+    scrollbar-width: none;
+
+    /*
+     * Prevent vertical overscroll interference
+     */
+    overscroll-behavior-x: contain;
+  }
+
+
   .lifeImagesSingleCard {
     width: 320px;
+    min-width: 320px;
     height: 230px;
   }
+
 
   .lifeImagesModal {
     padding: 20px;
@@ -336,8 +597,13 @@
   }
 }
 
-/* Mobile */
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
 @media (max-width: 576px) {
+
   .lifeImagesMainHeading {
     margin-bottom: 35px;
   }
@@ -350,10 +616,41 @@
     font-size: 2.1rem;
   }
 
+
+  /* =============================
+     MOBILE SCROLL
+     ============================= */
+
+  .lifeImagesScrollContainer {
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    touch-action: pan-x;
+
+    -webkit-overflow-scrolling: touch;
+
+    scroll-behavior: auto;
+
+    scrollbar-width: none;
+
+    overscroll-behavior-x: contain;
+
+    /*
+     * Prevent accidental text selection
+     */
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+
   .lifeImagesSingleCard {
     width: 290px;
+    min-width: 290px;
     height: 210px;
   }
+
 
   .lifeImagesModal {
     padding: 15px;
@@ -378,8 +675,13 @@
   }
 }
 
-/* Small Mobile */
+
+/* ============================= */
+/* SMALL MOBILE */
+/* ============================= */
+
 @media (max-width: 400px) {
+
   .lifeImagesMainHeading .topLine {
     font-size: 1.5rem;
   }
@@ -388,10 +690,31 @@
     font-size: 1.7rem;
   }
 
+
+  .lifeImagesScrollContainer {
+    gap: 18px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    touch-action: pan-x;
+
+    -webkit-overflow-scrolling: touch;
+
+    scroll-behavior: auto;
+
+    scrollbar-width: none;
+
+    overscroll-behavior-x: contain;
+  }
+
+
   .lifeImagesSingleCard {
     width: 270px;
+    min-width: 270px;
     height: 195px;
   }
+
 
   .lifeImagesModalContent img {
     height: 260px;
