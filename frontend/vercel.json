@@ -1,7 +1,17 @@
+
+
+
+
+
+
+
+
+
+
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!sitemap\\.xml|robots\\.txt|googlee7f7f1e716de28a5\\.html).*)",
       "destination": "/index.html"
     }
   ]
