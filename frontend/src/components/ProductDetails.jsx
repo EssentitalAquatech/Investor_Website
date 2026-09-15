@@ -575,10 +575,10 @@ const meenammaImage =
   "https://res.cloudinary.com/p8fs2e1n/image/upload/meenamma.png";
 
 const aquaSenseImage =
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/Sense.png";
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/sense.png";
 
 const aquaRiskImage =
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/Risk.png";
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/Goonch1.png";
 
 
 /* =========================================================
