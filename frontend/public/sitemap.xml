@@ -1,44 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://essentialaquatech.in/</loc>
-  </url>
-
-  <url>
-    <loc>https://essentialaquatech.in/about</loc>
-  </url>
-
-  <url>
-    <loc>https://essentialaquatech.in/life</loc>
-  </url>
-
-  <url>
-    <loc>https://essentialaquatech.in/contact</loc>
-  </url>
-
-  <url>
-    <loc>https://essentialaquatech.in/privacy-policy</loc>
-  </url>
-
-  <url>
-    <loc>https://essentialaquatech.in/return</loc>
-  </url>
-
-  <url>
-    <loc>https://essentialaquatech.in/products/toros</loc>
-  </url>
-
-  <url>
-    <loc>https://essentialaquatech.in/products/meenamma-ai</loc>
-  </url>
-
-  <url>
-    <loc>https://essentialaquatech.in/products/6sense</loc>
-  </url>
-
-  <url>
-    <loc>https://essentialaquatech.in/products/goonch</loc>
-  </url>
-
+  <url><loc>https://www.essentialaquatech.in/</loc></url>
+  <url><loc>https://www.essentialaquatech.in/about</loc></url>
+  <url><loc>https://www.essentialaquatech.in/life</loc></url>
+  <url><loc>https://www.essentialaquatech.in/contact</loc></url>
+  <url><loc>https://www.essentialaquatech.in/privacy-policy</loc></url>
+  <url><loc>https://www.essentialaquatech.in/return</loc></url>
+  <url><loc>https://www.essentialaquatech.in/products/toros</loc></url>
+  <url><loc>https://www.essentialaquatech.in/products/meenamma-ai</loc></url>
+  <url><loc>https://www.essentialaquatech.in/products/6sense</loc></url>
+  <url><loc>https://www.essentialaquatech.in/products/goonch</loc></url>
 </urlset>
