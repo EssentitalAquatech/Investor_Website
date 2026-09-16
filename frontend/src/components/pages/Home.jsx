@@ -118,6 +118,7 @@
 
 
   import React from "react";
+  import SEO from "../SEO";
 
 import Hero from "../Hero";
 import WhatWeDo from "../WhatWeDo";
@@ -136,6 +137,14 @@ function Home() {
         description="Essential Aquatech is building the intelligence layer for aquaculture using AI, satellite data, environmental intelligence and farm-level technology."
         canonical="https://www.essentialaquatech.in/"
       />
+
+     {/* <SEO
+  title="Essential Aquatech | Intelligent Aquaculture Solutions"
+  description="Essential Aquatech is building the intelligence layer for aquaculture using AI, satellite data, environmental intelligence and farm-level technology."
+/> */}
+
+
+
       {/* HOME */}
       <section
         id="home"
