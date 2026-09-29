@@ -918,46 +918,54 @@ export default function Products() {
        03 — KECHOSENSE
     ===================================== */
 
-    {
-      imageSrc: aquaSenseImage,
+   {
+  imageSrc: aquaSenseImage,
 
-      number: "03",
+  number: "03",
 
-      title: "KechoSense",
+  title: "KechoSense",
 
-      // Existing URL slug kept unchanged
-      slug: "KechoSense",
+  // Existing URL slug kept unchanged
+  slug: "KechoSense",
 
-      tagline:
-        "See beyond the pond with environmental intelligence.",
+  tagline: (
+    <>
+      Environmental Intelligence Layer
+      <br />
+      See beyond the pond. Sense what is coming before it arrives.
+    </>
+  ),
 
-      description:
-        "Kechosense combines satellite, weather, geospatial and environmental signals to build a deeper understanding of pond and farm conditions. It helps reveal risks, patterns and changes that may not be visible from the ground."
-
-    },
+  description:
+    "Named after the earthworm — কেঁচো — that senses what is coming from beneath the soil before it is visible above it. KechoSense reads the environment around your pond so you are never caught by what you did not see coming."
+},
 
 
     /* =====================================
        04 — GOONCH
     ===================================== */
 
-    {
-      imageSrc: aquaRiskImage,
+   {
+  imageSrc: aquaRiskImage,
 
-      number: "04",
+  number: "04",
 
-      title: "Goonch",
+  title: "Goonch",
 
-      // Existing URL slug kept unchanged
-      slug: "goonch",
+  // Existing URL slug kept unchanged
+  slug: "goonch",
 
-      tagline:
-        "Farm intelligence for smarter credit, insurance and risk.",
+  tagline: (
+    <>
+      Financial Risk Intelligence.
+      <br />
+      In aquaculture, the ability to see risk before it surfaces is the only intelligence that matters.
+    </>
+  ),
 
-      description:
-        "Named after India's most powerful freshwater predator — because in aquaculture, the ability to see risk before it surfaces is the only intelligence that matters."
-
-    }
+description:
+  "Goonch transforms farm intelligence into financial intelligence. By understanding pond health, farm performance and emerging risks, it helps reveal the signals that matter for smarter credit, insurance and financial decisions.",
+},
 
   ];
 
