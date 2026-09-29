@@ -883,10 +883,10 @@ export default function Products() {
       slug: "vachaos",
 
       tagline:
-        "The intelligence operating system for aquaculture.",
+        "Enterprise Intelligence OS ",
 
       description:
-        "Named after India's most endangered freshwater species — because intelligence is what separates survival from extinction."
+        "Named after India's most endangered freshwater catfish, Eutropiichthys vacha — VachaOS gives large farms, cooperatives, governments, and institutions the predictive intelligence to see what is coming before it arrives — pond by pond, season by season, decision by decision."
 
     },
 
