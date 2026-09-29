@@ -2,7 +2,6 @@
 
 
 
-
 // import React, { useEffect, useRef } from "react";
 // import { useNavigate } from "react-router-dom";
 // import "./Products.css";
@@ -29,6 +28,7 @@
 //   imageSrc,
 //   number,
 //   title,
+//   slug,
 //   tagline,
 //   description,
 //   index
@@ -57,13 +57,12 @@
 //     return () => observer.disconnect();
 //   }, []);
 
-//   // Product URL slug
-//   const productSlug = title
-//     .toLowerCase()
-//     .replace(/\s+/g, "-");
+//   /* =========================================================
+//      LEARN MORE
+//   ========================================================= */
 
 //   const handleLearnMore = () => {
-//     navigate(`/products/${productSlug}`);
+//     navigate(`/products/${slug}`);
 //     window.scrollTo(0, 0);
 //   };
 
@@ -74,10 +73,13 @@
 //         index % 2 !== 0 ? "reverse" : ""
 //       }`}
 //     >
+
 //       <div className="row align-items-center">
 
 //         {/* ================= IMAGE ================= */}
+
 //         <div className="col-lg-6 col-md-12 mb-4">
+
 //           <div className="product-image-wrapper">
 
 //             <img
@@ -87,15 +89,18 @@
 //             />
 
 //           </div>
+
 //         </div>
 
 
 //         {/* ================= CONTENT ================= */}
+
 //         <div className="col-lg-6 col-md-12">
 
 //           <div className="product-content-wrapper">
 
 //             {/* ================= EYEBROW ================= */}
+
 //             <div className="product-eyebrow">
 
 //               <span className="product-number">
@@ -112,28 +117,33 @@
 
 
 //             {/* ================= TITLE ================= */}
+
 //             <h3 className="product-title">
 //               {title}
 //             </h3>
 
 
 //             {/* ================= TAGLINE ================= */}
+
 //             <h4 className="product-tagline">
 //               {tagline}
 //             </h4>
 
 
 //             {/* ================= DESCRIPTION ================= */}
+
 //             <p className="product-text">
 //               {description}
 //             </p>
 
 
 //             {/* ================= LEARN MORE ================= */}
+
 //             <button
 //               className="learn-more-btn"
 //               onClick={handleLearnMore}
 //             >
+
 //               <span>
 //                 Learn More
 //               </span>
@@ -170,6 +180,7 @@
 //         </div>
 
 //       </div>
+
 //     </div>
 //   );
 // }
@@ -329,7 +340,7 @@
 //   const sections = [
 
 //     /* =====================================
-//        01 — FISHOS
+//        01 — TOROS
 //     ===================================== */
 
 //     {
@@ -338,6 +349,9 @@
 //       number: "01",
 
 //       title: "TOROS",
+
+//       // ✅ FIXED URL SLUG
+//       slug: "toros",
 
 //       tagline:
 //         "The intelligence operating system for aquaculture.",
@@ -359,16 +373,20 @@
 
 //       title: "Meenamma AI",
 
+//       // ✅ FIXED URL SLUG
+//       slug: "meenamma-ai",
+
 //       tagline:
 //         "Your AI companion for smarter aquaculture.",
 
 //       description:
 //         "Meenamma AI brings intelligent, conversational support directly to farmers. It turns complex farm data and aquaculture intelligence into simple, practical guidance that helps farmers make better decisions at the right time."
+
 //     },
 
 
 //     /* =====================================
-//        03 — AQUASENSE
+//        03 — 6SENSE
 //     ===================================== */
 
 //     {
@@ -376,18 +394,22 @@
 
 //       number: "03",
 
-//       title: "6sense ",
+//       title: "6sense",
+
+//       // ✅ FIXED URL SLUG
+//       slug: "6sense",
 
 //       tagline:
 //         "See beyond the pond with environmental intelligence.",
 
 //       description:
 //         "AquaSense combines satellite, weather, geospatial and environmental signals to build a deeper understanding of pond and farm conditions. It helps reveal risks, patterns and changes that may not be visible from the ground."
+
 //     },
 
 
 //     /* =====================================
-//        04 — AQUARISK
+//        04 — GOONCH
 //     ===================================== */
 
 //     {
@@ -395,13 +417,17 @@
 
 //       number: "04",
 
-//       title: "Goonch ",
+//       title: "Goonch",
+
+//       // ✅ FIXED URL SLUG
+//       slug: "goonch",
 
 //       tagline:
 //         "Farm intelligence for smarter credit, insurance and risk.",
 
 //       description:
 //         "Named after India's most powerful freshwater predator — because in aquaculture, the ability to see risk before it surfaces is the only intelligence that matters."
+
 //     }
 
 //   ];
@@ -432,7 +458,7 @@
 //         {sections.map((item, index) => (
 
 //           <ProductSection
-//             key={item.title}
+//             key={item.slug}
 
 //             index={index}
 
@@ -441,6 +467,8 @@
 //             imageSrc={item.imageSrc}
 
 //             title={item.title}
+
+//             slug={item.slug}
 
 //             tagline={item.tagline}
 
@@ -463,6 +491,13 @@
 //   );
 
 // }
+
+
+
+
+
+
+
 
 
 
@@ -834,7 +869,7 @@ export default function Products() {
   const sections = [
 
     /* =====================================
-       01 — TOROS
+       01 — VACHAOS
     ===================================== */
 
     {
@@ -842,10 +877,10 @@ export default function Products() {
 
       number: "01",
 
-      title: "TOROS",
+      title: "VACHA OS",
 
-      // ✅ FIXED URL SLUG
-      slug: "toros",
+      // Existing URL slug kept unchanged
+      slug: "vachaos",
 
       tagline:
         "The intelligence operating system for aquaculture.",
@@ -867,7 +902,7 @@ export default function Products() {
 
       title: "Meenamma AI",
 
-      // ✅ FIXED URL SLUG
+      // Existing URL slug kept unchanged
       slug: "meenamma-ai",
 
       tagline:
@@ -880,7 +915,7 @@ export default function Products() {
 
 
     /* =====================================
-       03 — 6SENSE
+       03 — KECHOSENSE
     ===================================== */
 
     {
@@ -888,16 +923,16 @@ export default function Products() {
 
       number: "03",
 
-      title: "6sense",
+      title: "KechoSense",
 
-      // ✅ FIXED URL SLUG
-      slug: "6sense",
+      // Existing URL slug kept unchanged
+      slug: "KechoSense",
 
       tagline:
         "See beyond the pond with environmental intelligence.",
 
       description:
-        "AquaSense combines satellite, weather, geospatial and environmental signals to build a deeper understanding of pond and farm conditions. It helps reveal risks, patterns and changes that may not be visible from the ground."
+        "Kechosense combines satellite, weather, geospatial and environmental signals to build a deeper understanding of pond and farm conditions. It helps reveal risks, patterns and changes that may not be visible from the ground."
 
     },
 
@@ -913,7 +948,7 @@ export default function Products() {
 
       title: "Goonch",
 
-      // ✅ FIXED URL SLUG
+      // Existing URL slug kept unchanged
       slug: "goonch",
 
       tagline:

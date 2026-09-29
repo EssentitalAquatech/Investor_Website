@@ -1,9 +1,8 @@
 
 
-
-// import React from "react";
-// import { useParams, useNavigate } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router-dom";
 // import "./ProductDetails.css";
+// import SEO from "./SEO";
 
 // // ☁️ Cloudinary Product Images
 // const aquaImage =
@@ -26,13 +25,13 @@
 // const productData = {
 
 //   /* =====================================
-//      01 — TOROS
+//      01 — VACHAOS
 //   ===================================== */
 
 //   toros: {
 //     number: "01",
 
-//     title: "TOROS",
+//     title: "VACHAOS",
 
 //     tagline:
 //       "The intelligence operating system for aquaculture.",
@@ -334,6 +333,12 @@
 
 //       <section className="product-not-found">
 
+//         <SEO
+//           title="Product Not Found | Essential Aquatech"
+//           description="The requested Essential Aquatech product page could not be found."
+//           canonical={`https://www.essentialaquatech.in/products/${productSlug || ""}`}
+//         />
+
 //         <h1>
 //           Product Not Found
 //         </h1>
@@ -355,9 +360,19 @@
 //      MAIN PAGE
 //   ========================================================= */
 
+//   const productDescription = `${product.intro} ${product.description}`;
+//   const productUrl = `https://www.essentialaquatech.in/products/${productSlug}`;
+
 //   return (
 
 //     <section className="product-details-page">
+
+//       <SEO
+//         title={`${product.title} | Essential Aquatech`}
+//         description={productDescription}
+//         canonical={productUrl}
+//         image={product.image}
+//       />
 
 
 //       {/* =====================================
@@ -638,11 +653,9 @@
 
 
 
-
-import React from "react";
-import SEO from "./SEO";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDetails.css";
+import SEO from "./SEO";
 
 // ☁️ Cloudinary Product Images
 const aquaImage =
@@ -665,13 +678,13 @@ const aquaRiskImage =
 const productData = {
 
   /* =====================================
-     01 — TOROS
+     01 — VACHAOS
   ===================================== */
 
-  toros: {
+  vachaos: {
     number: "01",
 
-    title: "TOROS",
+    title: "VACHA OS",
 
     tagline:
       "The intelligence operating system for aquaculture.",
@@ -679,10 +692,10 @@ const productData = {
     image: aquaImage,
 
     intro:
-      "TOROS is the intelligence layer that brings the aquaculture ecosystem together.",
+      "VACHA OS is the intelligence layer that brings the aquaculture ecosystem together.",
 
     description:
-      "Aquaculture generates enormous amounts of information across ponds, farmers, weather, water quality, production history and farm operations. TOROS brings these fragmented signals together into one connected intelligence platform.",
+      "Aquaculture generates enormous amounts of information across ponds, farmers, weather, water quality, production history and farm operations. VACHAOS brings these fragmented signals together into one connected intelligence platform.",
 
     features: [
 
@@ -731,7 +744,7 @@ const productData = {
     ],
 
     bottomText:
-      "By connecting data, intelligence and operations, TOROS helps aquaculture move from fragmented information to smarter, data-driven decisions."
+      "By connecting data, intelligence and operations, VACHAOS helps aquaculture move from fragmented information to smarter, data-driven decisions."
   },
 
 
@@ -807,13 +820,13 @@ const productData = {
 
 
   /* =====================================
-     03 — 6SENSE
+     03 — KECHOSENSE
   ===================================== */
 
-  "6sense": {
+  "KechoSense": {
     number: "03",
 
-    title: "6sense",
+    title: "KechoSense",
 
     tagline:
       "See beyond the pond with environmental intelligence.",
@@ -821,10 +834,10 @@ const productData = {
     image: aquaSenseImage,
 
     intro:
-      "6sense connects the pond to the world around it.",
+      "KechoSense connects the pond to the world around it.",
 
     description:
-      "Pond conditions are influenced by weather, geography, surrounding land, water conditions and environmental changes. 6sense brings these signals together using satellite, weather, geospatial and environmental intelligence.",
+      "Pond conditions are influenced by weather, geography, surrounding land, water conditions and environmental changes. Kechosense brings these signals together using satellite, weather, geospatial and environmental intelligence.",
 
     features: [
 
@@ -873,7 +886,7 @@ const productData = {
     ],
 
     bottomText:
-      "6sense helps reveal patterns and environmental changes that may not be visible from the ground, enabling better awareness and earlier decisions."
+      "Kechosense helps reveal patterns and environmental changes that may not be visible from the ground, enabling better awareness and earlier decisions."
   },
 
 
@@ -1255,3 +1268,7 @@ export default function ProductDetails() {
   );
 
 }
+
+
+
+
