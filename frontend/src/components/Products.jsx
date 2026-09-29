@@ -877,7 +877,7 @@ export default function Products() {
 
       number: "01",
 
-      title: "VACHA OS",
+      title: "VachaOS",
 
       // Existing URL slug kept unchanged
       slug: "vachaos",
