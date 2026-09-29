@@ -695,7 +695,7 @@ const productData = {
       "Named after India's most endangered freshwater catfish, Eutropiichthys vacha — VachaOS gives large farms, cooperatives, governments, and institutions the predictive intelligence to see what is coming before it arrives — pond by pond, season by season, decision by decision.",
 
     capabilitiesTitle:
-      "VachaOS Capabilities",
+      "",
 
     capabilitiesDescription:
       "See every pond. Predict every risk. Drive every decision.",
@@ -772,7 +772,7 @@ const productData = {
       "Farmers often have access to large amounts of information but need simple and timely answers. Meenamma AI understands aquaculture conversations and turns complex farm intelligence into practical guidance.",
 
     capabilitiesTitle:
-      "MeenAmma AI Capabilities",
+      "",
 
     capabilitiesDescription:
       "Ask anything. Understand your farm. Act with confidence.",
@@ -855,7 +855,7 @@ const productData = {
 description:
   "Named after the earthworm — কেঁচো — that senses what is coming from beneath the soil before it is visible above it. KechoSense reads the environment around your pond so you are never caught by what you did not see coming.",
     capabilitiesTitle:
-      "KechoSense Capabilities",
+      "",
 
     capabilitiesDescription:
       "See beyond the pond. Detect change early. Understand what comes next.",
@@ -939,7 +939,7 @@ description:
   "Goonch transforms farm intelligence into financial intelligence. By understanding pond health, farm performance and emerging risks, it helps reveal the signals that matter for smarter credit, insurance and financial decisions.",
 
     capabilitiesTitle:
-      "Goonch Capabilities",
+      "",
 
     capabilitiesDescription:
       "In aquaculture, the ability to see risk before it surfaces is the only intelligence that matters.",

@@ -886,7 +886,7 @@ export default function Products() {
         "Enterprise Intelligence OS ",
 
       description:
-        "Named after India's most endangered freshwater catfish, Eutropiichthys vacha — VachaOS gives large farms, cooperatives, governments, and institutions the predictive intelligence to see what is coming before it arrives — pond by pond, season by season, decision by decision."
+        " VachaOS gives large farms, cooperatives, governments, and institutions the predictive intelligence to see what is coming before it arrives."
 
     },
 
@@ -932,12 +932,12 @@ export default function Products() {
     <>
       Environmental Intelligence Layer
       <br />
-      See beyond the pond. Sense what is coming before it arrives.
+    
     </>
   ),
 
   description:
-    "Named after the earthworm — কেঁচো — that senses what is coming from beneath the soil before it is visible above it. KechoSense reads the environment around your pond so you are never caught by what you did not see coming."
+    "  See beyond the pond. Sense what is coming before it arrives."
 },
 
 
@@ -959,12 +959,12 @@ export default function Products() {
     <>
       Financial Risk Intelligence.
       <br />
-      In aquaculture, the ability to see risk before it surfaces is the only intelligence that matters.
+      
     </>
   ),
 
 description:
-  "Goonch transforms farm intelligence into financial intelligence. By understanding pond health, farm performance and emerging risks, it helps reveal the signals that matter for smarter credit, insurance and financial decisions.",
+  "In aquaculture, the ability to see risk before it surfaces is the only intelligence that matters.",
 },
 
   ];
