@@ -426,40 +426,40 @@ const sections = [
   {
     id: 1,
     number: "01",
-    kicker: "Aquaculture Intelligence",
-    title: "Aquaculture Intelligence",
-    imageSrc: getOptimizedImage("2right.png"),
+    kicker: "THE ENGINE",
+    title: "THE ENGINE",
+   imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/Engine.png",
     imageAlt:
-      "Aquaculture intelligence dashboard combining pond, climate and farmer data layers",
+      "Aquaculture intelligence engine combining satellite, astronomical and pond-level data",
 
     description:
-      "15-Day Forward Action Plan • Disease Outbreak Prediction • Water Quality Intelligence • Climate Risk Scoring • Climate Early Warning • Farmer Behaviour Analytics",
+      "Satellite Imagery • Astronomical Data • Pond-Level Inputs • Disease Prediction • Harvest Forecasting • Action Intelligence",
   },
 
   {
     id: 2,
     number: "02",
-    kicker: "3AI AquaStack",
-    title: "3AI AquaStack",
+    kicker: "THE INTELLIGENCE",
+    title: "THE INTELLIGENCE",
     imageSrc: getOptimizedImage("1right.png"),
     imageAlt:
-      "3AI AquaStack combining satellite, astronomical and pond-level intelligence",
+      "Aquaculture intelligence platform transforming data into predictive decisions",
 
     description:
-      "Satellite Imagery • Astronomical Data • Pond-Level Inputs • Disease Prediction • Harvest Forecasting • Farm Risk Scoring • Climate Advisory • Action Intelligence",
+      "15-Day Forward Action Plan • Disease Outbreak Prediction • Water Quality Intelligence • Climate Risk Scoring • Harvest Forecasting • Farm Risk Scoring",
   },
 
   {
     id: 3,
     number: "03",
-    kicker: "Connected Ecosystem",
-    title: "Connected Aquaculture Ecosystem",
-    imageSrc: getOptimizedImage("3right.png"),
+    kicker: "THE ECOSYSTEM",
+    title: "THE ECOSYSTEM",
+imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/Ecosystem.png",
     imageAlt:
-      "Connected aquaculture ecosystem linking farmers, dealers, markets, finance and insurance",
+      "Connected aquaculture ecosystem linking farmers, input dealers, companies, lenders, governments and research institutions",
 
     description:
-      "Farmers • Dealers • Feed Companies • Markets • Finance • Insurance • Industry Partners",
+      "Farmers • Input Dealers • Input Companies • Rural Lenders & NBFCs • Governments • R&D Institutions",
   },
 ];
 
