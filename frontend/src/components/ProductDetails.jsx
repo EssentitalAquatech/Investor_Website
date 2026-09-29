@@ -692,10 +692,10 @@ const productData = {
     image: aquaImage,
 
     intro:
-      "VACHA OS is the intelligence layer that brings the aquaculture ecosystem together.",
+      "VachaOS — Enterprise Intelligence OS",
 
     description:
-      "Aquaculture generates enormous amounts of information across ponds, farmers, weather, water quality, production history and farm operations. VACHAOS brings these fragmented signals together into one connected intelligence platform.",
+      "Named after India's most endangered freshwater catfish, Eutropiichthys vacha — VachaOS gives large farms, cooperatives, governments, and institutions the predictive intelligence to see what is coming before it arrives — pond by pond, season by season, decision by decision.",
 
     features: [
 
