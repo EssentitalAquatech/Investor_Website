@@ -3,7 +3,8 @@
 ================================ */
 
 .products-main {
-  background: #e5e2e2;
+  /* background: #e5e2e2; */
+  background: rgb(255, 255, 255);
   padding: 0 0 80px;
 }
 
