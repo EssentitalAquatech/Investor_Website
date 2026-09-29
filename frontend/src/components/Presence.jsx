@@ -133,8 +133,7 @@ function Presence() {
       id: "livelihood",
       title: "Livelihood",
 
-      bgImage:
-        `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/Live.png`,
+     bgImage: `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/Livelihood.png`,
 
       description:
         "Essential Aquatech delivers real-time pond intelligence to smallholder fresh water fish farmers through MeenAmma, a multilingual WhatsApp AI . Farmers on the platform record 30% yield improvement and 25% income increase.",
@@ -144,8 +143,7 @@ function Presence() {
       id: "impact",
       title: "Impact",
 
-      bgImage:
-        `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/Impact.png`,
+    bgImage: `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/impact2.png`,
 
       description:
         "By combining AI, satellite, weather, water, and farm data, we turn complex information into measurable outcomes for more productive, sustainable, and resilient aquaculture.",
@@ -155,8 +153,7 @@ function Presence() {
       id: "finance",
       title: "Finance",
 
-      bgImage:
-        `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/Finance.png`,
+     bgImage: `${CLOUDINARY_BASE}/f_auto,q_auto,w_900/finance1.png`,
 
       description:
         "Every pond conversation with MeenAmma builds a proprietary Farm Health Score, turning real-world farm data into credit profiles and insurance eligibility. EA is making India’s freshwater fish farmers bankable for the first time by enabling access to formal credit and insurance.",

@@ -222,7 +222,7 @@ const missionImage =
   "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/mission.png";
 
 const valuesImage =
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/Value.png";
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/values2.png";
 
 
 // =====================================================
