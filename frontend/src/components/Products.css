@@ -24,6 +24,20 @@
   color: #000;
 
   padding-top: 70px;
+
+  /* Directional reveal */
+  opacity: 0;
+
+  transform: translate3d(0, -60px, 0);
+
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.products-heading.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .products-heading span {
@@ -288,6 +302,73 @@
 
 
 /* =========================================================
+   DIRECTIONAL REVEAL — per-element (text, image, buttons)
+   =========================================================
+   These classes are applied inside each ProductSection and
+   the SecondaryProducts block. Each element animates from
+   its own direction when the parent section becomes visible.
+*/
+
+/* Base state for any directional reveal element */
+.p-reveal {
+  opacity: 0;
+
+  will-change: opacity, transform;
+
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* From LEFT */
+.p-reveal--left {
+  transform: translate3d(-70px, 0, 0);
+}
+
+/* From RIGHT */
+.p-reveal--right {
+  transform: translate3d(70px, 0, 0);
+}
+
+/* From TOP */
+.p-reveal--top {
+  transform: translate3d(0, -60px, 0);
+}
+
+/* From BOTTOM */
+.p-reveal--bottom {
+  transform: translate3d(0, 60px, 0);
+}
+
+/* Scale-in for buttons */
+.p-reveal--scale {
+  transform: scale(0.85);
+}
+
+/* Visible state */
+.product-section.visible .p-reveal,
+.secondary-products-section.visible .p-reveal,
+.products-heading.visible {
+  opacity: 1;
+
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Stagger delays inside a product block */
+.product-section.visible .p-reveal[data-delay="1"] { transition-delay: 0.10s; }
+.product-section.visible .p-reveal[data-delay="2"] { transition-delay: 0.18s; }
+.product-section.visible .p-reveal[data-delay="3"] { transition-delay: 0.26s; }
+.product-section.visible .p-reveal[data-delay="4"] { transition-delay: 0.34s; }
+.product-section.visible .p-reveal[data-delay="5"] { transition-delay: 0.42s; }
+
+/* Stagger delays inside secondary block */
+.secondary-products-section.visible .p-reveal[data-delay="1"] { transition-delay: 0.15s; }
+.secondary-products-section.visible .p-reveal[data-delay="2"] { transition-delay: 0.30s; }
+.secondary-products-section.visible .p-reveal[data-delay="3"] { transition-delay: 0.45s; }
+.secondary-products-section.visible .p-reveal[data-delay="4"] { transition-delay: 0.60s; }
+
+
+/* =========================================================
    SECONDARY PRODUCTS SECTION
 ========================================================= */
 
@@ -466,23 +547,6 @@
   font-weight: 700;
 
   letter-spacing: 3px;
-
-  opacity: 0;
-
-  transform: translateY(25px);
-
-  transition:
-    opacity 0.7s ease 0.25s,
-    transform 0.7s ease 0.25s;
-}
-
-
-.secondary-products-section.visible
-.secondary-products-eyebrow {
-
-  opacity: 1;
-
-  transform: translateY(0);
 }
 
 
@@ -525,27 +589,6 @@
   margin-bottom: 22px;
 
   letter-spacing: -1px;
-
-  opacity: 0;
-
-  transform:
-    translateY(35px)
-    scale(0.94);
-
-  transition:
-    opacity 0.8s ease 0.4s,
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
-}
-
-
-.secondary-products-section.visible
-.secondary-products-title {
-
-  opacity: 1;
-
-  transform:
-    translateY(0)
-    scale(1);
 }
 
 
@@ -583,23 +626,6 @@
   line-height: 1.8;
 
   color: #555;
-
-  opacity: 0;
-
-  transform: translateY(25px);
-
-  transition:
-    opacity 0.8s ease 0.6s,
-    transform 0.8s ease 0.6s;
-}
-
-
-.secondary-products-section.visible
-.secondary-products-text {
-
-  opacity: 1;
-
-  transform: translateY(0);
 }
 
 
@@ -618,23 +644,6 @@
   line-height: 1.7;
 
   color: #666;
-
-  opacity: 0;
-
-  transform: translateY(25px);
-
-  transition:
-    opacity 0.8s ease 0.75s,
-    transform 0.8s ease 0.75s;
-}
-
-
-.secondary-products-section.visible
-.secondary-products-subtext {
-
-  opacity: 1;
-
-  transform: translateY(0);
 }
 
 
@@ -671,32 +680,10 @@
   box-shadow:
     0 8px 20px rgba(14, 165, 233, 0.25);
 
-  opacity: 0;
-
-  transform:
-    translateY(30px)
-    scale(0.85);
-
   transition:
-    opacity 0.8s ease 0.9s,
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.9s,
     background 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-
-/* ========================================
-   Button Visible
-======================================== */
-
-.secondary-products-section.visible
-.explore-btn {
-
-  opacity: 1;
-
-  transform:
-    translateY(0)
-    scale(1);
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 
@@ -966,6 +953,17 @@
     font-size: 0.9rem;
   }
 
+
+  /* On mobile, all p-reveal elements come from bottom for clean feel */
+  .p-reveal--left,
+  .p-reveal--right {
+    transform: translate3d(0, 50px, 0);
+  }
+
+  .p-reveal--top {
+    transform: translate3d(0, -40px, 0);
+  }
+
 }
 
 
@@ -1124,21 +1122,23 @@
 }
 
 
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
+@media (prefers-reduced-motion: reduce) {
 
+  .products-heading,
+  .p-reveal,
+  .product-section,
+  .secondary-products-section {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 .fishhaat-highlight {

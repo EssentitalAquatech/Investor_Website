@@ -38,11 +38,6 @@
 
   -webkit-font-smoothing: antialiased;
 
-  /*
-    Isolate this section's layout/paint work.
-    It does not change appearance.
-  */
-
   contain: layout paint;
 }
 
@@ -207,10 +202,6 @@
 
   border-bottom: 1px solid var(--wwd-line);
 
-  /*
-    Each block is isolated for smoother browser rendering.
-  */
-
   contain: layout paint;
 }
 
@@ -251,11 +242,6 @@
 
   overflow: hidden;
 
-  /*
-    No click action.
-    Cursor remains normal.
-  */
-
   cursor: default;
 
   border-radius: var(--wwd-radius);
@@ -270,21 +256,12 @@
 
   contain: layout paint;
 
-  /*
-    Hover applies to the whole container,
-    not the image inside it.
-  */
-
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease,
     border-color 0.35s ease;
 }
 
-
-/* ==========================================================
-   CONTAINER HOVER
-   ========================================================== */
 
 .wwd__media:hover {
   transform: translateY(-5px);
@@ -312,11 +289,6 @@
   object-fit: cover;
 
   object-position: center;
-
-  /*
-    No transform transition.
-    Therefore image itself never zooms.
-  */
 
   pointer-events: none;
 
@@ -402,54 +374,7 @@
    HEADING
    ========================================================== */
 
-/* .wwd__heading {
-  margin: 0.55rem 0 0;
-
-  font-size:
-    clamp(1.7rem, 3.2vw, 2.6rem);
-
-  font-weight: 650;
-
-  line-height: 1.1;
-
-  letter-spacing: -0.035em;
-
-  text-wrap: balance;
-} */
-
-
-
-
-/* 
 .wwd__heading {
-  margin: 0.55rem 0 0;
-
-  font-family:
-    "Segoe UI",
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-
-  font-size:
-    clamp(2rem, 3.5vw, 3rem);
-
-  font-weight: 750;
-
-  line-height: 1.05;
-
-  letter-spacing: -0.045em;
-
-  text-transform: uppercase;
-
-  color: #0a0e12;
-
-  text-wrap: balance;
-} */
-
-
-
-
- .wwd__heading {
   margin: 0.55rem 0 0;
 
   font-family:
@@ -468,10 +393,7 @@
   color: #0b0f12;
 
   text-wrap: balance;
-} 
-
-
-
+}
 
 
 /* ==========================================================
@@ -515,11 +437,18 @@
 
   color: var(--wwd-ink);
 
+  /*
+    Chip reveal + hover both handled here.
+    Initial hidden state is controlled
+    by .wwd__chip--reveal below.
+  */
+
   transition:
     color 0.3s ease,
     border-color 0.3s ease,
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 
   flex: 0 1 auto;
 
@@ -573,6 +502,40 @@
 
 
 /* ==========================================================
+   CHIP REVEAL — each chip slides in from its own direction
+   ----------------------------------------------------------
+   We use CSS custom properties (--chip-x / --chip-y) to set
+   the starting offset. Direction is assigned per chip in JSX.
+   ========================================================== */
+
+.wwd__chip.wwd__chip--reveal {
+  opacity: 0;
+
+  transform:
+    translate3d(
+      var(--chip-x, 0px),
+      var(--chip-y, 0px),
+      0
+    );
+
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.wwd__chip.wwd__chip--reveal.is-visible {
+  opacity: 1;
+
+  transform:
+    translate3d(0, 0, 0);
+}
+
+
+/* ==========================================================
    FOOTNOTE
    ========================================================== */
 
@@ -588,45 +551,49 @@
 
 
 /* ==========================================================
-   REVEAL ANIMATION
+   REVEAL ANIMATION — DIRECTIONAL
    ========================================================== */
 
 .wwd__reveal {
   opacity: 0;
 
-  transform:
-    translate3d(0, 30px, 0);
+  will-change: opacity, transform;
 
   transition:
-    opacity 0.9s
-      cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.9s
-      cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
 .wwd__reveal--left {
-  transform:
-    translate3d(-48px, 16px, 0);
+  transform: translate3d(-70px, 0, 0);
 }
 
 
 .wwd__reveal--right {
-  transform:
-    translate3d(48px, 16px, 0);
+  transform: translate3d(70px, 0, 0);
+}
+
+
+.wwd__reveal--top {
+  transform: translate3d(0, -60px, 0);
+}
+
+
+.wwd__reveal--bottom {
+  transform: translate3d(0, 60px, 0);
 }
 
 
 .wwd__reveal.is-visible {
   opacity: 1;
 
-  transform:
-    translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 
 .wwd__block .wwd__reveal:nth-child(2) {
-  transition-delay: 0.1s;
+  transition-delay: 0.12s;
 }
 
 
@@ -638,6 +605,7 @@
   .wwd__reveal,
   .wwd__img,
   .wwd__chip,
+  .wwd__chip--reveal,
   .wwd__media {
     transition: none !important;
 
@@ -740,8 +708,14 @@
 
   .wwd__reveal--left,
   .wwd__reveal--right {
-    transform:
-      translate3d(0, 30px, 0);
+    transform: translate3d(0, 50px, 0);
+  }
+
+
+  /* On mobile, chips come only from bottom for cleanliness */
+  .wwd__chip.wwd__chip--reveal {
+    --chip-x: 0px !important;
+    --chip-y: 30px !important;
   }
 }
 

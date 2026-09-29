@@ -4,20 +4,21 @@
 
 // import React, { useEffect, useRef } from "react";
 // import { useNavigate } from "react-router-dom";
+
 // import "./Products.css";
 
 // // ☁️ Cloudinary Images
 // const aquaImage =
-//   "https://res.cloudinary.com/p8fs2e1n/image/upload/aqua.png";
+//   "https://res.cloudinary.com/p8fs2e1n/image/upload/VachaOS.png";
 
 // const meenammaImage =
 //   "https://res.cloudinary.com/p8fs2e1n/image/upload/meenamma.png";
 
 // const aquaSenseImage =
-//   "https://res.cloudinary.com/p8fs2e1n/image/upload/sense.png";
+//   "https://res.cloudinary.com/p8fs2e1n/image/upload/KechoSense.png";
 
 // const aquaRiskImage =
-//   "https://res.cloudinary.com/p8fs2e1n/image/upload/Goonch1.png";
+//   "https://res.cloudinary.com/p8fs2e1n/image/upload/Goonch.png";
 
 
 // /* =========================================================
@@ -340,7 +341,7 @@
 //   const sections = [
 
 //     /* =====================================
-//        01 — TOROS
+//        01 — VACHAOS
 //     ===================================== */
 
 //     {
@@ -348,16 +349,16 @@
 
 //       number: "01",
 
-//       title: "TOROS",
+//       title: "VachaOS",
 
-//       // ✅ FIXED URL SLUG
-//       slug: "toros",
+//       // Existing URL slug kept unchanged
+//       slug: "vachaos",
 
 //       tagline:
-//         "The intelligence operating system for aquaculture.",
+//         "Enterprise Intelligence OS ",
 
 //       description:
-//         "Named after India's most endangered freshwater species — because intelligence is what separates survival from extinction."
+//         " VachaOS gives large farms, cooperatives, governments, and institutions the predictive intelligence to see what is coming before it arrives."
 
 //     },
 
@@ -373,7 +374,7 @@
 
 //       title: "Meenamma AI",
 
-//       // ✅ FIXED URL SLUG
+//       // Existing URL slug kept unchanged
 //       slug: "meenamma-ai",
 
 //       tagline:
@@ -386,49 +387,57 @@
 
 
 //     /* =====================================
-//        03 — 6SENSE
+//        03 — KECHOSENSE
 //     ===================================== */
 
-//     {
-//       imageSrc: aquaSenseImage,
+//    {
+//   imageSrc: aquaSenseImage,
 
-//       number: "03",
+//   number: "03",
 
-//       title: "6sense",
+//   title: "KechoSense",
 
-//       // ✅ FIXED URL SLUG
-//       slug: "6sense",
+//   // Existing URL slug kept unchanged
+//   slug: "KechoSense",
 
-//       tagline:
-//         "See beyond the pond with environmental intelligence.",
+//   tagline: (
+//     <>
+//       Environmental Intelligence Layer
+//       <br />
+    
+//     </>
+//   ),
 
-//       description:
-//         "AquaSense combines satellite, weather, geospatial and environmental signals to build a deeper understanding of pond and farm conditions. It helps reveal risks, patterns and changes that may not be visible from the ground."
-
-//     },
+//   description:
+//     "  See beyond the pond. Sense what is coming before it arrives."
+// },
 
 
 //     /* =====================================
 //        04 — GOONCH
 //     ===================================== */
 
-//     {
-//       imageSrc: aquaRiskImage,
+//    {
+//   imageSrc: aquaRiskImage,
 
-//       number: "04",
+//   number: "04",
 
-//       title: "Goonch",
+//   title: "Goonch",
 
-//       // ✅ FIXED URL SLUG
-//       slug: "goonch",
+//   // Existing URL slug kept unchanged
+//   slug: "goonch",
 
-//       tagline:
-//         "Farm intelligence for smarter credit, insurance and risk.",
+//   tagline: (
+//     <>
+//       Financial Risk Intelligence.
+//       <br />
+      
+//     </>
+//   ),
 
-//       description:
-//         "Named after India's most powerful freshwater predator — because in aquaculture, the ability to see risk before it surfaces is the only intelligence that matters."
-
-//     }
+// description:
+//   "In aquaculture, the ability to see risk before it surfaces is the only intelligence that matters.",
+// },
 
 //   ];
 
@@ -508,29 +517,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -548,6 +534,38 @@ const aquaSenseImage =
 
 const aquaRiskImage =
   "https://res.cloudinary.com/p8fs2e1n/image/upload/Goonch.png";
+
+
+/* =========================================================
+   DIRECTIONAL REVEAL PATTERN
+   ---------------------------------------------------------
+   For each product block we pick a pattern that assigns a
+   different direction to each inner element. Since blocks
+   alternate layout (normal / reverse), we swap the pattern
+   for reversed blocks so the animation always feels natural.
+========================================================= */
+
+// Pattern for normal (image-left) product sections
+const PATTERN_NORMAL = {
+  image: "left",
+  number: "top",
+  label: "top",
+  title: "right",
+  tagline: "right",
+  description: "bottom",
+  button: "bottom",
+};
+
+// Pattern for reverse (image-right) product sections
+const PATTERN_REVERSE = {
+  image: "right",
+  number: "top",
+  label: "top",
+  title: "left",
+  tagline: "left",
+  description: "bottom",
+  button: "bottom",
+};
 
 
 /* =========================================================
@@ -596,11 +614,14 @@ function ProductSection({
     window.scrollTo(0, 0);
   };
 
+  const isReverse = index % 2 !== 0;
+  const dir = isReverse ? PATTERN_REVERSE : PATTERN_NORMAL;
+
   return (
     <div
       ref={sectionRef}
       className={`product-section ${
-        index % 2 !== 0 ? "reverse" : ""
+        isReverse ? "reverse" : ""
       }`}
     >
 
@@ -610,7 +631,9 @@ function ProductSection({
 
         <div className="col-lg-6 col-md-12 mb-4">
 
-          <div className="product-image-wrapper">
+          <div
+            className={`product-image-wrapper p-reveal p-reveal--${dir.image}`}
+          >
 
             <img
               src={imageSrc}
@@ -631,7 +654,10 @@ function ProductSection({
 
             {/* ================= EYEBROW ================= */}
 
-            <div className="product-eyebrow">
+            <div
+              className={`product-eyebrow p-reveal p-reveal--${dir.number}`}
+              data-delay="1"
+            >
 
               <span className="product-number">
                 {number}
@@ -639,7 +665,10 @@ function ProductSection({
 
               <span className="product-line"></span>
 
-              <span className="product-label">
+              <span
+                className={`product-label p-reveal p-reveal--${dir.label}`}
+                data-delay="2"
+              >
                 PRODUCT
               </span>
 
@@ -648,21 +677,30 @@ function ProductSection({
 
             {/* ================= TITLE ================= */}
 
-            <h3 className="product-title">
+            <h3
+              className={`product-title p-reveal p-reveal--${dir.title}`}
+              data-delay="2"
+            >
               {title}
             </h3>
 
 
             {/* ================= TAGLINE ================= */}
 
-            <h4 className="product-tagline">
+            <h4
+              className={`product-tagline p-reveal p-reveal--${dir.tagline}`}
+              data-delay="3"
+            >
               {tagline}
             </h4>
 
 
             {/* ================= DESCRIPTION ================= */}
 
-            <p className="product-text">
+            <p
+              className={`product-text p-reveal p-reveal--${dir.description}`}
+              data-delay="4"
+            >
               {description}
             </p>
 
@@ -670,7 +708,8 @@ function ProductSection({
             {/* ================= LEARN MORE ================= */}
 
             <button
-              className="learn-more-btn"
+              className={`learn-more-btn p-reveal p-reveal--${dir.button} p-reveal--scale`}
+              data-delay="5"
               onClick={handleLearnMore}
             >
 
@@ -783,10 +822,13 @@ function SecondaryProducts() {
 
 
         {/* ================================
-           HEADING
+           HEADING — from TOP
         ================================= */}
 
-        <h2 className="secondary-products-title">
+        <h2
+          className="secondary-products-title p-reveal p-reveal--top"
+          data-delay="1"
+        >
 
           <span className="fishhaat-highlight">
             FishHaat
@@ -797,10 +839,13 @@ function SecondaryProducts() {
 
 
         {/* ================================
-           DESCRIPTION
+           DESCRIPTION — from LEFT
         ================================= */}
 
-        <p className="secondary-products-text">
+        <p
+          className="secondary-products-text p-reveal p-reveal--left"
+          data-delay="2"
+        >
 
           FishHaat delivers quality fish health medicines,
           feed supplements, and fingerlings, fish feed
@@ -812,11 +857,12 @@ function SecondaryProducts() {
 
 
         {/* ================================
-           VISIT FISHHAAT BUTTON
+           VISIT FISHHAAT BUTTON — from BOTTOM
         ================================= */}
 
         <button
-          className="explore-btn secondary-explore-btn"
+          className="explore-btn secondary-explore-btn p-reveal p-reveal--bottom p-reveal--scale"
+          data-delay="3"
           onClick={handleExploreClick}
         >
 
@@ -866,6 +912,38 @@ function SecondaryProducts() {
 ========================================================= */
 
 export default function Products() {
+
+  const headingRef = useRef(null);
+
+  /* Reveal the main "Our Products" heading */
+  useEffect(() => {
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.disconnect();
+
+          }
+
+        });
+
+      },
+      { threshold: 0.3 }
+    );
+
+    if (headingRef.current) {
+      observer.observe(headingRef.current);
+    }
+
+    return () => observer.disconnect();
+
+  }, []);
 
   const sections = [
 
@@ -979,10 +1057,13 @@ description:
 
 
         {/* ================================
-           MAIN HEADING
+           MAIN HEADING — from TOP
         ================================= */}
 
-        <h2 className="products-heading">
+        <h2
+          ref={headingRef}
+          className="products-heading"
+        >
 
           Our <span>Products</span>
 
