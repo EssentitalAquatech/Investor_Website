@@ -656,16 +656,16 @@ import SEO from "./SEO";
 
 // ☁️ Cloudinary Product Images
 const aquaImage =
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/aqua.png";
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/VachaOS.png";
 
 const meenammaImage =
   "https://res.cloudinary.com/p8fs2e1n/image/upload/meenamma.png";
 
 const aquaSenseImage =
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/sense.png";
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/KechoSense.png";
 
 const aquaRiskImage =
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/Goonch1.png";
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/Goonch.png";
 
 
 /* =========================================================
