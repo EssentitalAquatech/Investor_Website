@@ -123,7 +123,7 @@
 import Hero from "../Hero";
 import WhatWeDo from "../WhatWeDo";
 import Meenama from "../Meenama";
-import Presence from "../Presence";
+// import Presence from "../Presence";
 import Product from "../Products";
 import Life from "./Life";
 import About from "./About";
@@ -159,10 +159,10 @@ function Home() {
       <WhatWeDo />
 
       {/* MEENAMMA AI */}
-      <Meenama />
+      {/* <Meenama /> */}
 
       {/* PRESENCE */}
-      <Presence />
+      {/* <Presence /> */}
 
       {/* PRODUCT */}
       <section
@@ -174,6 +174,8 @@ function Home() {
         <Product />
       </section>
 
+      <Meenama />
+
         {/* ABOUT US */}
       <section
         id="aboutus"
@@ -183,6 +185,7 @@ function Home() {
       >
         <About />
       </section>
+      
 
       {/* LIFE */}
       <section

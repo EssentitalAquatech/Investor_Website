@@ -4,6 +4,7 @@
 
 
 import React, { useEffect, useRef } from "react";
+import Presence from "./Presence";
 import "./AboutTeam.css";
 
 // ☁️ Cloudinary Images
@@ -135,7 +136,9 @@ function AboutTeam() {
   }, []);
 
   return (
+    
     <section className="abt-team-section">
+        <Presence />
       <div
         className="abt-team-container"
         ref={scrollContainerRef}
@@ -233,7 +236,9 @@ function AboutTeam() {
 
         </div>
       </div>
+     
     </section>
+    
   );
 }
 
