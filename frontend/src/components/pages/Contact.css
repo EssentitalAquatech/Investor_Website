@@ -445,3 +445,41 @@ select.contact-form-control option {
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-email-link,
+.contact-phone-link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+}
+
+.contact-email-link:hover,
+.contact-phone-link:hover {
+  color: white;
+  text-decoration: underline;
+}
