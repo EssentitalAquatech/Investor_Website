@@ -1,4 +1,30 @@
+# ==========================================
+# Essential Aquatech - Robots Policy
+# ==========================================
+
+# Google Search - ALLOW
+User-agent: Googlebot
+Allow: /
+
+# OpenAI ChatGPT Search - BLOCK
+User-agent: OAI-SearchBot
+Disallow: /
+
+# OpenAI training crawler - BLOCK
+User-agent: GPTBot
+Disallow: /
+
+# OpenAI Ads crawler - BLOCK
+User-agent: OAI-AdsBot
+Disallow: /
+
+# Google Gemini / AI use - BLOCK
+User-agent: Google-Extended
+Disallow: /
+
+# Default crawlers
 User-agent: *
 Allow: /
 
-Sitemap: https://essentialaquatech.in/sitemap.xml
+# Sitemap
+Sitemap: https://www.essentialaquatech.in/sitemap.xml
