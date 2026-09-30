@@ -37,7 +37,7 @@ function AboutTeam() {
     {
       id: 2,
       name: "Subhadeep Mitra",
-      role: "Co-Founder",
+      role: "COO and Co-Founder",
       image: teamImages.image19,
     },
     {
