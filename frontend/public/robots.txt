@@ -1,30 +1,116 @@
 # ==========================================
-# Essential Aquatech - Robots Policy
+# Essential Aquatech - AI Crawler Protection
 # ==========================================
 
-# Google Search - ALLOW
+# ------------------------------------------
+# GOOGLE SEARCH - ALLOW
+# ------------------------------------------
 User-agent: Googlebot
 Allow: /
 
-# OpenAI ChatGPT Search - BLOCK
+# ------------------------------------------
+# OPENAI / CHATGPT - BLOCK
+# ------------------------------------------
 User-agent: OAI-SearchBot
 Disallow: /
 
-# OpenAI training crawler - BLOCK
 User-agent: GPTBot
 Disallow: /
 
-# OpenAI Ads crawler - BLOCK
 User-agent: OAI-AdsBot
 Disallow: /
 
-# Google Gemini / AI use - BLOCK
+User-agent: ChatGPT-User
+Disallow: /
+
+# ------------------------------------------
+# GOOGLE GEMINI / AI - BLOCK
+# ------------------------------------------
 User-agent: Google-Extended
 Disallow: /
 
-# Default crawlers
+# ------------------------------------------
+# ANTHROPIC / CLAUDE - BLOCK
+# ------------------------------------------
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-SearchBot
+Disallow: /
+
+User-agent: Claude-User
+Disallow: /
+
+# ------------------------------------------
+# PERPLEXITY AI - BLOCK
+# ------------------------------------------
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Perplexity-User
+Disallow: /
+
+# ------------------------------------------
+# META AI / LLAMA - BLOCK
+# ------------------------------------------
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+# ------------------------------------------
+# APPLE AI - BLOCK
+# ------------------------------------------
+User-agent: Applebot-Extended
+Disallow: /
+
+# ------------------------------------------
+# AMAZON AI - BLOCK
+# ------------------------------------------
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Amzn-SearchBot
+Disallow: /
+
+User-agent: Amzn-User
+Disallow: /
+
+# ------------------------------------------
+# BYTE DANCE / BYTESPIDER - BLOCK
+# ------------------------------------------
+User-agent: Bytespider
+Disallow: /
+
+# ------------------------------------------
+# COMMON CRAWL - BLOCK
+# ------------------------------------------
+User-agent: CCBot
+Disallow: /
+
+# ------------------------------------------
+# DUCKDUCKGO AI - BLOCK
+# ------------------------------------------
+User-agent: DuckAssistBot
+Disallow: /
+
+# ------------------------------------------
+# MISTRAL AI - BLOCK
+# ------------------------------------------
+User-agent: MistralAI-User
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+# ------------------------------------------
+# GENERAL UNKNOWN BOTS
+# ------------------------------------------
 User-agent: *
 Allow: /
 
-# Sitemap
+# ------------------------------------------
+# SITEMAP
+# ------------------------------------------
 Sitemap: https://www.essentialaquatech.in/sitemap.xml
