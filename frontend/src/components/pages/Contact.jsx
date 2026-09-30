@@ -1,5 +1,4 @@
 
-
 // import React, { useState } from "react";
 // import SEO from "../SEO";
 // import emailjs from "@emailjs/browser";
@@ -252,22 +251,42 @@
 //                     </div>
 //                   </div>
 
-//                   {/* Email */}
-//                   <div className="contact-info-item">
-//                     <i className="contact-info-icon bi bi-envelope-fill"></i>
+   
 
-//                     <div className="contact-info-text">
-//                       <strong>Email Us</strong>
-//                       <br />
+// {/* Email */}
+// <div className="contact-info-item">
+//   <i className="contact-info-icon bi bi-envelope-fill"></i>
 
-//                       24x7@essentialaquatech.com
-//                       <br />
+//   <div className="contact-info-text">
+//     <strong>Email Us</strong>
+//     <br />
 
-//                       <small>
-//                         Response within 24 hours
-//                       </small>
-//                     </div>
-//                   </div>
+//     <a
+//       href="mailto:24x7@essentialaquatech.com"
+//       className="contact-email-link"
+//     >
+//       24x7@essentialaquatech.com
+//     </a>
+
+//     <br />
+
+//     <a
+//       href="tel:+919046226705"
+//       className="contact-phone-link"
+//     >
+//       +91 90462 26705
+//     </a>
+
+//     <br />
+
+//     <small>
+//       Response within 24 hours
+//     </small>
+//   </div>
+// </div>
+
+
+
 
 //                   {/* Office Hours */}
 //                   <div className="contact-office-hours">
@@ -407,14 +426,22 @@
 
 
 
-import React, { useState } from "react";
-import SEO from "../SEO";
+
+
+
+
+
+
+
 import emailjs from "@emailjs/browser";
-import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from "../../utils/email";
+import { useState } from "react";
+import { PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from "../../utils/email";
+import SEO from "../SEO";
 import "./Contact.css";
 
 function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isConfirmed, setIsConfirmed] = useState(false);
 
   const socialLinks = {
     linkedin:
@@ -431,19 +458,27 @@ function Contact() {
 
     if (isSubmitting) return;
 
+    if (!isConfirmed) {
+      alert("Please confirm the checkbox before sending your message.");
+      return;
+    }
+
+    const form = e.currentTarget;
+
     setIsSubmitting(true);
 
     try {
       await emailjs.sendForm(
         SERVICE_ID,
         TEMPLATE_ID,
-        e.currentTarget,
+        form,
         PUBLIC_KEY
       );
 
       alert("✅ Message sent successfully!");
 
-      e.currentTarget.reset();
+      form.reset();
+      setIsConfirmed(false);
     } catch (error) {
       console.error("EmailJS Error:", error);
       alert("❌ Failed to send message. Please try again.");
@@ -456,7 +491,7 @@ function Contact() {
     <>
       <SEO
         title="Contact Essential Aquatech"
-        description="Get in touch with Essential Aquatech for intelligent aquaculture solutions, partnerships and business enquiries."
+        description="Get in touch with Essential Aquatech for partnerships, dealership, distribution, product enquiries and business collaborations."
         canonical="https://www.essentialaquatech.in/contact"
       />
 
@@ -471,9 +506,9 @@ function Contact() {
             </h1>
 
             <p className="contact-subtitle">
-              Have any questions about your order, delivery, or products?
-              We're here to help. Send us a message and our team will respond
-              within 24 hours.
+              Interested in partnering with us, becoming a dealer or
+              distributor, or exploring our products and solutions?
+              Send us a message and our team will get back to you.
             </p>
           </div>
 
@@ -530,7 +565,7 @@ function Contact() {
 
                   </div>
 
-                  {/* Phone + Issue */}
+                  {/* Phone + Enquiry Type */}
                   <div className="row g-3 mt-3">
 
                     <div className="col-md-6">
@@ -556,7 +591,7 @@ function Contact() {
                         htmlFor="contact-subject"
                         className="contact-form-label"
                       >
-                        Select Your Issue
+                        Enquiry Type
                       </label>
 
                       <select
@@ -570,16 +605,28 @@ function Contact() {
                           Please Select
                         </option>
 
-                        <option value="Order Related">
-                          Order Related
+                        <option value="Partnership">
+                          Partnership
                         </option>
 
-                        <option value="Return">
-                          Return
+                        <option value="Dealer Enquiry">
+                          Dealer Enquiry
                         </option>
 
-                        <option value="Payment Related Issues">
-                          Payment Related Issues
+                        <option value="Distributor Enquiry">
+                          Distributor Enquiry
+                        </option>
+
+                        <option value="Product Enquiry">
+                          Product Enquiry
+                        </option>
+
+                        <option value="Bulk / Institutional Enquiry">
+                          Bulk / Institutional Enquiry
+                        </option>
+
+                        <option value="Business Collaboration">
+                          Business Collaboration
                         </option>
 
                         <option value="Other">
@@ -604,9 +651,33 @@ function Contact() {
                       name="message"
                       className="contact-form-control contact-textarea form-control"
                       rows="6"
-                      placeholder="Tell us about your water needs or questions..."
+                      placeholder="Tell us how we can help you..."
                       required
                     ></textarea>
+                  </div>
+
+                  {/* ==================== CONFIRMATION CHECKBOX ==================== */}
+                  <div className="contact-confirmation-box mt-4">
+                    <label
+                      htmlFor="contact-confirmation"
+                      className="contact-confirmation-label"
+                    >
+                      <input
+                        id="contact-confirmation"
+                        type="checkbox"
+                        name="consent"
+                        value="Confirmed"
+                        checked={isConfirmed}
+                        onChange={(e) =>
+                          setIsConfirmed(e.target.checked)
+                        }
+                        className="contact-confirmation-checkbox"
+                      />
+
+                      <span>
+                       I agree to provide my name, email address and phone number to Essential Aquatech. I understand that my information will be stored and used to respond to my enquiry and provide the requested service, product or business assistance. My information may be retained by Essential Aquatech for as long as necessary to fulfil these purposes.
+                      </span>
+                    </label>
                   </div>
 
                   {/* Submit Button */}
@@ -659,42 +730,37 @@ function Contact() {
                     </div>
                   </div>
 
-   
+                  {/* Email */}
+                  <div className="contact-info-item">
+                    <i className="contact-info-icon bi bi-envelope-fill"></i>
 
-{/* Email */}
-<div className="contact-info-item">
-  <i className="contact-info-icon bi bi-envelope-fill"></i>
+                    <div className="contact-info-text">
+                      <strong>Email Us</strong>
+                      <br />
 
-  <div className="contact-info-text">
-    <strong>Email Us</strong>
-    <br />
+                      <a
+                        href="mailto:24x7@essentialaquatech.com"
+                        className="contact-email-link"
+                      >
+                        24x7@essentialaquatech.com
+                      </a>
 
-    <a
-      href="mailto:24x7@essentialaquatech.com"
-      className="contact-email-link"
-    >
-      24x7@essentialaquatech.com
-    </a>
+                      <br />
 
-    <br />
+                      <a
+                        href="tel:+919046226705"
+                        className="contact-phone-link"
+                      >
+                        +91 90462 26705
+                      </a>
 
-    <a
-      href="tel:+919046226705"
-      className="contact-phone-link"
-    >
-      +91 90462 26705
-    </a>
+                      <br />
 
-    <br />
-
-    <small>
-      Response within 24 hours
-    </small>
-  </div>
-</div>
-
-
-
+                      <small>
+                        Response within 24 hours
+                      </small>
+                    </div>
+                  </div>
 
                   {/* Office Hours */}
                   <div className="contact-office-hours">

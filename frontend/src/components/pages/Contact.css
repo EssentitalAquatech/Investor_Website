@@ -26,15 +26,7 @@
   margin: 100px auto;
 }
 
-/* .contact-page-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #1a365d;
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-} */
- .contact-page-title {
+.contact-page-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -42,14 +34,12 @@
   display: inline-block;
 }
 
-/* Get In = black */
 .contact-page-title .get-in {
   color: #000000;
 }
 
-/* Touch = sky blue */
 .contact-page-title .touch {
-  color: #0ea5e9; /* sky blue */
+  color: #0ea5e9;
 }
 
 .contact-page-title::after {
@@ -118,7 +108,7 @@
   color: #a0aec0;
 }
 
-/* Select dropdown specific styles */
+/* Select dropdown */
 select.contact-form-control {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -139,7 +129,6 @@ select.contact-form-control option {
 
 /* Contact Info Card */
 .contact-info-card {
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   background: #0ea5e9;
   border-radius: 20px;
   border: none;
@@ -214,6 +203,54 @@ select.contact-form-control option {
   line-height: 1.6;
 }
 
+/* Email + Phone Links */
+.contact-email-link,
+.contact-phone-link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+}
+
+.contact-email-link:hover,
+.contact-phone-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* ==================== CONFIRMATION CHECKBOX ==================== */
+
+.contact-confirmation-box {
+  width: 100%;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.contact-confirmation-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  cursor: pointer;
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.contact-confirmation-checkbox {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #0ea5e9;
+}
+
 /* Office Hours */
 .contact-office-hours {
   margin-top: 40px;
@@ -252,7 +289,6 @@ select.contact-form-control option {
 
 /* Submit Button */
 .contact-submit-btn {
-  /* background: linear-gradient(90deg, #007bff, #0056b3); */
   background: #0ea5e9;
   border: none;
   border-radius: 10px;
@@ -269,7 +305,6 @@ select.contact-form-control option {
 .contact-submit-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
-  /* background: linear-gradient(90deg, #0056b3, #007bff); */
   background: #0a8cc9;
 }
 
@@ -326,7 +361,7 @@ select.contact-form-control option {
   .contact-page-title {
     font-size: 2.5rem;
   }
-  
+
   .contact-form-container,
   .contact-info-card .card-body {
     padding: 30px;
@@ -337,15 +372,15 @@ select.contact-form-control option {
   .contact-page-content {
     padding: 40px 0;
   }
-  
+
   .contact-page-title {
     font-size: 2.2rem;
   }
-  
+
   .contact-form-container {
     margin-bottom: 30px;
   }
-  
+
   .contact-info-card {
     height: auto;
   }
@@ -355,14 +390,18 @@ select.contact-form-control option {
   .contact-page-title {
     font-size: 2rem;
   }
-  
+
   .contact-form-container,
   .contact-info-card .card-body {
     padding: 25px;
   }
-  
+
   .contact-submit-btn {
     width: 100%;
+  }
+
+  .contact-confirmation-label {
+    font-size: 0.85rem;
   }
 }
 
@@ -370,22 +409,26 @@ select.contact-form-control option {
   .contact-page-content {
     padding: 30px 0;
   }
-  
+
   .contact-page-title {
     font-size: 1.8rem;
   }
-  
+
   .contact-form-container,
   .contact-info-card .card-body {
     padding: 20px;
   }
-  
+
   .contact-info-item {
     padding: 12px;
   }
-  
+
   .contact-social-links {
     justify-content: center;
+  }
+
+  .contact-confirmation-box {
+    padding: 12px;
   }
 }
 
@@ -399,6 +442,7 @@ select.contact-form-control option {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -444,42 +488,4 @@ select.contact-form-control option {
   to {
     transform: rotate(360deg);
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.contact-email-link,
-.contact-phone-link {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  z-index: 10;
-}
-
-.contact-email-link:hover,
-.contact-phone-link:hover {
-  color: white;
-  text-decoration: underline;
 }
