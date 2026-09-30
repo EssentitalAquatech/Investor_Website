@@ -146,7 +146,7 @@ import About from "./components/pages/About";
 import Life from "./components/pages/Life";
 import Contact from "./components/pages/Contact";
 import PrivacyPolicy from "./components/pages/PrivacyPolciy";
-import ReturnPolicy from "./components/pages/ReturnPolicy";
+// import ReturnPolicy from "./components/pages/ReturnPolicy";
 import ScheduleDemoModal from "./components/ScheduleDemoModal";
 
 // ✅ Product Detail Page
@@ -247,10 +247,10 @@ function AppContent() {
           element={<PrivacyPolicy />}
         />
 
-        <Route
+        {/* <Route
           path="/return"
           element={<ReturnPolicy />}
-        />
+        /> */}
 
 
         {/* =========================

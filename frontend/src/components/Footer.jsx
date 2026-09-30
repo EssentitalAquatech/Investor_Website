@@ -660,13 +660,13 @@ function Footer() {
               </li>
 
 
-              <li>
+              {/* <li>
 
                 <a href="/return">
                   Return Policy
                 </a>
 
-              </li>
+              </li> */}
 
             </ul>
 
