@@ -57,6 +57,9 @@ const awardImages = {
 
   image16:
     "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/WhatsApp_Image_2025-04-21_at_2.35.35_PM.jpg",
+
+    image17:
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/cer",
 };
 
 function Award() {
@@ -313,6 +316,22 @@ function Award() {
       desc:
         "Received a Certificate of Recognition from EarthON Foundation for our active participation and valuable contribution to the EarthON Eco Champions Bootcamp, recognizing our commitment to innovation, climate action, and sustainable solutions for a better future.",
     },
+    {
+  id: 17,
+  image: awardImages.image17,
+  heading: (
+    <>
+      Certificate of Recognition
+      <br />
+      <span className="award-heading-org">
+        Essential Aquatech
+      </span>
+    </>
+  ),
+  year: "2026",
+  desc:
+    "Received a Certificate of Recognition in appreciation of our contribution, commitment, and efforts toward innovation and sustainable development in the aquaculture ecosystem. The recognition reflects our continued focus on technology-driven solutions, responsible aquaculture, and creating meaningful impact for fish farmers and the wider aquatic ecosystem.",
+},
   ];
 
   /*

@@ -17,21 +17,19 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 80px 0;
-  overflow-x: auto;          /* 🔥 full horizontal scroll */
+  overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   position: relative;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 .abt-team-container::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .abt-team-container {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* ================================
@@ -61,7 +59,6 @@
 ================================ */
 .abt-team-scroll-btn {
   padding: 12px 25px;
-  /* background: linear-gradient(90deg, #3498db, #2ecc71); */
   background: #0EA5E9;
   color: white;
   border: none;
@@ -94,13 +91,9 @@
   left: 100%;
 }
 
-/* Button hover effects */
 .abt-team-scroll-btn:hover {
-  /* background: linear-gradient(90deg, #2980b9, #27ae60);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4); */
   background: #0284c7;
-    transform: translateY(-2px)
+  transform: translateY(-2px);
 }
 
 .abt-team-scroll-btn:active {
@@ -108,7 +101,6 @@
   box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
 }
 
-/* Button icons */
 .abt-team-btn-icon {
   font-size: 1.2rem;
   transition: transform 0.3s ease;
@@ -123,7 +115,7 @@
 }
 
 /* ================================
-   LEFT SIDE - With Scroll Animation and Enhanced Hover Effects
+   LEFT SIDE
 ================================ */
 .abt-team-text-side {
   min-width: 300px;
@@ -137,16 +129,15 @@
   opacity: 0;
   transform: translateX(-50px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  padding-bottom: 100px; /* Space for buttons */
+  padding-bottom: 100px;
 }
 
-/* Animation for scroll */
 .abt-team-text-side.animate {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Title Styling - Meet Our और Team अलग-अलग lines में */
+/* Title Styling */
 .abt-team-title {
   font-size: 3rem;
   line-height: 1.1;
@@ -158,11 +149,9 @@
   transition: all 0.4s ease;
 }
 
-/* Title Gradient Colors */
 .abt-team-title-light {
   display: block;
   font-weight: 400;
-  /* background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c); */
   background: black;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -176,7 +165,6 @@
 .abt-team-title-bold {
   display: block;
   font-weight: 800;
-  /* background: linear-gradient(90deg, #2c3e50, #3498db, #2ecc71); */
   background: #0ea5e9;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -187,20 +175,12 @@
   animation: gradientShift 5s ease infinite 0.5s;
 }
 
-/* Gradient Animation */
 @keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Animated Gradient Underline */
 .abt-team-title::after {
   content: '';
   position: absolute;
@@ -208,32 +188,19 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, 
-    #3498db, #9b59b6, #e74c3c, 
-    #f1c40f, #2ecc71, #3498db);
+  background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c, #f1c40f, #2ecc71, #3498db);
   background-size: 300% 100%;
   border-radius: 2px;
   transform-origin: left;
   animation: underlineFlow 3s ease-in-out infinite;
 }
 
-/* Underline Flow Animation */
 @keyframes underlineFlow {
-  0% {
-    background-position: 0% 50%;
-    transform: scaleX(0.8);
-  }
-  50% {
-    background-position: 100% 50%;
-    transform: scaleX(1);
-  }
-  100% {
-    background-position: 0% 50%;
-    transform: scaleX(0.8);
-  }
+  0% { background-position: 0% 50%; transform: scaleX(0.8); }
+  50% { background-position: 100% 50%; transform: scaleX(1); }
+  100% { background-position: 0% 50%; transform: scaleX(0.8); }
 }
 
-/* Hover effect for title */
 .abt-team-title:hover .abt-team-title-light {
   animation: gradientShift 2s ease infinite;
 }
@@ -247,9 +214,9 @@
   height: 5px;
 }
 
-/* Subtitle with Animated Line */
+/* Subtitle */
 .abt-team-subtitle {
-  color: #666;  /* Gray color (bina hover ke) */
+  color: #666;
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 30px;
@@ -259,16 +226,16 @@
   transition: all 0.4s ease;
   transform: translateY(0);
   margin-top: 30px;
+  display: block;
 }
 
-/* Subtitle के side में animated line */
 .abt-team-subtitle::before {
   content: '';
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: 0;  /* Start with 0 height */
+  height: 0;
   width: 3px;
   background: linear-gradient(to bottom, #3498db, #2ecc71);
   border-radius: 2px;
@@ -276,37 +243,25 @@
   animation: linePulse 3s infinite alternate;
 }
 
-/* Line pulse animation */
 @keyframes linePulse {
-  0% {
-    height: 30%;
-    opacity: 0.7;
-  }
-  50% {
-    height: 70%;
-    opacity: 1;
-  }
-  100% {
-    height: 100%;
-    opacity: 0.7;
-  }
+  0% { height: 30%; opacity: 0.7; }
+  50% { height: 70%; opacity: 1; }
+  100% { height: 100%; opacity: 0.7; }
 }
 
-/* Hover effect - Jab hover ho */
 .abt-team-subtitle:hover {
-  color: #2c3e50;  /* Dark blue color on hover */
+  color: #2c3e50;
   padding-left: 28px;
 }
 
 .abt-team-subtitle:hover::before {
-  background: linear-gradient(to bottom, #1a5276, #2c3e50);  /* Dark blue gradient on hover */
-  animation: none;  /* Stop animation on hover */
-  height: 100%;  /* Full height on hover */
+  background: linear-gradient(to bottom, #1a5276, #2c3e50);
+  animation: none;
+  height: 100%;
   opacity: 1;
-  width: 4px;  /* Thicker on hover */
+  width: 4px;
 }
 
-/* 4 line clamp */
 .abt-team-clamp-4 {
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -315,7 +270,7 @@
 }
 
 /* ================================
-   RIGHT SIDE - With Scroll Animation
+   RIGHT SIDE
 ================================ */
 .abt-team-cards-side {
   min-width: 1200px;
@@ -326,14 +281,13 @@
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
 }
 
-/* Animation for scroll */
 .abt-team-cards-side.animate {
   opacity: 1;
   transform: translateX(0);
 }
 
 /* ================================
-   TEAM MEMBERS ROW with alternating up/down positions
+   TEAM MEMBERS ROW
 ================================ */
 .abt-team-members-row {
   display: flex;
@@ -342,7 +296,7 @@
 }
 
 /* ================================
-   CARD with CIRCULAR IMAGE and content below - Enhanced Animations
+   CARD
 ================================ */
 .abt-team-member-card {
   width: 320px;
@@ -351,21 +305,15 @@
   flex-direction: column;
   align-items: center;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Initial state for card animation */
-.abt-team-member-card {
   opacity: 0;
   transform: translateY(30px);
 }
 
-/* Staggered animation for cards */
 .abt-team-member-card.animate {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* और अधिक प्रमुख ऊपर-नीचे पोजिशनिंग */
 .abt-team-member-card:nth-child(1) { margin-top: 0; transition-delay: 0.1s; }
 .abt-team-member-card:nth-child(2) { margin-top: 50px; transition-delay: 0.2s; }
 .abt-team-member-card:nth-child(3) { margin-top: 10px; transition-delay: 0.3s; }
@@ -374,7 +322,6 @@
 .abt-team-member-card:nth-child(6) { margin-top: 55px; transition-delay: 0.6s; }
 .abt-team-member-card:nth-child(7) { margin-top: 25px; transition-delay: 0.7s; }
 
-/* Hover effect on card */
 .abt-team-member-card:hover {
   transform: translateY(-10px) scale(1.02);
 }
@@ -398,7 +345,7 @@
   box-shadow: none;
 }
 
-/* CIRCULAR IMAGE CONTAINER - Enhanced hover effects - ROTATION REMOVED */
+/* IMAGE CONTAINER */
 .abt-team-img-container {
   width: 300px;
   height: 300px;
@@ -413,14 +360,12 @@
   cursor: pointer;
 }
 
-/* ROTATION REMOVED - केवल scale effect रखा है */
 .abt-team-member-card:hover .abt-team-img-container {
-  transform: scale(1.05); /* केवल scale, कोई rotate नहीं */
+  transform: scale(1.05);
   box-shadow: 0 15px 35px rgba(52, 152, 219, 0.2), 0 0 0 3px rgba(46, 204, 113, 0.1);
   border: 8px solid rgba(255, 255, 255, 0.9);
 }
 
-/* Pulsing animation on hover */
 @keyframes pulse-glow {
   0% { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
   50% { box-shadow: 0 15px 35px rgba(52, 152, 219, 0.3), 0 0 0 5px rgba(46, 204, 113, 0.1); }
@@ -439,13 +384,11 @@
   filter: grayscale(20%);
 }
 
-/* Image के scale effect को भी smooth किया है */
 .abt-team-card:hover .abt-team-img {
-  transform: scale(1.08); /* थोड़ा सा scale */
+  transform: scale(1.08);
   filter: grayscale(0%);
 }
 
-/* Image overlay effect */
 .abt-team-img-container::after {
   content: '';
   position: absolute;
@@ -463,11 +406,15 @@
   opacity: 1;
 }
 
-/* CONTENT BELOW CIRCULAR IMAGE - Enhanced effects */
+/* CARD BODY – CENTERED below image */
 .abt-team-card-body {
-  padding: 30px 25px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   width: 100%;
+  padding: 18px 10px 0 10px;
   margin-top: 0;
   background: transparent;
   border-radius: 0;
@@ -476,80 +423,89 @@
 }
 
 .abt-team-member-card:hover .abt-team-card-body {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
+/* NAME – centered below image */
 .abt-team-name {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 6px 0;
+  line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
   font-size: 1.4rem;
   font-weight: 700;
-  color: #1a1a1a;  /* Black color (bina hover ke) */
-  margin-bottom: 8px;
+  color: #1a1a1a;
+  text-align: center;
   position: relative;
-  display: inline-block;
-  padding-bottom: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-/* Default underline for name (bina hover ke) */
 .abt-team-name::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;  /* Default width */
+  width: 50px;
   height: 2px;
   background: linear-gradient(90deg, #3498db, #2ecc71);
   border-radius: 1px;
 }
 
-/* Hover effect */
 .abt-team-name:hover {
-  color: #1a5276;  /* Dark blue color on hover */
+  color: #1a5276;
 }
 
 .abt-team-name:hover::after {
-  background: linear-gradient(90deg, #1a5276, #2c3e50);  /* Dark blue gradient on hover */
+  background: linear-gradient(90deg, #1a5276, #2c3e50);
 }
 
+/* ROLE – centered below name */
 .abt-team-role {
+  display: block;
+  width: 100%;
+  margin: 6px 0 0;
+  padding: 0;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
   font-size: 1rem;
   color: #0284c7;
   font-weight: 600;
-  margin-bottom: 15px;
-  transition: all 0.4s ease;
-  padding: 6px 15px;
-  /* background: rgba(46, 204, 113, 0.1); */
-  background: rgb(248 248 248);
-  border-radius: 20px;
-  display: inline-block;
+  text-align: center;
+  background: transparent;
+  border-radius: 0;
   cursor: pointer;
+  transition: all 0.4s ease;
 }
 
 .abt-team-role:hover {
   color: #056494;
-  background: rgb(238, 238, 238);
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2);
+  transform: translateY(-2px);
 }
 
 .abt-team-desc {
   font-size: 0.95rem;
-  color: #666;  /* Gray color (bina hover ke) */
+  color: #666;
   line-height: 1.7;
   margin-top: 10px;
   transition: all 0.4s ease;
   opacity: 0.9;
+  text-align: center;
 }
 
 .abt-team-member-card:hover .abt-team-desc {
-  color: #1a5276;  /* Dark blue color on hover */
+  color: #1a5276;
   opacity: 1;
   transform: translateY(-2px);
 }
 
-/* Floating animation for cards - यह भी हटा सकते हैं अगर चाहें */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -559,7 +515,6 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Social icons (optional) */
 .abt-team-social {
   display: none;
 }
@@ -587,770 +542,212 @@
    SCROLL TRIGGERED ANIMATIONS
 ================================ */
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ================================
-   RESPONSIVE DESIGN FOR SCROLL BUTTONS
+   SCROLL BUTTONS – RESPONSIVE
 ================================ */
-
-/* Extra large screens */
 @media (min-width: 1920px) {
-  .abt-team-scroll-buttons {
-    left: 200px;
-    bottom: 40px;
-  }
-  
-  .abt-team-scroll-btn {
-    padding: 14px 30px;
-    font-size: 1.1rem;
-  }
-  
-  .abt-team-text-side {
-    padding-bottom: 120px;
-  }
+  .abt-team-scroll-buttons { left: 200px; bottom: 40px; }
+  .abt-team-scroll-btn { padding: 14px 30px; font-size: 1.1rem; }
+  .abt-team-text-side { padding-bottom: 120px; }
 }
 
-/* Large desktops */
 @media (min-width: 1600px) and (max-width: 1919px) {
-  .abt-team-scroll-buttons {
-    left: 150px;
-    bottom: 35px;
-  }
-  
-  .abt-team-scroll-btn {
-    padding: 13px 28px;
-  }
-  
-  .abt-team-text-side {
-    padding-bottom: 110px;
-  }
+  .abt-team-scroll-buttons { left: 150px; bottom: 35px; }
+  .abt-team-scroll-btn { padding: 13px 28px; }
+  .abt-team-text-side { padding-bottom: 110px; }
 }
 
-/* Standard desktops */
 @media (min-width: 1200px) and (max-width: 1599px) {
-  .abt-team-scroll-buttons {
-    left: 80px;
-    bottom: 30px;
-  }
-  
-  .abt-team-scroll-btn {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
-  
-  .abt-team-text-side {
-    padding-bottom: 100px;
-  }
+  .abt-team-scroll-buttons { left: 80px; bottom: 30px; }
+  .abt-team-scroll-btn { padding: 12px 25px; font-size: 1rem; }
+  .abt-team-text-side { padding-bottom: 100px; }
 }
 
-/* Small desktops & laptops */
 @media (min-width: 1024px) and (max-width: 1199px) {
-  .abt-team-scroll-buttons {
-    left: 60px;
-    bottom: 25px;
-  }
-  
-  .abt-team-scroll-btn {
-    padding: 11px 22px;
-    font-size: 0.95rem;
-  }
-  
-  .abt-team-text-side {
-    padding-bottom: 90px;
-  }
+  .abt-team-scroll-buttons { left: 60px; bottom: 25px; }
+  .abt-team-scroll-btn { padding: 11px 22px; font-size: 0.95rem; }
+  .abt-team-text-side { padding-bottom: 90px; }
 }
 
-/* Tablets landscape */
 @media (min-width: 992px) and (max-width: 1023px) {
-  .abt-team-scroll-buttons {
-    left: 40px;
-    bottom: 20px;
-  }
-  
-  .abt-team-scroll-btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-  
-  .abt-team-text-side {
-    padding-bottom: 80px;
-  }
+  .abt-team-scroll-buttons { left: 40px; bottom: 20px; }
+  .abt-team-scroll-btn { padding: 10px 20px; font-size: 0.9rem; }
+  .abt-team-text-side { padding-bottom: 80px; }
 }
 
-/* Tablets portrait */
 @media (min-width: 768px) and (max-width: 991px) {
-  .abt-team-scroll-buttons {
-    left: 30px;
-    bottom: 20px;
-  }
-  
-  .abt-team-scroll-btn {
-    padding: 9px 18px;
-    font-size: 0.85rem;
-  }
-  
-  .abt-team-text-side {
-    padding-bottom: 80px;
-  }
+  .abt-team-scroll-buttons { left: 30px; bottom: 20px; }
+  .abt-team-scroll-btn { padding: 9px 18px; font-size: 0.85rem; }
+  .abt-team-text-side { padding-bottom: 80px; }
 }
 
-/* Large mobile */
 @media (min-width: 577px) and (max-width: 767px) {
-  .abt-team-scroll-buttons {
-    left: 20px;
-    bottom: 15px;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .abt-team-scroll-btn {
-    padding: 8px 16px;
-    font-size: 0.8rem;
-  }
-  
-  .abt-team-text-side {
-    padding-bottom: 70px;
-  }
+  .abt-team-scroll-buttons { left: 20px; bottom: 15px; flex-direction: column; gap: 10px; }
+  .abt-team-scroll-btn { padding: 8px 16px; font-size: 0.8rem; }
+  .abt-team-text-side { padding-bottom: 70px; }
 }
 
-/* Medium mobile */
 @media (min-width: 481px) and (max-width: 576px) {
-  .abt-team-scroll-buttons {
-    left: 15px;
-    bottom: 10px;
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .abt-team-scroll-btn {
-    padding: 7px 14px;
-    font-size: 0.75rem;
-  }
-  
-  .abt-team-text-side {
-    padding-bottom: 60px;
-  }
+  .abt-team-scroll-buttons { left: 15px; bottom: 10px; flex-direction: column; gap: 8px; }
+  .abt-team-scroll-btn { padding: 7px 14px; font-size: 0.75rem; }
+  .abt-team-text-side { padding-bottom: 60px; }
 }
 
-/* Small mobile */
 @media (max-width: 480px) {
-  .abt-team-scroll-buttons {
-    left: 10px;
-    bottom: 8px;
-    flex-direction: column;
-    gap: 6px;
-  }
-  
-  .abt-team-scroll-btn {
-    padding: 6px 12px;
-    font-size: 0.7rem;
-    border-radius: 20px;
-  }
-  
-  .abt-team-text-side {
-    padding-bottom: 50px;
-  }
-  
-  .abt-team-btn-icon {
-    font-size: 1rem;
-  }
+  .abt-team-scroll-buttons { left: 10px; bottom: 8px; flex-direction: column; gap: 6px; }
+  .abt-team-scroll-btn { padding: 6px 12px; font-size: 0.7rem; border-radius: 20px; }
+  .abt-team-text-side { padding-bottom: 50px; }
+  .abt-team-btn-icon { font-size: 1rem; }
 }
-
-/* COMPLETE RESPONSIVE DESIGN FOR ALL DEVICES */
 
 /* =========== 1. EXTRA LARGE DESKTOPS (1920px and above) =========== */
 @media (min-width: 1920px) {
-  .abt-team-section {
-    padding: 100px 0;
-  }
-  
-  .abt-team-container {
-    padding: 100px 0;
-  }
-  
-  .abt-team-layout {
-    min-width: 2200px;
-    gap: 120px;
-  }
-  
-  .abt-team-text-side {
-    margin-left: 200px;
-    min-width: 400px;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 4rem;
-    line-height: 1;
-  }
-  
-  .abt-team-title::after {
-    height: 5px;
-    bottom: -15px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 3.5rem;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-    margin-top: 0;
-    font-size: 4.5rem;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 1600px;
-    padding-right: 200px;
-  }
-  
-  .abt-team-member-card {
-    width: 380px;
-  }
-  
-  .abt-team-img-container {
-    width: 350px;
-    height: 350px;
-    border: 10px solid white;
-  }
-  
-  .abt-team-subtitle {
-    font-size: 1.3rem;
-    line-height: 1.8;
-    margin-top: 40px;
-  }
-  
-  .abt-team-name {
-    font-size: 1.6rem;
-  }
-  
-  .abt-team-role {
-    font-size: 1.1rem;
-    padding: 8px 20px;
-  }
-  
-  .abt-team-desc {
-    font-size: 1.1rem;
-  }
+  .abt-team-section { padding: 100px 0; }
+  .abt-team-container { padding: 100px 0; }
+  .abt-team-layout { min-width: 2200px; gap: 120px; }
+  .abt-team-text-side { margin-left: 200px; min-width: 400px; }
+  .abt-team-title { font-size: 4rem; line-height: 1; }
+  .abt-team-title::after { height: 5px; bottom: -15px; }
+  .abt-team-title-light { display: block; margin-bottom: 5px; font-size: 3.5rem; }
+  .abt-team-title-bold { display: block; margin-top: 0; font-size: 4.5rem; }
+  .abt-team-cards-side { min-width: 1600px; padding-right: 200px; }
+  .abt-team-member-card { width: 380px; }
+  .abt-team-img-container { width: 350px; height: 350px; border: 10px solid white; }
+  .abt-team-subtitle { font-size: 1.3rem; line-height: 1.8; margin-top: 40px; }
+  .abt-team-name { font-size: 1.6rem; }
+  .abt-team-role { font-size: 1.1rem; }
+  .abt-team-desc { font-size: 1.1rem; }
 }
 
 /* =========== 2. LARGE DESKTOPS (1600px to 1919px) =========== */
 @media (min-width: 1600px) and (max-width: 1919px) {
-  .abt-team-section {
-    padding: 90px 0;
-  }
-  
-  .abt-team-container {
-    padding: 90px 0;
-  }
-  
-  .abt-team-layout {
-    min-width: 2000px;
-    gap: 100px;
-  }
-  
-  .abt-team-text-side {
-    margin-left: 150px;
-    min-width: 350px;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 3.5rem;
-    line-height: 1;
-  }
-  
-  .abt-team-title::after {
-    height: 4px;
-    bottom: -12px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 4rem;
-    font-weight: 700;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-    margin-top: 0;
-    font-size: 4rem;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 1400px;
-    padding-right: 150px;
-  }
-  
-  .abt-team-member-card {
-    width: 340px;
-  }
-  
-  .abt-team-img-container {
-    width: 320px;
-    height: 320px;
-  }
-  
-  .abt-team-subtitle {
-    font-size: 1.2rem;
-    margin-top: 35px;
-  }
-  
-  .abt-team-members-row {
-    gap: 100px;
-  }
+  .abt-team-section { padding: 90px 0; }
+  .abt-team-container { padding: 90px 0; }
+  .abt-team-layout { min-width: 2000px; gap: 100px; }
+  .abt-team-text-side { margin-left: 150px; min-width: 350px; }
+  .abt-team-title { font-size: 3.5rem; line-height: 1; }
+  .abt-team-title::after { height: 4px; bottom: -12px; }
+  .abt-team-title-light { display: block; margin-bottom: 5px; font-size: 4rem; font-weight: 700; }
+  .abt-team-title-bold { display: block; margin-top: 0; font-size: 4rem; }
+  .abt-team-cards-side { min-width: 1400px; padding-right: 150px; }
+  .abt-team-member-card { width: 340px; }
+  .abt-team-img-container { width: 320px; height: 320px; }
+  .abt-team-subtitle { font-size: 1.2rem; margin-top: 35px; }
+  .abt-team-members-row { gap: 100px; }
 }
 
 /* =========== 3. STANDARD DESKTOPS (1200px to 1599px) =========== */
 @media (min-width: 1200px) and (max-width: 1599px) {
-  .abt-team-section {
-    padding: 80px 0;
-  }
-  
-  .abt-team-container {
-    padding: 80px 0;
-  }
-  
-  .abt-team-layout {
-    min-width: 1500px;
-    gap: 60px;
-  }
-  
-  .abt-team-text-side {
-    margin-left: 80px;
-    min-width: 280px;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 3rem;
-    line-height: 1;
-  }
-  
-  .abt-team-title::after {
-    height: 4px;
-    bottom: -10px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 2.5rem;
-    font-weight: 500;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-    margin-top: 0;
-    font-size: 3.5rem;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 1100px;
-    padding-right: 80px;
-  }
-  
-  .abt-team-member-card {
-    width: 300px;
-  }
-  
-  .abt-team-img-container {
-    width: 280px;
-    height: 280px;
-  }
-  
-  .abt-team-subtitle {
-    margin-top: 30px;
-  }
-  
-  .abt-team-members-row {
-    gap: 70px;
-  }
+  .abt-team-section { padding: 80px 0; }
+  .abt-team-container { padding: 80px 0; }
+  .abt-team-layout { min-width: 1500px; gap: 60px; }
+  .abt-team-text-side { margin-left: 80px; min-width: 280px; }
+  .abt-team-title { font-size: 3rem; line-height: 1; }
+  .abt-team-title::after { height: 4px; bottom: -10px; }
+  .abt-team-title-light { display: block; margin-bottom: 5px; font-size: 2.5rem; font-weight: 500; }
+  .abt-team-title-bold { display: block; margin-top: 0; font-size: 3.5rem; }
+  .abt-team-cards-side { min-width: 1100px; padding-right: 80px; }
+  .abt-team-member-card { width: 300px; }
+  .abt-team-img-container { width: 280px; height: 280px; }
+  .abt-team-subtitle { margin-top: 30px; }
+  .abt-team-members-row { gap: 70px; }
 }
 
 /* =========== 4. SMALL DESKTOPS & LAPTOPS (1024px to 1199px) =========== */
 @media (min-width: 1024px) and (max-width: 1199px) {
-  .abt-team-section {
-    padding: 70px 0;
-  }
-  
-  .abt-team-container {
-    padding: 70px 0;
-  }
-  
-  .abt-team-layout {
-    min-width: 1300px;
-    gap: 50px;
-    padding: 0 15px 15px 15px;
-  }
-  
-  .abt-team-text-side {
-    margin-left: 60px;
-    min-width: 250px;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 2.8rem;
-    line-height: 1;
-  }
-  
-  .abt-team-title::after {
-    height: 3px;
-    bottom: -8px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 2.3rem;
-    font-weight: 500;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-    margin-top: 0;
-    font-size: 3.3rem;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 950px;
-    padding-right: 60px;
-  }
-  
-  .abt-team-member-card {
-    width: 280px;
-  }
-  
-  .abt-team-img-container {
-    width: 260px;
-    height: 260px;
-  }
-  
-  .abt-team-subtitle {
-    font-size: 1.05rem;
-    margin-top: 25px;
-  }
-  
-  .abt-team-members-row {
-    gap: 60px;
-  }
+  .abt-team-section { padding: 70px 0; }
+  .abt-team-container { padding: 70px 0; }
+  .abt-team-layout { min-width: 1300px; gap: 50px; padding: 0 15px 15px 15px; }
+  .abt-team-text-side { margin-left: 60px; min-width: 250px; }
+  .abt-team-title { font-size: 2.8rem; line-height: 1; }
+  .abt-team-title::after { height: 3px; bottom: -8px; }
+  .abt-team-title-light { display: block; margin-bottom: 5px; font-size: 2.3rem; font-weight: 500; }
+  .abt-team-title-bold { display: block; margin-top: 0; font-size: 3.3rem; }
+  .abt-team-cards-side { min-width: 950px; padding-right: 60px; }
+  .abt-team-member-card { width: 280px; }
+  .abt-team-img-container { width: 260px; height: 260px; }
+  .abt-team-subtitle { font-size: 1.05rem; margin-top: 25px; }
+  .abt-team-members-row { gap: 60px; }
 }
 
 /* =========== 5. TABLETS LANDSCAPE (992px to 1023px) =========== */
 @media (min-width: 992px) and (max-width: 1023px) {
-  .abt-team-section {
-    padding: 60px 0;
-  }
-  
-  .abt-team-container {
-    padding: 60px 0;
-  }
-  
-  .abt-team-layout {
-    min-width: 1200px;
-    gap: 40px;
-    padding: 0 15px 15px 15px;
-  }
-  
-  .abt-team-text-side {
-    margin-left: 40px;
-    min-width: 230px;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 2.5rem;
-    line-height: 1;
-  }
-  
-  .abt-team-title::after {
-    height: 3px;
-    bottom: -8px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 2rem;
-    font-weight: 500;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-    margin-top: 0;
-    font-size: 3rem;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 900px;
-    padding-right: 40px;
-  }
-  
-  .abt-team-member-card {
-    width: 260px;
-  }
-  
-  .abt-team-img-container {
-    width: 240px;
-    height: 240px;
-    border: 6px solid white;
-  }
-  
-  .abt-team-subtitle {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-top: 25px;
-  }
-  
-  .abt-team-members-row {
-    gap: 50px;
-  }
-  
-  .abt-team-name {
-    font-size: 1.3rem;
-  }
-  
-  .abt-team-role {
-    font-size: 0.95rem;
-  }
+  .abt-team-section { padding: 60px 0; }
+  .abt-team-container { padding: 60px 0; }
+  .abt-team-layout { min-width: 1200px; gap: 40px; padding: 0 15px 15px 15px; }
+  .abt-team-text-side { margin-left: 40px; min-width: 230px; }
+  .abt-team-title { font-size: 2.5rem; line-height: 1; }
+  .abt-team-title::after { height: 3px; bottom: -8px; }
+  .abt-team-title-light { display: block; margin-bottom: 5px; font-size: 2rem; font-weight: 500; }
+  .abt-team-title-bold { display: block; margin-top: 0; font-size: 3rem; }
+  .abt-team-cards-side { min-width: 900px; padding-right: 40px; }
+  .abt-team-member-card { width: 260px; }
+  .abt-team-img-container { width: 240px; height: 240px; border: 6px solid white; }
+  .abt-team-subtitle { font-size: 1rem; line-height: 1.6; margin-top: 25px; }
+  .abt-team-members-row { gap: 50px; }
+  .abt-team-name { font-size: 1.3rem; }
+  .abt-team-role { font-size: 0.95rem; }
 }
 
 /* =========== 6. TABLETS PORTRAIT (768px to 991px) =========== */
 @media (min-width: 768px) and (max-width: 991px) {
-  .abt-team-section {
-    padding: 60px 0;
-  }
-  
-  .abt-team-container {
-    padding: 60px 0;
-  }
-  
-  .abt-team-layout {
-    min-width: 1100px;
-    gap: 40px;
-    flex-direction: row;
-    padding: 0 20px 20px 20px;
-  }
-  
-  .abt-team-text-side {
-    min-width: 250px;
-    margin-left: 30px;
-    text-align: left;
-    padding: 0;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 2.2rem;
-    line-height: 1;
-  }
-  
-  .abt-team-title::after {
-    height: 3px;
-    bottom: -8px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1.8rem;
-    font-weight: 500;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-    margin-top: 0;
-    font-size: 2.6rem;
-  }
-  
-  .abt-team-subtitle::before {
-    display: block;
-  }
-  
-  .abt-team-subtitle {
-    padding-left: 20px;
-    max-width: 100%;
-    margin: 25px 0 30px 0;
-    font-size: 1rem;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 800px;
-    padding-right: 30px;
-  }
-  
-  .abt-team-members-row {
-    gap: 40px;
-  }
-  
-  .abt-team-member-card {
-    width: 240px;
-  }
-  
-  .abt-team-img-container {
-    width: 220px;
-    height: 220px;
-    margin-top: 0;
-    border: 6px solid white;
-  }
-  
-  /* Adjust positioning for tablet */
+  .abt-team-section { padding: 60px 0; }
+  .abt-team-container { padding: 60px 0; }
+  .abt-team-layout { min-width: 1100px; gap: 40px; flex-direction: row; padding: 0 20px 20px 20px; }
+  .abt-team-text-side { min-width: 250px; margin-left: 30px; padding: 0; }
+  .abt-team-title { font-size: 2.2rem; line-height: 1; }
+  .abt-team-title::after { height: 3px; bottom: -8px; }
+  .abt-team-title-light { display: block; margin-bottom: 5px; font-size: 1.8rem; font-weight: 500; }
+  .abt-team-title-bold { display: block; margin-top: 0; font-size: 2.6rem; }
+  .abt-team-subtitle::before { display: block; }
+  .abt-team-subtitle { padding-left: 20px; max-width: 100%; margin: 25px 0 30px 0; font-size: 1rem; }
+  .abt-team-cards-side { min-width: 800px; padding-right: 30px; }
+  .abt-team-members-row { gap: 40px; }
+  .abt-team-member-card { width: 240px; }
+  .abt-team-img-container { width: 220px; height: 220px; margin-top: 0; border: 6px solid white; }
   .abt-team-member-card:nth-child(2) { margin-top: 40px; }
   .abt-team-member-card:nth-child(4) { margin-top: 50px; }
   .abt-team-member-card:nth-child(6) { margin-top: 45px; }
-  
-  .abt-team-card-body {
-    padding: 25px 15px 15px 15px;
-  }
-  
-  .abt-team-name {
-    font-size: 1.2rem;
-  }
-  
-  .abt-team-role {
-    font-size: 0.9rem;
-    padding: 5px 12px;
-  }
-  
-  .abt-team-desc {
-    font-size: 0.85rem;
-  }
+  .abt-team-card-body { padding: 15px 10px 0 10px; }
+  .abt-team-name { font-size: 1.2rem; }
+  .abt-team-role { font-size: 0.9rem; }
+  .abt-team-desc { font-size: 0.85rem; }
 }
 
 /* =========== 7. LARGE MOBILE (577px to 767px) =========== */
 @media (min-width: 577px) and (max-width: 767px) {
-  .abt-team-section {
-    padding: 50px 0;
-  }
-  
-  .abt-team-container {
-    padding: 50px 0;
-  }
-  
-  .abt-team-layout {
-    min-width: 1000px;
-    gap: 30px;
-    flex-direction: row;
-    padding: 0 15px 15px 15px;
-  }
-  
-  .abt-team-text-side {
-    min-width: 220px;
-    margin-left: 20px;
-    text-align: left;
-    padding: 0;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 1.8rem;
-    line-height: 1;
-    margin-bottom: 15px;
-  }
-  
-  .abt-team-title::after {
-    height: 2px;
-    bottom: -5px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-    margin-top: 0;
-    font-size: 2.1rem;
-  }
-  
-  .abt-team-subtitle::before {
-    display: block;
-  }
-  
-  .abt-team-subtitle {
-    padding-left: 15px;
-    font-size: 0.95rem;
-    margin: 20px 0 25px 0;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 750px;
-    padding-right: 20px;
-  }
-  
-  .abt-team-members-row {
-    gap: 35px;
-  }
-  
-  .abt-team-member-card {
-    width: 210px;
-  }
-  
-  .abt-team-img-container {
-    width: 190px;
-    height: 190px;
-    margin-top: 0;
-    border: 5px solid white;
-  }
-  
-  .abt-team-card-body {
-    padding: 20px 10px 10px 10px;
-  }
-  
-  .abt-team-name {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-  }
-  
-  .abt-team-role {
-    font-size: 0.85rem;
-    padding: 4px 10px;
-    margin-bottom: 10px;
-  }
-  
-  .abt-team-desc {
-    font-size: 0.8rem;
-    line-height: 1.5;
-  }
-  
-  /* Adjust positioning for mobile */
+  .abt-team-section { padding: 50px 0; }
+  .abt-team-container { padding: 50px 0; }
+  .abt-team-layout { min-width: 1000px; gap: 30px; flex-direction: row; padding: 0 15px 15px 15px; }
+  .abt-team-text-side { min-width: 220px; margin-left: 20px; padding: 0; }
+  .abt-team-title { font-size: 1.8rem; line-height: 1; margin-bottom: 15px; }
+  .abt-team-title::after { height: 2px; bottom: -5px; }
+  .abt-team-title-light { display: block; margin-bottom: 5px; font-size: 1.5rem; font-weight: 500; }
+  .abt-team-title-bold { display: block; margin-top: 0; font-size: 2.1rem; }
+  .abt-team-subtitle::before { display: block; }
+  .abt-team-subtitle { padding-left: 15px; font-size: 0.95rem; margin: 20px 0 25px 0; }
+  .abt-team-cards-side { min-width: 750px; padding-right: 20px; }
+  .abt-team-members-row { gap: 35px; }
+  .abt-team-member-card { width: 210px; }
+  .abt-team-img-container { width: 190px; height: 190px; margin-top: 0; border: 5px solid white; }
+  .abt-team-card-body { padding: 12px 8px 0 8px; }
+  .abt-team-name { font-size: 1.1rem; margin-bottom: 0; }
+  .abt-team-role { font-size: 0.85rem; }
+  .abt-team-desc { font-size: 0.8rem; line-height: 1.5; }
   .abt-team-member-card:nth-child(1) { margin-top: 0; }
   .abt-team-member-card:nth-child(2) { margin-top: 30px; }
   .abt-team-member-card:nth-child(3) { margin-top: 10px; }
@@ -1362,390 +759,89 @@
 
 /* =========== 8. MEDIUM MOBILE (481px to 576px) =========== */
 @media (min-width: 481px) and (max-width: 576px) {
-  .abt-team-section {
-    padding: 40px 0;
-  }
-  
-  .abt-team-container {
-    padding: 40px 0;
-  }
-  
-  .abt-team-layout {
-    min-width: 900px;
-    gap: 25px;
-    flex-direction: row;
-    padding: 0 10px 10px 10px;
-  }
-  
-  .abt-team-text-side {
-    min-width: 200px;
-    margin-left: 15px;
-    text-align: left;
-    padding: 0;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 1.6rem;
-    line-height: 1;
-    margin-bottom: 12px;
-  }
-  
-  .abt-team-title::after {
-    height: 2px;
-    bottom: -4px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-    margin-top: 0;
-    font-size: 1.9rem;
-  }
-  
-  .abt-team-subtitle::before {
-    display: block;
-    width: 2px;
-  }
-  
-  .abt-team-subtitle {
-    padding-left: 12px;
-    font-size: 0.9rem;
-    margin: 15px 0 20px 0;
-    line-height: 1.5;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 650px;
-    padding-right: 15px;
-  }
-  
-  .abt-team-members-row {
-    gap: 30px;
-  }
-  
-  .abt-team-member-card {
-    width: 180px;
-  }
-  
-  .abt-team-img-container {
-    width: 160px;
-    height: 160px;
-    margin-top: 0;
-    border: 4px solid white;
-  }
-  
-  .abt-team-card {
-    border-radius: 0;
-  }
-  
-  .abt-team-card-body {
-    padding: 15px 8px 8px 8px;
-  }
-  
-  .abt-team-name {
-    font-size: 1rem;
-    margin-bottom: 3px;
-  }
-  
-  .abt-team-name::after {
-    height: 1.5px;
-    width: 40px;
-  }
-  
-  .abt-team-role {
-    font-size: 0.75rem;
-    margin-bottom: 8px;
-    padding: 3px 8px;
-  }
-  
-  .abt-team-desc {
-    font-size: 0.75rem;
-    line-height: 1.4;
-  }
-  
-  /* Simple alternating pattern */
-  .abt-team-member-card:nth-child(odd) {
-    margin-top: 0;
-  }
-  
-  .abt-team-member-card:nth-child(even) {
-    margin-top: 20px;
-  }
+  .abt-team-section { padding: 40px 0; }
+  .abt-team-container { padding: 40px 0; }
+  .abt-team-layout { min-width: 900px; gap: 25px; flex-direction: row; padding: 0 10px 10px 10px; }
+  .abt-team-text-side { min-width: 200px; margin-left: 15px; padding: 0; }
+  .abt-team-title { font-size: 1.6rem; line-height: 1; margin-bottom: 12px; }
+  .abt-team-title::after { height: 2px; bottom: -4px; }
+  .abt-team-title-light { display: block; margin-bottom: 5px; font-size: 1.3rem; font-weight: 500; }
+  .abt-team-title-bold { display: block; margin-top: 0; font-size: 1.9rem; }
+  .abt-team-subtitle::before { display: block; width: 2px; }
+  .abt-team-subtitle { padding-left: 12px; font-size: 0.9rem; margin: 15px 0 20px 0; line-height: 1.5; }
+  .abt-team-cards-side { min-width: 650px; padding-right: 15px; }
+  .abt-team-members-row { gap: 30px; }
+  .abt-team-member-card { width: 180px; }
+  .abt-team-img-container { width: 160px; height: 160px; margin-top: 0; border: 4px solid white; }
+  .abt-team-card { border-radius: 0; }
+  .abt-team-card-body { padding: 10px 6px 0 6px; }
+  .abt-team-name { font-size: 1rem; margin-bottom: 0; }
+  .abt-team-name::after { height: 1.5px; width: 35px; }
+  .abt-team-role { font-size: 0.75rem; }
+  .abt-team-desc { font-size: 0.75rem; line-height: 1.4; }
+  .abt-team-member-card:nth-child(odd) { margin-top: 0; }
+  .abt-team-member-card:nth-child(even) { margin-top: 20px; }
 }
 
 /* =========== 9. SMALL MOBILE (Up to 480px) =========== */
 @media (max-width: 480px) {
-  .abt-team-section {
-    padding: 30px 0;
-  }
-  
-  .abt-team-container {
-    padding: 30px 0;
-  }
-  
-  .abt-team-layout {
-    min-width: 800px;
-    gap: 20px;
-    flex-direction: row;
-    padding: 0 8px 8px 8px;
-  }
-  
-  .abt-team-text-side {
-    min-width: 180px;
-    margin-left: 10px;
-    text-align: left;
-    padding: 0;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 1.4rem;
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-  
-  .abt-team-title::after {
-    height: 1.5px;
-    bottom: -3px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-    margin-top: 0;
-    font-size: 1.6rem;
-  }
-  
-  .abt-team-subtitle::before {
-    display: block;
-    width: 2px;
-  }
-  
-  .abt-team-subtitle {
-    padding-left: 10px;
-    font-size: 0.85rem;
-    margin: 12px 0 15px 0;
-    line-height: 1.4;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 580px;
-    padding-right: 10px;
-  }
-  
-  .abt-team-members-row {
-    gap: 25px;
-  }
-  
-  .abt-team-member-card {
-    width: 160px;
-  }
-  
-  .abt-team-img-container {
-    width: 140px;
-    height: 140px;
-    margin-top: 0;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .abt-team-card-body {
-    padding: 12px 5px 5px 5px;
-  }
-  
-  .abt-team-name {
-    font-size: 0.9rem;
-    margin-bottom: 2px;
-    padding-bottom: 5px;
-  }
-  
-  .abt-team-name::after {
-    height: 1px;
-    width: 30px;
-  }
-  
-  .abt-team-role {
-    font-size: 0.7rem;
-    margin-bottom: 6px;
-    padding: 2px 6px;
-  }
-  
-  .abt-team-desc {
-    font-size: 0.7rem;
-    line-height: 1.3;
-  }
-  
-  /* Simple alternating pattern for small mobile */
-  .abt-team-member-card:nth-child(odd) {
-    margin-top: 0;
-  }
-  
-  .abt-team-member-card:nth-child(even) {
-    margin-top: 15px;
-  }
-  
-  /* Reduce animations for very small screens */
-  .abt-team-member-card:hover {
-    transform: translateY(-5px) scale(1.01);
-  }
-  
-  /* Mobile पर भी rotation हटाया है */
-  .abt-team-member-card:hover .abt-team-img-container {
-    transform: scale(1.03); /* केवल scale, कोई rotate नहीं */
-  }
+  .abt-team-section { padding: 30px 0; }
+  .abt-team-container { padding: 30px 0; }
+  .abt-team-layout { min-width: 800px; gap: 20px; flex-direction: row; padding: 0 8px 8px 8px; }
+  .abt-team-text-side { min-width: 180px; margin-left: 10px; padding: 0; }
+  .abt-team-title { font-size: 1.4rem; line-height: 1; margin-bottom: 10px; }
+  .abt-team-title::after { height: 1.5px; bottom: -3px; }
+  .abt-team-title-light { display: block; margin-bottom: 5px; font-size: 1.2rem; font-weight: 500; }
+  .abt-team-title-bold { display: block; margin-top: 0; font-size: 1.6rem; }
+  .abt-team-subtitle::before { display: block; width: 2px; }
+  .abt-team-subtitle { padding-left: 10px; font-size: 0.85rem; margin: 12px 0 15px 0; line-height: 1.4; }
+  .abt-team-cards-side { min-width: 580px; padding-right: 10px; }
+  .abt-team-members-row { gap: 25px; }
+  .abt-team-member-card { width: 160px; }
+  .abt-team-img-container { width: 140px; height: 140px; margin-top: 0; border: 3px solid white; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+  .abt-team-card-body { padding: 8px 4px 0 4px; }
+  .abt-team-name { font-size: 0.9rem; margin-bottom: 0; padding-bottom: 4px; }
+  .abt-team-name::after { height: 1px; width: 28px; }
+  .abt-team-role { font-size: 0.7rem; }
+  .abt-team-desc { font-size: 0.7rem; line-height: 1.3; }
+  .abt-team-member-card:nth-child(odd) { margin-top: 0; }
+  .abt-team-member-card:nth-child(even) { margin-top: 15px; }
+  .abt-team-member-card:hover { transform: translateY(-5px) scale(1.01); }
+  .abt-team-member-card:hover .abt-team-img-container { transform: scale(1.03); }
 }
 
 /* =========== 10. FOLDABLE & SMALLEST DEVICES (Up to 360px) =========== */
 @media (max-width: 360px) {
-  .abt-team-layout {
-    min-width: 700px;
-    gap: 15px;
-  }
-  
-  .abt-team-text-side {
-    min-width: 150px;
-    margin-left: 8px;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 1.2rem;
-    line-height: 1;
-  }
-  
-  .abt-team-title::after {
-    height: 1px;
-    bottom: -2px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-    font-size: 1.4rem;
-  }
-  
-  .abt-team-subtitle {
-    font-size: 0.8rem;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 520px;
-  }
-  
-  .abt-team-members-row {
-    gap: 20px;
-  }
-  
-  .abt-team-member-card {
-    width: 140px;
-  }
-  
-  .abt-team-img-container {
-    width: 120px;
-    height: 120px;
-  }
+  .abt-team-layout { min-width: 700px; gap: 15px; }
+  .abt-team-text-side { min-width: 150px; margin-left: 8px; }
+  .abt-team-title { font-size: 1.2rem; line-height: 1; }
+  .abt-team-title::after { height: 1px; bottom: -2px; }
+  .abt-team-title-light { display: block; font-size: 1rem; font-weight: 500; }
+  .abt-team-title-bold { display: block; font-size: 1.4rem; }
+  .abt-team-subtitle { font-size: 0.8rem; }
+  .abt-team-cards-side { min-width: 520px; }
+  .abt-team-members-row { gap: 20px; }
+  .abt-team-member-card { width: 140px; }
+  .abt-team-img-container { width: 120px; height: 120px; }
 }
 
 /* =========== 11. ORIENTATION SPECIFIC =========== */
 @media (max-height: 500px) and (orientation: landscape) {
-  .abt-team-section {
-    padding: 40px 0;
-  }
-  
-  .abt-team-container {
-    padding: 40px 0;
-  }
-  
-  .abt-team-text-side {
-    min-width: 250px;
-  }
-  
-  /* Title in two lines */
-  .abt-team-title {
-    font-size: 2rem;
-    line-height: 1;
-
-  }
-  
-  .abt-team-title::after {
-    height: 3px;
-  }
-  
-  .abt-team-title-light {
-    display: block;
-  }
-  
-  .abt-team-title-bold {
-    display: block;
-  }
-  
-  .abt-team-cards-side {
-    min-width: 900px;
-  }
-  
-  .abt-team-img-container {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .abt-team-member-card {
-    width: 220px;
-  }
+  .abt-team-section { padding: 40px 0; }
+  .abt-team-container { padding: 40px 0; }
+  .abt-team-text-side { min-width: 250px; }
+  .abt-team-title { font-size: 2rem; line-height: 1; }
+  .abt-team-title::after { height: 3px; }
+  .abt-team-cards-side { min-width: 900px; }
+  .abt-team-img-container { width: 200px; height: 200px; }
+  .abt-team-member-card { width: 220px; }
 }
 
 /* Touch device optimizations */
 @media (hover: none) {
-  .abt-team-subtitle::before {
-    animation: none;
-    height: 100%;
-    opacity: 1;
-  }
-  
-  /* Better touch targets */
-  .abt-team-title,
-  .abt-team-subtitle,
-  .abt-team-name,
-  .abt-team-role {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .abt-team-title {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .abt-team-img-container {
-    cursor: default;
-  }
-  
-  /* Scroll buttons for touch */
-  .abt-team-scroll-btn {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  .abt-team-subtitle::before { animation: none; height: 100%; opacity: 1; }
+  .abt-team-img-container { cursor: default; }
+  .abt-team-scroll-btn { min-height: 44px; }
 }
 
 /* High contrast mode support */
@@ -1757,46 +853,20 @@
     color: #0000FF;
     animation: none;
   }
-  
-  .abt-team-img-container {
-    border: 8px solid #000;
-  }
-  
+  .abt-team-img-container { border: 8px solid #000; }
   .abt-team-subtitle,
   .abt-team-name,
-  .abt-team-desc {
-    color: #000000;
-  }
-  
+  .abt-team-desc { color: #000000; }
   .abt-team-title:hover .abt-team-title-light,
   .abt-team-title:hover .abt-team-title-bold,
   .abt-team-subtitle:hover,
   .abt-team-name:hover,
-  .abt-team-member-card:hover .abt-team-desc {
-    color: #0000FF;
-  }
-  
-  .abt-team-title::after {
-    background: #0000FF;
-    animation: none;
-  }
-  
-  .abt-team-subtitle::before {
-    background: #0000FF;
-  }
-  
-  .abt-team-subtitle:hover::before {
-    background: #FF0000;
-  }
-  
-  .abt-team-scroll-btn {
-    background: #0000FF;
-    color: #FFFFFF;
-  }
-  
-  .abt-team-scroll-btn:hover {
-    background: #0000AA;
-  }
+  .abt-team-member-card:hover .abt-team-desc { color: #0000FF; }
+  .abt-team-title::after { background: #0000FF; animation: none; }
+  .abt-team-subtitle::before { background: #0000FF; }
+  .abt-team-subtitle:hover::before { background: #FF0000; }
+  .abt-team-scroll-btn { background: #0000FF; color: #FFFFFF; }
+  .abt-team-scroll-btn:hover { background: #0000AA; }
 }
 
 /* Reduced motion support */
@@ -1814,20 +884,10 @@
   .abt-team-name,
   .abt-team-desc,
   .abt-team-subtitle,
-  .abt-team-scroll-btn {
-    transition: none !important;
-  }
-  
+  .abt-team-scroll-btn { transition: none !important; }
   .abt-team-title-light,
-  .abt-team-title-bold {
-    animation: none !important;
-  }
-  
-  .abt-team-title::after {
-    animation: none !important;
-    background: linear-gradient(90deg, #3498db, #2ecc71);
-  }
-  
+  .abt-team-title-bold { animation: none !important; }
+  .abt-team-title::after { animation: none !important; background: linear-gradient(90deg, #3498db, #2ecc71); }
   .abt-team-card:hover,
   .abt-team-member-card:hover,
   .abt-team-card:hover .abt-team-img-container,
@@ -1835,90 +895,13 @@
   .abt-team-title:hover,
   .abt-team-subtitle:hover,
   .abt-team-role:hover,
-  .abt-team-name:hover {
-    transform: none !important;
-  }
-  
-  .abt-team-scroll-btn:hover {
-    transform: none !important;
-  }
-  
-  .abt-team-social a:hover {
-    transform: none !important;
-  }
-  
+  .abt-team-name:hover { transform: none !important; }
+  .abt-team-scroll-btn:hover { transform: none !important; }
+  .abt-team-social a:hover { transform: none !important; }
   .abt-team-member-card.animate,
   .abt-team-text-side.animate,
-  .abt-team-cards-side.animate {
-    animation: none !important;
-  }
-  
-  .abt-team-member-card:hover .abt-team-card {
-    animation: none !important;
-  }
-  
-  .abt-team-member-card:hover .abt-team-img-container {
-    animation: none !important;
-  }
-  
-  .abt-team-subtitle::before {
-    animation: none !important;
-    height: 100%;
-    opacity: 1;
-  }
+  .abt-team-cards-side.animate { animation: none !important; }
+  .abt-team-member-card:hover .abt-team-card { animation: none !important; }
+  .abt-team-member-card:hover .abt-team-img-container { animation: none !important; }
+  .abt-team-subtitle::before { animation: none !important; height: 100%; opacity: 1; }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

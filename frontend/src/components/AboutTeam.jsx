@@ -14,6 +14,11 @@ const teamImages = {
 
   image19:
     "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/ChatGPT_Image_Aug_14_2026_03_00_52_PM.png",
+    
+ image20:
+"https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/CA3",
+
+
 };
 
 function AboutTeam() {
@@ -32,39 +37,16 @@ function AboutTeam() {
     {
       id: 2,
       name: "Subhadeep Mitra",
-      role: "Chief Operating Officer",
+      role: "Co-Founder",
       image: teamImages.image19,
     },
     {
       id: 3,
-      name: "Kumar Saurabh",
-      role: "Chartered Accountant",
-      image: teamImages.image18,
+      name: "Saikat Sen",
+      role: "Co-Founder",
+      image: teamImages.image20,
     },
-    {
-      id: 4,
-      name: "Alex Johnson",
-      role: "CEO & Founder",
-      image: teamImages.image19,
-    },
-    {
-      id: 5,
-      name: "Alex Johnson",
-      role: "CEO & Founder",
-      image: teamImages.image18,
-    },
-    {
-      id: 6,
-      name: "Alex Johnson",
-      role: "CEO & Founder",
-      image: teamImages.image19,
-    },
-    {
-      id: 7,
-      name: "Alex Johnson",
-      role: "CEO & Founder",
-      image: teamImages.image18,
-    },
+   
   ];
 
   // Scroll right
