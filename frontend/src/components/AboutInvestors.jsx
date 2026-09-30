@@ -8,6 +8,30 @@ import "./AboutInvestors.css";
 
 const partners = [
   {
+  id: "ministry-agriculture-farmers-welfare",
+  name: "Ministry of Agriculture & Farmers Welfare",
+  logo: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/Wel",
+  type: "Government of India",
+  description:
+    "Government of India ministry working towards the development, growth and welfare of India’s agricultural sector and farming community.",
+},
+{
+  id: "meity",
+  name: "MeitY",
+logo: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/MITY",
+  type: "Government of India",
+  description:
+    "Ministry of Electronics and Information Technology, Government of India, driving innovation and growth across electronics, information technology, digital governance and emerging technologies.",
+},
+{
+  id: "niti-aayog",
+  name: "NITI Aayog",
+logo: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/NITI1",
+  type: "Government of India",
+  description:
+    "National Institution for Transforming India (NITI Aayog), the Government of India’s apex policy think tank, providing strategic and technical inputs for national development, innovation and inclusive growth.",
+},
+  {
     id: "iit-kharagpur-incubation",
     name: "IIT Kharagpur",
     logo: "https://res.cloudinary.com/p8fs2e1n/image/upload/KHARAGPUR.png",
@@ -80,30 +104,7 @@ const partners = [
       "Accelerator ecosystem supporting technology-led social impact and pathways to scale.",
   },
 
-{
-  id: "ministry-agriculture-farmers-welfare",
-  name: "Ministry of Agriculture & Farmers Welfare",
-  logo: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/Wel",
-  type: "Government of India",
-  description:
-    "Government of India ministry working towards the development, growth and welfare of India’s agricultural sector and farming community.",
-},
-{
-  id: "meity",
-  name: "MeitY",
-logo: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/MITY",
-  type: "Government of India",
-  description:
-    "Ministry of Electronics and Information Technology, Government of India, driving innovation and growth across electronics, information technology, digital governance and emerging technologies.",
-},
-{
-  id: "niti-aayog",
-  name: "NITI Aayog",
-logo: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/NITI1",
-  type: "Government of India",
-  description:
-    "National Institution for Transforming India (NITI Aayog), the Government of India’s apex policy think tank, providing strategic and technical inputs for national development, innovation and inclusive growth.",
-},
+
 ];  
 
 const AboutInvestors = () => {
