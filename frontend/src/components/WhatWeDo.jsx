@@ -48,7 +48,7 @@ const sections = [
     number: "03",
     kicker: "THE ECOSYSTEM",
     title: "THE ECOSYSTEM",
- imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/Eco3.png",
+ imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/Eco4.png",
     imageAlt:
       "Connected aquaculture ecosystem linking farmers, input dealers, companies, lenders, governments and research institutions",
 
