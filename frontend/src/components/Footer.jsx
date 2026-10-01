@@ -357,13 +357,6 @@
 
 
 
-
-
-
-
-
-
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -382,27 +375,27 @@ import "./Footer.css";
 const socials = [
   {
     icon: <FaFacebookF />,
-    url: "https://facebook.com",
+    url: "https://www.facebook.com/Essentialaquatech101",
     label: "Facebook",
   },
   {
     icon: <FaYoutube />,
-    url: "https://youtube.com",
+    url: "https://www.youtube.com/results?search_query=essential+aquatech",
     label: "YouTube",
   },
   {
     icon: <FaLinkedinIn />,
-    url: "https://linkedin.com",
+    url: "https://www.linkedin.com/company/essential-aquatech-private-limited/",
     label: "LinkedIn",
   },
   {
     icon: <FaInstagram />,
-    url: "https://instagram.com",
+    url: "https://www.instagram.com/essentialaquatech/",
     label: "Instagram",
   },
   {
     icon: <FaXTwitter />,
-    url: "https://x.com",
+    url: "https://x.com/EssentialAqua1",
     label: "X",
   },
 ];
