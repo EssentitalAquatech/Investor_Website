@@ -455,21 +455,21 @@ function LifeImages() {
       desc: "Working closely with people on the ground to understand real farming challenges and bring technology closer to everyday aquaculture.",
     },
 
-    {
-      id: 4,
-      image: image1,
-      heading: "Celebrating Field-Level Impact",
-      year: "Field Visit",
-      desc: "Meeting farmers and partners in the field while experiencing the real-world impact of our work across the aquaculture ecosystem.",
-    },
+    // {
+    //   id: 4,
+    //   image: image1,
+    //   heading: "Celebrating Field-Level Impact",
+    //   year: "Field Visit",
+    //   desc: "Meeting farmers and partners in the field while experiencing the real-world impact of our work across the aquaculture ecosystem.",
+    // },
 
-    {
-      id: 5,
-      image: image2,
-      heading: "Supporting Farmers With Technology",
-      year: "Farmer Interaction",
-      desc: "Direct interaction with farmers and stakeholders helps us turn real field experiences into practical and technology-driven solutions.",
-    },
+    // {
+    //   id: 5,
+    //   image: image2,
+    //   heading: "Supporting Farmers With Technology",
+    //   year: "Farmer Interaction",
+    //   desc: "Direct interaction with farmers and stakeholders helps us turn real field experiences into practical and technology-driven solutions.",
+    // },
 
     {
       id: 6,

@@ -1,5 +1,6 @@
 /* ==========================================================
    What We Do — Premium Aquaculture Intelligence Section
+   ==========================================================
    PERFORMANCE OPTIMIZED
    ========================================================== */
 
@@ -14,7 +15,6 @@
   --wwd-radius: 26px;
 
   position: relative;
-
   overflow: hidden;
 
   padding:
@@ -23,7 +23,6 @@
     clamp(80px, 10vw, 160px);
 
   background: var(--wwd-bg);
-
   color: var(--wwd-ink);
 
   font-family:
@@ -48,7 +47,6 @@
 
 .wwd__shell {
   width: min(1180px, 100% - 2.5rem);
-
   margin-inline: auto;
 }
 
@@ -64,27 +62,20 @@
 
 .wwd__eyebrow {
   display: inline-flex;
-
   align-items: center;
-
   gap: 0.6rem;
 
   margin: 0 0 1.6rem;
-
   padding: 0.42rem 0.95rem;
 
   border: 1px solid var(--wwd-line);
-
   border-radius: 999px;
 
   background: rgba(255, 255, 255, 0.7);
 
   font-size: 0.68rem;
-
   font-weight: 600;
-
   letter-spacing: 0.18em;
-
   text-transform: uppercase;
 
   color: var(--wwd-ink-soft);
@@ -95,7 +86,6 @@
   content: "";
 
   width: 7px;
-
   height: 7px;
 
   border-radius: 50%;
@@ -106,15 +96,17 @@
 }
 
 
+/* ==========================================================
+   TITLE
+   ========================================================== */
+
 .wwd__title {
   margin: 0;
 
   font-size: clamp(2.9rem, 7vw, 5.2rem);
-
   font-weight: 700;
 
   line-height: 0.98;
-
   letter-spacing: -0.045em;
 
   text-wrap: balance;
@@ -125,7 +117,6 @@
   background: var(--wwd-gradient);
 
   -webkit-background-clip: text;
-
   background-clip: text;
 
   color: transparent;
@@ -223,6 +214,7 @@
 
 /* ==========================================================
    IMAGE CONTAINER
+   FULL IMAGE — NO CROPPING
    ========================================================== */
 
 .wwd__media {
@@ -230,14 +222,17 @@
 
   width: 100%;
 
-  aspect-ratio: 2 / 1;
+  /*
+    Original images are 1536 × 1024
+    so 3 / 2 keeps the original aspect ratio.
+  */
+  aspect-ratio: 3 / 2;
 
   min-height: 0;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   overflow: hidden;
@@ -277,16 +272,21 @@
 
 /* ==========================================================
    IMAGES
+   FULL IMAGE VISIBLE
    ========================================================== */
 
 .wwd__media img {
   width: 100%;
-
   height: 100%;
 
   display: block;
 
-  object-fit: cover;
+  /*
+    IMPORTANT:
+    contain = complete image visible
+    cover = image gets cropped
+  */
+  object-fit: contain;
 
   object-position: center;
 
@@ -384,10 +384,13 @@
     sans-serif;
 
   font-size: clamp(2rem, 3.3vw, 2.8rem);
+
   font-weight: 700;
+
   line-height: 1;
 
   letter-spacing: -0.045em;
+
   text-transform: uppercase;
 
   color: #0b0f12;
@@ -416,7 +419,7 @@
   list-style: none;
 }
 
-
+/* 
 .wwd__chip {
   display: inline-flex;
 
@@ -437,12 +440,6 @@
 
   color: var(--wwd-ink);
 
-  /*
-    Chip reveal + hover both handled here.
-    Initial hidden state is controlled
-    by .wwd__chip--reveal below.
-  */
-
   transition:
     color 0.3s ease,
     border-color 0.3s ease,
@@ -455,8 +452,35 @@
   max-width: 100%;
 
   white-space: nowrap;
-}
+} */
+.wwd__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
 
+  padding: 0.5rem 1rem;
+
+  border: 1px solid var(--wwd-line);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  font-size: 0.86rem;
+
+  color: #111111;
+  font-weight: 600;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+  flex: 0 1 auto;
+  max-width: 100%;
+  white-space: nowrap;
+}
 
 .wwd__chip-dot {
   width: 6px;
@@ -502,10 +526,7 @@
 
 
 /* ==========================================================
-   CHIP REVEAL — each chip slides in from its own direction
-   ----------------------------------------------------------
-   We use CSS custom properties (--chip-x / --chip-y) to set
-   the starting offset. Direction is assigned per chip in JSX.
+   CHIP REVEAL
    ========================================================== */
 
 .wwd__chip.wwd__chip--reveal {
@@ -623,7 +644,6 @@
    ========================================================== */
 
 @media (max-width: 992px) {
-
   .wwd__block {
     grid-template-columns: 1fr 1fr;
 
@@ -655,7 +675,6 @@
    ========================================================== */
 
 @media (max-width: 768px) {
-
   .wwd__shell {
     width:
       min(
@@ -681,10 +700,16 @@
   }
 
 
+  /*
+    Increased height so 1536 × 1024
+    images remain fully visible.
+  */
   .wwd__media {
-    min-height: 220px;
+    min-height: 260px;
 
-    max-height: 340px;
+    max-height: 420px;
+
+    aspect-ratio: 3 / 2;
   }
 
 
@@ -712,9 +737,10 @@
   }
 
 
-  /* On mobile, chips come only from bottom for cleanliness */
+  /* On mobile, chips come only from bottom */
   .wwd__chip.wwd__chip--reveal {
     --chip-x: 0px !important;
+
     --chip-y: 30px !important;
   }
 }
@@ -725,7 +751,6 @@
    ========================================================== */
 
 @media (max-width: 480px) {
-
   .wwd__chip {
     font-size: 0.65rem;
 
@@ -741,5 +766,14 @@
     gap:
       0.3rem
       0.4rem;
+  }
+
+
+  .wwd__media {
+    min-height: 240px;
+
+    max-height: 360px;
+
+    aspect-ratio: 3 / 2;
   }
 }
