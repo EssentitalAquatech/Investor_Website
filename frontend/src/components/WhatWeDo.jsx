@@ -21,7 +21,7 @@ const sections = [
     kicker: "THE ENGINE",
     title: "THE ENGINE",
     imageSrc:
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/En.png",
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/machine123.png",
     imageAlt:
       "Aquaculture intelligence engine combining satellite, astronomical and pond-level data",
 
@@ -35,7 +35,7 @@ const sections = [
     kicker: "THE INTELLIGENCE",
     title: "THE INTELLIGENCE",
    imageSrc:
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/Int2.png",
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/Int4.png",
     imageAlt:
       "Aquaculture intelligence platform transforming data into predictive decisions",
 
@@ -48,7 +48,7 @@ const sections = [
     number: "03",
     kicker: "THE ECOSYSTEM",
     title: "THE ECOSYSTEM",
- imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/Eco.png",
+ imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/Eco2.png",
     imageAlt:
       "Connected aquaculture ecosystem linking farmers, input dealers, companies, lenders, governments and research institutions",
 
