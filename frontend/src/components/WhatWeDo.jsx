@@ -35,7 +35,7 @@ const sections = [
     kicker: "THE INTELLIGENCE",
     title: "THE INTELLIGENCE",
    imageSrc:
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/Int.png",
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/Int2.png",
     imageAlt:
       "Aquaculture intelligence platform transforming data into predictive decisions",
 
