@@ -1,7 +1,6 @@
 
 
 
-
 // import emailjs from "@emailjs/browser";
 // import { useState } from "react";
 // import { PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from "../../utils/email";
@@ -28,7 +27,7 @@
 //     if (isSubmitting) return;
 
 //     if (!isConfirmed) {
-//       alert("Please confirm the checkbox before sending your message.");
+//       alert("Please agree to the Privacy Policy before sending your message.");
 //       return;
 //     }
 
@@ -225,7 +224,7 @@
 //                     ></textarea>
 //                   </div>
 
-//                   {/* ==================== CONFIRMATION CHECKBOX ==================== */}
+//                   {/* ==================== PRIVACY CONFIRMATION ==================== */}
 //                   <div className="contact-confirmation-box mt-4">
 //                     <label
 //                       htmlFor="contact-confirmation"
@@ -244,7 +243,14 @@
 //                       />
 
 //                       <span>
-//                        I agree to provide my name, email address and phone number to Essential Aquatech. I understand that my information will be stored and used to respond to my enquiry and provide the requested service, product or business assistance. My information may be retained by Essential Aquatech for as long as necessary to fulfil these purposes.
+//                         I agree to the{" "}
+//                         <a
+//                           href="/privacy-policy"
+//                           className="contact-privacy-link"
+//                         >
+//                           Privacy Policy
+//                         </a>
+//                         .
 //                       </span>
 //                     </label>
 //                   </div>
@@ -470,6 +476,11 @@
 
 
 
+
+
+
+
+
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from "../../utils/email";
@@ -483,9 +494,9 @@ function Contact() {
   const socialLinks = {
     linkedin:
       "https://www.linkedin.com/company/essential-aquatech-private-limited/",
-    youtube: "https://www.youtube.com/@essentialaquatech",
+    youtube: "https://www.youtube.com/results?search_query=essential+aquatech",
     instagram:
-      "https://www.instagram.com/essentialaquatech?igsh=MW8wdDFtcXo3ODlmMQ==",
+      "https://www.instagram.com/essentialaquatech/",
     googleMaps:
       "https://maps.app.goo.gl/XFM2sL69HL8UTqqu8?g_st=aw",
   };
