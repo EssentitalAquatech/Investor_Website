@@ -485,8 +485,9 @@ function Footer() {
 
             <p className="ea-desc">
 
-              Pioneering sustainable water purification solutions —
-              delivering safe, clean drinking water across India.
+             Nurturing Aquaculture...
+             <br/>
+             Nourishing Lives...
 
             </p>
 
