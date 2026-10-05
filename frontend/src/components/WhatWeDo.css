@@ -22,7 +22,8 @@
     0
     clamp(80px, 10vw, 160px);
 
-  background: var(--wwd-bg);
+  /* background: var(--wwd-bg); */
+  background: white;
   color: var(--wwd-ink);
 
   font-family:
@@ -72,6 +73,7 @@
   border-radius: 999px;
 
   background: rgba(255, 255, 255, 0.7);
+  /* background: white; */
 
   font-size: 0.68rem;
   font-weight: 600;
