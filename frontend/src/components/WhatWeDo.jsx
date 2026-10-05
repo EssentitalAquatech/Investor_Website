@@ -22,7 +22,8 @@ const sections = [
     title: "THE ENGINE",
   //   imageSrc:
   // "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/machine123.png",
-imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/ic2.png",
+   imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/1a.png",
+
     imageAlt:
       "Aquaculture intelligence engine combining satellite, astronomical and pond-level data",
 
@@ -37,7 +38,8 @@ imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_au
     title: "THE INTELLIGENCE",
   //  imageSrc:
   // "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/Int4.png",
-   imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/1a.png",
+  imageSrc: "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto,dpr_auto/ic2.png",
+  
     imageAlt:
       "Aquaculture intelligence platform transforming data into predictive decisions",
 

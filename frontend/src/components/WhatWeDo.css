@@ -22,8 +22,8 @@
     0
     clamp(80px, 10vw, 160px);
 
-  /* background: var(--wwd-bg); */
-  background: white;
+  background: var(--wwd-bg);
+  /* background: white; */
   color: var(--wwd-ink);
 
   font-family:
