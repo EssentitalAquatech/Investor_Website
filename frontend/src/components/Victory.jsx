@@ -579,7 +579,7 @@ const Victory = () => {
                     <div className="sp-foot">
 
                       <span className="sp-stars">
-                        ★★★★★
+                        {/* ★★★★★ */}
                       </span>
 
                     </div>
