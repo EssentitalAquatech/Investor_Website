@@ -686,7 +686,7 @@ import SEO from "./SEO";
 
 // ☁️ Cloudinary Product Images
 const aquaImage =
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/VachaOS.png";
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/TorOSnex.png";
 
 const meenammaImage =
   "https://res.cloudinary.com/p8fs2e1n/image/upload/meenamma.png";
@@ -694,8 +694,8 @@ const meenammaImage =
 const aquaSenseImage =
   "https://res.cloudinary.com/p8fs2e1n/image/upload/KechoSense.png";
 
-const aquaRiskImage =
-  "https://res.cloudinary.com/p8fs2e1n/image/upload/Goonch.png";
+const aquaRiskImage ="https://res.cloudinary.com/p8fs2e1n/image/upload/Goonch_IQ.png";
+
 
 
 /* =========================================================
