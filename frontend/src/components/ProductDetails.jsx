@@ -943,7 +943,7 @@ description:
   goonch: {
     number: "04",
 
-    title: "Goonch",
+    title: " Goonch IQ",
 
     tagline:
       "Farm intelligence for smarter credit, insurance and risk.",
@@ -952,7 +952,7 @@ description:
 
    intro: (
   <>
-    Goonch
+     Goonch IQ
     <br />
     Financial Risk Intelligence.
     <br />
@@ -961,7 +961,7 @@ description:
 ),
 
 description:
-  "Goonch transforms farm intelligence into financial intelligence. By understanding pond health, farm performance and emerging risks, it helps reveal the signals that matter for smarter credit, insurance and financial decisions.",
+  " Goonch IQ transforms farm intelligence into financial intelligence. By understanding pond health, farm performance and emerging risks, it helps reveal the signals that matter for smarter credit, insurance and financial decisions.",
 
     capabilitiesTitle:
       "",
@@ -1016,7 +1016,7 @@ description:
     ],
 
     bottomText:
-      "By making farm intelligence more accessible and measurable, Goonch helps financial institutions and enterprise partners make more informed aquaculture decisions."
+      "By making farm intelligence more accessible and measurable,  Goonch IQ helps financial institutions and enterprise partners make more informed aquaculture decisions."
   }
 
 };
