@@ -708,27 +708,22 @@ const productData = {
      01 — VACHAOS
   ===================================== */
 
-  vachaos: {
+ TorOSnex: {
     number: "01",
-
-    title: "VACHA OS",
-
-    tagline:
-      "The intelligence operating system for aquaculture.",
-
+    title: "TorOSnex",
+    tagline: "The intelligence operating system for aquaculture.",
     image: aquaImage,
 
-    intro:
-      "VachaOS — Enterprise Intelligence OS",
+    intro: "TorOSnex — Enterprise Intelligence OS",
 
     description:
-      "Named after India's most endangered freshwater catfish, Eutropiichthys vacha — VachaOS gives large farms, cooperatives, governments, and institutions the predictive intelligence to see what is coming before it arrives — pond by pond, season by season, decision by decision.",
+      "Named after 'Tor tor' the Mahseer, India's most revered and rapidly disappearing freshwater predator — TorOSnex gives large farms, cooperatives, governments, and institutions the predictive intelligence to see what is coming before it arrives — pond by pond, season by season, decision by decision.",
 
-    capabilitiesTitle:
-      "",
+    capabilitiesTitle: "",
 
     capabilitiesDescription:
       "See every pond. Predict every risk. Drive every decision.",
+
 
     features: [
 

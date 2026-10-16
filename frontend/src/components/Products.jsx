@@ -951,24 +951,15 @@ export default function Products() {
        01 — VACHAOS
     ===================================== */
 
-    {
-      imageSrc: aquaImage,
-
-      number: "01",
-
-      title: "VachaOS",
-
-      // Existing URL slug kept unchanged
-      slug: "vachaos",
-
-      tagline:
-        "Enterprise Intelligence OS ",
-
-      description:
-        " VachaOS gives large farms, cooperatives, governments, and institutions the predictive intelligence to see what is coming before it arrives."
-
-    },
-
+   {
+  imageSrc: aquaImage,
+  number: "01",
+  title: "TorOSnex",
+  slug: "TorOSnex",
+  tagline: "Enterprise Intelligence OS",
+  description:
+    "Named after 'Tor tor' the Mahseer, India's most revered and rapidly disappearing freshwater predator — TorOSnex gives large farms, cooperatives, governments, and institutions the predictive intelligence to see what is coming before it arrives — pond by pond, season by season, decision by decision."
+},
 
     /* =====================================
        02 — MEENAMMA AI
@@ -1024,26 +1015,19 @@ export default function Products() {
        04 — GOONCH
     ===================================== */
 
-   {
+  {
   imageSrc: aquaRiskImage,
-
   number: "04",
-
-  title: "Goonch",
-
-  // Existing URL slug kept unchanged
+  title: "Goonch IQ",
   slug: "goonch",
-
   tagline: (
     <>
       Financial Risk Intelligence.
       <br />
-      
     </>
   ),
-
-description:
-  "In aquaculture, the ability to see risk before it surfaces is the only intelligence that matters.",
+  description:
+    "In aquaculture, the ability to see risk before it surfaces is the only intelligence that matters.",
 },
 
   ];
