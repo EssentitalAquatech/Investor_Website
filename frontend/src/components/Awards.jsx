@@ -70,44 +70,10 @@ function Award() {
   const scrollRef = useRef(null);
 
   const awards = [
+
+
     {
       id: 1,
-      image: awardImages.image1,
-      heading: (
-        <>
-          Bharat Entrepreneur Award 2024
-          <br />
-          <span className="award-heading-org">
-            EAI India, New Delhi
-          </span>
-        </>
-      ),
-      year: "2024",
-      desc:
-        "Honoured with the Bharat Entrepreneur Award 2024 by EAI India, New Delhi, in recognition of entrepreneurial excellence, innovation, and the vision to build technology-driven solutions creating meaningful impact across the aquaculture and sustainability ecosystem.",
-    },
-
-    {
-      id: 2,
-      image: awardImages.image2,
-      heading:
-        "EarthON Eco Champions Bootcamp — Certificate of Recognition",
-      year: "2024",
-      desc:
-        "Received a Certificate of Recognition from EarthON Foundation for our active participation and valuable contribution to the EarthON Eco Champions Bootcamp, recognizing our commitment to innovation, climate action, and sustainable solutions for a better future.",
-    },
-
-    {
-      id: 3,
-      image: awardImages.image3,
-      heading: "Bharat Entrepreneur Award 2024",
-      year: "2024",
-      desc:
-        "Mr. Arkaprava Das, Founder & CEO of Essential Aquatech Pvt. Ltd., was honoured with the Bharat Entrepreneur Award 2024 by the Entrepreneurs Association of India (EAI) at the Bharat Entrepreneurship Summit in New Delhi. The award recognized his entrepreneurial contribution and efforts toward innovation and technology-driven development in the aquaculture sector.",
-    },
-
-    {
-      id: 4,
       image: awardImages.image4,
       heading: (
         <>
@@ -123,8 +89,9 @@ function Award() {
         "Recognized as a promising aquaculture startup for developing technology-driven, climate-responsive solutions that empower fish farmers through AI, data intelligence, water quality monitoring, disease management, and sustainable farming practices.",
     },
 
-    {
-      id: 5,
+
+   {
+      id: 2,
       image: awardImages.image5,
       heading: (
         <>
@@ -140,8 +107,11 @@ function Award() {
         "Participated in the Farm School initiative on Integrated Fisheries Development – An Aquaponics Approach, held in Jalpaiguri, West Bengal, on 9 February 2018. The initiative showcased an integrated aquaponics model combining aquaculture and plant cultivation, promoting efficient resource utilization, sustainable farming practices, and innovative approaches to fisheries development.",
     },
 
-    {
-      id: 6,
+
+
+
+     {
+      id: 3,
       image: awardImages.image6,
       heading: (
         <>
@@ -157,8 +127,9 @@ function Award() {
         "Featured by The Telegraph India for pioneering an innovative aquaponics model that integrates fish farming with vegetable cultivation, demonstrating sustainable resource use and a new approach to integrated aquaculture.",
     },
 
-    {
-      id: 7,
+
+ {
+      id: 4,
       image: awardImages.image7,
       heading: (
         <>
@@ -174,8 +145,10 @@ function Award() {
         "Featured in Uttar Banga Sambad for pioneering innovative aquaculture practices in Jalpaiguri, showcasing integrated fish farming and soilless cultivation as sustainable alternatives to conventional farming.",
     },
 
-    {
-      id: 8,
+
+
+ {
+      id: 5,
       image: awardImages.image8,
       heading: (
         <>
@@ -191,42 +164,10 @@ function Award() {
         "Featured for pioneering soil-less farming practices through aquaponics and hydroponics, demonstrating sustainable approaches to food production, efficient water use, and livelihood development.",
     },
 
-    {
-      id: 9,
-      image: awardImages.image9,
-      heading: (
-        <>
-          Best Entrepreneur Award 2024
-          <br />
-          <span className="award-heading-org">
-            NBUPRERONA – COFAM
-          </span>
-        </>
-      ),
-      year: "2024",
-      desc:
-        "Recognized as the Best Entrepreneur (Fisheries & Aquaculture Input) from North Bengal in 2024 at NBUPRERONA-2024, presented by COFAM in collaboration with the Startup-Incubation Centre Committee, University of North Bengal, recognizing entrepreneurial excellence in the fisheries and aquaculture sector.",
-    },
 
-    {
-      id: 10,
-      image: awardImages.image10,
-      heading: (
-        <>
-          Aquaculture Research Publication
-          <br />
-          <span className="award-heading-org">
-            The Pharma Innovation Journal
-          </span>
-        </>
-      ),
-      year: "2023",
-      desc:
-        "Featured in The Pharma Innovation Journal through research on the application of aquaculture inputs in Assam, contributing insights into sustainable fish farming practices, input management, productivity, and the challenges faced by farmers.",
-    },
 
-    {
-      id: 11,
+{
+      id: 6,
       image: awardImages.image11,
       heading: (
         <>
@@ -242,42 +183,30 @@ function Award() {
         "Featured in The Telegraph for developing innovative, climate-resilient solutions for aquaculture, including fish health products, farmer training, RAS, and integrated aquaponics systems to improve productivity and sustainability.",
     },
 
-    {
-      id: 12,
-      image: awardImages.image12,
+
+
+
+     {
+      id: 7,
+      image: awardImages.image10,
       heading: (
         <>
-          Certificate of Appreciation
+          Aquaculture Research Publication
           <br />
           <span className="award-heading-org">
-            IFD – Aquaponics
+            The Pharma Innovation Journal
           </span>
         </>
       ),
-      year: "2018",
+      year: "2023",
       desc:
-        "Appreciated by the Fish Farmers' Development Agency, Jalpaiguri, Government of West Bengal, for contributions to the Integrated Fisheries Development – An Aquaponics Approach Farm School and its technical development, supervision, and monitoring.",
+        "Featured in The Pharma Innovation Journal through research on the application of aquaculture inputs in Assam, contributing insights into sustainable fish farming practices, input management, productivity, and the challenges faced by farmers.",
     },
 
-    {
-      id: 13,
-      image: awardImages.image13,
-      heading: (
-        <>
-          Sustainable Aquaculture
-          <br />
-          <span className="award-heading-org">
-            INFOCOM 2024 – ABP
-          </span>
-        </>
-      ),
-      year: "2024",
-      desc:
-        "Presented insights on climate-resilient aquaculture at INFOCOM 2024, highlighting the impact of changing water conditions, disease risks, algal blooms, and oxygen deficiency and the role of technology in building sustainable fish farming systems.",
-    },
 
-    {
-      id: 14,
+
+      {
+      id: 8,
       image: awardImages.image14,
       heading: (
         <>
@@ -293,53 +222,10 @@ function Award() {
         "Received a ₹25 lakh RKVY grant through AFBIC, IIT Kharagpur, recognizing our innovative approach to aquaculture using AI, advanced technology, and real-time water quality monitoring to build smarter and more productive fish farms.",
     },
 
-    {
-      id: 15,
-      image: awardImages.image15,
-      heading: (
-        <>
-          AFBIC – IIT Kharagpur
-          <br />
-          <span className="award-heading-org">
-            Cohort
-          </span>
-        </>
-      ),
-      year: "2024",
-      desc:
-        "Selected for the AFBIC – IIT Kharagpur Cohort, recognizing our potential to develop innovative, technology-driven solutions and providing access to mentorship, incubation support, and an ecosystem focused on scalable entrepreneurship and real-world impact.",
-    },
+
 
     {
-      id: 16,
-      image: awardImages.image16,
-      heading:
-        "EarthON Eco Champions Bootcamp — Certificate of Recognition",
-      year: "2024",
-      desc:
-        "Received a Certificate of Recognition from EarthON Foundation for our active participation and valuable contribution to the EarthON Eco Champions Bootcamp, recognizing our commitment to innovation, climate action, and sustainable solutions for a better future.",
-    },
-    {
-  id: 17,
-  image: awardImages.image17,
-  heading: (
-    <>
-      Certificate of Recognition
-      <br />
-      <span className="award-heading-org">
-        Essential Aquatech
-      </span>
-    </>
-  ),
-  year: "2026",
-  desc:
-    "Received a Certificate of Recognition in appreciation of our contribution, commitment, and efforts toward innovation and sustainable development in the aquaculture ecosystem. The recognition reflects our continued focus on technology-driven solutions, responsible aquaculture, and creating meaningful impact for fish farmers and the wider aquatic ecosystem.",
-},
-
-
-
-{
-  id: 18,
+  id: 9,
   image: awardImages.image18,
   heading: (
     <>
@@ -372,6 +258,158 @@ function Award() {
     </>
   ),
 },
+
+
+ {
+      id: 10,
+      image: awardImages.image12,
+      heading: (
+        <>
+          Certificate of Appreciation
+          <br />
+          <span className="award-heading-org">
+            IFD – Aquaponics
+          </span>
+        </>
+      ),
+      year: "2018",
+      desc:
+        "Appreciated by the Fish Farmers' Development Agency, Jalpaiguri, Government of West Bengal, for contributions to the Integrated Fisheries Development – An Aquaponics Approach Farm School and its technical development, supervision, and monitoring.",
+    },
+
+
+    {
+      id: 11,
+      image: awardImages.image1,
+      heading: (
+        <>
+          Bharat Entrepreneur Award 2024
+          <br />
+          <span className="award-heading-org">
+            EAI India, New Delhi
+          </span>
+        </>
+      ),
+      year: "2024",
+      desc:
+        "Honoured with the Bharat Entrepreneur Award 2024 by EAI India, New Delhi, in recognition of entrepreneurial excellence, innovation, and the vision to build technology-driven solutions creating meaningful impact across the aquaculture and sustainability ecosystem.",
+    },
+
+    {
+      id:12,
+      image: awardImages.image2,
+      heading:
+        "EarthON Eco Champions Bootcamp — Certificate of Recognition",
+      year: "2024",
+      desc:
+        "Received a Certificate of Recognition from EarthON Foundation for our active participation and valuable contribution to the EarthON Eco Champions Bootcamp, recognizing our commitment to innovation, climate action, and sustainable solutions for a better future.",
+    },
+
+    {
+      id: 13,
+      image: awardImages.image3,
+      heading: "Bharat Entrepreneur Award 2024",
+      year: "2024",
+      desc:
+        "Mr. Arkaprava Das, Founder & CEO of Essential Aquatech Pvt. Ltd., was honoured with the Bharat Entrepreneur Award 2024 by the Entrepreneurs Association of India (EAI) at the Bharat Entrepreneurship Summit in New Delhi. The award recognized his entrepreneurial contribution and efforts toward innovation and technology-driven development in the aquaculture sector.",
+    },
+
+    
+
+ 
+
+   
+
+   
+
+   
+
+    {
+      id: 14,
+      image: awardImages.image9,
+      heading: (
+        <>
+          Best Entrepreneur Award 2024
+          <br />
+          <span className="award-heading-org">
+            NBUPRERONA – COFAM
+          </span>
+        </>
+      ),
+      year: "2024",
+      desc:
+        "Recognized as the Best Entrepreneur (Fisheries & Aquaculture Input) from North Bengal in 2024 at NBUPRERONA-2024, presented by COFAM in collaboration with the Startup-Incubation Centre Committee, University of North Bengal, recognizing entrepreneurial excellence in the fisheries and aquaculture sector.",
+    },
+
+   
+
+    
+   
+    {
+      id: 15,
+      image: awardImages.image13,
+      heading: (
+        <>
+          Sustainable Aquaculture
+          <br />
+          <span className="award-heading-org">
+            INFOCOM 2024 – ABP
+          </span>
+        </>
+      ),
+      year: "2024",
+      desc:
+        "Presented insights on climate-resilient aquaculture at INFOCOM 2024, highlighting the impact of changing water conditions, disease risks, algal blooms, and oxygen deficiency and the role of technology in building sustainable fish farming systems.",
+    },
+
+  
+
+    {
+      id: 16,
+      image: awardImages.image15,
+      heading: (
+        <>
+          AFBIC – IIT Kharagpur
+          <br />
+          <span className="award-heading-org">
+            Cohort
+          </span>
+        </>
+      ),
+      year: "2024",
+      desc:
+        "Selected for the AFBIC – IIT Kharagpur Cohort, recognizing our potential to develop innovative, technology-driven solutions and providing access to mentorship, incubation support, and an ecosystem focused on scalable entrepreneurship and real-world impact.",
+    },
+
+    {
+      id: 17,
+      image: awardImages.image16,
+      heading:
+        "EarthON Eco Champions Bootcamp — Certificate of Recognition",
+      year: "2024",
+      desc:
+        "Received a Certificate of Recognition from EarthON Foundation for our active participation and valuable contribution to the EarthON Eco Champions Bootcamp, recognizing our commitment to innovation, climate action, and sustainable solutions for a better future.",
+    },
+    {
+  id: 18,
+  image: awardImages.image17,
+  heading: (
+    <>
+      Certificate of Recognition
+      <br />
+      <span className="award-heading-org">
+        Essential Aquatech
+      </span>
+    </>
+  ),
+  year: "2026",
+  desc:
+    "Received a Certificate of Recognition in appreciation of our contribution, commitment, and efforts toward innovation and sustainable development in the aquaculture ecosystem. The recognition reflects our continued focus on technology-driven solutions, responsible aquaculture, and creating meaningful impact for fish farmers and the wider aquatic ecosystem.",
+},
+
+
+
+
 
 
 
