@@ -60,6 +60,9 @@ const awardImages = {
 
     image17:
   "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/cer",
+
+  image18:
+  "https://res.cloudinary.com/p8fs2e1n/image/upload/f_auto,q_auto/News.png",
 };
 
 function Award() {
@@ -332,6 +335,47 @@ function Award() {
   desc:
     "Received a Certificate of Recognition in appreciation of our contribution, commitment, and efforts toward innovation and sustainable development in the aquaculture ecosystem. The recognition reflects our continued focus on technology-driven solutions, responsible aquaculture, and creating meaningful impact for fish farmers and the wider aquatic ecosystem.",
 },
+
+
+
+{
+  id: 18,
+  image: awardImages.image18,
+  heading: (
+    <>
+      Featured in
+      <br />
+      <span className="award-heading-org">
+        The Economic Times
+      </span>
+    </>
+  ),
+  year: "2026",
+  desc: (
+    <>
+      Featured in The Economic Times in an article titled
+      'Reinventing the pond: How this Bengal start-up is
+      helping fish farmers battle climate and credit crisis.'
+      The article highlights the challenges faced by fish
+      farmers and the role of technology in aquaculture.
+      <br />
+      <br />
+      For Read More,{" "}
+      <a
+        href="https://m.economictimes.com/small-biz/entrepreneurship/reinventing-the-pond-how-this-bengal-start-up-is-helping-fish-farmers-battle-climate-and-credit-crisis/articleshow/135108800.cms"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+      >
+        Click Here
+      </a>
+    </>
+  ),
+},
+
+
+
+
   ];
 
   /*

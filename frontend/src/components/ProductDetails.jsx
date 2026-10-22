@@ -772,7 +772,7 @@ const productData = {
     ],
 
     bottomText:
-      "By connecting data, intelligence and operations, TorOSnex helps aquaculture move from fragmented information to smarter, data-driven decisions."
+      "By connecting data, intelligence and operations, TorOSnex  helps aquaculture move from fragmented information to smarter, data-driven decisions."
   },
 
 
